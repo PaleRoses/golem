@@ -1,0 +1,3 @@
+artifacts/vigil-hound/vigil_hound_demo_front.png
+artifacts/vigil-hound/vigil_hound_demo_side.png
+artifacts/vigil-hound/vigil_hound_demo_top.png

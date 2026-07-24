@@ -1,0 +1,11 @@
+{
+ "layout": "morphology_anisotropic",
+ "cell_count": 48,
+ "random_seed": 7,
+ "relief": 0.004,
+ "groove": 0.002,
+ "seam_lift": 0.001,
+ "seam_material": "emissive_seam",
+ "axis_weight": 0.18,
+ "circulation_emission": true
+}

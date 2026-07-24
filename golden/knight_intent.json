@@ -1,0 +1,71 @@
+{
+  "name": "obsidian-knight",
+  "txn": 1,
+  "note": "Hand-written intent sidecar for the FROZEN rehearsal knight (rehearsal/knight/golem_knight.json). Landmarks are world coords read off that JSON. The attach list declares every intended FUSED join a competent knight author would author: the anatomy merges (limbs/armour into the torso at armpit + hip), the armour-plate contacts (breastplate to pauldron), and the full sword+grip assembly (hand around pommel AND grip; guard fused to blade and to the blade_flat cross-section workaround). Only pairs that actually interpenetrate are declared -- a declared-but-unfused pair would read as missing_fusion, so mere proximities (a forearm hovering by its own hilt) are left for the blend_ambiguity detector. The adjacencies deliberately NOT declared are the real defects and survive as anomalies: gauntlet.L~gauntlet.R (cross-plane lump), visor_ridge~torso (chin-on-chest), chest_plate~helm (helm bridges the chest, no neck void). Separately, expected_articulations declares the ONE girdle-shaped fusion the author intends: grip~blade (the sword is one rigid assembly, so grip fuses past the crossguard, 2 links apart) -- an articulated_fusion, not a defect. An articulation is a design intention; only a declared pair softens from unintended_fusion, so the undeclared chin-on-chest (visor_ridge~torso, also 2 links apart through the helm) stays a defect. Asserts A1-A7 adapt fable-b sec.2 to the real geometry; H is the knight's measured height (~2.905). The pack NAMES the three losses: hunch (A2 + suppressed burial), swallowed helm (A3 head-exposure + A4 shoulder-span + A7 heads-tall), cane-sword (A5 forward plant + A6 short length). A1 (blade ground contact) PASSES: the blade tip reaches the ground here (min_y 0.023 vs ground 0.02).",
+  "ground": {"parts": ["foot", "blade"], "tolerance": 0.02},
+  "attach": [
+    ["torso", "chest_plate"],
+    ["torso", "pelvis"],
+    ["torso", "helm"],
+    ["torso", "pauldron"],
+    ["torso", "arm"],
+    ["torso", "thigh"],
+    ["chest_plate", "pauldron"],
+    ["pauldron", "arm"],
+    ["arm", "gauntlet"],
+    ["helm", "visor_ridge"],
+    ["pelvis", "thigh"],
+    ["thigh", "shin"],
+    ["shin", "foot"],
+    ["gauntlet", "pommel"],
+    ["gauntlet", "grip"],
+    ["pommel", "grip"],
+    ["grip", "crossguard"],
+    ["crossguard", "blade"],
+    ["crossguard", "blade_flat"],
+    ["blade", "blade_flat"]
+  ],
+  "expected_articulations": [
+    ["grip", "blade"]
+  ],
+  "landmarks": {
+    "pelvis_center": [0, 1.28, 0.0],
+    "helm_top": [0, 2.925, 0.11],
+    "pommel": [0, 1.60, 0.74],
+    "blade_tip": [0, 0.095, 0.76],
+    "sword_plant": [0, 0.023, 0.76],
+    "toe_line": [0, 0.02, 0.41]
+  },
+  "asserts": {
+    "pack": "knight.intent",
+    "clauses": [
+      {"id": "A1", "scope": ["part:blade", "contact:planted"],
+       "metric": "contact_error", "operator": "maximum", "value": 0.005,
+       "unit": "world_unit", "tolerance": 0,
+       "knob": "blade.spine.tip.y", "direction": "-"},
+      {"id": "A2", "scope": ["part:helm", "part:torso"],
+       "metric": "neck_gap", "operator": "within", "value": [0.02, 0.12],
+       "unit": "world_unit", "tolerance": 0,
+       "knob": "helm.spine.y", "direction": "+"},
+      {"id": "A3", "scope": ["part:helm", "part:pauldron"],
+       "metric": "head_exposure", "operator": "minimum", "value": 0.85,
+       "unit": "helm-heights", "tolerance": 0,
+       "knob": "pauldron.center.y", "direction": "-"},
+      {"id": "A4", "scope": ["part:pauldron"], "note": "0.55*H",
+       "metric": "span", "operator": "maximum", "value": 1.60,
+       "unit": "world_unit", "tolerance": 0,
+       "knob": "pauldron.center.x", "direction": "-"},
+      {"id": "A5", "scope": ["landmark:sword_plant", "landmark:toe_line"],
+       "metric": "plant_offset", "operator": "maximum", "value": 0.15,
+       "unit": "world_unit", "tolerance": 0,
+       "knob": "blade.spine.z", "direction": "-"},
+      {"id": "A6", "scope": ["landmark:pommel", "landmark:blade_tip"],
+       "note": "[0.85,1.05]*H", "metric": "sword_length", "operator": "within",
+       "value": [2.47, 3.05], "unit": "world_unit", "tolerance": 0,
+       "knob": "blade.spine.tip.y", "direction": "+"},
+      {"id": "A7", "scope": ["part:helm"], "metric": "heads_tall",
+       "operator": "minimum", "value": 6.0, "unit": "heads", "tolerance": 0,
+       "knob": "helm.radii", "direction": "-"}
+    ]
+  }
+}

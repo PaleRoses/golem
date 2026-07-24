@@ -1,0 +1,38 @@
+{
+  "reinforcement": {
+    "affected_vertices": 18369,
+    "face_topology_unchanged": true,
+    "flow_basis": "absolute_solved_poiseuille_flow",
+    "major_edges": 32,
+    "max_offset": 0.0026857021653159795,
+    "mean_offset": 0.00015013159462397808,
+    "min_flow_fraction": 0.15,
+    "reach_in_pitches": 9.0,
+    "reach_world": 0.1539,
+    "strength_bound": 0.015390000000000001,
+    "surface_coverage": 0.21931039423099882,
+    "total_edges": 1060
+  },
+  "views": [
+    {
+      "added_pixels": 28,
+      "changed_pixels": 28,
+      "delta_locator_halo_pixels": 2,
+      "image_size": 720,
+      "intersection_over_union": 0.9981888745148771,
+      "removed_pixels": 0,
+      "shared_camera_frame": true,
+      "view": "front"
+    },
+    {
+      "added_pixels": 9,
+      "changed_pixels": 9,
+      "delta_locator_halo_pixels": 2,
+      "image_size": 720,
+      "intersection_over_union": 0.9993615662907002,
+      "removed_pixels": 0,
+      "shared_camera_frame": true,
+      "view": "three-quarter"
+    }
+  ]
+}

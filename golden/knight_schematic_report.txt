@@ -1,0 +1,5 @@
+SCHEMATIC obsidian-knight | views front,side | joints 12 | clauses 24
+PASS  24/24 schematic_offset (max offset 0.000, bound <= 0.010)
+SEED  perturb front:forearm/tail target u +0.300
+  front:forearm/tail schematic_offset @ forearm/tail: 0.300 world_unit, target <= 0.010 -> skeleton/forearm@length - (est 0.290, x29.000)  [@ landmark:forearm/tail]
+  detail: forearm/tail@front proj (0.090,1.580) vs target (0.390,1.580) off 0.300

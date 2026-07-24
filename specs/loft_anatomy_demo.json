@@ -1,0 +1,99 @@
+{
+  "name": "loft-anatomy-demo",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "appearance_material": "obsidian_warden",
+  "blend": 0.045,
+  "ground_y": 0.02,
+  "contacts": [],
+  "mounts": [],
+  "pose": {
+    "goals": [],
+    "joints": {},
+    "relations": []
+  },
+  "skeleton": {
+    "root": {
+      "id": "root",
+      "world": [0.0, 0.0, 0.0]
+    },
+    "bones": [
+      {
+        "id": "torso",
+        "parent": "root",
+        "attach": {
+          "t": 0.0
+        },
+        "rest_dir": [0.0, 1.0, 0.0],
+        "length": 1.4,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "keeled-thorax",
+            "sections": [
+              {
+                "station": 0.0,
+                "width": 0.22,
+                "depth": 0.14,
+                "exponent": 4.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.22,
+                "width": 0.38,
+                "depth": 0.24,
+                "exponent": 7.0,
+                "roll": 8.0
+              },
+              {
+                "station": 0.48,
+                "width": 0.34,
+                "depth": 0.19,
+                "exponent": 8.0,
+                "roll": -6.0
+              },
+              {
+                "station": 0.76,
+                "width": 0.17,
+                "depth": 0.085,
+                "exponent": 5.0,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "loft",
+            "name": "creased-pelvic-wedge",
+            "operator": "crease",
+            "sections": [
+              {
+                "station": 0.68,
+                "width": 0.18,
+                "depth": 0.095,
+                "exponent": 5.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.86,
+                "width": 0.27,
+                "depth": 0.16,
+                "exponent": 7.0,
+                "roll": 12.0
+              },
+              {
+                "station": 1.0,
+                "width": 0.21,
+                "depth": 0.12,
+                "exponent": 4.0,
+                "roll": 0.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

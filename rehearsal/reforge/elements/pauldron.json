@@ -1,0 +1,13 @@
+{
+ "name": "pauldron",
+ "_doc": "One shallow top-shoulder plate on +x; mount the same lawful element with mirror_x for the other side.",
+ "blend": 0.012,
+ "parts": [
+  {
+   "id": "top_shoulder_plate",
+   "type": "blob",
+   "center": [0.30, 1.285, 0.045],
+   "size": [0.14, 0.045, 0.13]
+  }
+ ]
+}

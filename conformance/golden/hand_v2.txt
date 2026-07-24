@@ -1,0 +1,5 @@
+[anatomy] PASS
+[open] PASS
+[fist] PASS
+[point] PASS
+TOTAL: 0

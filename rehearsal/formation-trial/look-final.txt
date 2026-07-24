@@ -1,0 +1,3 @@
+rehearsal/formation-trial/look-final/sable_stride_front.png
+rehearsal/formation-trial/look-final/sable_stride_side.png
+rehearsal/formation-trial/look-final/sable_stride_top.png

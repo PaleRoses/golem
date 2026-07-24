@@ -1,0 +1,18 @@
+GOLEM v03 bilateral-symmetry side-by-side  (generated 2026-07-12)
+
+Metrics (mirror plane x=0, PITCH=0.035):
+  legacy  = pilots/judge surface-shell voxel IoU; grid centered on x=0.
+            Reproduces conformance unrounded_symmetry_iou verbatim.
+  aligned = NEW solid voxel IoU; grid offset so x=0 is a cell boundary.
+  delta   = aligned - legacy.
+Values rounded to 4 decimals for cross-platform stability.
+
+artifact               legacy  aligned    delta
+--------------------  -------  -------  -------
+golem_v4@190           0.9800   0.9982  +0.0182
+bulwark_initial        0.9601   0.9962  +0.0360
+bulwark_r1             0.9600   0.9962  +0.0363
+bulwark_r2             0.9579   0.9963  +0.0385
+bulwark_r3             0.9574   0.9963  +0.0389
+bulwark_r3_metaball    0.9763   0.9981  +0.0218
+blender_knight         0.9835   0.9963  +0.0128

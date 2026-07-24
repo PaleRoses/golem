@@ -1,0 +1,45 @@
+{
+  "name": "obsidian-golem",
+  "blend": 0.035,
+  "parts": [
+    { "id": "torso", "type": "gencyl",
+      "spine": [[0, 0.9, -0.8], [0, 1.5, -0.25], [0, 1.85, 0.3]],
+      "radii": [0.5, 0.72, 0.78] },
+
+    { "id": "face_plate", "type": "blob",
+      "center": [0, 1.7, 0.68], "size": [0.6, 0.66, 0.3] },
+
+    { "id": "shoulder", "type": "blob", "mirror": true,
+      "center": [1.0, 1.82, 0.28], "size": [0.55, 0.55, 0.55] },
+
+    { "id": "upper_arm", "type": "gencyl", "mirror": true,
+      "spine": [[1.05, 1.75, 0.35], [1.45, 1.05, 0.45]],
+      "radii": [0.38, 0.42] },
+
+    { "id": "forearm", "type": "gencyl", "mirror": true,
+      "spine": [[1.45, 1.05, 0.45], [1.25, 0.45, 0.95]],
+      "radii": [0.48, 0.58] },
+
+    { "id": "hand", "type": "blob", "mirror": true,
+      "center": [1.18, 0.28, 1.28], "size": [0.46, 0.3, 0.5] },
+
+    { "id": "claw_inner", "type": "gencyl", "mirror": true,
+      "spine": [[0.88, 0.32, 1.55], [0.75, 0.0, 2.0]],
+      "radii": [0.19, 0.04] },
+    { "id": "claw_mid", "type": "gencyl", "mirror": true,
+      "spine": [[1.18, 0.35, 1.6], [1.18, 0.0, 2.15]],
+      "radii": [0.21, 0.04] },
+    { "id": "claw_outer", "type": "gencyl", "mirror": true,
+      "spine": [[1.48, 0.32, 1.48], [1.62, 0.0, 1.9]],
+      "radii": [0.19, 0.04] },
+
+    { "id": "hip", "type": "blob", "mirror": true,
+      "center": [0.42, 0.6, -0.85], "size": [0.4, 0.38, 0.44] },
+
+    { "id": "thigh", "type": "gencyl", "mirror": true,
+      "spine": [[0.48, 0.55, -0.85], [0.6, 0.3, -0.45]],
+      "radii": [0.28, 0.2] },
+    { "id": "foot", "type": "blob", "mirror": true,
+      "center": [0.62, 0.14, -0.5], "size": [0.24, 0.14, 0.36] }
+  ]
+}

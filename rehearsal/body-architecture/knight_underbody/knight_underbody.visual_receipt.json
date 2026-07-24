@@ -1,0 +1,51 @@
+{
+  "artifact_kind": "body-only morphology proof",
+  "source": "specs/knight_body.json",
+  "excludes": [
+    "vascular acceptance",
+    "thermal acceptance",
+    "mechanical acceptance"
+  ],
+  "resolution": 180,
+  "world_pitch": [
+    0.006022297206703911,
+    0.018714451396648044,
+    0.0048425871508379886
+  ],
+  "graph_bounds": [
+    [
+      -0.414612,
+      -0.885075,
+      -0.25458400000000003
+    ],
+    [
+      0.414612,
+      1.691761,
+      0.412203
+    ]
+  ],
+  "surface_bounds": [
+    [
+      -0.40672557010325,
+      -0.8230513503655248,
+      -0.17886762438122628
+    ],
+    [
+      0.40672560456311113,
+      1.5850813913914172,
+      0.35413854026393776
+    ]
+  ],
+  "authored_ground_y": -0.81,
+  "surface_ground_delta": -0.013051350365524739,
+  "compiler_violation_count": 0,
+  "vocabulary_violation_count": 0,
+  "anatomy_status": "accepted",
+  "coherence": {
+    "components": 1,
+    "grid_dust_slivers": 0,
+    "watertight_main": true,
+    "largest_component_volume_share": 1.0,
+    "faces": 166844
+  }
+}

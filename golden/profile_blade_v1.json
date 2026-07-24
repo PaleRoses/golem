@@ -1,0 +1,21 @@
+{
+ "name": "profile_blade_v1",
+ "_doc": "Flat greatsword blade authored via the profile word ALONE -- no box. In v0.3 the flat cross-section a round gencyl cannot express was bought by the box vocabulary (greatsword_v1's blade is a rounded box); v0.5's swept-superellipse profile achieves the same flatness on the gencyl spine itself, with zero box parts. The blade sweeps a superellipse (n=7, near-rectangular) whose half-WIDTH is the gencyl radius (x: 0.17 down to 0.08) and whose half-DEPTH is radius*aspect (z: aspect 0.30 at the wide top tapering to 0.55 at the narrow point), giving a broad, thin, taper-to-a-point blade along +/-y (spine 1.3 -> 0.1). up=[0,0,1] fixes the width axis to x. Authored 2026-07-17 under the v0.5 profile quarantine proposal (Rosalia: retire box-as-massing; the box remains for genuinely prismatic forms).",
+ "blend": 0.01,
+ "parts": [
+  {
+   "id": "blade",
+   "type": "gencyl",
+   "spine": [
+    [0, 1.3, 0],
+    [0, 0.1, 0]
+   ],
+   "radii": [0.085, 0.04],
+   "profile": {
+    "n": 7,
+    "aspect": [0.30, 0.55],
+    "up": [0, 0, 1]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "contract": "knight-postural-v1",
+ "_doc": "fable-a sec.4 postural clauses, metric/operator/value VERBATIM. Scopes are wired to the ids body.py emits (flesh names / landmark table / prop parts), keeping fable-a's semantics: helm_shell->the helm gencyl (emitted id 'helm'); the pauldron blob (emitted id 'pauldron'); port:wrist -> the recorded 'wrist' landmark; greatsword/pommel_grip -> the prop landmark. Values are NOT weakened; the body spec is tuned so these pass honestly. integrity uses post_dust_components = proprio's mesh-free predicted component count (the smoke test meshes once to confirm the prediction).",
+ "clauses": [
+  {"id": "hands_on_pommel",
+   "scope": ["landmark:wrist", "landmark:greatsword/pommel_grip"],
+   "metric": "landmark_distance", "operator": "maximum", "value": 0.05,
+   "unit": "world_unit", "tolerance": 0,
+   "knob": "skeleton/forearm@length", "direction": "+"},
+
+  {"id": "sword_planted",
+   "scope": ["part:greatsword/blade", "contact:planted"],
+   "metric": "contact_error", "operator": "maximum", "value": 0.02,
+   "unit": "world_unit", "tolerance": 0,
+   "knob": "props/greatsword@anchor.xz", "direction": "-"},
+
+  {"id": "upright",
+   "scope": ["chain:pelvis..helm"],
+   "metric": "axis_from_vertical", "operator": "maximum", "value": 8,
+   "unit": "degree", "tolerance": 0,
+   "knob": "skeleton/spine_lower@rest_dir.z", "direction": "-"},
+
+  {"id": "helm_forward",
+   "scope": ["landmark:helm/center", "landmark:spine_upper/tail"],
+   "metric": "forward_offset", "operator": "within", "value": [0.0, 0.10],
+   "unit": "world_unit", "tolerance": 0,
+   "knob": "skeleton/neck@rest_dir.z", "direction": "-"},
+
+  {"id": "helm_clear_of_pauldrons",
+   "scope": ["part:helm", "part:pauldron"],
+   "metric": "clearance", "operator": "minimum", "value": 0.04,
+   "unit": "world_unit", "tolerance": 0,
+   "knob": "skeleton/clavicle@length", "direction": "+"},
+
+  {"id": "balanced",
+   "scope": ["whole", "contact:support"],
+   "metric": "centroid_support_margin", "operator": "minimum", "value": 0.05,
+   "unit": "world_unit", "tolerance": 0,
+   "knob": "skeleton/foot@rest_dir.z", "direction": "+"},
+
+  {"id": "integrity",
+   "scope": ["whole"],
+   "metric": "post_dust_components", "operator": "equal", "value": 1,
+   "unit": "count", "tolerance": 0,
+   "knob": "spec@blend", "direction": "+"}
+ ]
+}

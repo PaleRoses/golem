@@ -1,0 +1,122 @@
+{
+ "name": "obsidian_knight_body_focus",
+ "pitch": 0.0171,
+ "service": {
+  "metres_per_world_unit": 1.0,
+  "constitutive_model": "isotropic_linear_thermoelastic",
+  "solid_materials": [
+   {
+    "role": "structure",
+    "domain": "element:body",
+    "material": "stainless_steel_316l_room_temperature"
+   },
+   {
+    "role": "lumen_wall",
+    "domain": "element:body",
+    "material": "stainless_steel_316l_room_temperature"
+   },
+   {
+    "role": "equipment",
+    "domain": "element:sword",
+    "material": "stainless_steel_316l_room_temperature"
+   }
+  ],
+  "cases": [
+   {
+    "id": "greatsword_gravity_heat",
+    "gravity_m_s2": [0.0, -9.80665, 0.0],
+    "inertial_acceleration_m_s2": [0.0, 0.0, 0.0],
+    "loads": [
+     {
+      "kind": "force",
+      "address": "mount:sword",
+      "vector_newtons": [0.0, -180.0, 0.0]
+     }
+    ],
+    "supports": [
+     {
+      "address": "bone:body/foot",
+      "law": "fixed"
+     }
+    ],
+    "joints": [
+     {
+      "address": "mount:sword",
+      "law": "rigid_payload"
+     }
+    ],
+    "heat_sources": [
+     {
+      "address": "region:body/axial_core",
+      "watts": 140.0
+     }
+    ]
+   }
+  ],
+  "ambient": {
+   "temperature_k": 288.15,
+   "heat_transfer_policy": "still_air_natural_convection",
+   "gas_material": "dry_air_101325_pa_298k",
+   "pressure_pa": 101325.0,
+   "natural_convection": {
+    "correlation": "churchill_chu_isothermal_vertical_plate",
+    "surface_orientation": "vertical_plate",
+    "characteristic_length_m": 3.3
+   }
+  },
+  "coolant": {
+   "material": "water_0_1_mpa_293k",
+   "inlet_temperature_k": 293.15,
+   "pump": {
+    "kind": "pressure_budget",
+    "maximum_pressure_pa": 250000.0
+   }
+  },
+  "manufacturing": {
+   "minimum_lumen_diameter_m": 0.00004,
+   "minimum_wall_thickness_m": 0.00002,
+   "minimum_remaining_ligament_m": 0.00006
+  },
+  "limits": {
+   "maximum_temperature_k": 313.15,
+   "maximum_temperature_gradient_k_per_m": 8000.0,
+   "maximum_displacement_m": 0.004,
+   "minimum_yield_safety_factor": 1.5,
+   "minimum_buckling_safety_factor": 1.5,
+   "minimum_burst_safety_factor": 2.0
+  },
+  "evidence": {
+   "channel_resolution_policy": "resolved_or_embedded_slender",
+   "physics_resolution": 32,
+   "minimum_cells_across_lumen": 6,
+   "resolution_refinement_factor": 2,
+   "maximum_refinement_change_fraction": 0.05
+  }
+ },
+ "elements": [
+  {
+   "id": "body",
+   "role": "creature",
+   "body": "../../specs/knight_body.json",
+   "appearance_material": "gambeson_dark"
+  },
+  {
+   "id": "sword",
+   "role": "equipment",
+   "graph": "elements/obsidian_greatsword.json",
+   "appearance_material": "steel_violet",
+   "mount": {
+    "translate": [
+     0,
+     0.405,
+     0.3
+    ]
+   },
+   "fit": {
+    "law": "bounded_mount_contact",
+    "with": "body",
+    "radius": 0.13
+   }
+  }
+ ]
+}

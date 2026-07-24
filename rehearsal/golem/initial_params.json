@@ -1,0 +1,6 @@
+{"name": "obsidian-bulwark",
+ "squash": 0.82, "torso_r": 1.06,
+ "shoulder_dx": 0.18, "shoulder_s": 1.10, "elbow_dx": 0.11,
+ "hand_dx": 0.10, "hand_dz": 0.0,
+ "foot_size": [0.34, 0.145, 0.42], "foot_cx": 0.70,
+ "hip_sx": 1.10, "hip_cx": 1.10}

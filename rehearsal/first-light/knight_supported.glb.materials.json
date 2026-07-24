@@ -1,0 +1,106 @@
+{
+ "elements": {
+  "arm_plate_l": "obsidian_warden",
+  "arm_plate_r": "obsidian_warden",
+  "body": "gambeson_dark",
+  "body__leyline": "emissive_seam",
+  "helm": "obsidian_deep",
+  "helm__visor_line": "emissive_seam",
+  "leg_plate_l": "obsidian_warden",
+  "leg_plate_r": "obsidian_warden",
+  "pauldron_l": "obsidian_warden",
+  "pauldron_r": "obsidian_warden",
+  "sword": "steel_violet",
+  "sword__fuller_rune": "emissive_seam",
+  "torso_plate": "obsidian_warden",
+  "torso_plate__rim_trim": "emissive_seam",
+  "torso_plate__waist_trim": "emissive_seam"
+ },
+ "records": {
+  "emissive_seam": {
+   "base_color": [
+    0.1,
+    0.05,
+    0.15
+   ],
+   "emissive": true,
+   "emissive_color": [
+    0.66,
+    0.33,
+    0.97
+   ],
+   "emissive_strength": 2.5,
+   "metallic": 0.0,
+   "roughness": 0.5,
+   "texture_set": null
+  },
+  "gambeson_dark": {
+   "base_color": [
+    0.048,
+    0.042,
+    0.046
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.88,
+   "texture_set": null
+  },
+  "obsidian_deep": {
+   "base_color": [
+    0.03,
+    0.029,
+    0.044
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.3,
+   "texture_set": null
+  },
+  "obsidian_warden": {
+   "base_color": [
+    0.034,
+    0.033,
+    0.048
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.24,
+   "texture_set": null
+  },
+  "steel_violet": {
+   "base_color": [
+    0.06,
+    0.06,
+    0.086
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.75,
+   "roughness": 0.38,
+   "texture_set": null
+  }
+ }
+}

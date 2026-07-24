@@ -1,0 +1,283 @@
+{
+  "name": "pa-tallpump",
+  "dialect": "body/0.3",
+  "appearance_material": "obsidian_warden",
+  "contacts": [],
+  "mounts": [],
+  "pose": {
+    "goals": [],
+    "joints": {},
+    "relations": []
+  },
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {
+          "region_id": "thoracic",
+          "kind": "torso",
+          "host_bone_id": "core"
+        },
+        {
+          "region_id": "cranial",
+          "kind": "head",
+          "host_bone_id": "head"
+        },
+        {
+          "region_id": "caudal",
+          "kind": "tail",
+          "host_bone_id": "tail_tip"
+        }
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "thoracic",
+        "carrier_radius_scale": 0.12,
+        "distance_decay": 0.86,
+        "exchange_beds": [
+          {
+            "region_id": "cranial",
+            "tissue": "neural_tissue",
+            "demand": 0.1
+          },
+          {
+            "region_id": "caudal",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          }
+        ]
+      }
+    }
+  },
+  "skeleton": {
+    "root": {
+      "id": "core",
+      "world": [
+        0,
+        0.64,
+        0
+      ],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "thorax",
+          "t": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            0.15,
+            0.36,
+            0.2
+          ]
+        }
+      ]
+    },
+    "bones": [
+      {
+        "id": "shoulder",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0,
+            0.03,
+            0.18
+          ]
+        },
+        "rest_dir": [
+          0,
+          0.0,
+          1.0
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "shoulder_mass",
+            "t": 0,
+            "size": [
+              0.16,
+              0.145,
+              0.15
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "shoulder_yoke",
+            "radii": [
+              0.155,
+              0.14,
+              0.125
+            ]
+          }
+        ]
+      },
+      {
+        "id": "haunch",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0,
+            0.03,
+            -0.18
+          ]
+        },
+        "rest_dir": [
+          0,
+          0.0,
+          -1.0
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "haunch_mass",
+            "t": 0,
+            "size": [
+              0.16,
+              0.145,
+              0.15
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "haunch_yoke",
+            "radii": [
+              0.155,
+              0.14,
+              0.125
+            ]
+          }
+        ]
+      },
+      {
+        "id": "neck",
+        "parent": "shoulder",
+        "attach": {
+          "at": "landmark:shoulder/tail"
+        },
+        "rest_dir": [
+          0,
+          0.27,
+          0.9629
+        ],
+        "length": 0.34,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "neck_column",
+            "radii": [
+              0.14,
+              0.125,
+              0.11
+            ]
+          }
+        ]
+      },
+      {
+        "id": "head",
+        "parent": "neck",
+        "attach": {
+          "at": "landmark:neck/tail"
+        },
+        "rest_dir": [
+          0,
+          0.12,
+          0.9928
+        ],
+        "length": 0.26,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "skull",
+            "t": 0.32,
+            "size": [
+              0.145,
+              0.135,
+              0.155
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "snout",
+            "radii": [
+              0.115,
+              0.095,
+              0.075
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tail_base",
+        "parent": "haunch",
+        "attach": {
+          "at": "landmark:haunch/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.05,
+          -0.9987
+        ],
+        "length": 0.38,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_root",
+            "radii": [
+              0.12,
+              0.1,
+              0.085
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tail_tip",
+        "parent": "tail_base",
+        "attach": {
+          "at": "landmark:tail_base/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.22,
+          -0.9755
+        ],
+        "length": 0.34,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_lash",
+            "radii": [
+              0.09,
+              0.07,
+              0.052
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1640 @@
+{
+  "status": "rejected",
+  "diagnostics": [
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "chest_mass~shoulder_sling",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "shoulder_sling"
+        ],
+        "gap": -0.286,
+        "magnitude": 9.533,
+        "detail": "0.286 deep, 953% of shoulder_sling",
+        "address": "chest_mass~shoulder_sling",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "chest_mass~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "spine_runner"
+        ],
+        "gap": -0.271,
+        "magnitude": 9.033,
+        "detail": "0.271 deep, 903% of spine_runner",
+        "address": "chest_mass~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "shoulder_junction~shoulder_sling",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "shoulder_junction",
+          "shoulder_sling"
+        ],
+        "gap": -0.232,
+        "magnitude": 7.733,
+        "detail": "0.232 deep, 773% of shoulder_sling",
+        "address": "shoulder_junction~shoulder_sling",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "shoulder_junction~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "shoulder_junction",
+          "spine_runner"
+        ],
+        "gap": -0.221,
+        "magnitude": 7.367,
+        "detail": "0.221 deep, 737% of spine_runner",
+        "address": "shoulder_junction~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tucked_waist~haunch_drive",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "tucked_waist"
+        ],
+        "gap": -0.214,
+        "magnitude": 7.133,
+        "detail": "0.214 deep, 713% of haunch_drive",
+        "address": "tucked_waist~haunch_drive",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "pelvic_basin",
+          "spine_runner"
+        ],
+        "gap": -0.198,
+        "magnitude": 6.6,
+        "detail": "0.198 deep, 660% of spine_runner",
+        "address": "pelvic_basin~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tucked_waist~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "spine_runner",
+          "tucked_waist"
+        ],
+        "gap": -0.198,
+        "magnitude": 6.6,
+        "detail": "0.198 deep, 660% of spine_runner",
+        "address": "tucked_waist~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~tail_lifter",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "pelvic_basin",
+          "tail_lifter"
+        ],
+        "gap": -0.136,
+        "magnitude": 5.44,
+        "detail": "0.136 deep, 544% of tail_lifter",
+        "address": "pelvic_basin~tail_lifter",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~haunch_drive",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "pelvic_basin"
+        ],
+        "gap": -0.161,
+        "magnitude": 5.367,
+        "detail": "0.161 deep, 537% of haunch_drive",
+        "address": "pelvic_basin~haunch_drive",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_thigh_mass~haunch_drive",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "hind_thigh_mass"
+        ],
+        "gap": -0.149,
+        "magnitude": 4.967,
+        "detail": "0.149 deep, 497% of haunch_drive",
+        "address": "hind_thigh_mass~haunch_drive",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tucked_waist~tail_lifter",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_lifter",
+          "tucked_waist"
+        ],
+        "gap": -0.117,
+        "magnitude": 4.68,
+        "detail": "0.117 deep, 468% of tail_lifter",
+        "address": "tucked_waist~tail_lifter",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_base~tail_lifter",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_base",
+          "tail_lifter"
+        ],
+        "gap": -0.116,
+        "magnitude": 4.64,
+        "detail": "0.116 deep, 464% of tail_lifter",
+        "address": "tail_base~tail_lifter",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "neck_mass~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "neck_mass",
+          "spine_runner"
+        ],
+        "gap": -0.138,
+        "magnitude": 4.6,
+        "detail": "0.138 deep, 460% of spine_runner",
+        "address": "neck_mass~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~haunch_drive",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "haunch_junction"
+        ],
+        "gap": -0.131,
+        "magnitude": 4.367,
+        "detail": "0.131 deep, 437% of haunch_drive",
+        "address": "haunch_junction~haunch_drive",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_junction",
+          "spine_runner"
+        ],
+        "gap": -0.122,
+        "magnitude": 4.067,
+        "detail": "0.122 deep, 407% of spine_runner",
+        "address": "haunch_junction~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_girdle~shoulder_sling",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_girdle",
+          "shoulder_sling"
+        ],
+        "gap": -0.118,
+        "magnitude": 3.933,
+        "detail": "0.118 deep, 393% of shoulder_sling",
+        "address": "fore_girdle~shoulder_sling",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_tip_mass~tail_lifter",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_lifter",
+          "tail_tip_mass"
+        ],
+        "gap": -0.094,
+        "magnitude": 3.76,
+        "detail": "0.094 deep, 376% of tail_lifter",
+        "address": "tail_tip_mass~tail_lifter",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_upper_mass~shoulder_sling",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_upper_mass",
+          "shoulder_sling"
+        ],
+        "gap": -0.11,
+        "magnitude": 3.667,
+        "detail": "0.110 deep, 367% of shoulder_sling",
+        "address": "fore_upper_mass~shoulder_sling",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_drive~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "spine_runner"
+        ],
+        "gap": -0.102,
+        "magnitude": 3.4,
+        "detail": "0.102 deep, 340% of haunch_drive",
+        "address": "haunch_drive~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_mid~tail_lifter",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_lifter",
+          "tail_mid"
+        ],
+        "gap": -0.082,
+        "magnitude": 3.28,
+        "detail": "0.082 deep, 328% of tail_lifter",
+        "address": "tail_mid~tail_lifter",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "shoulder_sling~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "shoulder_sling",
+          "spine_runner"
+        ],
+        "gap": -0.094,
+        "magnitude": 3.133,
+        "detail": "0.094 deep, 313% of shoulder_sling",
+        "address": "shoulder_sling~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "neck_mass~shoulder_sling",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "neck_mass",
+          "shoulder_sling"
+        ],
+        "gap": -0.085,
+        "magnitude": 2.833,
+        "detail": "0.085 deep, 283% of shoulder_sling",
+        "address": "neck_mass~shoulder_sling",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_girdle~haunch_drive",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_drive",
+          "hind_girdle"
+        ],
+        "gap": -0.057,
+        "magnitude": 1.9,
+        "detail": "0.057 deep, 190% of haunch_drive",
+        "address": "hind_girdle~haunch_drive",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~tail_base",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "pelvic_basin",
+          "tail_base"
+        ],
+        "gap": -0.188,
+        "magnitude": 1.88,
+        "detail": "0.188 deep, 188% of tail_base",
+        "address": "pelvic_basin~tail_base",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "chest_mass~neck_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "neck_mass"
+        ],
+        "gap": -0.212,
+        "magnitude": 1.767,
+        "detail": "0.212 deep, 177% of neck_mass",
+        "address": "chest_mass~neck_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_mid~tail_tip_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_mid",
+          "tail_tip_mass"
+        ],
+        "gap": -0.076,
+        "magnitude": 1.689,
+        "detail": "0.076 deep, 169% of tail_tip_mass",
+        "address": "tail_mid~tail_tip_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tucked_waist~tail_base",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_base",
+          "tucked_waist"
+        ],
+        "gap": -0.165,
+        "magnitude": 1.65,
+        "detail": "0.165 deep, 165% of tail_base",
+        "address": "tucked_waist~tail_base",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "shoulder_junction~neck_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "neck_mass",
+          "shoulder_junction"
+        ],
+        "gap": -0.196,
+        "magnitude": 1.633,
+        "detail": "0.196 deep, 163% of neck_mass",
+        "address": "shoulder_junction~neck_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_paw_mass~fore_pad",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_pad",
+          "fore_paw_mass"
+        ],
+        "gap": -0.057,
+        "magnitude": 1.629,
+        "detail": "0.057 deep, 163% of fore_pad",
+        "address": "fore_paw_mass~fore_pad",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_thigh_mass~hind_shin_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_shin_mass",
+          "hind_thigh_mass"
+        ],
+        "gap": -0.095,
+        "magnitude": 1.583,
+        "detail": "0.095 deep, 158% of hind_shin_mass",
+        "address": "hind_thigh_mass~hind_shin_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_base~tail_mid",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "tail_base",
+          "tail_mid"
+        ],
+        "gap": -0.104,
+        "magnitude": 1.486,
+        "detail": "0.104 deep, 149% of tail_mid",
+        "address": "tail_base~tail_mid",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_paw_mass~hind_pad",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_pad",
+          "hind_paw_mass"
+        ],
+        "gap": -0.059,
+        "magnitude": 1.475,
+        "detail": "0.059 deep, 148% of hind_pad",
+        "address": "hind_paw_mass~hind_pad",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tucked_waist~chest_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "tucked_waist"
+        ],
+        "gap": -0.294,
+        "magnitude": 1.47,
+        "detail": "0.294 deep, 147% of tucked_waist",
+        "address": "tucked_waist~chest_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~tucked_waist",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_junction",
+          "tucked_waist"
+        ],
+        "gap": -0.215,
+        "magnitude": 1.433,
+        "detail": "0.215 deep, 143% of haunch_junction",
+        "address": "haunch_junction~tucked_waist",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_upper_mass~fore_shin_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_shin_mass",
+          "fore_upper_mass"
+        ],
+        "gap": -0.068,
+        "magnitude": 1.236,
+        "detail": "0.068 deep, 124% of fore_shin_mass",
+        "address": "fore_upper_mass~fore_shin_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~haunch_junction",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_junction",
+          "pelvic_basin"
+        ],
+        "gap": -0.183,
+        "magnitude": 1.22,
+        "detail": "0.183 deep, 122% of haunch_junction",
+        "address": "pelvic_basin~haunch_junction",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "tail_base~spine_runner",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "spine_runner",
+          "tail_base"
+        ],
+        "gap": -0.035,
+        "magnitude": 1.167,
+        "detail": "0.035 deep, 117% of spine_runner",
+        "address": "tail_base~spine_runner",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_girdle~fore_upper_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_girdle",
+          "fore_upper_mass"
+        ],
+        "gap": -0.091,
+        "magnitude": 1.137,
+        "detail": "0.091 deep, 114% of fore_upper_mass",
+        "address": "fore_girdle~fore_upper_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~hind_thigh_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_thigh_mass",
+          "pelvic_basin"
+        ],
+        "gap": -0.112,
+        "magnitude": 1.12,
+        "detail": "0.112 deep, 112% of hind_thigh_mass",
+        "address": "pelvic_basin~hind_thigh_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_shin_mass~hind_paw_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_paw_mass",
+          "hind_shin_mass"
+        ],
+        "gap": -0.056,
+        "magnitude": 1.018,
+        "detail": "0.056 deep, 102% of hind_paw_mass",
+        "address": "hind_shin_mass~hind_paw_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~tucked_waist",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "pelvic_basin",
+          "tucked_waist"
+        ],
+        "gap": -0.201,
+        "magnitude": 1.005,
+        "detail": "0.201 deep, 100% of tucked_waist",
+        "address": "pelvic_basin~tucked_waist",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "fore_shin_mass~fore_paw_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "fore_paw_mass",
+          "fore_shin_mass"
+        ],
+        "gap": -0.055,
+        "magnitude": 1.0,
+        "detail": "0.055 deep, 100% of fore_shin_mass",
+        "address": "fore_shin_mass~fore_paw_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "hind_girdle~hind_thigh_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_girdle",
+          "hind_thigh_mass"
+        ],
+        "gap": -0.097,
+        "magnitude": 0.97,
+        "detail": "0.097 deep, 97% of hind_thigh_mass",
+        "address": "hind_girdle~hind_thigh_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "neck_mass~head_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "head_mass",
+          "neck_mass"
+        ],
+        "gap": -0.116,
+        "magnitude": 0.967,
+        "detail": "0.116 deep, 97% of neck_mass",
+        "address": "neck_mass~head_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "chest_mass~shoulder_junction",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "shoulder_junction"
+        ],
+        "gap": -0.23,
+        "magnitude": 0.92,
+        "detail": "0.230 deep, 92% of shoulder_junction",
+        "address": "chest_mass~shoulder_junction",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~chest_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "chest_mass",
+          "haunch_junction"
+        ],
+        "gap": -0.115,
+        "magnitude": 0.767,
+        "detail": "0.115 deep, 77% of haunch_junction",
+        "address": "haunch_junction~chest_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~hind_thigh_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_junction",
+          "hind_thigh_mass"
+        ],
+        "gap": -0.072,
+        "magnitude": 0.72,
+        "detail": "0.072 deep, 72% of hind_thigh_mass",
+        "address": "haunch_junction~hind_thigh_mass",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "pelvic_basin~hind_girdle",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "hind_girdle",
+          "pelvic_basin"
+        ],
+        "gap": -0.072,
+        "magnitude": 0.6,
+        "detail": "0.072 deep, 60% of hind_girdle",
+        "address": "pelvic_basin~hind_girdle",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "haunch_junction~tail_base",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "haunch_junction",
+          "tail_base"
+        ],
+        "gap": -0.056,
+        "magnitude": 0.56,
+        "detail": "0.056 deep, 56% of tail_base",
+        "address": "haunch_junction~tail_base",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "vascular.InfeasibleBifurcation",
+      "severity": "error",
+      "address": "anatomy/regions/fore_paws",
+      "predicate": "WallContainment",
+      "required": 0.0005,
+      "observed": -0.244064806562,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/fore_paws",
+        "region_id": "fore_paws",
+        "phase": "seed",
+        "lane": "return",
+        "predicate": "WallContainment",
+        "required": 0.0005,
+        "observed": -0.244064806562,
+        "terminal_index": null,
+        "supply_capsule": null,
+        "return_capsule": null,
+        "split_edge": [
+          9,
+          10
+        ],
+        "candidate_point_index": null,
+        "attempted_candidate_count": 1862,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.575869127784,
+                0.203308969703,
+                0.964983411783
+              ],
+              "host_bone_addresses": [
+                "skeleton/fore_paw"
+              ],
+              "host_part_addresses": [
+                "skeleton/fore_paw/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.304539017176,
+                0.964073443808,
+                0.667917796459
+              ],
+              "host_bone_addresses": [
+                "skeleton/fore_girdle"
+              ],
+              "host_part_addresses": [
+                "skeleton/fore_girdle/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      },
+      "help": {
+        "operations": []
+      }
+    }
+  ],
+  "margins": [
+    {
+      "constraint": "contract:env_balanced",
+      "address": "whole.centroid",
+      "predicate": "minimum",
+      "required": 0.02,
+      "observed": 0.673,
+      "margin": 0.653,
+      "normalized_margin": 0.970282317979,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "whole.centroid"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "offenders": [
+          "whole.centroid"
+        ],
+        "detail": "centroid margin +0.673 (inside)"
+      }
+    },
+    {
+      "constraint": "contract:env_integrity",
+      "address": "whole",
+      "predicate": "equal",
+      "required": 1.0,
+      "observed": 1.0,
+      "margin": 0.0,
+      "normalized_margin": 0.0,
+      "unit": "count",
+      "authoring_addresses": [
+        "whole"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "offenders": [
+          "whole"
+        ],
+        "detail": "predicted 1 component(s)"
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:loin",
+      "address": "skeleton/loin/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.0557565450666,
+      "observed": 0.2,
+      "margin": 0.144243454933,
+      "normalized_margin": 0.721217274667,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/loin/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/loin/joint",
+        "normalized_flow": 0.532258064516,
+        "distance_from_pump": 1
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:thorax",
+      "address": "skeleton/thorax/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.08,
+      "observed": 0.27,
+      "margin": 0.19,
+      "normalized_margin": 0.703703703704,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/thorax/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/thorax/joint",
+        "normalized_flow": 1.0,
+        "distance_from_pump": 0
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:neck",
+      "address": "skeleton/neck/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.12,
+      "margin": 0.08,
+      "normalized_margin": 0.666666666667,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/neck/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/neck/joint",
+        "normalized_flow": 0.0806451612903,
+        "distance_from_pump": 1
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:fore_upper",
+      "address": "skeleton/fore_upper/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.0431214550531,
+      "observed": 0.08,
+      "margin": 0.0368785449469,
+      "normalized_margin": 0.460981811836,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/fore_upper/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/fore_upper/joint",
+        "normalized_flow": 0.387096774194,
+        "distance_from_pump": 2
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:fore_shin",
+      "address": "skeleton/fore_shin/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.055,
+      "margin": 0.015,
+      "normalized_margin": 0.272727272727,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/fore_shin/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/fore_shin/joint",
+        "normalized_flow": 0.387096774194,
+        "distance_from_pump": 3
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:fore_paw",
+      "address": "skeleton/fore_paw/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.055,
+      "margin": 0.015,
+      "normalized_margin": 0.272727272727,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/fore_paw/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/fore_paw/joint",
+        "normalized_flow": 0.387096774194,
+        "distance_from_pump": 4
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_base",
+      "address": "skeleton/tail_base/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.1,
+      "margin": 0.06,
+      "normalized_margin": 0.6,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_base/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_base/joint",
+        "normalized_flow": 0.0483870967742,
+        "distance_from_pump": 3
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_mid",
+      "address": "skeleton/tail_mid/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.07,
+      "margin": 0.03,
+      "normalized_margin": 0.428571428571,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_mid/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_mid/joint",
+        "normalized_flow": 0.0483870967742,
+        "distance_from_pump": 4
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_tip",
+      "address": "skeleton/tail_tip/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.045,
+      "margin": 0.005,
+      "normalized_margin": 0.111111111111,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_tip/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_tip/joint",
+        "normalized_flow": 0.0483870967742,
+        "distance_from_pump": 5
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:hind_thigh",
+      "address": "skeleton/hind_thigh/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.1,
+      "margin": 0.06,
+      "normalized_margin": 0.6,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/hind_thigh/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/hind_thigh/joint",
+        "normalized_flow": 0.483870967742,
+        "distance_from_pump": 4
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:hind_shin",
+      "address": "skeleton/hind_shin/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.06,
+      "margin": 0.02,
+      "normalized_margin": 0.333333333333,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/hind_shin/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/hind_shin/joint",
+        "normalized_flow": 0.483870967742,
+        "distance_from_pump": 5
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:hind_paw",
+      "address": "skeleton/hind_paw/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.055,
+      "margin": 0.015,
+      "normalized_margin": 0.272727272727,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/hind_paw/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/hind_paw/joint",
+        "normalized_flow": 0.483870967742,
+        "distance_from_pump": 6
+      }
+    },
+    {
+      "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+      "address": "anatomy/regions/fore_paws",
+      "predicate": "WallContainment",
+      "required": 0.0005,
+      "observed": -0.244064806562,
+      "margin": -0.244564806562,
+      "normalized_margin": -1.0,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/fore_paw/flesh[0]",
+        "skeleton/fore_paw",
+        "skeleton/fore_girdle/flesh[0]",
+        "skeleton/fore_girdle"
+      ],
+      "disposition": "violated",
+      "active": true,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/fore_paws",
+        "region_id": "fore_paws",
+        "phase": "seed",
+        "lane": "return",
+        "predicate": "WallContainment",
+        "required": 0.0005,
+        "observed": -0.244064806562,
+        "terminal_index": null,
+        "supply_capsule": null,
+        "return_capsule": null,
+        "split_edge": [
+          9,
+          10
+        ],
+        "candidate_point_index": null,
+        "attempted_candidate_count": 1862,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.575869127784,
+                0.203308969703,
+                0.964983411783
+              ],
+              "host_bone_addresses": [
+                "skeleton/fore_paw"
+              ],
+              "host_part_addresses": [
+                "skeleton/fore_paw/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.304539017176,
+                0.964073443808,
+                0.667917796459
+              ],
+              "host_bone_addresses": [
+                "skeleton/fore_girdle"
+              ],
+              "host_part_addresses": [
+                "skeleton/fore_girdle/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      }
+    }
+  ],
+  "binding_constraint": {
+    "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+    "address": "anatomy/regions/fore_paws",
+    "predicate": "WallContainment",
+    "required": 0.0005,
+    "observed": -0.244064806562,
+    "margin": -0.244564806562,
+    "normalized_margin": -1.0,
+    "unit": "world_unit",
+    "authoring_addresses": [
+      "skeleton/fore_paw/flesh[0]",
+      "skeleton/fore_paw",
+      "skeleton/fore_girdle/flesh[0]",
+      "skeleton/fore_girdle"
+    ],
+    "disposition": "violated",
+    "active": true,
+    "witness": {
+      "kind": "InfeasibleBifurcation",
+      "address": "anatomy/regions/fore_paws",
+      "region_id": "fore_paws",
+      "phase": "seed",
+      "lane": "return",
+      "predicate": "WallContainment",
+      "required": 0.0005,
+      "observed": -0.244064806562,
+      "terminal_index": null,
+      "supply_capsule": null,
+      "return_capsule": null,
+      "split_edge": [
+        9,
+        10
+      ],
+      "candidate_point_index": null,
+      "attempted_candidate_count": 1862,
+      "failing_segments": [
+        {
+          "edge_id": null,
+          "source": {
+            "position": [
+              0.575869127784,
+              0.203308969703,
+              0.964983411783
+            ],
+            "host_bone_addresses": [
+              "skeleton/fore_paw"
+            ],
+            "host_part_addresses": [
+              "skeleton/fore_paw/flesh[0]"
+            ]
+          },
+          "target": {
+            "position": [
+              0.304539017176,
+              0.964073443808,
+              0.667917796459
+            ],
+            "host_bone_addresses": [
+              "skeleton/fore_girdle"
+            ],
+            "host_part_addresses": [
+              "skeleton/fore_girdle/flesh[0]"
+            ]
+          },
+          "radius": 3e-05
+        }
+      ]
+    }
+  },
+  "deltas": {
+    "margins": [],
+    "newly_active": [],
+    "newly_inactive": []
+  },
+  "contract_refs": [
+    "primer",
+    "receipts",
+    "envelope",
+    "schema"
+  ],
+  "changed_addresses": [],
+  "base_txn": 0,
+  "txn": 0,
+  "operations": [],
+  "journal": [],
+  "schema": "golem.session.verdict/2",
+  "diagnostics_summary": {
+    "total": 50,
+    "expected": 49,
+    "unexpected": 1,
+    "shown": 50,
+    "expected_filtered": false
+  }
+}

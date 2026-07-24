@@ -1,0 +1,1245 @@
+{
+  "status": "rejected",
+  "diagnostics": [
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_deep_chest~ashfall_tucked_waist",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_deep_chest",
+          "ashfall_tucked_waist"
+        ],
+        "gap": -0.275,
+        "magnitude": 1.038,
+        "detail": "0.275 deep, 104% of ashfall_tucked_waist",
+        "address": "ashfall_deep_chest~ashfall_tucked_waist",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_hock_shaft~ashfall_rear_paw",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_hock_shaft",
+          "ashfall_rear_paw"
+        ],
+        "gap": -0.097,
+        "magnitude": 0.924,
+        "detail": "0.097 deep, 92% of ashfall_rear_paw",
+        "address": "ashfall_hock_shaft~ashfall_rear_paw",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_lower_forelimb~ashfall_front_paw",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_front_paw",
+          "ashfall_lower_forelimb"
+        ],
+        "gap": -0.089,
+        "magnitude": 0.89,
+        "detail": "0.089 deep, 89% of ashfall_front_paw",
+        "address": "ashfall_lower_forelimb~ashfall_front_paw",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_tail_ribbon~ashfall_tail_end_flesh",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_tail_end_flesh",
+          "ashfall_tail_ribbon"
+        ],
+        "gap": -0.066,
+        "magnitude": 0.88,
+        "detail": "0.066 deep, 88% of ashfall_tail_end_flesh",
+        "address": "ashfall_tail_ribbon~ashfall_tail_end_flesh",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_tail_base_flesh~ashfall_tail_ribbon",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_tail_base_flesh",
+          "ashfall_tail_ribbon"
+        ],
+        "gap": -0.082,
+        "magnitude": 0.781,
+        "detail": "0.082 deep, 78% of ashfall_tail_ribbon",
+        "address": "ashfall_tail_base_flesh~ashfall_tail_ribbon",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_upper_forelimb~ashfall_front_paw",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_front_paw",
+          "ashfall_upper_forelimb"
+        ],
+        "gap": 0.053,
+        "magnitude": 0.754,
+        "detail": "gap 0.053 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_upper_forelimb~ashfall_front_paw",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_tail_base_flesh~ashfall_tail_end_flesh",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_tail_base_flesh",
+          "ashfall_tail_end_flesh"
+        ],
+        "gap": 0.061,
+        "magnitude": 0.717,
+        "detail": "gap 0.061 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_tail_base_flesh~ashfall_tail_end_flesh",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_tucked_waist~ashfall_tail_ribbon",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_tail_ribbon",
+          "ashfall_tucked_waist"
+        ],
+        "gap": 0.063,
+        "magnitude": 0.708,
+        "detail": "gap 0.063 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_tucked_waist~ashfall_tail_ribbon",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.unintended_fusion",
+      "severity": "warning",
+      "address": "ashfall_tucked_waist~ashfall_tail_base_flesh",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "unintended_fusion",
+      "witness": {
+        "kind": "unintended_fusion",
+        "pair": [
+          "ashfall_tail_base_flesh",
+          "ashfall_tucked_waist"
+        ],
+        "gap": -0.095,
+        "magnitude": 0.679,
+        "detail": "gap -0.095, 2 links apart",
+        "address": "ashfall_tucked_waist~ashfall_tail_base_flesh",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_upper_forelimb~ashfall_lower_forelimb",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_lower_forelimb",
+          "ashfall_upper_forelimb"
+        ],
+        "gap": -0.066,
+        "magnitude": 0.6,
+        "detail": "0.066 deep, 60% of ashfall_lower_forelimb",
+        "address": "ashfall_upper_forelimb~ashfall_lower_forelimb",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.deep_burial",
+      "severity": "warning",
+      "address": "ashfall_neck_column~ashfall_cranium",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "deep_burial",
+      "witness": {
+        "kind": "deep_burial",
+        "pair": [
+          "ashfall_cranium",
+          "ashfall_neck_column"
+        ],
+        "gap": -0.095,
+        "magnitude": 0.559,
+        "detail": "0.095 deep, 56% of ashfall_neck_column",
+        "address": "ashfall_neck_column~ashfall_cranium",
+        "expected": true
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_shoulder_mass~ashfall_lower_forelimb",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_lower_forelimb",
+          "ashfall_shoulder_mass"
+        ],
+        "gap": 0.131,
+        "magnitude": 0.393,
+        "detail": "gap 0.131 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_shoulder_mass~ashfall_lower_forelimb",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_deep_chest~ashfall_upper_forelimb",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_deep_chest",
+          "ashfall_upper_forelimb"
+        ],
+        "gap": 0.135,
+        "magnitude": 0.374,
+        "detail": "gap 0.135 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_deep_chest~ashfall_upper_forelimb",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_deep_chest~ashfall_thigh_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_deep_chest",
+          "ashfall_thigh_mass"
+        ],
+        "gap": 0.153,
+        "magnitude": 0.291,
+        "detail": "gap 0.153 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_deep_chest~ashfall_thigh_mass",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_deep_chest~ashfall_cranium",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_cranium",
+          "ashfall_deep_chest"
+        ],
+        "gap": 0.171,
+        "magnitude": 0.207,
+        "detail": "gap 0.171 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_deep_chest~ashfall_cranium",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_tucked_waist~ashfall_thigh_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_thigh_mass",
+          "ashfall_tucked_waist"
+        ],
+        "gap": 0.176,
+        "magnitude": 0.184,
+        "detail": "gap 0.176 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_tucked_waist~ashfall_thigh_mass",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_tucked_waist~ashfall_tail_end_flesh",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_tail_end_flesh",
+          "ashfall_tucked_waist"
+        ],
+        "gap": 0.181,
+        "magnitude": 0.161,
+        "detail": "gap 0.181 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_tucked_waist~ashfall_tail_end_flesh",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_thigh_mass~ashfall_rear_paw",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_rear_paw",
+          "ashfall_thigh_mass"
+        ],
+        "gap": 0.183,
+        "magnitude": 0.151,
+        "detail": "gap 0.183 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_thigh_mass~ashfall_rear_paw",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.blend_ambiguity",
+      "severity": "warning",
+      "address": "ashfall_rump_mass~ashfall_hock_shaft",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "blend_ambiguity",
+      "witness": {
+        "kind": "blend_ambiguity",
+        "pair": [
+          "ashfall_hock_shaft",
+          "ashfall_rump_mass"
+        ],
+        "gap": 0.184,
+        "magnitude": 0.147,
+        "detail": "gap 0.184 < k 0.216 (no void; may bridge at mesh)",
+        "address": "ashfall_rump_mass~ashfall_hock_shaft",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "body.anomaly.unintended_fusion",
+      "severity": "warning",
+      "address": "ashfall_tucked_waist~ashfall_rump_mass",
+      "predicate": "derived body senses are non-anomalous",
+      "required": "no anomaly",
+      "observed": "unintended_fusion",
+      "witness": {
+        "kind": "unintended_fusion",
+        "pair": [
+          "ashfall_rump_mass",
+          "ashfall_tucked_waist"
+        ],
+        "gap": -0.021,
+        "magnitude": 0.131,
+        "detail": "gap -0.021, 2 links apart",
+        "address": "ashfall_tucked_waist~ashfall_rump_mass",
+        "expected": false
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "vascular.InfeasibleBifurcation",
+      "severity": "error",
+      "address": "anatomy/regions/ashfall_head_region",
+      "predicate": "ReservedLaneClearance",
+      "required": 1e-08,
+      "observed": -1.55470164382e-06,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_head_region",
+        "region_id": "ashfall_head_region",
+        "phase": "seed",
+        "lane": "supply",
+        "predicate": "ReservedLaneClearance",
+        "required": 1e-08,
+        "observed": -1.55470164382e-06,
+        "terminal_index": null,
+        "supply_capsule": 6,
+        "return_capsule": 1,
+        "split_edge": null,
+        "candidate_point_index": null,
+        "attempted_candidate_count": 3422,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                -2.72753086578e-05,
+                1.02384086476,
+                -0.00111669778675
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0129721183523,
+                1.25746816014,
+                0.774748135789
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_neck"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_neck/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          },
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                1.02,
+                0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0,
+                1.035,
+                0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "vascular.InfeasibleBifurcation",
+      "severity": "error",
+      "address": "anatomy/regions/ashfall_hind_region",
+      "predicate": "WallContainment",
+      "required": 0.0005,
+      "observed": 0.000372636927261,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_hind_region",
+        "region_id": "ashfall_hind_region",
+        "phase": "seed",
+        "lane": "return",
+        "predicate": "WallContainment",
+        "required": 0.0005,
+        "observed": 0.000372636927261,
+        "terminal_index": null,
+        "supply_capsule": null,
+        "return_capsule": null,
+        "split_edge": [
+          3,
+          4
+        ],
+        "candidate_point_index": null,
+        "attempted_candidate_count": 45,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                0.991,
+                -0.02
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.299452756836,
+                0.866112384566,
+                -0.439233859571
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_pelvic_arc"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_pelvic_arc/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      },
+      "help": {
+        "operations": []
+      }
+    },
+    {
+      "code": "vascular.InfeasibleBifurcation",
+      "severity": "error",
+      "address": "anatomy/regions/ashfall_tail_region",
+      "predicate": "ReservedLaneClearance",
+      "required": 1e-08,
+      "observed": -1.08092526785e-05,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_tail_region",
+        "region_id": "ashfall_tail_region",
+        "phase": "seed",
+        "lane": "supply",
+        "predicate": "ReservedLaneClearance",
+        "required": 1e-08,
+        "observed": -1.08092526785e-05,
+        "terminal_index": null,
+        "supply_capsule": 1,
+        "return_capsule": 5,
+        "split_edge": null,
+        "candidate_point_index": null,
+        "attempted_candidate_count": 1024,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                1.02,
+                -0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0,
+                1.005,
+                -0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          },
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.00750043082557,
+                0.996000143606,
+                -0.610033891611
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[1]"
+              ]
+            },
+            "target": {
+              "position": [
+                -1.59722500531e-06,
+                1.0160021479,
+                0.000131057479907
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      },
+      "help": {
+        "operations": []
+      }
+    }
+  ],
+  "margins": [
+    {
+      "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+      "address": "anatomy/regions/ashfall_head_region",
+      "predicate": "ReservedLaneClearance",
+      "required": 1e-08,
+      "observed": -1.55470164382e-06,
+      "margin": -1.56470164382e-06,
+      "normalized_margin": -1.0,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/ashfall_torso/flesh[0]",
+        "skeleton/ashfall_torso",
+        "skeleton/ashfall_neck/flesh[0]",
+        "skeleton/ashfall_neck"
+      ],
+      "disposition": "violated",
+      "active": true,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_head_region",
+        "region_id": "ashfall_head_region",
+        "phase": "seed",
+        "lane": "supply",
+        "predicate": "ReservedLaneClearance",
+        "required": 1e-08,
+        "observed": -1.55470164382e-06,
+        "terminal_index": null,
+        "supply_capsule": 6,
+        "return_capsule": 1,
+        "split_edge": null,
+        "candidate_point_index": null,
+        "attempted_candidate_count": 3422,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                -2.72753086578e-05,
+                1.02384086476,
+                -0.00111669778675
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0129721183523,
+                1.25746816014,
+                0.774748135789
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_neck"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_neck/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          },
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                1.02,
+                0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0,
+                1.035,
+                0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      }
+    },
+    {
+      "constraint": "vascular:violation:InfeasibleBifurcationObstruction:1",
+      "address": "anatomy/regions/ashfall_hind_region",
+      "predicate": "WallContainment",
+      "required": 0.0005,
+      "observed": 0.000372636927261,
+      "margin": -0.000127363072739,
+      "normalized_margin": -0.254726145479,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/ashfall_torso/flesh[0]",
+        "skeleton/ashfall_torso",
+        "skeleton/ashfall_pelvic_arc/flesh[0]",
+        "skeleton/ashfall_pelvic_arc"
+      ],
+      "disposition": "violated",
+      "active": false,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_hind_region",
+        "region_id": "ashfall_hind_region",
+        "phase": "seed",
+        "lane": "return",
+        "predicate": "WallContainment",
+        "required": 0.0005,
+        "observed": 0.000372636927261,
+        "terminal_index": null,
+        "supply_capsule": null,
+        "return_capsule": null,
+        "split_edge": [
+          3,
+          4
+        ],
+        "candidate_point_index": null,
+        "attempted_candidate_count": 45,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                0.991,
+                -0.02
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.299452756836,
+                0.866112384566,
+                -0.439233859571
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_pelvic_arc"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_pelvic_arc/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      }
+    },
+    {
+      "constraint": "vascular:violation:InfeasibleBifurcationObstruction:2",
+      "address": "anatomy/regions/ashfall_tail_region",
+      "predicate": "ReservedLaneClearance",
+      "required": 1e-08,
+      "observed": -1.08092526785e-05,
+      "margin": -1.08192526785e-05,
+      "normalized_margin": -1.0,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/ashfall_torso/flesh[0]",
+        "skeleton/ashfall_torso",
+        "skeleton/ashfall_torso/flesh[1]"
+      ],
+      "disposition": "violated",
+      "active": true,
+      "witness": {
+        "kind": "InfeasibleBifurcation",
+        "address": "anatomy/regions/ashfall_tail_region",
+        "region_id": "ashfall_tail_region",
+        "phase": "seed",
+        "lane": "supply",
+        "predicate": "ReservedLaneClearance",
+        "required": 1e-08,
+        "observed": -1.08092526785e-05,
+        "terminal_index": null,
+        "supply_capsule": 1,
+        "return_capsule": 5,
+        "split_edge": null,
+        "candidate_point_index": null,
+        "attempted_candidate_count": 1024,
+        "failing_segments": [
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.0,
+                1.02,
+                -0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "target": {
+              "position": [
+                0.0,
+                1.005,
+                -0.004
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          },
+          {
+            "edge_id": null,
+            "source": {
+              "position": [
+                0.00750043082557,
+                0.996000143606,
+                -0.610033891611
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[1]"
+              ]
+            },
+            "target": {
+              "position": [
+                -1.59722500531e-06,
+                1.0160021479,
+                0.000131057479907
+              ],
+              "host_bone_addresses": [
+                "skeleton/ashfall_torso"
+              ],
+              "host_part_addresses": [
+                "skeleton/ashfall_torso/flesh[0]"
+              ]
+            },
+            "radius": 3e-05
+          }
+        ]
+      }
+    }
+  ],
+  "binding_constraint": {
+    "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+    "address": "anatomy/regions/ashfall_head_region",
+    "predicate": "ReservedLaneClearance",
+    "required": 1e-08,
+    "observed": -1.55470164382e-06,
+    "margin": -1.56470164382e-06,
+    "normalized_margin": -1.0,
+    "unit": "world_unit",
+    "authoring_addresses": [
+      "skeleton/ashfall_torso/flesh[0]",
+      "skeleton/ashfall_torso",
+      "skeleton/ashfall_neck/flesh[0]",
+      "skeleton/ashfall_neck"
+    ],
+    "disposition": "violated",
+    "active": true,
+    "witness": {
+      "kind": "InfeasibleBifurcation",
+      "address": "anatomy/regions/ashfall_head_region",
+      "region_id": "ashfall_head_region",
+      "phase": "seed",
+      "lane": "supply",
+      "predicate": "ReservedLaneClearance",
+      "required": 1e-08,
+      "observed": -1.55470164382e-06,
+      "terminal_index": null,
+      "supply_capsule": 6,
+      "return_capsule": 1,
+      "split_edge": null,
+      "candidate_point_index": null,
+      "attempted_candidate_count": 3422,
+      "failing_segments": [
+        {
+          "edge_id": null,
+          "source": {
+            "position": [
+              -2.72753086578e-05,
+              1.02384086476,
+              -0.00111669778675
+            ],
+            "host_bone_addresses": [
+              "skeleton/ashfall_torso"
+            ],
+            "host_part_addresses": [
+              "skeleton/ashfall_torso/flesh[0]"
+            ]
+          },
+          "target": {
+            "position": [
+              0.0129721183523,
+              1.25746816014,
+              0.774748135789
+            ],
+            "host_bone_addresses": [
+              "skeleton/ashfall_neck"
+            ],
+            "host_part_addresses": [
+              "skeleton/ashfall_neck/flesh[0]"
+            ]
+          },
+          "radius": 3e-05
+        },
+        {
+          "edge_id": null,
+          "source": {
+            "position": [
+              0.0,
+              1.02,
+              0.004
+            ],
+            "host_bone_addresses": [
+              "skeleton/ashfall_torso"
+            ],
+            "host_part_addresses": [
+              "skeleton/ashfall_torso/flesh[0]"
+            ]
+          },
+          "target": {
+            "position": [
+              0.0,
+              1.035,
+              0.004
+            ],
+            "host_bone_addresses": [
+              "skeleton/ashfall_torso"
+            ],
+            "host_part_addresses": [
+              "skeleton/ashfall_torso/flesh[0]"
+            ]
+          },
+          "radius": 3e-05
+        }
+      ]
+    }
+  },
+  "deltas": {
+    "margins": [
+      {
+        "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+        "address": "anatomy/regions/ashfall_head_region",
+        "before": -3.83954740504e-05,
+        "after": -1.56470164382e-06,
+        "delta": 3.68307724066e-05,
+        "before_normalized": -1.0,
+        "after_normalized": -1.0,
+        "normalized_delta": 0.0
+      },
+      {
+        "constraint": "vascular:violation:InfeasibleBifurcationObstruction:1",
+        "address": "anatomy/regions/ashfall_hind_region",
+        "before": -0.000448653872194,
+        "after": -0.000127363072739,
+        "delta": 0.000321290799455,
+        "before_normalized": -0.897307744389,
+        "after_normalized": -0.254726145479,
+        "normalized_delta": 0.64258159891
+      },
+      {
+        "constraint": "vascular:violation:InfeasibleBifurcationObstruction:2",
+        "address": "anatomy/regions/ashfall_tail_region",
+        "before": -4.03324511053e-05,
+        "after": -1.08192526785e-05,
+        "delta": 2.95131984268e-05,
+        "before_normalized": -1.0,
+        "after_normalized": -1.0,
+        "normalized_delta": 0.0
+      }
+    ],
+    "newly_active": [],
+    "newly_inactive": []
+  },
+  "contract_refs": [
+    "primer",
+    "receipts",
+    "envelope",
+    "schema"
+  ],
+  "changed_addresses": [
+    "skeleton/ashfall_neck@attach.offset",
+    "skeleton/ashfall_head@attach.t",
+    "skeleton/ashfall_pelvic_arc@attach.offset",
+    "skeleton/ashfall_tail_base@attach.offset"
+  ],
+  "base_txn": 0,
+  "txn": 4,
+  "operations": [
+    {
+      "op": "set",
+      "addr": "skeleton/ashfall_neck@attach.offset",
+      "value": [
+        0.013,
+        0.16,
+        0.55
+      ]
+    },
+    {
+      "op": "set",
+      "addr": "skeleton/ashfall_head@attach.t",
+      "value": 0.88
+    },
+    {
+      "op": "set",
+      "addr": "skeleton/ashfall_pelvic_arc@attach.offset",
+      "value": [
+        0.3,
+        -0.15,
+        -0.44
+      ]
+    },
+    {
+      "op": "set",
+      "addr": "skeleton/ashfall_tail_base@attach.offset",
+      "value": [
+        0.0075,
+        -0.02,
+        -0.61
+      ]
+    }
+  ],
+  "journal": [
+    {
+      "txn": 1,
+      "kind": "op",
+      "applied": {
+        "op": "set",
+        "addr": "skeleton/ashfall_neck@attach.offset",
+        "value": [
+          0.013,
+          0.16,
+          0.55
+        ]
+      },
+      "inverse": {
+        "op": "set",
+        "addr": "skeleton/ashfall_neck@attach.offset",
+        "value": [
+          0.003,
+          0.16,
+          0.55
+        ]
+      },
+      "label": "set skeleton/ashfall_neck@attach.offset [0.003, 0.16, 0.55] -> [0.013, 0.16, 0.55]",
+      "ts": 1
+    },
+    {
+      "txn": 2,
+      "kind": "op",
+      "applied": {
+        "op": "set",
+        "addr": "skeleton/ashfall_head@attach.t",
+        "value": 0.88
+      },
+      "inverse": {
+        "op": "set",
+        "addr": "skeleton/ashfall_head@attach.t",
+        "value": 0.98
+      },
+      "label": "set skeleton/ashfall_head@attach.t 0.98 -> 0.88",
+      "ts": 2
+    },
+    {
+      "txn": 3,
+      "kind": "op",
+      "applied": {
+        "op": "set",
+        "addr": "skeleton/ashfall_pelvic_arc@attach.offset",
+        "value": [
+          0.3,
+          -0.15,
+          -0.44
+        ]
+      },
+      "inverse": {
+        "op": "set",
+        "addr": "skeleton/ashfall_pelvic_arc@attach.offset",
+        "value": [
+          0.3,
+          -0.15,
+          -0.43
+        ]
+      },
+      "label": "set skeleton/ashfall_pelvic_arc@attach.offset [0.3, -0.15, -0.43] -> [0.3, -0.15, -0.44]",
+      "ts": 3
+    },
+    {
+      "txn": 4,
+      "kind": "op",
+      "applied": {
+        "op": "set",
+        "addr": "skeleton/ashfall_tail_base@attach.offset",
+        "value": [
+          0.0075,
+          -0.02,
+          -0.61
+        ]
+      },
+      "inverse": {
+        "op": "set",
+        "addr": "skeleton/ashfall_tail_base@attach.offset",
+        "value": [
+          -0.003,
+          -0.02,
+          -0.61
+        ]
+      },
+      "label": "set skeleton/ashfall_tail_base@attach.offset [-0.003, -0.02, -0.61] -> [0.0075, -0.02, -0.61]",
+      "ts": 4
+    }
+  ],
+  "schema": "golem.session.verdict/2",
+  "diagnostics_summary": {
+    "total": 23,
+    "expected": 7,
+    "unexpected": 16,
+    "shown": 23,
+    "expected_filtered": false
+  }
+}

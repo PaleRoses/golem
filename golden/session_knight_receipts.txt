@@ -1,0 +1,54 @@
+golem> outline "" 1 structure
+meta  obsidian-knight-underbody  blend 0.024 ground_y -0.81 @ meta
+skeleton  10 bones, 16 flesh, root [0, 0.43, 0] @ skeleton/root
+  skeleton/spine_lower  len 0.52 dof fixed  flesh[spine_lower]
+  skeleton/thigh  len 0.57 dof fixed mirror  flesh[thigh,hip,knee]
+golem> set skeleton/forearm@length 0.4576
+txn 1  set skeleton/forearm@length 0.35 -> 0.4576
+contract 0 FAIL / 0 pass
+anomaly + blend_ambiguity @ forearm~thigh: gap 0.047 < k 0.094 (no void; may bridge at mesh)
+anomaly + cross_plane_fusion @ hand.L~hand.R: overlap 0.032 across x=0
+anomaly - blend_ambiguity @ hand~hip
+senses  W 0.89 -> 0.90 | HW 2.84 -> 2.82
+est_tokens: 79
+golem> undo
+txn 2  undo txn 1 (set skeleton/forearm@length 0.35 -> 0.4576)
+contract 0 FAIL / 0 pass
+anomaly + blend_ambiguity @ hand~hip: gap 0.089 < k 0.094 (no void; may bridge at mesh)
+anomaly - blend_ambiguity @ forearm~thigh
+anomaly - cross_plane_fusion @ hand.L~hand.R
+senses  W 0.90 -> 0.89 | HW 2.82 -> 2.84
+est_tokens: 76
+golem> set skeleton/clavicle/shoulder@size [0.12, 0.11, 0.12]
+txn 3  set skeleton/clavicle/shoulder@size [0.11, 0.12, 0.13] -> [0.12, 0.11, 0.12]
+contract 0 FAIL / 0 pass
+est_tokens: 27
+golem> outline "" 1 constraint
+contract  0 FAIL / 0 pass @ meta
+anomaly N1 unintended_fusion @ knee~shin: gap -0.119, 2 links apart
+anomaly N2 deep_burial @ shoulder~upperarm: 0.089 deep, 202% of upperarm
+anomaly N3 deep_burial @ thigh~shin: 0.105 deep, 184% of shin
+anomaly N4 unintended_fusion @ elbow~forearm: gap -0.062, 2 links apart
+anomaly N5 deep_burial @ spine_upper~neck: 0.116 deep, 168% of neck
+anomaly N6 deep_burial @ thigh~knee: 0.119 deep, 155% of thigh
+anomaly N7 deep_burial @ upperarm~elbow: 0.067 deep, 152% of upperarm
+anomaly N8 unintended_fusion @ spine_upper~upperarm: gap -0.055, 2 links apart
+anomaly N9 deep_burial @ pelvis~thigh: 0.095 deep, 123% of thigh
+anomaly N10 deep_burial @ neck~head: 0.085 deep, 123% of neck
+anomaly N11 deep_burial @ upperarm~forearm: 0.044 deep, 122% of forearm
+anomaly N12 deep_burial @ forearm~hand: 0.042 deep, 117% of forearm
+anomaly N13 unintended_fusion @ spine_lower~forearm: gap -0.039, 4 links apart
+anomaly N14 unintended_fusion @ spine_lower~upperarm: gap -0.046, 3 links apart
+anomaly N15 unintended_fusion @ pelvis~hip: gap -0.110, 2 links apart
+anomaly N16 deep_burial @ shin~foot: 0.057 deep, 100% of shin
+anomaly N17 deep_burial @ spine_upper~shoulder: 0.107 deep, 97% of shoulder
+... +23 more @ meta (raise depth or narrow scope)
+golem> undo
+txn 4  undo txn 3 (set skeleton/clavicle/shoulder@size [0.11, 0.12, 0.13] -> [0.12, 0.11, 0.12])
+contract 0 FAIL / 0 pass
+est_tokens: 31
+golem> recent 5
+txn 1  set skeleton/forearm@length 0.35 -> 0.4576
+txn 2  undo txn 1 (set skeleton/forearm@length 0.35 -> 0.4576)
+txn 3  set skeleton/clavicle/shoulder@size [0.11, 0.12, 0.13] -> [0.12, 0.11, 0.12]
+txn 4  undo txn 3 (set skeleton/clavicle/shoulder@size [0.11, 0.12, 0.13] -> [0.12, 0.11, 0.12])

@@ -1,0 +1,72 @@
+{
+ "name": "greatsword_v1",
+ "_doc": "Knight's planted greatsword compiled standalone (GOLEM v0.3 box vocabulary). Parts from the fable-a design brief. blade+crossguard are rounded boxes; grip is a gencyl; pommel a blob. AABB note: 'round' is additive OUTWARD, so the compiled mesh extent on an axis = 2*(core_half + round) for the bounding part. Core (round-excluded) extents are x=0.68 (2*0.34), z=0.14 (2*0.07); TOTAL compiled extents are x=0.74, y=1.76, z=0.20 -- the harness asserts the true total extents. blade core flatness size_x/size_z = 0.16/0.035 = 4.57 (a flat cross-section a round gencyl cannot make).",
+ "blend": 0.025,
+ "parts": [
+  {
+   "id": "blade",
+   "type": "box",
+   "center": [
+    0,
+    0.66,
+    0
+   ],
+   "size": [
+    0.16,
+    0.64,
+    0.035
+   ],
+   "round": 0.02,
+   "blend": 0.02
+  },
+  {
+   "id": "crossguard",
+   "type": "box",
+   "center": [
+    0,
+    1.34,
+    0
+   ],
+   "size": [
+    0.34,
+    0.05,
+    0.07
+   ],
+   "round": 0.03
+  },
+  {
+   "id": "grip",
+   "type": "gencyl",
+   "spine": [
+    [
+     0,
+     1.38,
+     0
+    ],
+    [
+     0,
+     1.62,
+     0
+    ]
+   ],
+   "radii": [
+    0.055,
+    0.055
+   ]
+  },
+  {
+   "id": "pommel",
+   "type": "blob",
+   "center": [
+    0,
+    1.68,
+    0
+   ],
+   "size": [
+    0.08,
+    0.08,
+    0.08
+   ]
+  }
+ ]
+}

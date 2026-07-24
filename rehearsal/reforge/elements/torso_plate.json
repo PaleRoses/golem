@@ -1,0 +1,46 @@
+{
+ "name": "torso_plate",
+ "_doc": "Shallow external breastplate fitted in front of the final anatomy; a positive SDF is not counterfeited as a hollow cuirass.",
+ "blend": 0.01,
+ "parts": [
+  {
+   "id": "breastplate",
+   "type": "gencyl",
+   "spine": [
+    [0.0, 0.94, 0.020],
+    [0.0, 1.02, 0.022],
+    [0.0, 1.10, 0.024],
+    [0.0, 1.18, 0.026]
+   ],
+   "radii": [0.17, 0.22, 0.205, 0.14],
+   "profile": {
+    "n": [4.0, 5.0, 5.5, 4.0],
+    "aspect": [0.17, 0.16, 0.16, 0.18],
+    "offset": [[0.0, 0.225], [0.0, 0.245], [0.0, 0.24], [0.0, 0.20]],
+    "up": [0.0, 0.0, 1.0]
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "id": "gorget_trim",
+   "kind": "axial_loop",
+   "part": "breastplate",
+   "t": 0.88,
+   "width": 0.024,
+   "depth": 0.006,
+   "emit": ["groove", "band"],
+   "material": "emissive_seam"
+  },
+  {
+   "id": "heartline_trim",
+   "kind": "axial_loop",
+   "part": "breastplate",
+   "t": 0.32,
+   "width": 0.02,
+   "depth": 0.005,
+   "emit": ["groove", "band"],
+   "material": "emissive_seam"
+  }
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "name": "obsidian_greatsword",
+ "_doc": "canonical frame: origin at grip base, +y along handle, blade down -y, quillons along x",
+ "blend": 0.012,
+ "parts": [
+  {
+   "id": "pommel",
+   "type": "blob",
+   "blend": 0.012,
+   "center": [
+    0,
+    0.275,
+    0.0
+   ],
+   "size": [
+    0.055,
+    0.06,
+    0.055
+   ]
+  },
+  {
+   "id": "grip",
+   "type": "gencyl",
+   "blend": 0.012,
+   "spine": [
+    [
+     0,
+     0.26,
+     0.02
+    ],
+    [
+     0,
+     0.044999999999999984,
+     0.02
+    ]
+   ],
+   "radii": [
+    0.03,
+    0.03
+   ]
+  },
+  {
+   "id": "crossguard",
+   "type": "gencyl",
+   "blend": 0.01,
+   "spine": [
+    [
+     -0.34,
+     0.17,
+     0.04
+    ],
+    [
+     0,
+     0.18,
+     0.04
+    ],
+    [
+     0.34,
+     0.17,
+     0.04
+    ]
+   ],
+   "radii": [
+    0.034,
+    0.048,
+    0.034
+   ],
+   "profile": {
+    "n": 3.4,
+    "aspect": 0.75,
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "blade",
+   "type": "gencyl",
+   "blend": 0.008,
+   "spine": [
+    [
+     0,
+     0.20,
+     0.06
+    ],
+    [
+     0,
+     -0.855,
+     0.10
+    ],
+    [
+     0,
+     -1.245,
+     0.12
+    ]
+   ],
+   "radii": [
+    0.085,
+    0.075,
+    0.022
+   ],
+   "profile": {
+    "n": [
+     6.5,
+     7.0,
+     7.5
+    ],
+    "aspect": [
+     0.3,
+     0.3,
+     0.8
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "id": "fuller_rune",
+   "kind": "face_line",
+   "part": "blade",
+   "axis": "x",
+   "width": 0.02,
+   "depth": 0.005,
+   "face_normal": [
+    0,
+    0,
+    1
+   ],
+   "emit": [
+    "groove",
+    "band"
+   ],
+   "material": "emissive_seam"
+  }
+ ]
+}

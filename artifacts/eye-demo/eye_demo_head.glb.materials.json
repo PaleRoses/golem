@@ -1,0 +1,43 @@
+{
+ "elements": {
+  "eye-demo-head": "obsidian_warden",
+  "eye-demo-head__eye_watcher": "eye_gloss",
+  "eye-demo-head__eye_watcher_m": "eye_gloss"
+ },
+ "records": {
+  "eye_gloss": {
+   "base_color": [
+    0.035,
+    0.045,
+    0.055
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.08,
+   "texture_set": null
+  },
+  "obsidian_warden": {
+   "base_color": [
+    0.034,
+    0.033,
+    0.048
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.24,
+   "texture_set": null
+  }
+ }
+}

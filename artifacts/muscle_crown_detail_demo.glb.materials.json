@@ -1,0 +1,24 @@
+{
+ "elements": {
+  "muscle-crown-detail-demo": "gambeson_dark"
+ },
+ "records": {
+  "gambeson_dark": {
+   "base_color": [
+    0.048,
+    0.042,
+    0.046
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.88,
+   "texture_set": null
+  }
+ }
+}

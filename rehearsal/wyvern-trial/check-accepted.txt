@@ -1,0 +1,18 @@
+PROPRIO cinderwake txn:1 | 35 parts (19 mirrored, 54 instances) | no mesh
+GLOBAL  bbox 2.03w x 1.29h x 2.60d | H/W 0.63 | centroid (0.00,0.75,+0.01) | k=0.132 (global; 34 part override(s)) | predicted 1 component(s)
+
+ASSERT  0 FAIL / 2 pass  [pack:cinderwake-envelope]
+
+ANOMALY 0
+
+CIRCULATION pump thorax | 4/4 closed | 0 suggested carrier scales | coverage 1.000 | leverage 2.833x
+  NEURAL_TISSUE 0.138 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > neck_a > neck_b > skull
+  SKELETAL_MUSCLE 0.103 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > loin > pelvis > tail_a > tail_b > tail_c > tail_d
+  SKELETAL_MUSCLE 0.552 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > loin > pelvis > hind_girdle > hind_thigh > hind_met > hind_toe
+  SKELETAL_MUSCLE 0.207 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > wing_waypoint > wing_root > wing_arm > wing_fore > wing_finger_a > wing_finger_b
+VASCULAR feasibility: ACCEPTED
+  vascular nodes=1090 edges=1346 terminal_pairs=256 residual=3.851e-13 balance=4.236e-13
+  allocation {"caudal": 29, "cranial": 37, "hind_toes": 136, "wing_tips": 54}
+
+ASSEMBLY acceptance: ACCEPTED
+

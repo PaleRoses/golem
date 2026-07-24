@@ -1,0 +1,79 @@
+COMMANDS
+  set ADDR VALUE          write one authored field; VALUE is JSON (bareword ok)
+  unset ADDR              delete one authored field
+  add KIND ADDR JSON      insert a record; JSON is its params; KIND below
+  remove ADDR             delete a record
+  rename ADDR NEWNAME     rename a bone/flesh, rewriting in-spec references
+  undo | redo             walk the journal (both are journaled transactions)
+  outline [SCOPE] [DEPTH] [ASPECT]
+                          look around: SCOPE is an address prefix (default all),
+                          DEPTH 1-3 (default 1), ASPECT structure|constraint|recent
+  recent [N]              digest the last N transactions (default 5)
+  attach bone NAME at PARENT:T [JSON]
+                          place a new bone by ANCHOR (parent bone + station t
+                          in [0,1] along it); JSON extras: length, dir (a
+                          parent-frame 3-vector) OR world_dir (a world-frame
+                          DIRECTION, converted for you -- prefer this), dof,
+                          limits, offset (parent-frame), flesh, mirror.
+                          NO world coordinates (positions) -- ever.
+  attach flesh BONE NAME JSON
+                          place geometry on a bone (bone-local t/span/offset);
+                          JSON: kind gencyl|blob|box + t|span + size|radii ...
+  reflect BONE            mirror the bone's whole subtree (symmetry is a
+                          constraint, not a copy; instances update live)
+  array BONE NAME N [T0,T1] TEMPLATE-JSON
+                          ONE declaration placing N copies of a blob/box
+                          template along the bone; later edits to n/along/
+                          template are one-field sets at skeleton/BONE/NAME@...
+  squeeze NAME between A:TA B:TB [JSON]
+                          create a bone SOLVED to span two anchors (length +
+                          direction derived from current frames); records a
+                          landmark_distance clause when B is at t 0|0.5|1, so
+                          moving either side later fails the contract
+  envelope {"heads": N, "head": NAME, "margin": M}
+                          declare proportions as contract clauses (heads-tall
+                          band, balance margin, single-component integrity);
+                          clauses over parts that do not exist yet report
+                          unmeasurable -- targets to steer toward, not gates
+  save PATH               write the authored spec as canonical JSON
+  journal PATH            write the journal as JSONL
+  mesh [RES]              SLOW: on-demand mesh + coherence summary (default 120)
+  views PATH [RES]        SLOW: render a 4-view contact-sheet PNG (default 96)
+  branch PURPOSE          fork the state; returns the new branch name
+  branches                list the branches
+  checkout NAME           switch to a branch
+  compare A B             outline + contract-status diff of two branches
+  merge NAME              merge a branch iff its touched scopes are disjoint
+  help                    this reference
+  quit | exit             leave (EOF also exits)
+
+ADDRESS GRAMMAR    address := segments ('@' fieldpath)?
+  meta@blend | meta@name | meta@ground_y | meta@ground_tol | meta@emit_target
+  skeleton/root                          the root record
+  skeleton/<bone>@length|rest_dir|...    a bone field
+  skeleton/<bone>/<flesh>@field          a flesh field (flesh by name or flesh[i])
+  pose/<bone>@yaw|pitch|roll             a joint angle (set auto-creates the entry)
+  pose/goals/<id>@target|chain|end|...   a reach-goal field
+  props/<prop>@field | props/<prop>/<part>@field
+  mounts/<port>  (or mounts[i])          a mount, by its port field
+  contacts/<group>                       a contact record
+  the fieldpath after @ walks dicts/lists: @length, @joint.limits.pitch,
+  @radii[1], @world (a 3-vector).
+
+ADD KINDS    add KIND ADDR JSON   (ADDR names the parent/owner record)
+  bone     add bone skeleton/root {"id":"spine","length":0.4,"rest_dir":[0,1,0],"joint":{"dof":"ball"}}
+  flesh    add flesh skeleton/spine {"kind":"blob","name":"belly","t":0.5,"offset":[0,0,0],"size":[0.1,0.1,0.1]}
+  prop     add prop props {"id":"sword","anchor":"wrist.R","parts":[]}
+  part     add part props/sword {"id":"blade","type":"box"}
+  goal     add goal pose/goals {"id":"reachR","chain":["clavicle","forearm"],"end":"forearm","target":[0.3,0.9,0.1]}
+  contact  add contact contacts {"group":"feet","parts":["shin.L","shin.R"],"solve":"ground"}
+  mount    add mount mounts {"port":"wrist.R","subgrammar":"hand/1.0","spec":"hand_v2.json"}
+  pose     add pose pose/elbow {"pitch":-12}
+  flesh kinds: gencyl|blob|box.   joint.dof: fixed|hinge|ball.
+
+NOTES
+  Joint limits are REPORTED, never enforced: an out-of-limit pose value applies
+  and the receipt names the violation. Receipts show only DELTAS -- ops applied,
+  contract clauses newly failing/cleared, senses-digest changes, est_tokens --
+  never a full report. Orientation is pull, not push: use `outline` to look
+  around; nothing dumps state at you. mesh and views are the only slow commands.

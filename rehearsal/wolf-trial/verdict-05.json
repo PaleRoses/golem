@@ -1,0 +1,27 @@
+{
+  "schema": "golem.session.verdict/2",
+  "status": "rejected",
+  "command": "GOLEM_CIRCUIT_CACHE_COLD=1 .venv/bin/python -m golem session specs/ashfall.json specs/ashfall.json --all",
+  "base_txn": 0,
+  "txn": 0,
+  "diagnostics_summary": {"total": 22, "expected": 6, "unexpected": 16, "shown": 22, "expected_filtered": false},
+  "binding_constraint": {
+    "constraint": "vascular:violation:InfeasibleBifurcationObstruction:0",
+    "address": "anatomy/regions/ashfall_head_region",
+    "predicate": "ReservedLaneClearance",
+    "required": 1e-08,
+    "observed": -3.83854740504e-05,
+    "margin": -3.83954740504e-05,
+    "disposition": "violated",
+    "witness": {"region_id": "ashfall_head_region", "phase": "seed", "lane": "supply", "supply_capsule": 5, "return_capsule": 1, "attempted_candidate_count": 3422}
+  },
+  "hard_obstructions": [
+    {"address": "anatomy/regions/ashfall_head_region", "predicate": "ReservedLaneClearance", "observed": -3.83854740504e-05},
+    {"address": "anatomy/regions/ashfall_hind_region", "predicate": "WallContainment", "required": 0.0005, "observed": 5.13461278056e-05},
+    {"address": "anatomy/regions/ashfall_tail_region", "predicate": "ReservedLaneClearance", "observed": -4.03224511053e-05}
+  ],
+  "changed_addresses": [],
+  "operations": [],
+  "contract_refs": ["primer", "receipts", "envelope", "schema"],
+  "finding": "Blind authoring stopped honestly at inherited vascular reserved-lane topology obstruction; formed skin, attachment, and look rendering were not reached."
+}

@@ -1,0 +1,150 @@
+{
+  "name": "skin-siege-quadruped",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "blend": 0.02,
+  "ground_y": 0.02,
+  "ground_tol": 0.03,
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {"region_id": "axial_core", "kind": "torso", "host_bone_id": "thorax"},
+        {"region_id": "caudal", "kind": "tail", "host_bone_id": "tail_tip"},
+        {"region_id": "cranial", "kind": "head", "host_bone_id": "skull"}
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "axial_core",
+        "exchange_beds": [
+          {"region_id": "caudal", "tissue": "skeletal_muscle", "demand": 0.03},
+          {"region_id": "cranial", "tissue": "neural_tissue", "demand": 0.04}
+        ],
+        "carrier_radius_scale": 0.075,
+        "distance_decay": 0.86
+      },
+      "integument_layers": [
+        {"region_id": "axial_core", "thickness": 0.004, "formation": "static_implicit_relaxation"},
+        {"region_id": "caudal", "thickness": 0.004, "formation": "static_implicit_relaxation"},
+        {"region_id": "cranial", "thickness": 0.004, "formation": "static_implicit_relaxation"}
+      ]
+    }
+  },
+  "contacts": [],
+  "mounts": [],
+  "pose": {"goals": [], "joints": {}, "relations": []},
+  "contract": {
+    "contract": "skin-siege-quadruped-envelope",
+    "clauses": [],
+    "attach": [
+      ["pelvic_basin", "tucked_waist"],
+      ["tucked_waist", "chest_mass"],
+      ["chest_mass", "neck_mass"],
+      ["neck_mass", "head_mass"],
+      ["tucked_waist", "tail_base"],
+      ["pelvic_basin", "tail_base"],
+      ["tail_base", "tail_mid"],
+      ["tail_mid", "tail_tip_mass"],
+      ["chest_mass", "fore_leg"],
+      ["pelvic_basin", "hind_leg"],
+      ["tucked_waist", "hind_leg"]
+    ],
+    "midline": ["pelvic_basin", "tucked_waist", "chest_mass", "neck_mass", "head_mass", "tail_base", "tail_mid", "tail_tip_mass"]
+  },
+  "skeleton": {
+    "root": {
+      "id": "pelvis",
+      "world": [0.0, 0.86, -0.58],
+      "flesh": [
+        {"kind": "blob", "name": "pelvic_basin", "t": 0.0, "size": [0.25, 0.15, 0.205]}
+      ]
+    },
+    "bones": [
+      {
+        "id": "loin",
+        "parent": "pelvis",
+        "attach": {"t": 0.0},
+        "length": 0.55,
+        "rest_dir": [0.0, 0.0, 1.0],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "tucked_waist", "span": [0.0, 1.0], "radii": [0.16, 0.145], "blend": 0.002}]
+      },
+      {
+        "id": "thorax",
+        "parent": "loin",
+        "attach": {"t": 1.0},
+        "length": 0.62,
+        "rest_dir": [0.0, 0.0, 1.0],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "chest_mass", "span": [0.0, 1.0], "radii": [0.22, 0.19]}]
+      },
+      {
+        "id": "neck",
+        "parent": "thorax",
+        "attach": {"t": 1.0},
+        "length": 0.42,
+        "rest_dir": [0.0, 0.71934, 0.694658],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "neck_mass", "span": [0.0, 1.0], "radii": [0.14, 0.1]}]
+      },
+      {
+        "id": "skull",
+        "parent": "neck",
+        "attach": {"t": 1.0},
+        "length": 0.41,
+        "rest_dir": [0.0, -0.292372, 0.956305],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "blob", "name": "head_mass", "t": 0.38, "size": [0.15, 0.12, 0.19]}]
+      },
+      {
+        "id": "tail_base",
+        "parent": "pelvis",
+        "attach": {"t": 0.0, "offset": [0.0, 0.055, -0.12]},
+        "length": 0.36,
+        "rest_dir": [0.0, 0.087156, -0.996195],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "tail_base", "span": [0.0, 1.0], "radii": [0.085, 0.055], "blend": 0.002}]
+      },
+      {
+        "id": "tail_mid",
+        "parent": "tail_base",
+        "attach": {"t": 1.0},
+        "length": 0.32,
+        "rest_dir": [0.0, -0.052336, 0.99863],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "tail_mid", "span": [0.0, 1.0], "radii": [0.05, 0.03]}]
+      },
+      {
+        "id": "tail_tip",
+        "parent": "tail_mid",
+        "attach": {"t": 1.0},
+        "length": 0.32,
+        "rest_dir": [0.0, -0.03, 0.99955],
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "tail_tip_mass", "span": [0.0, 1.0], "radii": [0.03, 0.016]}]
+      },
+      {
+        "id": "fore_leg",
+        "parent": "thorax",
+        "role": "handle",
+        "attach": {"t": 0.4, "offset": [0.18, 0.0, 0.0]},
+        "length": 0.62,
+        "rest_dir": [0.0, -1.0, 0.0],
+        "mirror": true,
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "fore_leg", "span": [0.0, 1.0], "radii": [0.075, 0.05]}]
+      },
+      {
+        "id": "hind_leg",
+        "parent": "pelvis",
+        "role": "handle",
+        "attach": {"t": 0.0, "offset": [0.18, 0.0, 0.08]},
+        "length": 0.62,
+        "rest_dir": [0.0, -1.0, 0.0],
+        "mirror": true,
+        "joint": {"dof": "fixed"},
+        "flesh": [{"kind": "gencyl", "name": "hind_leg", "span": [0.0, 1.0], "radii": [0.075, 0.05]}]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+set meta@name "obsidian_knight"
+set meta@ground_y -0.9
+add bone skeleton/root {"id":"spine1","length":0.32,"rest_dir":[0,1,0],"joint":{"dof":"ball"}}
+attach bone spine2 at spine1:1 {"length":0.34,"world_dir":[0,1,0],"dof":"ball"}
+attach bone neck at spine2:1 {"length":0.16,"world_dir":[0,1,0],"dof":"ball"}
+attach bone head at neck:1 {"length":0.26,"world_dir":[0,1,0],"dof":"ball"}
+attach bone clavicle.L at spine2:1 {"length":0.22,"world_dir":[1,0.2,0],"dof":"ball"}
+attach bone uarm.L at clavicle.L:1 {"length":0.32,"world_dir":[0.15,-0.92,0.28],"dof":"ball"}
+attach bone farm.L at uarm.L:1 {"length":0.38,"world_dir":[-0.5,-0.80,0.30],"dof":"hinge"}
+attach bone hand.L at farm.L:1 {"length":0.09,"world_dir":[-0.3,-0.4,0.4],"dof":"ball"}
+attach bone hip.L at spine1:0 {"length":0.20,"world_dir":[1,0,0],"dof":"fixed"}
+attach bone thigh.L at hip.L:1 {"length":0.61,"world_dir":[0,-1,0],"dof":"ball"}
+attach bone shin.L at thigh.L:1 {"length":0.61,"world_dir":[0,-1,0.04],"dof":"hinge"}
+attach bone foot.L at shin.L:1 {"length":0.20,"world_dir":[0,-0.12,1],"dof":"hinge"}
+attach bone swordmount at spine1:0.4 {"length":0.18,"world_dir":[0,0,1],"dof":"fixed"}
+attach bone sword at swordmount:1 {"length":1.42,"world_dir":[0,-1,0],"dof":"fixed"}
+attach flesh spine2 breastplate {"kind":"box","t":0.5,"size":[0.30,0.32,0.17]}
+attach flesh spine1 abdomen {"kind":"box","t":0.5,"size":[0.24,0.28,0.15]}
+attach flesh spine1 tasset {"kind":"box","t":0.0,"size":[0.30,0.12,0.20]}
+attach flesh neck gorget {"kind":"box","t":0.5,"size":[0.15,0.12,0.15]}
+attach flesh head helm {"kind":"box","t":0.4,"size":[0.19,0.18,0.20]}
+attach flesh head crest {"kind":"blob","t":1.0,"size":[0.05,0.12,0.18]}
+attach flesh uarm.L pauldron {"kind":"blob","t":0.0,"size":[0.22,0.14,0.22]}
+attach flesh uarm.L upperarm {"kind":"gencyl","span":[0.25,1.0],"radii":[0.08,0.065]}
+attach flesh farm.L forearm {"kind":"gencyl","span":[0.0,1.0],"radii":[0.07,0.055]}
+attach flesh hand.L gauntlet {"kind":"blob","t":0.6,"size":[0.09,0.08,0.10]}
+attach flesh thigh.L cuisse {"kind":"gencyl","span":[0.0,1.0],"radii":[0.09,0.075]}
+attach flesh shin.L greave {"kind":"gencyl","span":[0.0,1.0],"radii":[0.08,0.065]}
+attach flesh shin.L knee {"kind":"blob","t":0.0,"size":[0.09,0.09,0.09]}
+attach flesh foot.L sabaton {"kind":"box","t":0.5,"size":[0.13,0.09,0.24]}
+attach flesh sword pommel {"kind":"blob","t":0.02,"size":[0.07,0.08,0.07]}
+attach flesh sword grip {"kind":"gencyl","span":[0.03,0.14],"radii":[0.028,0.028]}
+attach flesh sword crossguard {"kind":"box","t":0.13,"size":[0.08,0.05,0.36]}
+attach flesh sword blade {"kind":"gencyl","span":[0.12,1.0],"radii":[0.06,0.014]}
+reflect clavicle.L
+reflect hip.L
+add contact contacts {"group":"support","parts":["foot.L","foot.R"],"solve":"ground"}
+envelope {"heads":7,"head":"helm","margin":0.05}
+views rehearsal/session-knight/renders/r6.png 200
+save rehearsal/session-knight/knight_final.json

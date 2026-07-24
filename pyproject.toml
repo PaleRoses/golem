@@ -1,0 +1,24 @@
+[project]
+name = "golem-kernel-conformance"
+version = "0.1.0"
+description = "Pinned conformance surface for the GOLEM Python pilots"
+requires-python = "==3.12.12"
+dependencies = [
+  "numpy==2.5.1",
+  "pillow==12.3.0",
+  "scikit-image==0.26.0",
+  "scipy==1.18.0",
+  "trimesh==4.12.2",
+]
+
+[dependency-groups]
+dev = [
+  "jsonschema==4.25.1",
+  "pytest==9.1.1",
+  "rfc3339-validator==0.1.4",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["pilots"]
+testpaths = ["conformance"]

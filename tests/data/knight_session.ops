@@ -1,0 +1,9 @@
+# Separated-underbody session probe: one reach revision and one shoulder-mass
+# revision, each undone through the journal. Receipts are frozen byte-exact.
+outline "" 1 structure
+set skeleton/forearm@length 0.4576
+undo
+set skeleton/clavicle/shoulder@size [0.12, 0.11, 0.12]
+outline "" 1 constraint
+undo
+recent 5

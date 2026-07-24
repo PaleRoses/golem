@@ -1,0 +1,10 @@
+FIELD obsidian-aether-v1 | domain complex:plate_complex | scalar
+SECTION obsidian-aether-v1/section | 110 derived / 6 pins authored | leverage 18.333x
+RESIDUAL max_normalized <= 1.0e-10 | PASS
+CONDUIT 5/5 reachable | 22/324 seams active
+  heart-rune -> crown-rune: cell:51 -> cell:69 -> cell:3 -> cell:87
+  heart-rune -> left-gauntlet-rune: cell:51 -> cell:16 -> cell:61 -> cell:65 -> cell:31
+  heart-rune -> right-gauntlet-rune: cell:51 -> cell:99 -> cell:38 -> cell:49 -> cell:21 -> cell:47
+  heart-rune -> left-foot-rune: cell:51 -> cell:75 -> cell:32 -> cell:64 -> cell:80 -> cell:88 -> cell:23
+  heart-rune -> right-foot-rune: cell:51 -> cell:99 -> cell:100 -> cell:36 -> cell:106 -> cell:7
+VIOLATION 0

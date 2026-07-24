@@ -1,0 +1,1919 @@
+{
+  "$schema": "./schema.json",
+  "recordType": "ExperimentManifest",
+  "schemaVersion": 1,
+  "experimentId": "golem-phase-minus-one-obsidian-wardens",
+  "status": "preregistered",
+  "claim": "The frozen GOLEM symbolic pilot is aesthetically non-inferior to a strong Blender procedural-agent baseline while making warm-start revisions substantially cheaper and rarely requiring direct mesh surgery.",
+  "authority": {
+    "pilotRoot": "../pilots",
+    "runtimeLock": "../uv.lock",
+    "sourceHashes": [
+      {
+        "path": "./PROTOCOL.md",
+        "sha256": "f330fc3f33d3bcf4a08742d907034026635716c779d55d6fc2f1cf0a757414f0"
+      },
+      {
+        "path": "./schema.json",
+        "sha256": "441228bf0a281ea769df3336753958bc8446b1bbe5700ee91f83154fb72f1ca4"
+      },
+      {
+        "path": "../pyproject.toml",
+        "sha256": "d486066bfd35e28c200b7a6b1988661ea17380ca2f2caa683e3434e0a9709153"
+      },
+      {
+        "path": "../uv.lock",
+        "sha256": "58e6e92827c376ee8352f6dbb902ee4bd25ba2e3eed3c24bb9a46f04b7acc979"
+      },
+      {
+        "path": "../conformance/test_oracle.py",
+        "sha256": "e2d159b6ac3ea6236290468d1962b9bfef930f82adb34fc429f86c19493f8488"
+      },
+      {
+        "path": "../conformance/golden/hand_v1.txt",
+        "sha256": "ffcc7abb5c31eb7bcb819f6b8069c0e3b6ccd19ce1ff175f1c12ce81a4f23298"
+      },
+      {
+        "path": "../conformance/golden/hand_v2.txt",
+        "sha256": "b71b83ac5e0ccfb82f2c28fb9d8d28d58e5c58f218b3cb35b802a45d5f0038c8"
+      },
+      {
+        "path": "../pilots/engine.py",
+        "sha256": "e8154cabef20aad45e6852777b0c617cbbc349297851d2e5e23cfdbe04daa4fa"
+      },
+      {
+        "path": "../pilots/render.py",
+        "sha256": "4c9c961395c35a3889ee49b1266c7fac5d3ea6dac16d47ebc8dd85ee7cc0555e"
+      },
+      {
+        "path": "../pilots/hand.py",
+        "sha256": "6405a07968129c581f7b1f22d027865d3e5a5c8323a1f85f6ae4642a33a3ec07"
+      },
+      {
+        "path": "../pilots/hand_pack.py",
+        "sha256": "f34154b890f3597eeecbb6d2f1ede103fb40976a9b93cb475524215e241a4c22"
+      },
+      {
+        "path": "../pilots/mount_hands.py",
+        "sha256": "4d2ddf73a5e7c8fc7ec672ac0c8704be476687478d582083a529421fd1f67aec"
+      },
+      {
+        "path": "../pilots/plates.py",
+        "sha256": "887d6995cc3a89268914fc5e7b7aeb770e6cd6a339ed9752546925e4f39e21d8"
+      },
+      {
+        "path": "../pilots/judge.py",
+        "sha256": "6a5e766719044a49466f8efb7043ef814dc478febc59e304cd1a85460fd57816"
+      },
+      {
+        "path": "../pilots/control_creature.py",
+        "sha256": "4593f95f5c08ea760cfb86c5502b3a78e0c4683edbd097a6983155d80db29651"
+      },
+      {
+        "path": "../pilots/golem_hands.json",
+        "sha256": "b91cb56901d3c1b1ef8933087a00b3b09e527df6f004bff62207fd0b1879bf33"
+      },
+      {
+        "path": "../pilots/golem_v4.json",
+        "sha256": "36de6b5b4b44a662a8db56342a87d080df707d2f8cd6081e3f97e4d2a572b428"
+      },
+      {
+        "path": "../pilots/hand_v1.json",
+        "sha256": "93eb0e8b140f75a4e3623b80a521d7ff139e3f735a8bf6aa62f86565ef89f1ac"
+      },
+      {
+        "path": "../pilots/hand_v2.json",
+        "sha256": "366c8244b1f1bfa4da80aa23d89aba3fbe8276037db6cf49d41e261e4b883c47"
+      }
+    ],
+    "artifactHashes": [
+      {
+        "path": "../outputs/plate_complex.json",
+        "sha256": "af11dd22b3dd1186a2bdc5077fecf1fc88950409ef6bac96b49280dad5da3666"
+      },
+      {
+        "path": "../outputs/golem.glb",
+        "sha256": "d406dc84d11e9e996a901de07afd36c69851d6543d7cac289172181328e2b3ab"
+      },
+      {
+        "path": "../outputs/golem_hands.glb",
+        "sha256": "2fcb38d2197f24ec3c600b76929dadf63ac6b6da70934ee48c02342e29d84e1c"
+      },
+      {
+        "path": "../outputs/golem_plated.glb",
+        "sha256": "23adc421ec870abda26e6be928db40023981207a1086d10218b79ca26cad522e"
+      },
+      {
+        "path": "../outputs/v4_views.png",
+        "sha256": "6da2315728346ac6201c15d88f69be3067c28b69c040d0a2e693731bf024bc72"
+      },
+      {
+        "path": "../outputs/v4_turntable.gif",
+        "sha256": "004cfa40cbd14dd4291886622f0e763e30cb2f57c7c242329fe7c68765bac456"
+      }
+    ],
+    "semanticOracle": {
+      "handV1Violations": 20,
+      "handV2Violations": 0,
+      "plateCells": 110,
+      "plateAdjacencies": 324,
+      "v4Components": 1,
+      "v4Watertight": true,
+      "controlOccupiedComponents": 1,
+      "controlShells": 35,
+      "controlWatertight": false
+    },
+    "sealedObstructions": [
+      {
+        "tag": "RawSymmetryGate",
+        "observed": "0.9799926081064433",
+        "expected": ">=0.98"
+      },
+      {
+        "tag": "RenderPixelDrift",
+        "observed": "four PNG pixels and five GIF pixels differ",
+        "expected": "pixel-exact"
+      },
+      {
+        "tag": "PlatedGlbOrdering",
+        "observed": "semantic colored-face match with different face serialization",
+        "expected": "byte-exact"
+      }
+    ]
+  },
+  "family": {
+    "id": "obsidian-wardens",
+    "description": "Bilateral, faceless, plated, five-digit knuckle-walking stone guardians derived from the frozen golem-with-hands family master.",
+    "allowedPartKinds": [
+      "gencyl",
+      "blob"
+    ],
+    "allowedScopes": [
+      "whole",
+      "torso",
+      "face_plate",
+      "shoulder",
+      "upper_arm",
+      "forearm",
+      "hand",
+      "digits",
+      "hip",
+      "thigh",
+      "foot",
+      "ground_contact"
+    ],
+    "excludedCapabilities": [
+      "hair",
+      "wings",
+      "membranes",
+      "detailed_faces",
+      "animation",
+      "rigging",
+      "engine_adaptation",
+      "new_part_kinds"
+    ],
+    "measurementContract": {
+      "commonSurface": "Anonymous exported mesh after reversible presentation transform only.",
+      "sidecar": "Each arm emits the same named scopes and centerline/junction/contact landmarks; an independent verifier checks every landmark against the visible mesh before unblinding.",
+      "surfaceSampling": "Verifier-owned canonical-triangle area sampling; arms do not choose or submit sample locations.",
+      "measurementSeed": 7319,
+      "surfaceSamplesPerSurface": 4096,
+      "surfaceSamplingAlgorithm": "Canonicalize each triangle by lexicographically sorting its three float64 vertex triples; sort triangles lexicographically; NumPy 2.5.1 Generator(PCG64) seed 7319 plus 100 times manifest scope ordinal plus declared instance ordinal; inverse-CDF triangle-area selection; sqrt-barycentric point sampling",
+      "requiredSurfaceScopes": [
+        "whole",
+        "torso",
+        "face_plate",
+        "shoulder",
+        "upper_arm",
+        "forearm",
+        "hand",
+        "digits",
+        "hip",
+        "thigh",
+        "foot"
+      ],
+      "groundPlaneY": 0.02,
+      "sourceFieldsForbidden": true
+    },
+    "regressionSemantics": {
+      "critical": "Any failed /family/preserveProfiles/0/clauses/* result.",
+      "noncritical": "A revision with one or more failed /family/creatures/*/revisions/*/preserve/* results.",
+      "targetFailure": "A failed target clause makes the stage ValidationFailed rather than Completed."
+    },
+    "metricSemantics": [
+      {
+        "id": "attachment_error",
+        "definition": "Euclidean distance between each named child instance's first centerline point and its corresponding parent instance's last centerline point.",
+        "multiScopeLaw": "relational_pair",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "axis",
+        "definition": "Normalized vector from the first to last centerline point of each named scoped instance.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      },
+      {
+        "id": "center",
+        "definition": "Center of the scoped output surface's world-space axis-aligned bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      },
+      {
+        "id": "center_and_height",
+        "definition": "Concatenation of scoped output-surface bounding-box center and y extent.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "combined_length",
+        "definition": "Sum of common sidecar centerline-segment lengths for all scoped appendages.",
+        "multiScopeLaw": "combined",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "combined_scale",
+        "definition": "Cube root of the scoped world-space bounding-box volume.",
+        "multiScopeLaw": "combined",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "contact_error",
+        "definition": "Absolute difference between the scoped output surface's lowest y coordinate and ground y=0.02.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "depth",
+        "definition": "World-space z extent of the scoped output surface's axis-aligned bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "dimensions",
+        "definition": "World-space x, y, and z extents of the scoped output surface's axis-aligned bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "distal_endpoints",
+        "definition": "Last centerline point for every named scoped instance in declared order.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      },
+      {
+        "id": "endpoints",
+        "definition": "First and last centerline points for every named scoped instance in declared order.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      },
+      {
+        "id": "forward_pitch",
+        "definition": "Degrees of atan2(z displacement, y displacement) from the first to last point of the scoped singleton midline.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "geometry",
+        "definition": "Maximum bidirectional distance between deterministic pre/post scoped surface samples, divided by the pre-stage scoped bounding-box diagonal.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "height",
+        "definition": "World-space y extent of the scoped output surface's axis-aligned bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "length",
+        "definition": "Arc length through the centerline points of each named scoped instance.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "lower_radii",
+        "definition": "Effective output-surface cross-section radii at the lower half of the common torso centerline samples.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "mass_axes",
+        "definition": "Semi-axis vector of the scoped output surface's oriented bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "post_dust_components",
+        "definition": "Connected output-mesh components with at least ten faces, matching engine.coherence_report's dust cutoff.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "projection",
+        "definition": "Forward-most world-space z coordinate of the scoped output surface.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "proximal_endpoints",
+        "definition": "First centerline point for every named scoped instance in declared order.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      },
+      {
+        "id": "radii",
+        "definition": "Effective output-surface cross-section radii at common 0%, 50%, and 100% centerline landmarks.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "scale",
+        "definition": "Cube root of the scoped world-space bounding-box volume.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "segment_ratios",
+        "definition": "Ordered ratios of adjacent segment lengths and radii from the ten exact named digit chains.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "span",
+        "definition": "Distance between common mirrored scope-center landmarks on the x axis.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "symmetry_iou",
+        "definition": "Unrounded bilateral occupancy IoU computed from judge.occupancy at judge.PITCH.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "thickness",
+        "definition": "Mean effective cross-section diameter of the scoped output surface at common centerline samples.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "watertight",
+        "definition": "Watertightness of the scoped exported mesh, encoded as 1 or 0.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "width",
+        "definition": "World-space x extent of the scoped output surface's axis-aligned bounding box.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "wrist_junction_error",
+        "definition": "Euclidean distance between common forearm-distal and hand-wrist landmarks.",
+        "multiScopeLaw": "relational_pair",
+        "valueShape": "scalars"
+      },
+      {
+        "id": "wrist_position",
+        "definition": "World-space position of the common hand-wrist landmark.",
+        "multiScopeLaw": "all_scopes",
+        "valueShape": "vec3s"
+      }
+    ],
+    "preserveProfiles": [
+      {
+        "id": "warden-family-integrity",
+        "clauses": [
+          {
+            "scope": [
+              "whole"
+            ],
+            "metric": "post_dust_components",
+            "operator": "equal",
+            "value": 1,
+            "unit": "count",
+            "tolerance": 0
+          },
+          {
+            "scope": [
+              "whole"
+            ],
+            "metric": "watertight",
+            "operator": "equal",
+            "value": 1,
+            "unit": "boolean",
+            "tolerance": 0
+          },
+          {
+            "scope": [
+              "whole"
+            ],
+            "metric": "symmetry_iou",
+            "operator": "minimum",
+            "value": 0.98,
+            "unit": "ratio",
+            "tolerance": 0
+          },
+          {
+            "scope": [
+              "hand",
+              "ground_contact"
+            ],
+            "metric": "contact_error",
+            "operator": "maximum",
+            "value": 0.02,
+            "unit": "world_unit",
+            "tolerance": 0
+          },
+          {
+            "scope": [
+              "foot",
+              "ground_contact"
+            ],
+            "metric": "contact_error",
+            "operator": "maximum",
+            "value": 0.02,
+            "unit": "world_unit",
+            "tolerance": 0
+          }
+        ]
+      }
+    ],
+    "split": {
+      "calibration": [
+        "bulwark",
+        "climber"
+      ],
+      "heldOut": [
+        "sentinel",
+        "delver",
+        "lancer",
+        "porter",
+        "strider",
+        "oracle"
+      ]
+    },
+    "creatures": [
+      {
+        "id": "bulwark",
+        "name": "Obsidian Bulwark",
+        "phase": "calibration",
+        "lineupIdentity": "Widest shoulders, squat torso, short forearms, broad feet.",
+        "initialBrief": {
+          "text": "Build the broadest, lowest Obsidian Warden without leaving the family vocabulary.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "shoulder"
+              ],
+              "metric": "span",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "height",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "forearm"
+              ],
+              "metric": "length",
+              "operator": "family_rank_desc",
+              "value": 7,
+              "unit": "rank",
+              "tolerance": 1
+            },
+            {
+              "scope": [
+                "foot"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "bulwark-r1",
+            "request": "Widen shoulder span 20% and shoulder masses 15%; preserve height, face, and hands within 2%.",
+            "targets": [
+              {
+                "scope": [
+                  "shoulder"
+                ],
+                "metric": "span",
+                "operator": "increase_percent",
+                "value": 20,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "shoulder"
+                ],
+                "metric": "mass_axes",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "height",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "face_plate",
+                  "hand"
+                ],
+                "metric": "dimensions",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "bulwark-r2",
+            "request": "Shorten forearms 12% and replant palms; preserve upper arms.",
+            "targets": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "length",
+                "operator": "decrease_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "upper_arm"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "bulwark-r3",
+            "request": "Narrow the face plate 18% and project it 10% farther forward; preserve torso and shoulders.",
+            "targets": [
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "width",
+                "operator": "decrease_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "projection",
+                "operator": "increase_percent",
+                "value": 10,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "torso",
+                  "shoulder"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "climber",
+        "name": "Obsidian Climber",
+        "phase": "calibration",
+        "lineupIdentity": "Longest forearms, largest hands, compact torso.",
+        "initialBrief": {
+          "text": "Build the reach-specialized Obsidian Warden with the family maximum forearms and hands.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "forearm"
+              ],
+              "metric": "length",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "hand"
+              ],
+              "metric": "scale",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "height",
+              "operator": "family_rank_desc",
+              "value": 7,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "climber-r1",
+            "request": "Lengthen forearms 18%, holding shoulders and elbows while preserving hand contact.",
+            "targets": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "length",
+                "operator": "increase_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "shoulder",
+                  "upper_arm"
+                ],
+                "metric": "proximal_endpoints",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "climber-r2",
+            "request": "Rigid-scale both hands 12% around their wrist junctions; preserve digit ratios.",
+            "targets": [
+              {
+                "scope": [
+                  "hand",
+                  "digits"
+                ],
+                "metric": "scale",
+                "operator": "increase_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "digits"
+                ],
+                "metric": "segment_ratios",
+                "operator": "max_delta_percent",
+                "value": 1,
+                "unit": "percent",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "forearm",
+                  "hand"
+                ],
+                "metric": "wrist_junction_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "climber-r3",
+            "request": "Reduce torso radii 15%; preserve height and all limb endpoints.",
+            "targets": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "radii",
+                "operator": "decrease_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "height",
+                "operator": "max_delta_percent",
+                "value": 1,
+                "unit": "percent",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "upper_arm",
+                  "forearm",
+                  "hand",
+                  "thigh",
+                  "foot"
+                ],
+                "metric": "distal_endpoints",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sentinel",
+        "name": "Obsidian Sentinel",
+        "phase": "held_out",
+        "lineupIdentity": "Tallest upright torso, small hands, narrow feet.",
+        "initialBrief": {
+          "text": "Build the tallest and most upright Obsidian Warden with restrained hands and feet.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "height",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "hand"
+              ],
+              "metric": "scale",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 1
+            },
+            {
+              "scope": [
+                "foot"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "sentinel-r1",
+            "request": "Raise upper torso and face 12%; keep feet fixed and limb thickness unchanged.",
+            "targets": [
+              {
+                "scope": [
+                  "torso",
+                  "face_plate"
+                ],
+                "metric": "height",
+                "operator": "increase_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "center",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "upper_arm",
+                  "forearm",
+                  "thigh"
+                ],
+                "metric": "thickness",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "sentinel-r2",
+            "request": "Narrow shoulder span 10%, preserving wrists by re-aiming the arms.",
+            "targets": [
+              {
+                "scope": [
+                  "shoulder"
+                ],
+                "metric": "span",
+                "operator": "decrease_percent",
+                "value": 10,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "hand"
+                ],
+                "metric": "wrist_position",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "sentinel-r3",
+            "request": "Increase face height 15% and reduce depth 10%; preserve total height.",
+            "targets": [
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "height",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "depth",
+                "operator": "decrease_percent",
+                "value": 10,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "whole"
+                ],
+                "metric": "height",
+                "operator": "max_delta_percent",
+                "value": 1,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "delver",
+        "name": "Obsidian Delver",
+        "phase": "held_out",
+        "lineupIdentity": "Lowest forward lean, thickest forearms, splayed feet.",
+        "initialBrief": {
+          "text": "Build the lowest forward-driving Obsidian Warden with massive forearms and broad support.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "forward_pitch",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "forearm"
+              ],
+              "metric": "radii",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "foot"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 2,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "delver-r1",
+            "request": "Pitch torso and face forward 10 degrees; hands and feet remain within 0.02 units of ground.",
+            "targets": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "forward_pitch",
+                "operator": "increase",
+                "value": 10,
+                "unit": "degree",
+                "tolerance": 1
+              },
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "forward_pitch",
+                "operator": "increase",
+                "value": 10,
+                "unit": "degree",
+                "tolerance": 1
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "hand",
+                  "foot",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "delver-r2",
+            "request": "Increase forearm radii 20%; preserve axes and hands.",
+            "targets": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "radii",
+                "operator": "increase_percent",
+                "value": 20,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "axis",
+                "operator": "max_angle",
+                "value": 1,
+                "unit": "degree",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "delver-r3",
+            "request": "Widen feet 18% and shorten them 12%; preserve centers and ground contact.",
+            "targets": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "width",
+                "operator": "increase_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "length",
+                "operator": "decrease_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "center",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "foot",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lancer",
+        "name": "Obsidian Lancer",
+        "phase": "held_out",
+        "lineupIdentity": "Narrowest torso, longest slim arms, smallest shoulders.",
+        "initialBrief": {
+          "text": "Build the narrow, long-reaching Obsidian Warden without leaving the shared body plan.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "upper_arm",
+                "forearm"
+              ],
+              "metric": "combined_length",
+              "operator": "family_rank_desc",
+              "value": 2,
+              "unit": "rank",
+              "tolerance": 1
+            },
+            {
+              "scope": [
+                "shoulder"
+              ],
+              "metric": "mass_axes",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "lancer-r1",
+            "request": "Lengthen upper arms 15%; hold shoulders fixed and preserve wrists by forearm re-aiming.",
+            "targets": [
+              {
+                "scope": [
+                  "upper_arm"
+                ],
+                "metric": "length",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "shoulder"
+                ],
+                "metric": "center",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand"
+                ],
+                "metric": "wrist_position",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "lancer-r2",
+            "request": "Reduce forearm radii 12%; keep endpoints and hands fixed.",
+            "targets": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "radii",
+                "operator": "decrease_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "endpoints",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "lancer-r3",
+            "request": "Narrow the face 20% and increase projection 15%; preserve center and height.",
+            "targets": [
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "width",
+                "operator": "decrease_percent",
+                "value": 20,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "projection",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "center_and_height",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "porter",
+        "name": "Obsidian Porter",
+        "phase": "held_out",
+        "lineupIdentity": "Barrel torso, broad hips, huge palms, short upper arms.",
+        "initialBrief": {
+          "text": "Build the load-bearing Obsidian Warden with the broadest trunk and hips and largest palms.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "torso"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "hip"
+              ],
+              "metric": "span",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "hand"
+              ],
+              "metric": "scale",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 1
+            },
+            {
+              "scope": [
+                "upper_arm"
+              ],
+              "metric": "length",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "porter-r1",
+            "request": "Increase lower torso radii 18%; preserve face and shoulders.",
+            "targets": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "lower_radii",
+                "operator": "increase_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "face_plate",
+                  "shoulder"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "porter-r2",
+            "request": "Rigid-scale hands 15% around the wrists; preserve contact.",
+            "targets": [
+              {
+                "scope": [
+                  "hand",
+                  "digits"
+                ],
+                "metric": "scale",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "forearm",
+                  "hand"
+                ],
+                "metric": "wrist_junction_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "porter-r3",
+            "request": "Widen hips 15%; preserve foot centers and shoulder span.",
+            "targets": [
+              {
+                "scope": [
+                  "hip"
+                ],
+                "metric": "span",
+                "operator": "increase_percent",
+                "value": 15,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "center",
+                "operator": "max_distance",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "shoulder"
+                ],
+                "metric": "span",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "strider",
+        "name": "Obsidian Strider",
+        "phase": "held_out",
+        "lineupIdentity": "Longest rear legs, highest hips, slim upper body.",
+        "initialBrief": {
+          "text": "Build the long-legged Obsidian Warden with the highest rear chain and a narrow upper body.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "thigh"
+              ],
+              "metric": "length",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "hip"
+              ],
+              "metric": "height",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "torso",
+                "shoulder"
+              ],
+              "metric": "width",
+              "operator": "family_rank_desc",
+              "value": 7,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "strider-r1",
+            "request": "Lengthen thighs 20% with feet planted; translate the body chain coherently and replant hands.",
+            "targets": [
+              {
+                "scope": [
+                  "thigh"
+                ],
+                "metric": "length",
+                "operator": "increase_percent",
+                "value": 20,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "foot",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "strider-r2",
+            "request": "Lengthen feet 18%; preserve width and leg attachment.",
+            "targets": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "length",
+                "operator": "increase_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "foot"
+                ],
+                "metric": "width",
+                "operator": "max_delta_percent",
+                "value": 2,
+                "unit": "percent",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "thigh",
+                  "foot"
+                ],
+                "metric": "attachment_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "strider-r3",
+            "request": "Shorten forearms 10% and replant hands; keep shoulders and upper arms fixed.",
+            "targets": [
+              {
+                "scope": [
+                  "forearm"
+                ],
+                "metric": "length",
+                "operator": "decrease_percent",
+                "value": 10,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "shoulder",
+                  "upper_arm"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "oracle",
+        "name": "Obsidian Oracle",
+        "phase": "held_out",
+        "lineupIdentity": "Largest tall face plate, narrow shoulders, compact lower body.",
+        "initialBrief": {
+          "text": "Build the face-dominant Obsidian Warden with a compact support chain.",
+          "preserveProfileId": "warden-family-integrity",
+          "identityCriteria": [
+            {
+              "scope": [
+                "face_plate"
+              ],
+              "metric": "height",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "face_plate"
+              ],
+              "metric": "projection",
+              "operator": "family_rank_desc",
+              "value": 1,
+              "unit": "rank",
+              "tolerance": 0
+            },
+            {
+              "scope": [
+                "shoulder"
+              ],
+              "metric": "span",
+              "operator": "family_rank_desc",
+              "value": 7,
+              "unit": "rank",
+              "tolerance": 1
+            },
+            {
+              "scope": [
+                "hip",
+                "thigh",
+                "foot"
+              ],
+              "metric": "combined_scale",
+              "operator": "family_rank_desc",
+              "value": 8,
+              "unit": "rank",
+              "tolerance": 1
+            }
+          ]
+        },
+        "revisions": [
+          {
+            "id": "oracle-r1",
+            "request": "Increase face height 20% and narrow it 10%; preserve total height.",
+            "targets": [
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "height",
+                "operator": "increase_percent",
+                "value": 20,
+                "unit": "percent",
+                "tolerance": 2
+              },
+              {
+                "scope": [
+                  "face_plate"
+                ],
+                "metric": "width",
+                "operator": "decrease_percent",
+                "value": 10,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "whole"
+                ],
+                "metric": "height",
+                "operator": "max_delta_percent",
+                "value": 1,
+                "unit": "percent",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "oracle-r2",
+            "request": "Rigid-scale hands down 12%; keep wrists and contact fixed.",
+            "targets": [
+              {
+                "scope": [
+                  "hand",
+                  "digits"
+                ],
+                "metric": "scale",
+                "operator": "decrease_percent",
+                "value": 12,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "forearm",
+                  "hand"
+                ],
+                "metric": "wrist_junction_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              },
+              {
+                "scope": [
+                  "hand",
+                  "ground_contact"
+                ],
+                "metric": "contact_error",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "world_unit",
+                "tolerance": 0
+              }
+            ]
+          },
+          {
+            "id": "oracle-r3",
+            "request": "Increase lower torso radius 18%; preserve face and shoulders.",
+            "targets": [
+              {
+                "scope": [
+                  "torso"
+                ],
+                "metric": "lower_radii",
+                "operator": "increase_percent",
+                "value": 18,
+                "unit": "percent",
+                "tolerance": 2
+              }
+            ],
+            "preserve": [
+              {
+                "scope": [
+                  "face_plate",
+                  "shoulder"
+                ],
+                "metric": "geometry",
+                "operator": "maximum",
+                "value": 0.02,
+                "unit": "ratio",
+                "tolerance": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arms": [
+    {
+      "id": "golem_pilot",
+      "label": "Frozen GOLEM pilot concierge",
+      "toolVersion": "python-3.12.12-uv-lock",
+      "allowedSurface": [
+        "trial_local_body_json",
+        "trial_local_hand_json",
+        "frozen_pilot_invocation"
+      ],
+      "forbiddenSurface": [
+        "pilot_source_edit",
+        "new_part_kind",
+        "vertex_edit",
+        "edge_edit",
+        "face_edit",
+        "sculpt_edit",
+        "authoritative_dcc_repair"
+      ]
+    },
+    {
+      "id": "blender_procedural_agent",
+      "label": "Strong Blender procedural-agent baseline",
+      "toolVersion": "Blender 5.1.1",
+      "allowedSurface": [
+        "geometry_nodes",
+        "modifiers",
+        "mirror",
+        "voxel_remesh",
+        "booleans",
+        "sculpt",
+        "python",
+        "materials",
+        "persistent_blend",
+        "direct_mesh_work"
+      ],
+      "forbiddenSurface": [
+        "access_to_golem_sources",
+        "access_to_golem_artifacts",
+        "access_to_other_arm_metrics"
+      ]
+    }
+  ],
+  "budgets": {
+    "initialSeconds": 1800,
+    "initialRenderRounds": 6,
+    "revisionSeconds": 720,
+    "revisionRenderRounds": 3
+  },
+  "counterbalance": [
+    {
+      "creatureId": "sentinel",
+      "firstArm": "golem_pilot"
+    },
+    {
+      "creatureId": "delver",
+      "firstArm": "blender_procedural_agent"
+    },
+    {
+      "creatureId": "lancer",
+      "firstArm": "golem_pilot"
+    },
+    {
+      "creatureId": "porter",
+      "firstArm": "blender_procedural_agent"
+    },
+    {
+      "creatureId": "strider",
+      "firstArm": "golem_pilot"
+    },
+    {
+      "creatureId": "oracle",
+      "firstArm": "blender_procedural_agent"
+    }
+  ],
+  "baselineQualification": {
+    "calibrationRevisionCompletionsRequired": 6,
+    "minimumNamedControlGroups": 6,
+    "watertightCalibrationFinalsRequired": 2,
+    "minimumSymmetryIou": 0.98,
+    "minimumCalibrationJudges": 2,
+    "minimumCalibrationAppealMean": 5.0,
+    "minimumCalibrationBriefFidelityMean": 5.0,
+    "heldOutRevisionReceiptsRequired": 18,
+    "heldOutFinalArtifactsRequired": 6
+  },
+  "blinding": {
+    "minimumTechnicalArtists": 3,
+    "visualBeforeTechnicalInspection": true,
+    "lineupChoices": 8,
+    "appealScaleMaximum": 7,
+    "briefFidelityScaleMaximum": 7,
+    "riggingReadinessScaleMaximum": 7,
+    "engineReadinessScaleMaximum": 7,
+    "confidenceScaleMaximum": 5,
+    "randomizationAlgorithm": "NumPy 2.5.1 Generator(PCG64).permutation over held-out manifest order crossed with arm manifest order",
+    "stripGeneratorMetadata": true
+  },
+  "decisionGates": {
+    "minimumCompletedHeldOutRevisions": 18,
+    "requiredHeldOutFinalArtifacts": 6,
+    "minimumAppealPairedDifference": -0.5,
+    "minimumBriefFidelityPairedDifference": -0.5,
+    "minimumRiggingReadinessPairedDifference": -1.0,
+    "minimumEngineReadinessPairedDifference": -1.0,
+    "minimumCorrectGolemLineups": 5,
+    "maximumMedianRevisionTimeRatio": 0.5,
+    "maximumP75RevisionTimeRatio": 0.67,
+    "revisionP75NearestRankIndex": 14,
+    "requiredFinalComponents": 1,
+    "requireFinalWatertight": true,
+    "minimumFinalSymmetryIou": 0.98,
+    "maximumCriticalRegressions": 0,
+    "maximumNoncriticalRegressionRevisions": 2,
+    "maximumHumanAuthoredRevisions": 2,
+    "maximumHumanAuthoringSeconds": 1800,
+    "maximumAuthoritativeGolemMeshEdits": 0,
+    "maximumNonSymbolicRevisionOutcomes": 0,
+    "maximumFinalArtifactsRequiringMeshSurgery": 2,
+    "maximumMedianCleanupSeconds": 2700,
+    "maximumCleanupDisadvantageSeconds": 900,
+    "missingGolemCleanupSeconds": 2700,
+    "missingBlenderFinalDisposition": "Inconclusive",
+    "maximumVocabularyProposals": 2,
+    "maximumPackProposalAuthoringSeconds": 7200,
+    "maximumMedianPackProposalSecondsPerCreature": 900
+  },
+  "assessmentPolicy": {
+    "riggingAndEngineValuesAreExpertEstimates": true,
+    "notAssessableCountsAsScore": 1,
+    "productionReceiptsClaimed": false
+  },
+  "evidencePolicy": {
+    "filesAreWriteOnce": true,
+    "correctionsSupersedeById": true,
+    "verdictArtifactPermitted": false,
+    "manualCrossRecordAuditRequired": true,
+    "missingMeasurementsBecomeObstructions": true,
+    "missingEvidenceBecomesObstruction": true
+  }
+}

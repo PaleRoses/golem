@@ -1,0 +1,3684 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pale-meridian.invalid/golem/phase-minus-one/schema.json",
+  "title": "GOLEM Phase -1 evidence",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/ExperimentManifest"
+    },
+    {
+      "$ref": "#/$defs/OracleEvidence"
+    },
+    {
+      "$ref": "#/$defs/TrialEvidence"
+    },
+    {
+      "$ref": "#/$defs/MeasurementSidecarEvidence"
+    },
+    {
+      "$ref": "#/$defs/EvaluationContractEvidence"
+    },
+    {
+      "$ref": "#/$defs/VisualJudgeEvidence"
+    },
+    {
+      "$ref": "#/$defs/TechnicalJudgeEvidence"
+    },
+    {
+      "$ref": "#/$defs/BlindingCommitmentEvidence"
+    },
+    {
+      "$ref": "#/$defs/BlindingRevealEvidence"
+    },
+    {
+      "$ref": "#/$defs/BaselineQualificationEvidence"
+    },
+    {
+      "$ref": "#/$defs/QuarantineProposalEvidence"
+    },
+    {
+      "$ref": "#/$defs/ExperimentObstructionEvidence"
+    }
+  ],
+  "$defs": {
+    "Sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "Identifier": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$"
+    },
+    "BlindId": {
+      "enum": [
+        "p01",
+        "p02",
+        "p03",
+        "p04",
+        "p05",
+        "p06",
+        "p07",
+        "p08",
+        "p09",
+        "p10",
+        "p11",
+        "p12"
+      ]
+    },
+    "UtcTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?Z$"
+    },
+    "PathHash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/Sha256"
+        }
+      }
+    },
+    "Scope": {
+      "type": "string",
+      "enum": [
+        "whole",
+        "torso",
+        "face_plate",
+        "shoulder",
+        "upper_arm",
+        "forearm",
+        "hand",
+        "digits",
+        "hip",
+        "thigh",
+        "foot",
+        "ground_contact"
+      ]
+    },
+    "ConstraintClause": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "metric",
+        "operator",
+        "value",
+        "unit",
+        "tolerance"
+      ],
+      "properties": {
+        "scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "metric": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "operator": {
+          "type": "string",
+          "enum": [
+            "equal",
+            "minimum",
+            "maximum",
+            "family_rank_desc",
+            "increase",
+            "increase_percent",
+            "decrease_percent",
+            "max_delta_percent",
+            "max_distance",
+            "max_angle"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "count",
+            "boolean",
+            "ratio",
+            "world_unit",
+            "rank",
+            "percent",
+            "degree"
+          ]
+        },
+        "tolerance": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "MetricDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "definition",
+        "multiScopeLaw",
+        "valueShape"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "multiScopeLaw": {
+          "enum": [
+            "all_scopes",
+            "combined",
+            "relational_pair"
+          ]
+        },
+        "valueShape": {
+          "enum": [
+            "scalars",
+            "vec3s"
+          ]
+        }
+      }
+    },
+    "InitialBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "preserveProfileId",
+        "identityCriteria"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "preserveProfileId": {
+          "const": "warden-family-integrity"
+        },
+        "identityCriteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ConstraintClause"
+          }
+        }
+      }
+    },
+    "Revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "request",
+        "targets",
+        "preserve"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ConstraintClause"
+          }
+        },
+        "preserve": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ConstraintClause"
+          }
+        }
+      }
+    },
+    "Creature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "phase",
+        "lineupIdentity",
+        "initialBrief",
+        "revisions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "enum": [
+            "calibration",
+            "held_out"
+          ]
+        },
+        "lineupIdentity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initialBrief": {
+          "$ref": "#/$defs/InitialBrief"
+        },
+        "revisions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/Revision"
+          }
+        }
+      }
+    },
+    "PreserveProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "clauses"
+      ],
+      "properties": {
+        "id": {
+          "const": "warden-family-integrity"
+        },
+        "clauses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ConstraintClause"
+          }
+        }
+      }
+    },
+    "Authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pilotRoot",
+        "runtimeLock",
+        "sourceHashes",
+        "artifactHashes",
+        "semanticOracle",
+        "sealedObstructions"
+      ],
+      "properties": {
+        "pilotRoot": {
+          "const": "../pilots"
+        },
+        "runtimeLock": {
+          "const": "../uv.lock"
+        },
+        "sourceHashes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/PathHash"
+          }
+        },
+        "artifactHashes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/PathHash"
+          }
+        },
+        "semanticOracle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "handV1Violations",
+            "handV2Violations",
+            "plateCells",
+            "plateAdjacencies",
+            "v4Components",
+            "v4Watertight",
+            "controlOccupiedComponents",
+            "controlShells",
+            "controlWatertight"
+          ],
+          "properties": {
+            "handV1Violations": {
+              "const": 20
+            },
+            "handV2Violations": {
+              "const": 0
+            },
+            "plateCells": {
+              "const": 110
+            },
+            "plateAdjacencies": {
+              "const": 324
+            },
+            "v4Components": {
+              "const": 1
+            },
+            "v4Watertight": {
+              "const": true
+            },
+            "controlOccupiedComponents": {
+              "const": 1
+            },
+            "controlShells": {
+              "const": 35
+            },
+            "controlWatertight": {
+              "const": false
+            }
+          }
+        },
+        "sealedObstructions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tag",
+              "observed",
+              "expected"
+            ],
+            "properties": {
+              "tag": {
+                "enum": [
+                  "RawSymmetryGate",
+                  "RenderPixelDrift",
+                  "PlatedGlbOrdering"
+                ]
+              },
+              "observed": {
+                "type": "string",
+                "minLength": 1
+              },
+              "expected": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "Family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "description",
+        "allowedPartKinds",
+        "allowedScopes",
+        "excludedCapabilities",
+        "measurementContract",
+        "regressionSemantics",
+        "metricSemantics",
+        "preserveProfiles",
+        "split",
+        "creatures"
+      ],
+      "properties": {
+        "id": {
+          "const": "obsidian-wardens"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowedPartKinds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "gencyl",
+              "blob"
+            ]
+          }
+        },
+        "allowedScopes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "excludedCapabilities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "hair",
+              "wings",
+              "membranes",
+              "detailed_faces",
+              "animation",
+              "rigging",
+              "engine_adaptation",
+              "new_part_kinds"
+            ]
+          }
+        },
+        "measurementContract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "commonSurface",
+            "sidecar",
+            "surfaceSampling",
+            "measurementSeed",
+            "surfaceSamplesPerSurface",
+            "surfaceSamplingAlgorithm",
+            "requiredSurfaceScopes",
+            "groundPlaneY",
+            "sourceFieldsForbidden"
+          ],
+          "properties": {
+            "commonSurface": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sidecar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "surfaceSampling": {
+              "type": "string",
+              "minLength": 1
+            },
+            "measurementSeed": {
+              "const": 7319
+            },
+            "surfaceSamplesPerSurface": {
+              "const": 4096
+            },
+            "surfaceSamplingAlgorithm": {
+              "const": "Canonicalize each triangle by lexicographically sorting its three float64 vertex triples; sort triangles lexicographically; NumPy 2.5.1 Generator(PCG64) seed 7319 plus 100 times manifest scope ordinal plus declared instance ordinal; inverse-CDF triangle-area selection; sqrt-barycentric point sampling"
+            },
+            "requiredSurfaceScopes": {
+              "const": [
+                "whole",
+                "torso",
+                "face_plate",
+                "shoulder",
+                "upper_arm",
+                "forearm",
+                "hand",
+                "digits",
+                "hip",
+                "thigh",
+                "foot"
+              ]
+            },
+            "groundPlaneY": {
+              "const": 0.02
+            },
+            "sourceFieldsForbidden": {
+              "const": true
+            }
+          }
+        },
+        "regressionSemantics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "critical",
+            "noncritical",
+            "targetFailure"
+          ],
+          "properties": {
+            "critical": {
+              "const": "Any failed /family/preserveProfiles/0/clauses/* result."
+            },
+            "noncritical": {
+              "const": "A revision with one or more failed /family/creatures/*/revisions/*/preserve/* results."
+            },
+            "targetFailure": {
+              "const": "A failed target clause makes the stage ValidationFailed rather than Completed."
+            }
+          }
+        },
+        "metricSemantics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/MetricDefinition"
+          }
+        },
+        "preserveProfiles": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/PreserveProfile"
+          }
+        },
+        "split": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "calibration",
+            "heldOut"
+          ],
+          "properties": {
+            "calibration": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/Identifier"
+              }
+            },
+            "heldOut": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/Identifier"
+              }
+            }
+          }
+        },
+        "creatures": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/Creature"
+          },
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "phase"
+                ],
+                "properties": {
+                  "phase": {
+                    "const": "calibration"
+                  }
+                }
+              },
+              "minContains": 2,
+              "maxContains": 2
+            },
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "phase"
+                ],
+                "properties": {
+                  "phase": {
+                    "const": "held_out"
+                  }
+                }
+              },
+              "minContains": 6,
+              "maxContains": 6
+            }
+          ]
+        }
+      }
+    },
+    "Arm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "toolVersion",
+        "allowedSurface",
+        "forbiddenSurface"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "golem_pilot",
+            "blender_procedural_agent"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "toolVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowedSurface": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        },
+        "forbiddenSurface": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        }
+      }
+    },
+    "ExperimentManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "$schema",
+        "recordType",
+        "schemaVersion",
+        "experimentId",
+        "status",
+        "claim",
+        "authority",
+        "family",
+        "arms",
+        "budgets",
+        "counterbalance",
+        "baselineQualification",
+        "blinding",
+        "decisionGates",
+        "assessmentPolicy",
+        "evidencePolicy"
+      ],
+      "properties": {
+        "$schema": {
+          "const": "./schema.json"
+        },
+        "recordType": {
+          "const": "ExperimentManifest"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "experimentId": {
+          "const": "golem-phase-minus-one-obsidian-wardens"
+        },
+        "status": {
+          "const": "preregistered"
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "$ref": "#/$defs/Authority"
+        },
+        "family": {
+          "$ref": "#/$defs/Family"
+        },
+        "arms": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/Arm"
+          }
+        },
+        "budgets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initialSeconds",
+            "initialRenderRounds",
+            "revisionSeconds",
+            "revisionRenderRounds"
+          ],
+          "properties": {
+            "initialSeconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "initialRenderRounds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "revisionSeconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "revisionRenderRounds": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "counterbalance": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "creatureId",
+              "firstArm"
+            ],
+            "properties": {
+              "creatureId": {
+                "$ref": "#/$defs/Identifier"
+              },
+              "firstArm": {
+                "enum": [
+                  "golem_pilot",
+                  "blender_procedural_agent"
+                ]
+              }
+            }
+          }
+        },
+        "baselineQualification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "calibrationRevisionCompletionsRequired",
+            "minimumNamedControlGroups",
+            "watertightCalibrationFinalsRequired",
+            "minimumSymmetryIou",
+            "minimumCalibrationJudges",
+            "minimumCalibrationAppealMean",
+            "minimumCalibrationBriefFidelityMean",
+            "heldOutRevisionReceiptsRequired",
+            "heldOutFinalArtifactsRequired"
+          ],
+          "properties": {
+            "calibrationRevisionCompletionsRequired": {
+              "const": 6
+            },
+            "minimumNamedControlGroups": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "watertightCalibrationFinalsRequired": {
+              "const": 2
+            },
+            "minimumSymmetryIou": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "minimumCalibrationJudges": {
+              "const": 2
+            },
+            "minimumCalibrationAppealMean": {
+              "const": 5.0
+            },
+            "minimumCalibrationBriefFidelityMean": {
+              "const": 5.0
+            },
+            "heldOutRevisionReceiptsRequired": {
+              "const": 18
+            },
+            "heldOutFinalArtifactsRequired": {
+              "const": 6
+            }
+          }
+        },
+        "blinding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "minimumTechnicalArtists",
+            "visualBeforeTechnicalInspection",
+            "lineupChoices",
+            "appealScaleMaximum",
+            "briefFidelityScaleMaximum",
+            "riggingReadinessScaleMaximum",
+            "engineReadinessScaleMaximum",
+            "confidenceScaleMaximum",
+            "randomizationAlgorithm",
+            "stripGeneratorMetadata"
+          ],
+          "properties": {
+            "minimumTechnicalArtists": {
+              "type": "integer",
+              "minimum": 3
+            },
+            "visualBeforeTechnicalInspection": {
+              "const": true
+            },
+            "lineupChoices": {
+              "const": 8
+            },
+            "appealScaleMaximum": {
+              "const": 7
+            },
+            "briefFidelityScaleMaximum": {
+              "const": 7
+            },
+            "riggingReadinessScaleMaximum": {
+              "const": 7
+            },
+            "engineReadinessScaleMaximum": {
+              "const": 7
+            },
+            "confidenceScaleMaximum": {
+              "const": 5
+            },
+            "randomizationAlgorithm": {
+              "const": "NumPy 2.5.1 Generator(PCG64).permutation over held-out manifest order crossed with arm manifest order"
+            },
+            "stripGeneratorMetadata": {
+              "const": true
+            }
+          }
+        },
+        "decisionGates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "minimumCompletedHeldOutRevisions",
+            "requiredHeldOutFinalArtifacts",
+            "minimumAppealPairedDifference",
+            "minimumBriefFidelityPairedDifference",
+            "minimumRiggingReadinessPairedDifference",
+            "minimumEngineReadinessPairedDifference",
+            "minimumCorrectGolemLineups",
+            "maximumMedianRevisionTimeRatio",
+            "maximumP75RevisionTimeRatio",
+            "revisionP75NearestRankIndex",
+            "requiredFinalComponents",
+            "requireFinalWatertight",
+            "minimumFinalSymmetryIou",
+            "maximumCriticalRegressions",
+            "maximumNoncriticalRegressionRevisions",
+            "maximumHumanAuthoredRevisions",
+            "maximumHumanAuthoringSeconds",
+            "maximumAuthoritativeGolemMeshEdits",
+            "maximumNonSymbolicRevisionOutcomes",
+            "maximumFinalArtifactsRequiringMeshSurgery",
+            "maximumMedianCleanupSeconds",
+            "maximumCleanupDisadvantageSeconds",
+            "missingGolemCleanupSeconds",
+            "missingBlenderFinalDisposition",
+            "maximumVocabularyProposals",
+            "maximumPackProposalAuthoringSeconds",
+            "maximumMedianPackProposalSecondsPerCreature"
+          ],
+          "properties": {
+            "minimumCompletedHeldOutRevisions": {
+              "const": 18
+            },
+            "requiredHeldOutFinalArtifacts": {
+              "const": 6
+            },
+            "minimumAppealPairedDifference": {
+              "const": -0.5
+            },
+            "minimumBriefFidelityPairedDifference": {
+              "const": -0.5
+            },
+            "minimumRiggingReadinessPairedDifference": {
+              "const": -1.0
+            },
+            "minimumEngineReadinessPairedDifference": {
+              "const": -1.0
+            },
+            "minimumCorrectGolemLineups": {
+              "const": 5
+            },
+            "maximumMedianRevisionTimeRatio": {
+              "const": 0.5
+            },
+            "maximumP75RevisionTimeRatio": {
+              "const": 0.67
+            },
+            "revisionP75NearestRankIndex": {
+              "const": 14
+            },
+            "requiredFinalComponents": {
+              "const": 1
+            },
+            "requireFinalWatertight": {
+              "const": true
+            },
+            "minimumFinalSymmetryIou": {
+              "const": 0.98
+            },
+            "maximumCriticalRegressions": {
+              "const": 0
+            },
+            "maximumNoncriticalRegressionRevisions": {
+              "const": 2
+            },
+            "maximumHumanAuthoredRevisions": {
+              "const": 2
+            },
+            "maximumHumanAuthoringSeconds": {
+              "const": 1800
+            },
+            "maximumAuthoritativeGolemMeshEdits": {
+              "const": 0
+            },
+            "maximumNonSymbolicRevisionOutcomes": {
+              "const": 0
+            },
+            "maximumFinalArtifactsRequiringMeshSurgery": {
+              "const": 2
+            },
+            "maximumMedianCleanupSeconds": {
+              "const": 2700
+            },
+            "maximumCleanupDisadvantageSeconds": {
+              "const": 900
+            },
+            "missingGolemCleanupSeconds": {
+              "const": 2700
+            },
+            "missingBlenderFinalDisposition": {
+              "const": "Inconclusive"
+            },
+            "maximumVocabularyProposals": {
+              "const": 2
+            },
+            "maximumPackProposalAuthoringSeconds": {
+              "const": 7200
+            },
+            "maximumMedianPackProposalSecondsPerCreature": {
+              "const": 900
+            }
+          }
+        },
+        "assessmentPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "riggingAndEngineValuesAreExpertEstimates",
+            "notAssessableCountsAsScore",
+            "productionReceiptsClaimed"
+          ],
+          "properties": {
+            "riggingAndEngineValuesAreExpertEstimates": {
+              "const": true
+            },
+            "notAssessableCountsAsScore": {
+              "const": 1
+            },
+            "productionReceiptsClaimed": {
+              "const": false
+            }
+          }
+        },
+        "evidencePolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "filesAreWriteOnce",
+            "correctionsSupersedeById",
+            "verdictArtifactPermitted",
+            "manualCrossRecordAuditRequired",
+            "missingMeasurementsBecomeObstructions",
+            "missingEvidenceBecomesObstruction"
+          ],
+          "properties": {
+            "filesAreWriteOnce": {
+              "const": true
+            },
+            "correctionsSupersedeById": {
+              "const": true
+            },
+            "verdictArtifactPermitted": {
+              "const": false
+            },
+            "manualCrossRecordAuditRequired": {
+              "const": true
+            },
+            "missingMeasurementsBecomeObstructions": {
+              "const": true
+            },
+            "missingEvidenceBecomesObstruction": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "ArtifactReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "kind"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "kind": {
+          "enum": [
+            "source",
+            "mesh",
+            "render",
+            "turntable",
+            "receipt",
+            "blend",
+            "measurement_sidecar"
+          ]
+        }
+      }
+    },
+    "MeshArtifactReference": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ArtifactReference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "mesh"
+            }
+          }
+        }
+      ]
+    },
+    "BlendArtifactReference": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ArtifactReference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "blend"
+            }
+          }
+        }
+      ]
+    },
+    "SourceArtifactReference": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ArtifactReference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "source"
+            }
+          }
+        }
+      ]
+    },
+    "RenderArtifactReference": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ArtifactReference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "render"
+            }
+          }
+        }
+      ]
+    },
+    "TurntableArtifactReference": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/ArtifactReference"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "turntable"
+            }
+          }
+        }
+      ]
+    },
+    "StageSourceArtifact": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        {
+          "$ref": "#/$defs/BlendArtifactReference"
+        }
+      ]
+    },
+    "EvaluationContractEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "frozenAt",
+        "blenderBuildIdentity",
+        "sceneArtifact",
+        "renderScriptArtifact",
+        "cameraIds",
+        "resolution",
+        "turntableFrames"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "EvaluationContractEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "frozenAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "blenderBuildIdentity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sceneArtifact": {
+          "$ref": "#/$defs/BlendArtifactReference"
+        },
+        "renderScriptArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "cameraIds": {
+          "const": [
+            "front",
+            "left",
+            "right",
+            "three_quarter"
+          ]
+        },
+        "resolution": {
+          "const": [
+            1024,
+            1024
+          ]
+        },
+        "turntableFrames": {
+          "const": 36
+        }
+      }
+    },
+    "OracleCheckObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "passed",
+        "expected",
+        "observed"
+      ],
+      "properties": {
+        "passed": {
+          "const": true
+        },
+        "expected": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "OracleEvidence": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "recordType",
+            "schemaVersion",
+            "evidenceId",
+            "manifestSha256",
+            "verifiedAt",
+            "status",
+            "semanticChecks",
+            "sealedObstructions"
+          ],
+          "properties": {
+            "recordType": {
+              "const": "OracleEvidence"
+            },
+            "schemaVersion": {
+              "const": 1
+            },
+            "evidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "supersedesEvidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "manifestSha256": {
+              "$ref": "#/$defs/Sha256"
+            },
+            "verifiedAt": {
+              "$ref": "#/$defs/UtcTimestamp"
+            },
+            "status": {
+              "const": "SemanticPassSealedObstructed"
+            },
+            "semanticChecks": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "handReportGoldenV1",
+                "handReportGoldenV2",
+                "v4Coherence",
+                "mount",
+                "bodyGlbByteExact",
+                "mountedGlbByteExact",
+                "plateComplex",
+                "platedGlbSemantic",
+                "platedGlbDriftBounded",
+                "controlScorecard",
+                "rawSymmetryObserved",
+                "renderDriftBounded"
+              ],
+              "properties": {
+                "handReportGoldenV1": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "handReportGoldenV2": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "v4Coherence": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "mount": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "bodyGlbByteExact": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "mountedGlbByteExact": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "plateComplex": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "platedGlbSemantic": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "platedGlbDriftBounded": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "controlScorecard": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "rawSymmetryObserved": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                },
+                "renderDriftBounded": {
+                  "$ref": "#/$defs/OracleCheckObservation"
+                }
+              }
+            },
+            "sealedObstructions": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "rawSymmetryGate",
+                "renderPixelDrift",
+                "platedGlbOrdering"
+              ],
+              "properties": {
+                "rawSymmetryGate": {
+                  "const": {
+                    "expected": ">=0.98",
+                    "observed": "0.9799926081064433"
+                  }
+                },
+                "renderPixelDrift": {
+                  "const": {
+                    "expected": "pixel-exact",
+                    "observed": "four PNG pixels and five GIF pixels differ"
+                  }
+                },
+                "platedGlbOrdering": {
+                  "const": {
+                    "expected": "byte-exact",
+                    "observed": "semantic colored-face match with different face serialization"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "recordType",
+            "schemaVersion",
+            "evidenceId",
+            "manifestSha256",
+            "verifiedAt",
+            "status",
+            "failedChecks"
+          ],
+          "properties": {
+            "recordType": {
+              "const": "OracleEvidence"
+            },
+            "schemaVersion": {
+              "const": 1
+            },
+            "evidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "supersedesEvidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "manifestSha256": {
+              "$ref": "#/$defs/Sha256"
+            },
+            "verifiedAt": {
+              "$ref": "#/$defs/UtcTimestamp"
+            },
+            "status": {
+              "const": "Failed"
+            },
+            "failedChecks": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "checkId",
+                  "expected",
+                  "observed"
+                ],
+                "properties": {
+                  "checkId": {
+                    "$ref": "#/$defs/Identifier"
+                  },
+                  "expected": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "observed": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MetricValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "values"
+          ],
+          "properties": {
+            "tag": {
+              "const": "Scalars"
+            },
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "values"
+          ],
+          "properties": {
+            "tag": {
+              "const": "Vec3s"
+            },
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/Vec3"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ClauseObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clauseRef",
+        "observed",
+        "unit"
+      ],
+      "properties": {
+        "clauseRef": {
+          "$ref": "#/$defs/ClauseReference"
+        },
+        "observed": {
+          "$ref": "#/$defs/MetricValue"
+        },
+        "unit": {
+          "enum": [
+            "count",
+            "boolean",
+            "ratio",
+            "world_unit",
+            "rank",
+            "percent",
+            "degree"
+          ]
+        }
+      }
+    },
+    "Vec3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      }
+    },
+    "SurfaceMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bboxMin",
+        "bboxMax",
+        "orientedHalfAxes",
+        "surfaceSamples"
+      ],
+      "properties": {
+        "bboxMin": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "bboxMax": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "orientedHalfAxes": {
+          "$ref": "#/$defs/Vec3"
+        },
+        "surfaceSamples": {
+          "type": "array",
+          "minItems": 4096,
+          "maxItems": 4096,
+          "items": {
+            "$ref": "#/$defs/Vec3"
+          }
+        }
+      }
+    },
+    "CenterlineMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "centerline",
+        "crossSectionRadii"
+      ],
+      "properties": {
+        "centerline": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Vec3"
+          }
+        },
+        "crossSectionRadii": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "AppendageInstanceMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "centerline",
+        "crossSectionRadii"
+      ],
+      "properties": {
+        "surface": {
+          "$ref": "#/$defs/SurfaceMeasurement"
+        },
+        "centerline": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Vec3"
+          }
+        },
+        "crossSectionRadii": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "FingerInstanceMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "centerline",
+        "crossSectionRadii"
+      ],
+      "properties": {
+        "surface": {
+          "$ref": "#/$defs/SurfaceMeasurement"
+        },
+        "centerline": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/Vec3"
+          }
+        },
+        "crossSectionRadii": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "ThumbInstanceMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "centerline",
+        "crossSectionRadii"
+      ],
+      "properties": {
+        "surface": {
+          "$ref": "#/$defs/SurfaceMeasurement"
+        },
+        "centerline": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/Vec3"
+          }
+        },
+        "crossSectionRadii": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "SingletonScopeMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface",
+        "midline"
+      ],
+      "properties": {
+        "surface": {
+          "$ref": "#/$defs/SurfaceMeasurement"
+        },
+        "midline": {
+          "$ref": "#/$defs/CenterlineMeasurement"
+        }
+      }
+    },
+    "BilateralScopeMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "left",
+        "right"
+      ],
+      "properties": {
+        "left": {
+          "$ref": "#/$defs/AppendageInstanceMeasurement"
+        },
+        "right": {
+          "$ref": "#/$defs/AppendageInstanceMeasurement"
+        }
+      }
+    },
+    "DigitScopeMeasurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "left_thumb",
+        "left_index",
+        "left_middle",
+        "left_ring",
+        "left_pinky",
+        "right_thumb",
+        "right_index",
+        "right_middle",
+        "right_ring",
+        "right_pinky"
+      ],
+      "properties": {
+        "left_thumb": {
+          "$ref": "#/$defs/ThumbInstanceMeasurement"
+        },
+        "left_index": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "left_middle": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "left_ring": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "left_pinky": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "right_thumb": {
+          "$ref": "#/$defs/ThumbInstanceMeasurement"
+        },
+        "right_index": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "right_middle": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "right_ring": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        },
+        "right_pinky": {
+          "$ref": "#/$defs/FingerInstanceMeasurement"
+        }
+      }
+    },
+    "MeasurementSidecarEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "creatureId",
+        "armId",
+        "stageSlot",
+        "sourceMesh",
+        "verifierId",
+        "verifiedAt",
+        "measurementSeed",
+        "sourceFieldsUsed",
+        "scopes",
+        "landmarks",
+        "groundPlaneY",
+        "wholeMetrics",
+        "clauseObservations"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "MeasurementSidecarEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "creatureId": {
+          "enum": [
+            "bulwark",
+            "climber",
+            "sentinel",
+            "delver",
+            "lancer",
+            "porter",
+            "strider",
+            "oracle"
+          ]
+        },
+        "armId": {
+          "enum": [
+            "golem_pilot",
+            "blender_procedural_agent"
+          ]
+        },
+        "stageSlot": {
+          "enum": [
+            "initial",
+            "r1",
+            "r2",
+            "r3"
+          ]
+        },
+        "sourceMesh": {
+          "$ref": "#/$defs/MeshArtifactReference"
+        },
+        "verifierId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "verifiedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "measurementSeed": {
+          "const": 7319
+        },
+        "sourceFieldsUsed": {
+          "const": false
+        },
+        "scopes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "whole",
+            "torso",
+            "face_plate",
+            "shoulder",
+            "upper_arm",
+            "forearm",
+            "hand",
+            "digits",
+            "hip",
+            "thigh",
+            "foot"
+          ],
+          "properties": {
+            "whole": {
+              "$ref": "#/$defs/SingletonScopeMeasurement"
+            },
+            "torso": {
+              "$ref": "#/$defs/SingletonScopeMeasurement"
+            },
+            "face_plate": {
+              "$ref": "#/$defs/SingletonScopeMeasurement"
+            },
+            "shoulder": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "upper_arm": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "forearm": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "hand": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "digits": {
+              "$ref": "#/$defs/DigitScopeMeasurement"
+            },
+            "hip": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "thigh": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            },
+            "foot": {
+              "$ref": "#/$defs/BilateralScopeMeasurement"
+            }
+          }
+        },
+        "landmarks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "torso_base",
+            "torso_apex",
+            "face_center",
+            "face_front",
+            "face_top",
+            "face_bottom",
+            "face_left",
+            "face_right",
+            "shoulder_left",
+            "shoulder_right",
+            "elbow_left",
+            "elbow_right",
+            "wrist_left",
+            "wrist_right",
+            "hand_contact_left",
+            "hand_contact_right",
+            "hip_left",
+            "hip_right",
+            "knee_left",
+            "knee_right",
+            "foot_center_left",
+            "foot_center_right",
+            "foot_contact_left",
+            "foot_contact_right"
+          ],
+          "properties": {
+            "torso_base": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "torso_apex": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_center": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_front": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_top": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_bottom": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "face_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "shoulder_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "shoulder_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "elbow_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "elbow_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "wrist_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "wrist_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "hand_contact_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "hand_contact_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "hip_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "hip_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "knee_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "knee_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "foot_center_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "foot_center_right": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "foot_contact_left": {
+              "$ref": "#/$defs/Vec3"
+            },
+            "foot_contact_right": {
+              "$ref": "#/$defs/Vec3"
+            }
+          }
+        },
+        "groundPlaneY": {
+          "const": 0.02
+        },
+        "wholeMetrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "postDustComponents",
+            "watertight",
+            "symmetryIou"
+          ],
+          "properties": {
+            "postDustComponents": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "watertight": {
+              "type": "boolean"
+            },
+            "symmetryIou": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "clauseObservations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/ClauseObservation"
+          }
+        }
+      }
+    },
+    "CompletedOutcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tag",
+        "measurementEvidenceId",
+        "sourceArtifact",
+        "outputMesh",
+        "viewsArtifact",
+        "turntableArtifact"
+      ],
+      "properties": {
+        "tag": {
+          "const": "Completed"
+        },
+        "measurementEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "sourceArtifact": {
+          "$ref": "#/$defs/StageSourceArtifact"
+        },
+        "outputMesh": {
+          "$ref": "#/$defs/MeshArtifactReference"
+        },
+        "viewsArtifact": {
+          "$ref": "#/$defs/RenderArtifactReference"
+        },
+        "turntableArtifact": {
+          "$ref": "#/$defs/TurntableArtifactReference"
+        }
+      }
+    },
+    "RevisionOutcome": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CompletedOutcome"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "budgetSeconds"
+          ],
+          "properties": {
+            "tag": {
+              "const": "TimedOut"
+            },
+            "budgetSeconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "proposalEvidenceId",
+            "description"
+          ],
+          "properties": {
+            "tag": {
+              "const": "UnsupportedVocabulary"
+            },
+            "proposalEvidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "proposalEvidenceId",
+            "description"
+          ],
+          "properties": {
+            "tag": {
+              "const": "NonSymbolicEditRequired"
+            },
+            "proposalEvidenceId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "violations"
+          ],
+          "properties": {
+            "tag": {
+              "const": "ValidationFailed"
+            },
+            "violations": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/ClauseReference"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "StageMetrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wallSeconds",
+        "activeSeconds",
+        "renderRounds",
+        "humanInterventions",
+        "humanAuthoringSeconds",
+        "directMeshWorkSeconds",
+        "authoritativeMeshEdits"
+      ],
+      "properties": {
+        "wallSeconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "activeSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "renderRounds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "humanInterventions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "humanAuthoringSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "directMeshWorkSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "authoritativeMeshEdits": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "StageEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metrics",
+        "outcome"
+      ],
+      "properties": {
+        "metrics": {
+          "$ref": "#/$defs/StageMetrics"
+        },
+        "outcome": {
+          "$ref": "#/$defs/RevisionOutcome"
+        }
+      }
+    },
+    "InitialStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/StageEvidence"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "metrics": {
+              "properties": {
+                "wallSeconds": {
+                  "maximum": 1800
+                },
+                "renderRounds": {
+                  "maximum": 6
+                }
+              }
+            },
+            "outcome": {
+              "if": {
+                "properties": {
+                  "tag": {
+                    "const": "TimedOut"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "budgetSeconds": {
+                    "const": 1800
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "AttemptedRevisionStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/StageEvidence"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "metrics": {
+              "properties": {
+                "wallSeconds": {
+                  "maximum": 720
+                },
+                "renderRounds": {
+                  "maximum": 3
+                }
+              }
+            },
+            "outcome": {
+              "if": {
+                "properties": {
+                  "tag": {
+                    "const": "TimedOut"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "budgetSeconds": {
+                    "const": 720
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BlockedStageEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome"
+      ],
+      "properties": {
+        "outcome": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "priorSlot"
+          ],
+          "properties": {
+            "tag": {
+              "const": "BlockedByPriorStage"
+            },
+            "priorSlot": {
+              "enum": [
+                "initial",
+                "r1",
+                "r2"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "CompletedInitialStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/InitialStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "$ref": "#/$defs/CompletedOutcome"
+            }
+          }
+        }
+      ]
+    },
+    "FailedInitialStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/InitialStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "not": {
+                "$ref": "#/$defs/CompletedOutcome"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "CompletedRevisionStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/AttemptedRevisionStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "$ref": "#/$defs/CompletedOutcome"
+            }
+          }
+        }
+      ]
+    },
+    "FailedRevisionStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/AttemptedRevisionStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "not": {
+                "$ref": "#/$defs/CompletedOutcome"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BlockedByInitialStageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BlockedStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "properties": {
+                "priorSlot": {
+                  "const": "initial"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BlockedByR1StageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BlockedStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "properties": {
+                "priorSlot": {
+                  "const": "r1"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "BlockedByR2StageEvidence": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/BlockedStageEvidence"
+        },
+        {
+          "properties": {
+            "outcome": {
+              "properties": {
+                "priorSlot": {
+                  "const": "r2"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "StageSequenceEvidence": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial",
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "properties": {
+            "initial": {
+              "$ref": "#/$defs/FailedInitialStageEvidence"
+            },
+            "r1": {
+              "$ref": "#/$defs/BlockedByInitialStageEvidence"
+            },
+            "r2": {
+              "$ref": "#/$defs/BlockedByInitialStageEvidence"
+            },
+            "r3": {
+              "$ref": "#/$defs/BlockedByInitialStageEvidence"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial",
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "properties": {
+            "initial": {
+              "$ref": "#/$defs/CompletedInitialStageEvidence"
+            },
+            "r1": {
+              "$ref": "#/$defs/FailedRevisionStageEvidence"
+            },
+            "r2": {
+              "$ref": "#/$defs/BlockedByR1StageEvidence"
+            },
+            "r3": {
+              "$ref": "#/$defs/BlockedByR1StageEvidence"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial",
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "properties": {
+            "initial": {
+              "$ref": "#/$defs/CompletedInitialStageEvidence"
+            },
+            "r1": {
+              "$ref": "#/$defs/CompletedRevisionStageEvidence"
+            },
+            "r2": {
+              "$ref": "#/$defs/FailedRevisionStageEvidence"
+            },
+            "r3": {
+              "$ref": "#/$defs/BlockedByR2StageEvidence"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial",
+            "r1",
+            "r2",
+            "r3"
+          ],
+          "properties": {
+            "initial": {
+              "$ref": "#/$defs/CompletedInitialStageEvidence"
+            },
+            "r1": {
+              "$ref": "#/$defs/CompletedRevisionStageEvidence"
+            },
+            "r2": {
+              "$ref": "#/$defs/CompletedRevisionStageEvidence"
+            },
+            "r3": {
+              "$ref": "#/$defs/AttemptedRevisionStageEvidence"
+            }
+          }
+        }
+      ]
+    },
+    "GolemStageConstraint": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "properties": {
+            "directMeshWorkSeconds": {
+              "const": 0
+            },
+            "authoritativeMeshEdits": {
+              "const": 0
+            }
+          }
+        }
+      }
+    },
+    "TrialEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "creatureId",
+        "armId",
+        "attemptId",
+        "startedAt",
+        "endedAt",
+        "modelIdentity",
+        "modelVersion",
+        "samplingSettingsArtifact",
+        "commonPromptArtifact",
+        "toolPromptArtifact",
+        "toolVersion",
+        "evaluationContractEvidenceId",
+        "hardware",
+        "stages"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "TrialEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "creatureId": {
+          "enum": [
+            "bulwark",
+            "climber",
+            "sentinel",
+            "delver",
+            "lancer",
+            "porter",
+            "strider",
+            "oracle"
+          ]
+        },
+        "armId": {
+          "enum": [
+            "golem_pilot",
+            "blender_procedural_agent"
+          ]
+        },
+        "attemptId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "startedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "endedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "modelIdentity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modelVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "samplingSettingsArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "commonPromptArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "toolPromptArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "toolVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluationContractEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "hardware": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stages": {
+          "$ref": "#/$defs/StageSequenceEvidence"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "armId"
+            ],
+            "properties": {
+              "armId": {
+                "const": "golem_pilot"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "stages": {
+                "properties": {
+                  "initial": {
+                    "$ref": "#/$defs/GolemStageConstraint"
+                  },
+                  "r1": {
+                    "$ref": "#/$defs/GolemStageConstraint"
+                  },
+                  "r2": {
+                    "$ref": "#/$defs/GolemStageConstraint"
+                  },
+                  "r3": {
+                    "$ref": "#/$defs/GolemStageConstraint"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ReadinessAssessment": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "score",
+            "estimatedPrepSeconds",
+            "blockers"
+          ],
+          "properties": {
+            "tag": {
+              "const": "Estimated"
+            },
+            "score": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7
+            },
+            "estimatedPrepSeconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "blockers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "reasons"
+          ],
+          "properties": {
+            "tag": {
+              "const": "NotAssessable"
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "VisualJudgeEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "judgeId",
+        "blindId",
+        "sealedAt",
+        "lineupCreatureId",
+        "appeal",
+        "briefFidelity",
+        "confidence"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "VisualJudgeEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "judgeId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "blindId": {
+          "$ref": "#/$defs/BlindId"
+        },
+        "sealedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "lineupCreatureId": {
+          "enum": [
+            "bulwark",
+            "climber",
+            "sentinel",
+            "delver",
+            "lancer",
+            "porter",
+            "strider",
+            "oracle"
+          ]
+        },
+        "appeal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "briefFidelity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "confidence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
+      }
+    },
+    "TechnicalJudgeEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "judgeId",
+        "blindId",
+        "visualEvidenceId",
+        "recordedAt",
+        "technical",
+        "rigging",
+        "engineReadiness"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "TechnicalJudgeEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "judgeId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "blindId": {
+          "$ref": "#/$defs/BlindId"
+        },
+        "visualEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "recordedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "technical": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cleanupSeconds",
+            "meshSurgeryRequired",
+            "blockingDefects"
+          ],
+          "properties": {
+            "cleanupSeconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "meshSurgeryRequired": {
+              "type": "boolean"
+            },
+            "blockingDefects": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "rigging": {
+          "$ref": "#/$defs/ReadinessAssessment"
+        },
+        "engineReadiness": {
+          "$ref": "#/$defs/ReadinessAssessment"
+        }
+      }
+    },
+    "BlindAssignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "creatureId",
+        "armId",
+        "meshSha256",
+        "viewsSha256",
+        "turntableSha256"
+      ],
+      "properties": {
+        "creatureId": {
+          "enum": [
+            "sentinel",
+            "delver",
+            "lancer",
+            "porter",
+            "strider",
+            "oracle"
+          ]
+        },
+        "armId": {
+          "enum": [
+            "golem_pilot",
+            "blender_procedural_agent"
+          ]
+        },
+        "meshSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "viewsSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "turntableSha256": {
+          "$ref": "#/$defs/Sha256"
+        }
+      }
+    },
+    "BlindingCommitmentEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "sealedAt",
+        "evaluationContractEvidenceId",
+        "randomizationSeed",
+        "randomizationAlgorithm",
+        "assignments"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "BlindingCommitmentEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "sealedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "evaluationContractEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "randomizationSeed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "randomizationAlgorithm": {
+          "const": "NumPy 2.5.1 Generator(PCG64).permutation over held-out manifest order crossed with arm manifest order"
+        },
+        "assignments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p01",
+            "p02",
+            "p03",
+            "p04",
+            "p05",
+            "p06",
+            "p07",
+            "p08",
+            "p09",
+            "p10",
+            "p11",
+            "p12"
+          ],
+          "properties": {
+            "p01": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p02": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p03": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p04": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p05": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p06": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p07": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p08": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p09": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p10": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p11": {
+              "$ref": "#/$defs/BlindAssignment"
+            },
+            "p12": {
+              "$ref": "#/$defs/BlindAssignment"
+            }
+          }
+        }
+      }
+    },
+    "BlindingRevealEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "commitmentEvidenceId",
+        "revealedAt",
+        "visualEvidenceIds",
+        "technicalEvidenceIds"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "BlindingRevealEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "commitmentEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "revealedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "visualEvidenceIds": {
+          "type": "array",
+          "minItems": 36,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        },
+        "technicalEvidenceIds": {
+          "type": "array",
+          "minItems": 36,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        }
+      }
+    },
+    "CalibrationAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "judgeId",
+        "recordedAt",
+        "appeal",
+        "briefFidelity"
+      ],
+      "properties": {
+        "judgeId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "recordedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "appeal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "briefFidelity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        }
+      }
+    },
+    "CalibrationArtifactAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "meshSha256",
+        "viewsSha256",
+        "turntableSha256",
+        "judges"
+      ],
+      "properties": {
+        "meshSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "viewsSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "turntableSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "judges": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/CalibrationAssessment"
+          }
+        }
+      }
+    },
+    "BaselineQualificationEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "qualifiedAt",
+        "toolVersion",
+        "toolBuildIdentity",
+        "modelIdentity",
+        "modelVersion",
+        "samplingSettingsArtifact",
+        "commonPromptArtifact",
+        "toolPromptArtifact",
+        "evaluationContractEvidenceId",
+        "masterArtifact",
+        "setupActiveSeconds",
+        "setupWallSeconds",
+        "namedControlGroups",
+        "calibrationTrialEvidenceIds",
+        "calibrationAssessments"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "BaselineQualificationEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "qualifiedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "toolVersion": {
+          "const": "Blender 5.1.1"
+        },
+        "toolBuildIdentity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modelIdentity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modelVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "samplingSettingsArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "commonPromptArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "toolPromptArtifact": {
+          "$ref": "#/$defs/SourceArtifactReference"
+        },
+        "evaluationContractEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "masterArtifact": {
+          "$ref": "#/$defs/BlendArtifactReference"
+        },
+        "setupActiveSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "setupWallSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "namedControlGroups": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        },
+        "calibrationTrialEvidenceIds": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        },
+        "calibrationAssessments": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bulwark",
+            "climber"
+          ],
+          "properties": {
+            "bulwark": {
+              "$ref": "#/$defs/CalibrationArtifactAssessment"
+            },
+            "climber": {
+              "$ref": "#/$defs/CalibrationArtifactAssessment"
+            }
+          }
+        }
+      }
+    },
+    "QuarantineProposalEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "proposedAt",
+        "originatingArmId",
+        "originatingCreatureId",
+        "proposalId",
+        "proposalKind",
+        "status",
+        "sourceEvidenceIds",
+        "description",
+        "suggestedSymbolicForm",
+        "verificationRequirements",
+        "authoringSeconds"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "QuarantineProposalEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "proposedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "originatingArmId": {
+          "const": "golem_pilot"
+        },
+        "originatingCreatureId": {
+          "enum": [
+            "bulwark",
+            "climber",
+            "sentinel",
+            "delver",
+            "lancer",
+            "porter",
+            "strider",
+            "oracle"
+          ]
+        },
+        "proposalId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "proposalKind": {
+          "enum": [
+            "vocab",
+            "rewrite"
+          ]
+        },
+        "status": {
+          "const": "quarantine"
+        },
+        "sourceEvidenceIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Identifier"
+          }
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "suggestedSymbolicForm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verificationRequirements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "authoringSeconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "ExperimentObstruction": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "expected",
+            "observed"
+          ],
+          "properties": {
+            "tag": {
+              "const": "OracleMismatch"
+            },
+            "expected": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observed": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "tool"
+          ],
+          "properties": {
+            "tag": {
+              "const": "BaselineUnavailable"
+            },
+            "tool": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "reasons"
+          ],
+          "properties": {
+            "tag": {
+              "const": "BaselineQualificationFailed"
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "artifact"
+          ],
+          "properties": {
+            "tag": {
+              "const": "ArtifactCorrupt"
+            },
+            "artifact": {
+              "$ref": "#/$defs/ArtifactReference"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "blindId"
+          ],
+          "properties": {
+            "tag": {
+              "const": "BlindingBreach"
+            },
+            "blindId": {
+              "$ref": "#/$defs/BlindId"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "ruleId"
+          ],
+          "properties": {
+            "tag": {
+              "const": "ProtocolDeviation"
+            },
+            "ruleId": {
+              "$ref": "#/$defs/Identifier"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "metricId"
+          ],
+          "properties": {
+            "tag": {
+              "const": "MissingMeasurement"
+            },
+            "metricId": {
+              "$ref": "#/$defs/Identifier"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "evidenceKind",
+            "subjectId",
+            "description"
+          ],
+          "properties": {
+            "tag": {
+              "const": "MissingEvidence"
+            },
+            "evidenceKind": {
+              "enum": [
+                "OracleEvidence",
+                "EvaluationContractEvidence",
+                "TrialEvidence",
+                "MeasurementSidecarEvidence",
+                "VisualJudgeEvidence",
+                "TechnicalJudgeEvidence",
+                "BlindingCommitmentEvidence",
+                "BlindingRevealEvidence",
+                "BaselineQualificationEvidence",
+                "QuarantineProposalEvidence"
+              ]
+            },
+            "subjectId": {
+              "$ref": "#/$defs/Identifier"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "judgeId"
+          ],
+          "properties": {
+            "tag": {
+              "const": "JudgeConflict"
+            },
+            "judgeId": {
+              "$ref": "#/$defs/Identifier"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tag",
+            "runId"
+          ],
+          "properties": {
+            "tag": {
+              "const": "ResourceContention"
+            },
+            "runId": {
+              "$ref": "#/$defs/Identifier"
+            }
+          }
+        }
+      ]
+    },
+    "ExperimentObstructionEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recordType",
+        "schemaVersion",
+        "evidenceId",
+        "manifestSha256",
+        "observedAt",
+        "obstruction"
+      ],
+      "properties": {
+        "recordType": {
+          "const": "ExperimentObstructionEvidence"
+        },
+        "schemaVersion": {
+          "const": 1
+        },
+        "evidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "supersedesEvidenceId": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "manifestSha256": {
+          "$ref": "#/$defs/Sha256"
+        },
+        "observedAt": {
+          "$ref": "#/$defs/UtcTimestamp"
+        },
+        "obstruction": {
+          "$ref": "#/$defs/ExperimentObstruction"
+        }
+      }
+    },
+    "ClauseReference": {
+      "type": "string",
+      "enum": [
+        "/family/creatures/0/initialBrief/identityCriteria/0",
+        "/family/creatures/0/initialBrief/identityCriteria/1",
+        "/family/creatures/0/initialBrief/identityCriteria/2",
+        "/family/creatures/0/initialBrief/identityCriteria/3",
+        "/family/creatures/0/revisions/0/preserve/0",
+        "/family/creatures/0/revisions/0/preserve/1",
+        "/family/creatures/0/revisions/0/targets/0",
+        "/family/creatures/0/revisions/0/targets/1",
+        "/family/creatures/0/revisions/1/preserve/0",
+        "/family/creatures/0/revisions/1/targets/0",
+        "/family/creatures/0/revisions/1/targets/1",
+        "/family/creatures/0/revisions/2/preserve/0",
+        "/family/creatures/0/revisions/2/targets/0",
+        "/family/creatures/0/revisions/2/targets/1",
+        "/family/creatures/1/initialBrief/identityCriteria/0",
+        "/family/creatures/1/initialBrief/identityCriteria/1",
+        "/family/creatures/1/initialBrief/identityCriteria/2",
+        "/family/creatures/1/revisions/0/preserve/0",
+        "/family/creatures/1/revisions/0/targets/0",
+        "/family/creatures/1/revisions/0/targets/1",
+        "/family/creatures/1/revisions/1/preserve/0",
+        "/family/creatures/1/revisions/1/preserve/1",
+        "/family/creatures/1/revisions/1/targets/0",
+        "/family/creatures/1/revisions/2/preserve/0",
+        "/family/creatures/1/revisions/2/preserve/1",
+        "/family/creatures/1/revisions/2/targets/0",
+        "/family/creatures/2/initialBrief/identityCriteria/0",
+        "/family/creatures/2/initialBrief/identityCriteria/1",
+        "/family/creatures/2/initialBrief/identityCriteria/2",
+        "/family/creatures/2/revisions/0/preserve/0",
+        "/family/creatures/2/revisions/0/preserve/1",
+        "/family/creatures/2/revisions/0/targets/0",
+        "/family/creatures/2/revisions/1/preserve/0",
+        "/family/creatures/2/revisions/1/targets/0",
+        "/family/creatures/2/revisions/2/preserve/0",
+        "/family/creatures/2/revisions/2/targets/0",
+        "/family/creatures/2/revisions/2/targets/1",
+        "/family/creatures/3/initialBrief/identityCriteria/0",
+        "/family/creatures/3/initialBrief/identityCriteria/1",
+        "/family/creatures/3/initialBrief/identityCriteria/2",
+        "/family/creatures/3/revisions/0/preserve/0",
+        "/family/creatures/3/revisions/0/targets/0",
+        "/family/creatures/3/revisions/0/targets/1",
+        "/family/creatures/3/revisions/1/preserve/0",
+        "/family/creatures/3/revisions/1/preserve/1",
+        "/family/creatures/3/revisions/1/targets/0",
+        "/family/creatures/3/revisions/2/preserve/0",
+        "/family/creatures/3/revisions/2/preserve/1",
+        "/family/creatures/3/revisions/2/targets/0",
+        "/family/creatures/3/revisions/2/targets/1",
+        "/family/creatures/4/initialBrief/identityCriteria/0",
+        "/family/creatures/4/initialBrief/identityCriteria/1",
+        "/family/creatures/4/initialBrief/identityCriteria/2",
+        "/family/creatures/4/revisions/0/preserve/0",
+        "/family/creatures/4/revisions/0/preserve/1",
+        "/family/creatures/4/revisions/0/targets/0",
+        "/family/creatures/4/revisions/1/preserve/0",
+        "/family/creatures/4/revisions/1/preserve/1",
+        "/family/creatures/4/revisions/1/targets/0",
+        "/family/creatures/4/revisions/2/preserve/0",
+        "/family/creatures/4/revisions/2/targets/0",
+        "/family/creatures/4/revisions/2/targets/1",
+        "/family/creatures/5/initialBrief/identityCriteria/0",
+        "/family/creatures/5/initialBrief/identityCriteria/1",
+        "/family/creatures/5/initialBrief/identityCriteria/2",
+        "/family/creatures/5/initialBrief/identityCriteria/3",
+        "/family/creatures/5/revisions/0/preserve/0",
+        "/family/creatures/5/revisions/0/targets/0",
+        "/family/creatures/5/revisions/1/preserve/0",
+        "/family/creatures/5/revisions/1/preserve/1",
+        "/family/creatures/5/revisions/1/targets/0",
+        "/family/creatures/5/revisions/2/preserve/0",
+        "/family/creatures/5/revisions/2/preserve/1",
+        "/family/creatures/5/revisions/2/targets/0",
+        "/family/creatures/6/initialBrief/identityCriteria/0",
+        "/family/creatures/6/initialBrief/identityCriteria/1",
+        "/family/creatures/6/initialBrief/identityCriteria/2",
+        "/family/creatures/6/revisions/0/preserve/0",
+        "/family/creatures/6/revisions/0/preserve/1",
+        "/family/creatures/6/revisions/0/targets/0",
+        "/family/creatures/6/revisions/1/preserve/0",
+        "/family/creatures/6/revisions/1/preserve/1",
+        "/family/creatures/6/revisions/1/targets/0",
+        "/family/creatures/6/revisions/2/preserve/0",
+        "/family/creatures/6/revisions/2/targets/0",
+        "/family/creatures/6/revisions/2/targets/1",
+        "/family/creatures/7/initialBrief/identityCriteria/0",
+        "/family/creatures/7/initialBrief/identityCriteria/1",
+        "/family/creatures/7/initialBrief/identityCriteria/2",
+        "/family/creatures/7/initialBrief/identityCriteria/3",
+        "/family/creatures/7/revisions/0/preserve/0",
+        "/family/creatures/7/revisions/0/targets/0",
+        "/family/creatures/7/revisions/0/targets/1",
+        "/family/creatures/7/revisions/1/preserve/0",
+        "/family/creatures/7/revisions/1/preserve/1",
+        "/family/creatures/7/revisions/1/targets/0",
+        "/family/creatures/7/revisions/2/preserve/0",
+        "/family/creatures/7/revisions/2/targets/0",
+        "/family/preserveProfiles/0/clauses/0",
+        "/family/preserveProfiles/0/clauses/1",
+        "/family/preserveProfiles/0/clauses/2",
+        "/family/preserveProfiles/0/clauses/3",
+        "/family/preserveProfiles/0/clauses/4"
+      ]
+    }
+  }
+}

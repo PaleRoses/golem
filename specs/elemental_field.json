@@ -1,0 +1,41 @@
+{
+  "field_id": "obsidian-aether-v1",
+  "domain": {
+    "kind": "complex",
+    "complex_id": "plate_complex"
+  },
+  "type": "scalar",
+  "boundary_exprs": [
+    {
+      "boundary_id": "heart-rune",
+      "cell_id": 51,
+      "value": 1.0
+    },
+    {
+      "boundary_id": "crown-rune",
+      "cell_id": 87,
+      "value": 0.0
+    },
+    {
+      "boundary_id": "left-gauntlet-rune",
+      "cell_id": 31,
+      "value": 0.0
+    },
+    {
+      "boundary_id": "right-gauntlet-rune",
+      "cell_id": 47,
+      "value": 0.0
+    },
+    {
+      "boundary_id": "left-foot-rune",
+      "cell_id": 23,
+      "value": 0.0
+    },
+    {
+      "boundary_id": "right-foot-rune",
+      "cell_id": 7,
+      "value": 0.0
+    }
+  ],
+  "singularities": []
+}

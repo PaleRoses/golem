@@ -1,0 +1,1365 @@
+{
+ "name": "obsidian-knight-underbody",
+ "blend": 0.024,
+ "parts": [
+  {
+   "id": "pelvis",
+   "type": "blob",
+   "center": [
+    0.0,
+    0.425,
+    0.005
+   ],
+   "size": [
+    0.235,
+    0.145,
+    0.17
+   ]
+  },
+  {
+   "id": "spine_lower",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.0,
+     0.409217,
+     -0.000832
+    ],
+    [
+     0.0,
+     0.49235,
+     0.002496
+    ],
+    [
+     0.0,
+     0.606659,
+     0.007072
+    ],
+    [
+     0.0,
+     0.762534,
+     0.013312
+    ],
+    [
+     0.0,
+     0.876842,
+     0.017888
+    ],
+    [
+     0.0,
+     0.959976,
+     0.021216
+    ]
+   ],
+   "radii": [
+    0.19,
+    0.185,
+    0.16,
+    0.205,
+    0.24,
+    0.225
+   ],
+   "profile": {
+    "n": [
+     2.6,
+     2.7,
+     3,
+     2.8,
+     2.6,
+     2.6
+    ],
+    "aspect": [
+     0.76,
+     0.72,
+     0.64,
+     0.68,
+     0.7,
+     0.69
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "spine_upper",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.0,
+     0.930388,
+     0.020416
+    ],
+    [
+     0.0,
+     0.992775,
+     0.021664
+    ],
+    [
+     0.0,
+     1.059962,
+     0.023009
+    ],
+    [
+     0.0,
+     1.122349,
+     0.024257
+    ],
+    [
+     0.0,
+     1.165541,
+     0.025122
+    ],
+    [
+     0.0,
+     1.203933,
+     0.02589
+    ]
+   ],
+   "radii": [
+    0.225,
+    0.245,
+    0.265,
+    0.275,
+    0.235,
+    0.155
+   ],
+   "profile": {
+    "n": [
+     2.6,
+     2.6,
+     2.7,
+     2.7,
+     2.8,
+     2.6
+    ],
+    "aspect": [
+     0.69,
+     0.71,
+     0.72,
+     0.69,
+     0.64,
+     0.68
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "neck",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.0,
+     1.172546,
+     0.025007
+    ],
+    [
+     0.0,
+     1.260892,
+     0.028101
+    ],
+    [
+     0.0,
+     1.373023,
+     0.032028
+    ]
+   ],
+   "radii": [
+    0.085,
+    0.076,
+    0.069
+   ],
+   "profile": {
+    "n": [
+     2.4,
+     2.4,
+     2.4
+    ],
+    "aspect": [
+     0.92,
+     0.9,
+     0.88
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "head",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.0,
+     1.348435,
+     0.031277
+    ],
+    [
+     0.0,
+     1.403418,
+     0.032653
+    ],
+    [
+     0.0,
+     1.486992,
+     0.034743
+    ],
+    [
+     0.0,
+     1.539775,
+     0.036064
+    ],
+    [
+     0.0,
+     1.583761,
+     0.037164
+    ]
+   ],
+   "radii": [
+    0.09,
+    0.104,
+    0.108,
+    0.1,
+    0.082
+   ],
+   "profile": {
+    "n": [
+     2.6,
+     2.4,
+     2.4,
+     2.6,
+     3
+    ],
+    "aspect": [
+     0.86,
+     0.82,
+     0.8,
+     0.79,
+     0.78
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "shoulder",
+   "type": "blob",
+   "center": [
+    0.2295,
+    1.127148,
+    0.024353
+   ],
+   "size": [
+    0.11,
+    0.12,
+    0.13
+   ],
+   "rot": [
+    0.504977,
+    -0.494973,
+    0.504977,
+    -0.494973
+   ],
+   "mirror": true
+  },
+  {
+   "id": "upperarm",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.252022,
+     1.145264,
+     0.021365
+    ],
+    [
+     0.26294,
+     1.078841,
+     0.032321
+    ],
+    [
+     0.275843,
+     1.000341,
+     0.045269
+    ],
+    [
+     0.288747,
+     0.921841,
+     0.058217
+    ],
+    [
+     0.297679,
+     0.867495,
+     0.067181
+    ],
+    [
+     0.306612,
+     0.813149,
+     0.076145
+    ]
+   ],
+   "radii": [
+    0.1,
+    0.108,
+    0.105,
+    0.09,
+    0.071,
+    0.064
+   ],
+   "profile": {
+    "n": [
+     2.4,
+     2.4,
+     2.5,
+     2.5,
+     2.4,
+     2.4
+    ],
+    "aspect": [
+     0.94,
+     0.9,
+     0.84,
+     0.82,
+     0.87,
+     0.92
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   },
+   "mirror": true
+  },
+  {
+   "id": "elbow",
+   "type": "blob",
+   "center": [
+    0.304627,
+    0.825226,
+    0.074153
+   ],
+   "size": [
+    0.071,
+    0.066,
+    0.071
+   ],
+   "rot": [
+    0.063237,
+    -0.051647,
+    0.645763,
+    -0.75916
+   ],
+   "mirror": true
+  },
+  {
+   "id": "forearm",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.316532,
+     0.841264,
+     0.067668
+    ],
+    [
+     0.27685,
+     0.787804,
+     0.089285
+    ],
+    [
+     0.233199,
+     0.728997,
+     0.113064
+    ],
+    [
+     0.181612,
+     0.659499,
+     0.141166
+    ],
+    [
+     0.141929,
+     0.606039,
+     0.162783
+    ],
+    [
+     0.098278,
+     0.547232,
+     0.186562
+    ]
+   ],
+   "radii": [
+    0.066,
+    0.08,
+    0.086,
+    0.076,
+    0.059,
+    0.048
+   ],
+   "profile": {
+    "n": [
+     2.4,
+     2.4,
+     2.5,
+     2.5,
+     2.4,
+     2.4
+    ],
+    "aspect": [
+     0.94,
+     0.9,
+     0.84,
+     0.82,
+     0.86,
+     0.9
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   },
+   "mirror": true
+  },
+  {
+   "id": "hand",
+   "type": "blob",
+   "center": [
+    0.082505,
+    0.537885,
+    0.218684
+   ],
+   "size": [
+    0.068,
+    0.052,
+    0.08
+   ],
+   "rot": [
+    0.207227,
+    -0.217774,
+    -0.546047,
+    0.781962
+   ],
+   "mirror": true
+  },
+  {
+   "id": "thigh",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.157948,
+     0.439128,
+     -0.000855
+    ],
+    [
+     0.16342,
+     0.348121,
+     0.001425
+    ],
+    [
+     0.169576,
+     0.245738,
+     0.00399
+    ],
+    [
+     0.177784,
+     0.109227,
+     0.00741
+    ],
+    [
+     0.185992,
+     -0.027284,
+     0.01083
+    ],
+    [
+     0.19078,
+     -0.106915,
+     0.012825
+    ],
+    [
+     0.195567,
+     -0.186546,
+     0.01482
+    ]
+   ],
+   "radii": [
+    0.12,
+    0.145,
+    0.155,
+    0.145,
+    0.123,
+    0.102,
+    0.084
+   ],
+   "profile": {
+    "n": [
+     2.5,
+     2.5,
+     2.5,
+     2.6,
+     2.6,
+     2.5,
+     2.4
+    ],
+    "aspect": [
+     0.92,
+     0.9,
+     0.84,
+     0.8,
+     0.8,
+     0.86,
+     0.94
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   },
+   "mirror": true
+  },
+  {
+   "id": "hip",
+   "type": "blob",
+   "center": [
+    0.161026,
+    0.387936,
+    0.000427
+   ],
+   "size": [
+    0.12,
+    0.108,
+    0.125
+   ],
+   "rot": [
+    0.607168,
+    0.568906,
+    0.404779,
+    -0.379271
+   ],
+   "mirror": true
+  },
+  {
+   "id": "knee",
+   "type": "blob",
+   "center": [
+    0.194199,
+    -0.163795,
+    0.01425
+   ],
+   "size": [
+    0.095,
+    0.09,
+    0.098
+   ],
+   "rot": [
+    0.607168,
+    0.568906,
+    0.404779,
+    -0.379271
+   ],
+   "mirror": true
+  },
+  {
+   "id": "shin",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.193771,
+     -0.140599,
+     0.014071
+    ],
+    [
+     0.195486,
+     -0.233381,
+     0.014786
+    ],
+    [
+     0.197416,
+     -0.33776,
+     0.01559
+    ],
+    [
+     0.199776,
+     -0.465334,
+     0.016573
+    ],
+    [
+     0.202135,
+     -0.592909,
+     0.017556
+    ],
+    [
+     0.203636,
+     -0.674092,
+     0.018182
+    ],
+    [
+     0.205244,
+     -0.761075,
+     0.018852
+    ]
+   ],
+   "radii": [
+    0.092,
+    0.108,
+    0.124,
+    0.12,
+    0.106,
+    0.09,
+    0.075
+   ],
+   "profile": {
+    "n": [
+     2.4,
+     2.4,
+     2.5,
+     2.5,
+     2.5,
+     2.4,
+     2.4
+    ],
+    "aspect": [
+     0.94,
+     0.88,
+     0.82,
+     0.79,
+     0.8,
+     0.86,
+     0.95
+    ],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   },
+   "mirror": true
+  },
+  {
+   "id": "foot",
+   "type": "gencyl",
+   "spine": [
+    [
+     0.204929,
+     -0.743456,
+     -0.002881
+    ],
+    [
+     0.204911,
+     -0.744124,
+     0.061915
+    ],
+    [
+     0.204891,
+     -0.744847,
+     0.132112
+    ],
+    [
+     0.20487,
+     -0.745626,
+     0.207708
+    ],
+    [
+     0.204857,
+     -0.746127,
+     0.256305
+    ],
+    [
+     0.204844,
+     -0.7466,
+     0.302203
+    ]
+   ],
+   "radii": [
+    0.076,
+    0.091,
+    0.104,
+    0.11,
+    0.102,
+    0.075
+   ],
+   "profile": {
+    "n": [
+     2.8,
+     3,
+     3.2,
+     3.4,
+     3.6,
+     3.6
+    ],
+    "aspect": [
+     0.72,
+     0.66,
+     0.6,
+     0.56,
+     0.54,
+     0.56
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ]
+   },
+   "mirror": true
+  },
+  {
+   "id": "toes",
+   "type": "blob",
+   "center": [
+    0.204855,
+    -0.746211,
+    0.264405
+   ],
+   "size": [
+    0.055,
+    0.096,
+    0.083
+   ],
+   "rot": [
+    0.716225,
+    0.003788,
+    0.003497,
+    -0.697851
+   ],
+   "mirror": true
+  }
+ ],
+ "intent": {
+  "name": "obsidian-knight-underbody",
+  "txn": 1,
+  "note": "compiled by v03/body.py (M3)",
+  "ground": {
+   "parts": [],
+   "tolerance": 0.02
+  },
+  "attach": [
+   [
+    "pelvis",
+    "spine_lower"
+   ],
+   [
+    "spine_lower",
+    "spine_upper"
+   ],
+   [
+    "spine_upper",
+    "neck"
+   ],
+   [
+    "neck",
+    "head"
+   ],
+   [
+    "spine_upper",
+    "shoulder"
+   ],
+   [
+    "upperarm",
+    "elbow"
+   ],
+   [
+    "shoulder",
+    "upperarm"
+   ],
+   [
+    "forearm",
+    "hand"
+   ],
+   [
+    "upperarm",
+    "forearm"
+   ],
+   [
+    "thigh",
+    "hip"
+   ],
+   [
+    "thigh",
+    "knee"
+   ],
+   [
+    "pelvis",
+    "thigh"
+   ],
+   [
+    "thigh",
+    "shin"
+   ],
+   [
+    "foot",
+    "toes"
+   ],
+   [
+    "shin",
+    "foot"
+   ]
+  ],
+  "landmarks": {
+   "pelvis/head": [
+    0.0,
+    0.43,
+    0.0
+   ],
+   "pelvis/tail": [
+    0.0,
+    0.43,
+    0.0
+   ],
+   "pelvis/center": [
+    0.0,
+    0.43,
+    0.0
+   ],
+   "spine_lower/head": [
+    0.0,
+    0.43,
+    0.0
+   ],
+   "spine_lower/tail": [
+    0.0,
+    0.949584,
+    0.0208
+   ],
+   "spine_lower/center": [
+    0.0,
+    0.689792,
+    0.0104
+   ],
+   "spine_upper/head": [
+    0.0,
+    0.949584,
+    0.0208
+   ],
+   "spine_upper/tail": [
+    0.0,
+    1.189536,
+    0.025602
+   ],
+   "spine_upper/center": [
+    0.0,
+    1.06956,
+    0.023201
+   ],
+   "neck/head": [
+    0.0,
+    1.189536,
+    0.025602
+   ],
+   "neck/tail": [
+    0.0,
+    1.359432,
+    0.031552
+   ],
+   "neck/center": [
+    0.0,
+    1.274484,
+    0.028577
+   ],
+   "helm/head": [
+    0.0,
+    1.359432,
+    0.031552
+   ],
+   "helm/tail": [
+    0.0,
+    1.579363,
+    0.037054
+   ],
+   "helm/center": [
+    0.0,
+    1.469397,
+    0.034303
+   ],
+   "clavicle/head": [
+    0.0,
+    1.127148,
+    0.024353
+   ],
+   "clavicle/tail": [
+    0.255,
+    1.127148,
+    0.024353
+   ],
+   "clavicle/center": [
+    0.1275,
+    1.127148,
+    0.024353
+   ],
+   "upper_arm/head": [
+    0.255,
+    1.127148,
+    0.024353
+   ],
+   "upper_arm/tail": [
+    0.304627,
+    0.825226,
+    0.074153
+   ],
+   "upper_arm/center": [
+    0.279814,
+    0.976187,
+    0.049253
+   ],
+   "forearm/head": [
+    0.304627,
+    0.825226,
+    0.074153
+   ],
+   "forearm/tail": [
+    0.106215,
+    0.557924,
+    0.182238
+   ],
+   "forearm/center": [
+    0.205421,
+    0.691575,
+    0.128196
+   ],
+   "thigh/head": [
+    0.16,
+    0.405,
+    0.0
+   ],
+   "thigh/tail": [
+    0.194199,
+    -0.163795,
+    0.01425
+   ],
+   "thigh/center": [
+    0.1771,
+    0.120603,
+    0.007125
+   ],
+   "shin/head": [
+    0.194199,
+    -0.163795,
+    0.01425
+   ],
+   "shin/tail": [
+    0.204923,
+    -0.743678,
+    0.018718
+   ],
+   "shin/center": [
+    0.199561,
+    -0.453736,
+    0.016484
+   ],
+   "foot/head": [
+    0.204923,
+    -0.743678,
+    0.018718
+   ],
+   "foot/tail": [
+    0.204848,
+    -0.746461,
+    0.288703
+   ],
+   "foot/center": [
+    0.204885,
+    -0.74507,
+    0.153711
+   ]
+  },
+  "provenance": {
+   "pelvis": "skeleton/pelvis/flesh[0]",
+   "spine_lower": "skeleton/spine_lower/flesh[0]",
+   "spine_upper": "skeleton/spine_upper/flesh[0]",
+   "neck": "skeleton/neck/flesh[0]",
+   "head": "skeleton/helm/flesh[0]",
+   "shoulder": "skeleton/clavicle/flesh[0]",
+   "upperarm": "skeleton/upper_arm/flesh[0]",
+   "elbow": "skeleton/upper_arm/flesh[1]",
+   "forearm": "skeleton/forearm/flesh[0]",
+   "hand": "skeleton/forearm/flesh[1]",
+   "thigh": "skeleton/thigh/flesh[0]",
+   "hip": "skeleton/thigh/flesh[1]",
+   "knee": "skeleton/thigh/flesh[2]",
+   "shin": "skeleton/shin/flesh[0]",
+   "foot": "skeleton/foot/flesh[0]",
+   "toes": "skeleton/foot/flesh[1]"
+  },
+  "asserts": {
+   "pack": "body.contract",
+   "clauses": []
+  },
+  "anatomy": {
+   "status": "accepted",
+   "overall": {
+    "regions": [
+     {
+      "region_id": "axial_core",
+      "kind": "torso",
+      "host_bone_id": "spine_upper"
+     },
+     {
+      "region_id": "cranial",
+      "kind": "head",
+      "host_bone_id": "helm"
+     },
+     {
+      "region_id": "forelimb",
+      "kind": "limb",
+      "host_bone_id": "forearm"
+     },
+     {
+      "region_id": "hindlimb",
+      "kind": "limb",
+      "host_bone_id": "foot"
+     }
+    ],
+    "pump": {
+     "kind": "pump_organ",
+     "region_id": "axial_core",
+     "host_bone_id": "spine_upper"
+    }
+   },
+   "circulation_kind": "closed_vascular",
+   "circuits": [
+    {
+     "exchange_region_id": "cranial",
+     "host_bone_id": "helm",
+     "tissue": "neural_tissue",
+     "demand": 0.1,
+     "effective_demand": 0.1,
+     "flow_fraction": 0.09803921568627451,
+     "tissue_minimum_radius": 0.07,
+     "is_complete": true,
+     "bones": [
+      "spine_upper",
+      "neck",
+      "helm"
+     ],
+     "supply": [
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/neck/joint"
+      },
+      {
+       "kind": "resistance_arteriole",
+       "interface_address": "skeleton/helm/joint"
+      }
+     ],
+     "exchange": {
+      "kind": "capillary_bed",
+      "region_id": "cranial",
+      "host_bone_id": "helm",
+      "tissue": "neural_tissue"
+     },
+     "return": [
+      {
+       "kind": "collecting_venule",
+       "interface_address": "skeleton/helm/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/neck/joint"
+      }
+     ]
+    },
+    {
+     "exchange_region_id": "forelimb",
+     "host_bone_id": "forearm",
+     "tissue": "skeletal_muscle",
+     "demand": 0.02,
+     "effective_demand": 0.04,
+     "flow_fraction": 0.0392156862745098,
+     "tissue_minimum_radius": null,
+     "is_complete": true,
+     "bones": [
+      "spine_upper",
+      "clavicle",
+      "upper_arm",
+      "forearm"
+     ],
+     "supply": [
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/clavicle/joint"
+      },
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/upper_arm/joint"
+      },
+      {
+       "kind": "resistance_arteriole",
+       "interface_address": "skeleton/forearm/joint"
+      }
+     ],
+     "exchange": {
+      "kind": "capillary_bed",
+      "region_id": "forelimb",
+      "host_bone_id": "forearm",
+      "tissue": "skeletal_muscle"
+     },
+     "return": [
+      {
+       "kind": "collecting_venule",
+       "interface_address": "skeleton/forearm/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/upper_arm/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/clavicle/joint"
+      }
+     ]
+    },
+    {
+     "exchange_region_id": "hindlimb",
+     "host_bone_id": "foot",
+     "tissue": "skeletal_muscle",
+     "demand": 0.44,
+     "effective_demand": 0.88,
+     "flow_fraction": 0.8627450980392157,
+     "tissue_minimum_radius": null,
+     "is_complete": true,
+     "bones": [
+      "spine_upper",
+      "spine_lower",
+      "pelvis",
+      "thigh",
+      "shin",
+      "foot"
+     ],
+     "supply": [
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/spine_upper/joint"
+      },
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/spine_lower/joint"
+      },
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/thigh/joint"
+      },
+      {
+       "kind": "distributing_artery",
+       "interface_address": "skeleton/shin/joint"
+      },
+      {
+       "kind": "resistance_arteriole",
+       "interface_address": "skeleton/foot/joint"
+      }
+     ],
+     "exchange": {
+      "kind": "capillary_bed",
+      "region_id": "hindlimb",
+      "host_bone_id": "foot",
+      "tissue": "skeletal_muscle"
+     },
+     "return": [
+      {
+       "kind": "collecting_venule",
+       "interface_address": "skeleton/foot/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/shin/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/thigh/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/spine_lower/joint"
+      },
+      {
+       "kind": "returning_vein",
+       "interface_address": "skeleton/spine_upper/joint"
+      }
+     ]
+    }
+   ],
+   "carrier_rows": [
+    {
+     "bone_id": "pelvis",
+     "interface_address": "skeleton/pelvis",
+     "shape_address": null,
+     "normalized_flow": 0.8627450980392157,
+     "distance_from_pump": 2,
+     "circulation_minimum_radius": 0.08449006586387597,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.08449006586387597,
+     "measured_minimum_radius": null,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "spine_lower",
+     "interface_address": "skeleton/spine_lower/joint",
+     "shape_address": "skeleton/spine_lower/flesh[0]",
+     "normalized_flow": 0.8627450980392157,
+     "distance_from_pump": 1,
+     "circulation_minimum_radius": 0.09824426263241393,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.09824426263241393,
+     "measured_minimum_radius": 0.16,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "spine_upper",
+     "interface_address": "skeleton/spine_upper/joint",
+     "shape_address": "skeleton/spine_upper/flesh[0]",
+     "normalized_flow": 1.0,
+     "distance_from_pump": 0,
+     "circulation_minimum_radius": 0.12,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.12,
+     "measured_minimum_radius": 0.155,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "neck",
+     "interface_address": "skeleton/neck/joint",
+     "shape_address": "skeleton/neck/flesh[0]",
+     "normalized_flow": 0.09803921568627451,
+     "distance_from_pump": 1,
+     "circulation_minimum_radius": 0.04758604818663029,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.04758604818663029,
+     "measured_minimum_radius": 0.069,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "helm",
+     "interface_address": "skeleton/helm/joint",
+     "shape_address": "skeleton/helm/flesh[0]",
+     "normalized_flow": 0.09803921568627451,
+     "distance_from_pump": 2,
+     "circulation_minimum_radius": 0.040924001440502046,
+     "tissue_minimum_radius": 0.07,
+     "controlling_constraint": "tissue_envelope",
+     "target_minimum_radius": 0.07,
+     "measured_minimum_radius": 0.082,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "clavicle",
+     "interface_address": "skeleton/clavicle/joint",
+     "shape_address": null,
+     "normalized_flow": 0.0392156862745098,
+     "distance_from_pump": 1,
+     "circulation_minimum_radius": 0.04,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.04,
+     "measured_minimum_radius": null,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "upper_arm",
+     "interface_address": "skeleton/upper_arm/joint",
+     "shape_address": "skeleton/upper_arm/flesh[0]",
+     "normalized_flow": 0.0392156862745098,
+     "distance_from_pump": 2,
+     "circulation_minimum_radius": 0.04,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.04,
+     "measured_minimum_radius": 0.064,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "forearm",
+     "interface_address": "skeleton/forearm/joint",
+     "shape_address": "skeleton/forearm/flesh[0]",
+     "normalized_flow": 0.0392156862745098,
+     "distance_from_pump": 3,
+     "circulation_minimum_radius": 0.04,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.04,
+     "measured_minimum_radius": 0.048,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "thigh",
+     "interface_address": "skeleton/thigh/joint",
+     "shape_address": "skeleton/thigh/flesh[0]",
+     "normalized_flow": 0.8627450980392157,
+     "distance_from_pump": 3,
+     "circulation_minimum_radius": 0.07266145664293333,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.07266145664293333,
+     "measured_minimum_radius": 0.084,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "shin",
+     "interface_address": "skeleton/shin/joint",
+     "shape_address": "skeleton/shin/flesh[0]",
+     "normalized_flow": 0.8627450980392157,
+     "distance_from_pump": 4,
+     "circulation_minimum_radius": 0.06248885271292267,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.06248885271292267,
+     "measured_minimum_radius": 0.075,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    },
+    {
+     "bone_id": "foot",
+     "interface_address": "skeleton/foot/joint",
+     "shape_address": "skeleton/foot/flesh[0]",
+     "normalized_flow": 0.8627450980392157,
+     "distance_from_pump": 5,
+     "circulation_minimum_radius": 0.05374041333311349,
+     "tissue_minimum_radius": null,
+     "controlling_constraint": "circulation_clearance",
+     "target_minimum_radius": 0.05374041333311349,
+     "measured_minimum_radius": 0.075,
+     "deficit": 0.0,
+     "suggested_scale": 1.0,
+     "suggestion": null
+    }
+   ],
+   "terminal_coverage": 1.0,
+   "maximum_normalized_free_cell_imbalance": 0.0,
+   "boundary_relative_error": 0.0,
+   "authored_numeric_values": 6,
+   "derived_radius_values": 9,
+   "authoring_leverage": 1.5
+  }
+ }
+}

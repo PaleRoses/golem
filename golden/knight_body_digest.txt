@@ -1,0 +1,29 @@
+BODY obsidian-knight | target v03 | parts 24 | ground_lift -0.103
+predicted_components 1 | goals 1 | limit_violations 0 | compile_violations 0
+goal arms_to_pommel reachable=yes flexion 100.2 residual 0.000
+ASSERT 0 FAIL / 7 pass
+EMIT (24)
+  breastplate <- skeleton/spine_upper/flesh[1]
+  foot <- skeleton/foot/flesh[0]
+  forearm <- skeleton/forearm/flesh[0]
+  greatsword/blade <- props[0]/parts/blade
+  greatsword/crossguard <- props[0]/parts/crossguard
+  greatsword/grip <- props[0]/parts/grip
+  greatsword/pommel <- props[0]/parts/pommel
+  hand_index <- mounts[0]/hand_index
+  hand_middle <- mounts[0]/hand_middle
+  hand_palm <- mounts[0]/hand_palm
+  hand_pinky <- mounts[0]/hand_pinky
+  hand_ring <- mounts[0]/hand_ring
+  hand_thumb <- mounts[0]/hand_thumb
+  helm <- skeleton/helm/flesh[0]
+  neck <- skeleton/neck/flesh[0]
+  pauldron <- skeleton/clavicle/flesh[0]
+  pelvis <- skeleton/pelvis/flesh[0]
+  shin <- skeleton/shin/flesh[0]
+  spine_lower <- skeleton/spine_lower/flesh[0]
+  spine_upper <- skeleton/spine_upper/flesh[0]
+  thigh <- skeleton/thigh/flesh[0]
+  upper_arm <- skeleton/upper_arm/flesh[0]
+  visor <- skeleton/helm/flesh[1]
+  wrist_pad <- skeleton/forearm/flesh[1]

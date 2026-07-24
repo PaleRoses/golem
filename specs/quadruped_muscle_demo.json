@@ -1,0 +1,187 @@
+{
+  "name": "quadruped-muscle-demo",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "blend": 0.035,
+  "ground_y": 0.0,
+  "contract": {
+    "contract": "body.contract",
+    "clauses": [],
+    "attach": [
+      ["left_gastrocnemius", "left_hamstrings"],
+      ["left_gastrocnemius", "left_hock_mass"],
+      ["left_gastrocnemius", "left_quadriceps"],
+      ["left_gastrocnemius", "left_shin_mass"],
+      ["left_hamstrings", "left_quadriceps"],
+      ["left_hamstrings", "left_shin_mass"],
+      ["left_hamstrings", "left_thigh_mass"],
+      ["left_hamstrings", "pelvis_mass"],
+      ["left_quadriceps", "left_shin_mass"],
+      ["left_quadriceps", "left_thigh_mass"],
+      ["right_quadriceps", "right_shin_mass"],
+      ["right_quadriceps", "right_thigh_mass"]
+    ]
+  },
+
+  "skeleton": {
+    "root": {
+      "id": "pelvis",
+      "world": [0.0, 1.7, 0.0],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "pelvis_mass",
+          "t": 0.0,
+          "size": [0.34, 0.18, 0.24]
+        }
+      ]
+    },
+    "bones": [
+      {
+        "id": "left_thigh",
+        "parent": "pelvis",
+        "attach": {"t": 0.0, "offset": [0.22, 0.0, 0.0]},
+        "length": 0.72,
+        "rest_dir": [0.0, -0.99, 0.12],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "left_thigh_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.065, 0.055]
+          }
+        ]
+      },
+      {
+        "id": "left_shin",
+        "parent": "left_thigh",
+        "attach": {"t": 1.0},
+        "length": 0.68,
+        "rest_dir": [0.0, -0.98, -0.18],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "left_shin_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.055, 0.045]
+          }
+        ]
+      },
+      {
+        "id": "left_hock",
+        "parent": "left_shin",
+        "attach": {"t": 1.0},
+        "length": 0.34,
+        "rest_dir": [0.0, -0.45, 0.89],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "left_hock_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.045, 0.035]
+          }
+        ]
+      },
+      {
+        "id": "right_thigh",
+        "parent": "pelvis",
+        "attach": {"t": 0.0, "offset": [-0.22, 0.0, 0.0]},
+        "length": 0.72,
+        "rest_dir": [0.0, -0.99, 0.12],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "right_thigh_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.065, 0.055]
+          }
+        ]
+      },
+      {
+        "id": "right_shin",
+        "parent": "right_thigh",
+        "attach": {"t": 1.0},
+        "length": 0.68,
+        "rest_dir": [0.0, -0.98, -0.18],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "right_shin_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.055, 0.045]
+          }
+        ]
+      },
+      {
+        "id": "right_hock",
+        "parent": "right_shin",
+        "attach": {"t": 1.0},
+        "length": 0.34,
+        "rest_dir": [0.0, -0.45, 0.89],
+        "joint": {"dof": "fixed"},
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "right_hock_mass",
+            "span": [0.0, 1.0],
+            "radii": [0.045, 0.035]
+          }
+        ]
+      }
+    ]
+  },
+  "muscles": [
+    {
+      "kind": "muscle",
+      "id": "left_quadriceps",
+      "origin": "part:left_thigh_mass",
+      "insertion": "landmark:left_shin/center",
+      "sections": [
+        {"station": 0.0, "width": 0.026, "depth": 0.018, "exponent": 2.4, "roll": 0.0},
+        {"station": 0.24, "width": 0.105, "depth": 0.07, "exponent": 3.2, "roll": 8.0},
+        {"station": 0.55, "width": 0.14, "depth": 0.09, "exponent": 3.8, "roll": 14.0},
+        {"station": 0.82, "width": 0.075, "depth": 0.05, "exponent": 3.0, "roll": 6.0},
+        {"station": 1.0, "width": 0.022, "depth": 0.016, "exponent": 2.2, "roll": 0.0}
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "right_quadriceps",
+      "origin": "part:right_thigh_mass",
+      "insertion": "landmark:right_shin/center",
+      "mirror_of": "left_quadriceps"
+    },
+    {
+      "kind": "muscle",
+      "id": "left_hamstrings",
+      "origin": "landmark:left_thigh/head",
+      "insertion": "part:left_shin_mass",
+      "operator": "crease",
+      "sections": [
+        {"station": 0.0, "width": 0.022, "depth": 0.016, "exponent": 2.2, "roll": 0.0},
+        {"station": 0.3, "width": 0.085, "depth": 0.055, "exponent": 3.0, "roll": -18.0},
+        {"station": 0.62, "width": 0.12, "depth": 0.075, "exponent": 3.6, "roll": -24.0},
+        {"station": 1.0, "width": 0.02, "depth": 0.014, "exponent": 2.2, "roll": 0.0}
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "left_gastrocnemius",
+      "origin": "landmark:left_shin/center",
+      "insertion": "landmark:left_hock/tail",
+      "operator": "chamfer",
+      "blend": 0.012,
+      "sections": [
+        {"station": 0.0, "width": 0.018, "depth": 0.014, "exponent": 2.2, "roll": 0.0},
+        {"station": 0.38, "width": 0.075, "depth": 0.052, "exponent": 3.4, "roll": 10.0},
+        {"station": 0.7, "width": 0.09, "depth": 0.06, "exponent": 3.8, "roll": 4.0},
+        {"station": 1.0, "width": 0.016, "depth": 0.012, "exponent": 2.2, "roll": 0.0}
+      ]
+    }
+  ]
+}

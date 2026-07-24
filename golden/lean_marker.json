@@ -1,0 +1,91 @@
+{
+ "name": "lean_marker",
+ "_doc": "Single rotated box demonstrating GOLEM v0.3 'rot'. Orientation = yaw 30 deg about +y (up) THEN pitch 20 deg about +x (creature's left), composed EXTRINSICALLY (fixed world axes): R = R_x(20deg) @ R_y(30deg), quaternion q = q_pitch (x) q_yaw, applied as p_world = R @ p_local + center. round=0 so the 8 core corners are exact SDF zero-crossings. _expected_corners lists the analytic world corners in the sign order [(sx,sy,sz) for sx in (-1,1) for sy in (-1,1) for sz in (-1,1)] with local = (sx,sy,sz)*size.",
+ "_rotation": {
+  "yaw_deg": 30.0,
+  "yaw_axis": [
+   0,
+   1,
+   0
+  ],
+  "pitch_deg": 20.0,
+  "pitch_axis": [
+   1,
+   0,
+   0
+  ],
+  "order": "extrinsic yaw-then-pitch: R = R_x(pitch) @ R_y(yaw)",
+  "quat_wxyz": [
+   0.9512512425641978,
+   0.16773125949652065,
+   0.2548870022441788,
+   0.04494345552754778
+  ]
+ },
+ "_expected_corners": [
+  [
+   -0.33248711305964285,
+   0.41146358174649983,
+   -0.04912863006542692
+  ],
+  [
+   -0.1524871130596428,
+   0.30483225396513125,
+   0.2438385352203476
+  ],
+  [
+   -0.33248711305964285,
+   0.5994021059036815,
+   0.019275398599706825
+  ],
+  [
+   -0.1524871130596428,
+   0.4927707781223129,
+   0.31224256388548133
+  ],
+  [
+   0.1524871130596428,
+   0.507229221877687,
+   -0.31224256388548133
+  ],
+  [
+   0.33248711305964285,
+   0.4005978940963185,
+   -0.019275398599706825
+  ],
+  [
+   0.1524871130596428,
+   0.6951677460348687,
+   -0.2438385352203476
+  ],
+  [
+   0.33248711305964285,
+   0.5885364182535001,
+   0.04912863006542692
+  ]
+ ],
+ "blend": 0.03,
+ "parts": [
+  {
+   "id": "marker",
+   "type": "box",
+   "center": [
+    0.0,
+    0.5,
+    0.0
+   ],
+   "size": [
+    0.28,
+    0.1,
+    0.18
+   ],
+   "round": 0.0,
+   "rot": [
+    0.9512512425641978,
+    0.16773125949652065,
+    0.2548870022441788,
+    0.04494345552754778
+   ]
+  }
+ ]
+}

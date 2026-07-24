@@ -1,0 +1,42 @@
+{
+ "elements": {
+  "body": "gambeson_dark",
+  "body__leyline": "emissive_seam"
+ },
+ "records": {
+  "emissive_seam": {
+   "base_color": [
+    0.1,
+    0.05,
+    0.15
+   ],
+   "emissive": true,
+   "emissive_color": [
+    0.66,
+    0.33,
+    0.97
+   ],
+   "emissive_strength": 2.5,
+   "metallic": 0.0,
+   "roughness": 0.5,
+   "texture_set": null
+  },
+  "gambeson_dark": {
+   "base_color": [
+    0.048,
+    0.042,
+    0.046
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.88,
+   "texture_set": null
+  }
+ }
+}

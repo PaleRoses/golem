@@ -1,0 +1,500 @@
+{
+  "status": "accepted",
+  "diagnostics": [],
+  "margins": [
+    {
+      "constraint": "anatomy:carrier:loin",
+      "address": "skeleton/loin/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.0486296099528,
+      "observed": 0.145,
+      "margin": 0.0963703900472,
+      "normalized_margin": 0.664623379636,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/loin/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/loin/joint",
+        "normalized_flow": 0.428571428571,
+        "distance_from_pump": 1
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:thorax",
+      "address": "skeleton/thorax/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.075,
+      "observed": 0.19,
+      "margin": 0.115,
+      "normalized_margin": 0.605263157895,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/thorax/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/thorax/joint",
+        "normalized_flow": 1.0,
+        "distance_from_pump": 0
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:neck",
+      "address": "skeleton/neck/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.0535238114021,
+      "observed": 0.1,
+      "margin": 0.0464761885979,
+      "normalized_margin": 0.464761885979,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/neck/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/neck/joint",
+        "normalized_flow": 0.571428571429,
+        "distance_from_pump": 1
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_base",
+      "address": "skeleton/tail_base/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.055,
+      "margin": 0.015,
+      "normalized_margin": 0.272727272727,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_base/flesh[0]"
+      ],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_base/joint",
+        "normalized_flow": 0.428571428571,
+        "distance_from_pump": 3
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_mid",
+      "address": "skeleton/tail_mid/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.03,
+      "margin": -0.01,
+      "normalized_margin": -0.25,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_mid/flesh[0]"
+      ],
+      "disposition": "repaired",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_mid/joint",
+        "normalized_flow": 0.428571428571,
+        "distance_from_pump": 4
+      }
+    },
+    {
+      "constraint": "anatomy:carrier:tail_tip",
+      "address": "skeleton/tail_tip/flesh[0]",
+      "predicate": "circulation_clearance",
+      "required": 0.04,
+      "observed": 0.016,
+      "margin": -0.024,
+      "normalized_margin": -0.6,
+      "unit": "world_unit",
+      "authoring_addresses": [
+        "skeleton/tail_tip/flesh[0]"
+      ],
+      "disposition": "repaired",
+      "active": false,
+      "witness": {
+        "interface_address": "skeleton/tail_tip/joint",
+        "normalized_flow": 0.428571428571,
+        "distance_from_pump": 5
+      }
+    },
+    {
+      "constraint": "vascular:capsule_clearance",
+      "address": "anatomy/vasculature",
+      "predicate": "minimum capsule margin",
+      "required": 0.0005,
+      "observed": 0.000500128081302,
+      "margin": 1.28081302392e-07,
+      "normalized_margin": 0.000256097002309,
+      "unit": "world_unit",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": true,
+      "witness": null
+    },
+    {
+      "constraint": "vascular:delivery",
+      "address": "anatomy/vasculature",
+      "predicate": "maximum delivery relative error",
+      "required": 0.001,
+      "observed": 0.00015592837812,
+      "margin": 0.00084407162188,
+      "normalized_margin": 0.84407162188,
+      "unit": "relative_error",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "vascular:solver_residual",
+      "address": "anatomy/vasculature",
+      "predicate": "maximum free-cell residual",
+      "required": 1e-10,
+      "observed": 3.29461744196e-13,
+      "margin": 9.96705382558e-11,
+      "normalized_margin": 0.996705382558,
+      "unit": "normalized_residual",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "vascular:boundary_balance",
+      "address": "anatomy/vasculature",
+      "predicate": "boundary balance error",
+      "required": 1e-10,
+      "observed": 3.31716010645e-13,
+      "margin": 9.96682839894e-11,
+      "normalized_margin": 0.996682839894,
+      "unit": "normalized_residual",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "vascular:symmetry",
+      "address": "anatomy/vasculature",
+      "predicate": "maximum bilateral symmetry error",
+      "required": 1e-12,
+      "observed": 0.0,
+      "margin": 1e-12,
+      "normalized_margin": 1.0,
+      "unit": "world_unit",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "assembly:integrity:skin-siege-quadruped:components",
+      "address": "skin-siege-quadruped",
+      "predicate": "exactly one connected component",
+      "required": 1,
+      "observed": 1.0,
+      "margin": 1.0,
+      "normalized_margin": 1.0,
+      "unit": "component",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "assembly:integrity:skin-siege-quadruped:watertight",
+      "address": "skin-siege-quadruped",
+      "predicate": "watertight main surface",
+      "required": true,
+      "observed": 1.0,
+      "margin": 1.0,
+      "normalized_margin": 1.0,
+      "unit": "boolean",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    },
+    {
+      "constraint": "assembly:integrity:skin-siege-quadruped:vocabulary",
+      "address": "skin-siege-quadruped",
+      "predicate": "no vocabulary violations",
+      "required": 0,
+      "observed": 0.0,
+      "margin": 1.0,
+      "normalized_margin": 1.0,
+      "unit": "violation",
+      "authoring_addresses": [],
+      "disposition": "satisfied",
+      "active": false,
+      "witness": null
+    }
+  ],
+  "binding_constraint": {
+    "constraint": "vascular:capsule_clearance",
+    "address": "anatomy/vasculature",
+    "predicate": "minimum capsule margin",
+    "required": 0.0005,
+    "observed": 0.000500128081302,
+    "margin": 1.28081302392e-07,
+    "normalized_margin": 0.000256097002309,
+    "unit": "world_unit",
+    "authoring_addresses": [],
+    "disposition": "satisfied",
+    "active": true,
+    "witness": null
+  },
+  "deltas": {
+    "margins": [],
+    "newly_active": [],
+    "newly_inactive": []
+  },
+  "contract_refs": [
+    "primer",
+    "receipts",
+    "envelope",
+    "schema"
+  ],
+  "changed_addresses": [
+    "meta@anatomy"
+  ],
+  "base_txn": 0,
+  "txn": 1,
+  "operations": [
+    {
+      "op": "set",
+      "addr": "meta@anatomy",
+      "value": {
+        "dialect": "anatomy/0.1",
+        "overall": {
+          "regions": [
+            {
+              "region_id": "axial_core",
+              "kind": "torso",
+              "host_bone_id": "thorax"
+            },
+            {
+              "region_id": "caudal",
+              "kind": "tail",
+              "host_bone_id": "tail_tip"
+            },
+            {
+              "region_id": "cranial",
+              "kind": "head",
+              "host_bone_id": "skull"
+            }
+          ],
+          "circulation": {
+            "kind": "closed_vascular",
+            "pump_region_id": "axial_core",
+            "exchange_beds": [
+              {
+                "region_id": "caudal",
+                "tissue": "skeletal_muscle",
+                "demand": 0.03
+              },
+              {
+                "region_id": "cranial",
+                "tissue": "neural_tissue",
+                "demand": 0.04
+              }
+            ],
+            "carrier_radius_scale": 0.075,
+            "distance_decay": 0.86
+          },
+          "integument_layers": [
+            {
+              "region_id": "axial_core",
+              "thickness": 0.004,
+              "formation": "static_implicit_relaxation"
+            },
+            {
+              "region_id": "caudal",
+              "thickness": 0.004,
+              "formation": "static_implicit_relaxation"
+            },
+            {
+              "region_id": "cranial",
+              "thickness": 0.004,
+              "formation": "static_implicit_relaxation"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "journal": [
+    {
+      "txn": 1,
+      "kind": "op",
+      "applied": {
+        "op": "set",
+        "addr": "meta@anatomy",
+        "value": {
+          "dialect": "anatomy/0.1",
+          "overall": {
+            "regions": [
+              {
+                "region_id": "axial_core",
+                "kind": "torso",
+                "host_bone_id": "thorax"
+              },
+              {
+                "region_id": "caudal",
+                "kind": "tail",
+                "host_bone_id": "tail_tip"
+              },
+              {
+                "region_id": "cranial",
+                "kind": "head",
+                "host_bone_id": "skull"
+              }
+            ],
+            "circulation": {
+              "kind": "closed_vascular",
+              "pump_region_id": "axial_core",
+              "exchange_beds": [
+                {
+                  "region_id": "caudal",
+                  "tissue": "skeletal_muscle",
+                  "demand": 0.03
+                },
+                {
+                  "region_id": "cranial",
+                  "tissue": "neural_tissue",
+                  "demand": 0.04
+                }
+              ],
+              "carrier_radius_scale": 0.075,
+              "distance_decay": 0.86
+            },
+            "integument_layers": [
+              {
+                "region_id": "axial_core",
+                "thickness": 0.004,
+                "formation": "static_implicit_relaxation"
+              },
+              {
+                "region_id": "caudal",
+                "thickness": 0.004,
+                "formation": "static_implicit_relaxation"
+              },
+              {
+                "region_id": "cranial",
+                "thickness": 0.004,
+                "formation": "static_implicit_relaxation"
+              }
+            ]
+          }
+        }
+      },
+      "inverse": {
+        "op": "set",
+        "addr": "meta@anatomy",
+        "value": {
+          "dialect": "anatomy/0.1",
+          "overall": {
+            "regions": [
+              {
+                "region_id": "axial_core",
+                "kind": "torso",
+                "host_bone_id": "thorax"
+              },
+              {
+                "region_id": "caudal",
+                "kind": "tail",
+                "host_bone_id": "tail_tip"
+              },
+              {
+                "region_id": "cranial",
+                "kind": "head",
+                "host_bone_id": "skull"
+              }
+            ],
+            "circulation": {
+              "kind": "closed_vascular",
+              "pump_region_id": "axial_core",
+              "exchange_beds": [
+                {
+                  "region_id": "caudal",
+                  "tissue": "skeletal_muscle",
+                  "demand": 0.03
+                },
+                {
+                  "region_id": "cranial",
+                  "tissue": "neural_tissue",
+                  "demand": 0.04
+                }
+              ],
+              "carrier_radius_scale": 0.075,
+              "distance_decay": 0.86
+            },
+            "integument_layers": [
+              {
+                "region_id": "axial_core",
+                "thickness": 0.004
+              },
+              {
+                "region_id": "caudal",
+                "thickness": 0.004
+              },
+              {
+                "region_id": "cranial",
+                "thickness": 0.004
+              }
+            ]
+          }
+        }
+      },
+      "label": "set meta@anatomy {\"dialect\": \"anatomy/0.1\", \"overall\": {\"regio... -> {\"dialect\": \"anatomy/0.1\", \"overall\": {\"regio...",
+      "ts": 1
+    },
+    {
+      "txn": 1,
+      "kind": "auto_repair",
+      "constraint": "anatomy:carrier:tail_mid",
+      "address": "skeleton/tail_mid/flesh[0]",
+      "predicate": "circulation_clearance",
+      "authored": 0.03,
+      "repaired": 0.04,
+      "operation": {
+        "operation": "scale_radius",
+        "factor": 1.33333333333
+      },
+      "authoring_addresses": [
+        "skeleton/tail_mid/flesh[0]"
+      ],
+      "ts": 1
+    },
+    {
+      "txn": 1,
+      "kind": "auto_repair",
+      "constraint": "anatomy:carrier:tail_tip",
+      "address": "skeleton/tail_tip/flesh[0]",
+      "predicate": "circulation_clearance",
+      "authored": 0.016,
+      "repaired": 0.04,
+      "operation": {
+        "operation": "scale_radius",
+        "factor": 2.5
+      },
+      "authoring_addresses": [
+        "skeleton/tail_tip/flesh[0]"
+      ],
+      "ts": 1
+    }
+  ],
+  "schema": "golem.session.verdict/2",
+  "diagnostics_summary": {
+    "total": 11,
+    "expected": 11,
+    "unexpected": 0,
+    "shown": 0,
+    "expected_filtered": true
+  }
+}

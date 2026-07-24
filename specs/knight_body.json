@@ -1,0 +1,225 @@
+{
+ "name": "obsidian-knight-underbody",
+ "dialect": "body/0.3",
+ "emit_target": "v03",
+ "blend": 0.024,
+ "ground_y": -0.81,
+ "ground_tol": 0.02,
+ "anatomy": {
+  "dialect": "anatomy/0.1",
+  "overall": {
+   "regions": [
+    {"region_id": "axial_core", "kind": "torso", "host_bone_id": "spine_upper"},
+    {"region_id": "cranial", "kind": "head", "host_bone_id": "helm"},
+    {"region_id": "forelimb", "kind": "limb", "host_bone_id": "forearm"},
+    {"region_id": "hindlimb", "kind": "limb", "host_bone_id": "foot"}
+   ],
+   "circulation": {
+    "kind": "closed_vascular",
+    "pump_region_id": "axial_core",
+    "exchange_beds": [
+     {"region_id": "cranial", "tissue": "neural_tissue", "demand": 0.1,
+      "tissue_envelope": {"minimum_radius": 0.07}},
+     {"region_id": "forelimb", "tissue": "skeletal_muscle", "demand": 0.02},
+     {"region_id": "hindlimb", "tissue": "skeletal_muscle", "demand": 0.44}
+    ],
+    "carrier_radius_scale": 0.12,
+    "distance_decay": 0.86
+   },
+   "myotendinous_units": [
+    {"muscle_id": "forelimb_flexor", "region_id": "forelimb",
+     "origin": {"bone_id": "upper_arm", "parameter": 0.18, "offset": [0, 0.07]},
+     "joint_offset": [0, 0.06],
+     "insertion": {"bone_id": "forearm", "parameter": 0.72, "offset": [0, 0.05]},
+     "tendon_radius": 0.018, "belly_radius": 0.055},
+    {"muscle_id": "forelimb_extensor", "region_id": "forelimb",
+     "origin": {"bone_id": "upper_arm", "parameter": 0.16, "offset": [0, -0.06]},
+     "joint_offset": [0, -0.055],
+     "insertion": {"bone_id": "forearm", "parameter": 0.75, "offset": [0, -0.045]},
+     "tendon_radius": 0.016, "belly_radius": 0.05},
+    {"muscle_id": "hindlimb_extensor", "region_id": "hindlimb",
+     "origin": {"bone_id": "thigh", "parameter": 0.12, "offset": [0.14, 0]},
+     "joint_offset": [0.12, 0],
+     "insertion": {"bone_id": "shin", "parameter": 0.68, "offset": [0.1, 0]},
+     "tendon_radius": 0.025, "belly_radius": 0.105},
+    {"muscle_id": "hindlimb_flexor", "region_id": "hindlimb",
+     "origin": {"bone_id": "thigh", "parameter": 0.14, "offset": [-0.12, 0]},
+     "joint_offset": [-0.1, 0],
+     "insertion": {"bone_id": "shin", "parameter": 0.7, "offset": [-0.09, 0]},
+     "tendon_radius": 0.024, "belly_radius": 0.095}
+   ],
+   "integument_layers": [
+    {"region_id": "forelimb", "thickness": 0.018},
+    {"region_id": "hindlimb", "thickness": 0.032}
+   ]
+  }
+ },
+ "skeleton": {
+  "root": {
+   "id": "pelvis",
+   "world": [0, 0.43, 0],
+   "flesh": [
+    {"kind": "blob", "name": "pelvis", "t": 0,
+     "offset": [0, -0.005, 0.005], "size": [0.235, 0.145, 0.17]}
+   ]
+  },
+  "bones": [
+   {"id": "spine_lower", "parent": "pelvis", "attach": {"t": 0},
+    "length": 0.52,
+    "rest_dir": [0, 0.9992, 0.04],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "spine_lower", "span": [-0.04, 1.02],
+      "stations": [-0.04, 0.12, 0.34, 0.64, 0.86, 1.02],
+      "radii": [0.19, 0.185, 0.16, 0.205, 0.24, 0.225],
+      "profile": {
+       "n": [2.6, 2.7, 3, 2.8, 2.6, 2.6],
+       "aspect": [0.76, 0.72, 0.64, 0.68, 0.7, 0.69],
+       "up": [0, 0, 1]
+      }}
+    ]},
+   {"id": "spine_upper", "parent": "spine_lower", "attach": {"t": 1},
+    "length": 0.24,
+    "rest_dir": [0, 0.02, 0.9998],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "spine_upper", "span": [-0.08, 1.06],
+      "stations": [-0.08, 0.18, 0.46, 0.72, 0.9, 1.06],
+      "radii": [0.225, 0.245, 0.265, 0.275, 0.235, 0.155],
+      "profile": {
+       "n": [2.6, 2.6, 2.7, 2.7, 2.8, 2.6],
+       "aspect": [0.69, 0.71, 0.72, 0.69, 0.64, 0.68],
+       "up": [0, 0, 1]
+      }}
+    ]},
+   {"id": "neck", "parent": "spine_upper", "attach": {"t": 1},
+    "length": 0.17,
+    "rest_dir": [0, -0.015, 0.9999],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "neck", "span": [-0.1, 1.08],
+      "stations": [-0.1, 0.42, 1.08],
+      "radii": [0.085, 0.076, 0.069],
+      "profile": {
+       "n": [2.4, 2.4, 2.4],
+       "aspect": [0.92, 0.9, 0.88],
+       "up": [0, 0, 1]
+      }}
+    ]},
+   {"id": "helm", "parent": "neck", "attach": {"t": 1},
+    "length": 0.22,
+    "rest_dir": [0, 0.01, 0.9999],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "head", "span": [-0.05, 1.02],
+      "stations": [-0.05, 0.2, 0.58, 0.82, 1.02],
+      "radii": [0.09, 0.104, 0.108, 0.1, 0.082],
+      "profile": {
+       "n": [2.6, 2.4, 2.4, 2.6, 3],
+       "aspect": [0.86, 0.82, 0.8, 0.79, 0.78],
+       "up": [0, 0, 1]
+      }}
+    ]},
+   {"id": "clavicle", "parent": "spine_upper", "attach": {"t": 0.74},
+    "length": 0.255,
+    "rest_dir": [1, 0, 0],
+    "mirror": true,
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "blob", "name": "shoulder", "t": 0.9,
+      "size": [0.11, 0.12, 0.13]}
+    ]},
+   {"id": "upper_arm", "parent": "clavicle", "attach": {"t": 1},
+    "length": 0.31,
+    "bone_radii": [0.026, 0.022],
+    "rest_dir": [0.97, -0.18, 0.16],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "upperarm", "span": [-0.06, 1.04],
+      "stations": [-0.06, 0.16, 0.42, 0.68, 0.86, 1.04],
+      "radii": [0.1, 0.108, 0.105, 0.09, 0.071, 0.064],
+      "profile": {
+       "n": [2.4, 2.4, 2.5, 2.5, 2.4, 2.4],
+       "aspect": [0.94, 0.9, 0.84, 0.82, 0.87, 0.92],
+       "up": [0, 0, 1]
+      }},
+     {"kind": "blob", "name": "elbow", "t": 1,
+      "size": [0.071, 0.066, 0.071]}
+    ]},
+   {"id": "forearm", "parent": "upper_arm", "attach": {"t": 1},
+    "length": 0.35,
+    "bone_radii": [0.023, 0.018],
+    "rest_dir": [0.68, -0.2, 0.7],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "forearm", "span": [-0.06, 1.04],
+      "stations": [-0.06, 0.14, 0.36, 0.62, 0.82, 1.04],
+      "radii": [0.066, 0.08, 0.086, 0.076, 0.059, 0.048],
+      "profile": {
+       "n": [2.4, 2.4, 2.5, 2.5, 2.4, 2.4],
+       "aspect": [0.94, 0.9, 0.84, 0.82, 0.86, 0.9],
+       "up": [0, 0, 1]
+      }},
+     {"kind": "blob", "name": "hand", "t": 1,
+      "offset": [0.004, -0.026, 0.04],
+      "size": [0.068, 0.052, 0.08]}
+    ]},
+   {"id": "thigh", "parent": "pelvis",
+    "attach": {"t": 0, "offset": [0.16, -0.025, 0]},
+    "length": 0.57,
+    "bone_radii": [0.046, 0.036],
+    "rest_dir": [0.06, -0.9979, 0.025],
+    "mirror": true,
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "thigh", "span": [-0.06, 1.04],
+      "stations": [-0.06, 0.1, 0.28, 0.52, 0.76, 0.9, 1.04],
+      "radii": [0.12, 0.145, 0.155, 0.145, 0.123, 0.102, 0.084],
+      "profile": {
+       "n": [2.5, 2.5, 2.5, 2.6, 2.6, 2.5, 2.4],
+       "aspect": [0.92, 0.9, 0.84, 0.8, 0.8, 0.86, 0.94],
+       "up": [0, 0, 1]
+      }},
+     {"kind": "blob", "name": "hip", "t": 0.03,
+      "size": [0.12, 0.108, 0.125]},
+     {"kind": "blob", "name": "knee", "t": 1,
+      "size": [0.095, 0.09, 0.098]}
+    ]},
+   {"id": "shin", "parent": "thigh", "attach": {"t": 1},
+    "length": 0.58,
+    "bone_radii": [0.036, 0.025],
+    "rest_dir": [0, -0.045, 0.999],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "shin", "span": [-0.04, 1.03],
+      "stations": [-0.04, 0.12, 0.3, 0.52, 0.74, 0.88, 1.03],
+      "radii": [0.092, 0.108, 0.124, 0.12, 0.106, 0.09, 0.075],
+      "profile": {
+       "n": [2.4, 2.4, 2.5, 2.5, 2.5, 2.4, 2.4],
+       "aspect": [0.94, 0.88, 0.82, 0.79, 0.8, 0.86, 0.95],
+       "up": [0, 0, 1]
+      }}
+    ]},
+   {"id": "foot", "parent": "shin", "attach": {"t": 1},
+    "length": 0.27,
+    "rest_dir": [-0.923, 0.384, 0.018],
+    "joint": {"dof": "fixed"},
+    "flesh": [
+     {"kind": "gencyl", "name": "foot", "span": [-0.08, 1.05],
+      "stations": [-0.08, 0.16, 0.42, 0.7, 0.88, 1.05],
+      "radii": [0.076, 0.091, 0.104, 0.11, 0.102, 0.075],
+      "profile": {
+       "n": [2.8, 3, 3.2, 3.4, 3.6, 3.6],
+       "aspect": [0.72, 0.66, 0.6, 0.56, 0.54, 0.56],
+       "up": [0, 1, 0]
+     }},
+     {"kind": "blob", "name": "toes", "t": 0.91,
+      "size": [0.055, 0.096, 0.083]}
+    ]}
+  ]
+ },
+ "mounts": [],
+ "props": [],
+ "pose": {"joints": {}, "goals": []},
+ "contacts": []
+}

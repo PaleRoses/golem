@@ -1,0 +1,17 @@
+{
+  "_doc": "v03-local gauntlet spec for the obsidian-knight mount. A chunkier variant of pilots/hand_v2.json (frozen): the palm is thicker/wider and the finger radii are enlarged so the posed fist is a SOLID single component under proprio's conservative (overlap-only) fusion predictor -- the frozen hand's fingers sit at 92% of the palm and only mesh-fuse via blend, which the mesh-free predictor deliberately does not count. body.py's mount search prefers this v03 copy over the pilots original.",
+  "palm": { "width": 1.0, "length": 0.92, "thickness": 0.44 },
+  "fingers": [
+    { "id": "index",  "knuckle_x": -0.28, "splay_deg": -6,
+      "phalanges": [0.40, 0.28, 0.20], "radii": [0.17, 0.15, 0.135, 0.115] },
+    { "id": "middle", "knuckle_x": -0.09, "splay_deg": -1,
+      "phalanges": [0.44, 0.31, 0.22], "radii": [0.18, 0.16, 0.145, 0.12] },
+    { "id": "ring",   "knuckle_x": 0.10,  "splay_deg": 4,
+      "phalanges": [0.41, 0.29, 0.20], "radii": [0.17, 0.15, 0.135, 0.115] },
+    { "id": "pinky",  "knuckle_x": 0.27,  "splay_deg": 10,
+      "phalanges": [0.32, 0.23, 0.16], "radii": [0.155, 0.14, 0.125, 0.10] }
+  ],
+  "thumb": { "root": [0.42, -0.04, 0.10], "yaw_deg": 55, "elev_deg": -15,
+             "opposition_deg": 40, "phalanges": [0.40, 0.28],
+             "radii": [0.20, 0.17, 0.14] }
+}

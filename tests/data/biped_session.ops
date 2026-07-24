@@ -1,0 +1,22 @@
+# From-empty biped authored via the attachment grammar ONLY.
+# Zero world-coordinate literals (enforced by test): placement is anchors
+# (bone:t), world-frame DIRECTIONS (world_dir -- directions, never positions),
+# bone-local offsets, mirrors, one array declaration, and one squeeze solve.
+envelope {"heads": 6.0, "head": "head", "margin": 0.02}
+attach bone spine at root:0 {"length": 0.34, "world_dir": [0, 1, 0], "dof": "ball", "flesh": [{"kind": "gencyl", "name": "torso", "span": [0, 1], "radii": [0.13, 0.155]}]}
+remove skeleton/root/seed
+attach bone neck at spine:1 {"length": 0.07, "world_dir": [0, 1, 0.08], "dof": "hinge", "limits": {"pitch": [-20, 20]}, "flesh": [{"kind": "gencyl", "name": "neck", "span": [0, 1], "radii": [0.055, 0.05]}]}
+attach bone head at neck:1 {"length": 0.2, "world_dir": [0, 1, 0.05], "dof": "ball", "flesh": [{"kind": "blob", "name": "head", "t": 0.55, "size": [0.105, 0.14, 0.11]}]}
+attach bone thigh at root:0 {"offset": [0.11, -0.03, 0], "length": 0.41, "world_dir": [0.04, -1, 0.03], "dof": "ball", "limits": {"pitch": [-30, 90], "yaw": [-30, 30], "roll": [-20, 20]}, "flesh": [{"kind": "gencyl", "name": "thigh", "span": [0, 1], "radii": [0.085, 0.06]}]}
+reflect thigh
+attach bone shin at thigh:1 {"length": 0.36, "world_dir": [0, -1, 0.03], "dof": "hinge", "limits": {"pitch": [-140, 0]}, "flesh": [{"kind": "gencyl", "name": "shin", "span": [0, 1], "radii": [0.055, 0.04]}]}
+attach bone foot at shin:1 {"length": 0.15, "world_dir": [0, 0, 1], "dof": "hinge", "limits": {"pitch": [-30, 30]}, "flesh": [{"kind": "blob", "name": "foot", "t": 0.5, "offset": [0, 0, -0.02], "size": [0.055, 0.035, 0.13]}]}
+add contact contacts {"group": "support", "parts": ["foot"], "solve": "lift_body"}
+attach bone clavicle at spine:0.92 {"length": 0.15, "world_dir": [1, -0.1, 0], "dof": "fixed"}
+reflect clavicle
+attach bone upper_arm at clavicle:1 {"length": 0.3, "world_dir": [0.12, -1, 0.02], "dof": "ball", "flesh": [{"kind": "gencyl", "name": "upper_arm", "span": [0, 1], "radii": [0.05, 0.042]}]}
+attach bone forearm at upper_arm:1 {"length": 0.26, "world_dir": [0.03, -1, 0.12], "dof": "hinge", "limits": {"pitch": [0, 140]}, "flesh": [{"kind": "gencyl", "name": "forearm", "span": [0, 1], "radii": [0.04, 0.034]}, {"kind": "blob", "name": "mitt", "t": 1.05, "size": [0.045, 0.055, 0.05]}]}
+array spine dorsal 5 [0.2, 0.9] {"kind": "blob", "size": [0.028, 0.05, 0.028], "offset": [-0.15, 0, 0]}
+squeeze belt between spine:0.1 spine:0.22 {"flesh": [{"kind": "gencyl", "name": "belt", "span": [0, 1], "radii": [0.155, 0.15]}]}
+outline "" 2 structure
+outline "" 1 constraint

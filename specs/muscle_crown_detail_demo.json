@@ -1,0 +1,46 @@
+{
+  "name": "muscle-crown-detail-demo",
+  "appearance_material": "gambeson_dark",
+  "pitch": 0.018,
+  "blend": 0.025,
+  "surface_detail": {
+    "kind": "curvature",
+    "amplitude": 0.014,
+    "scale": 0.12
+  },
+  "parts": [
+    {
+      "id": "torso",
+      "type": "blob",
+      "center": [0.0, 0.0, 0.0],
+      "size": [0.3, 0.42, 0.23]
+    },
+    {
+      "id": "abdomen",
+      "type": "gencyl",
+      "spine": [[0.0, -0.32, 0.0], [0.0, 0.16, 0.0]],
+      "radii": [0.23, 0.27]
+    },
+    {
+      "id": "pectoral",
+      "type": "blob",
+      "center": [0.18, 0.18, 0.17],
+      "size": [0.22, 0.18, 0.15],
+      "mirror": true
+    },
+    {
+      "id": "deltoid",
+      "type": "blob",
+      "center": [0.36, 0.16, 0.02],
+      "size": [0.18, 0.2, 0.17],
+      "mirror": true
+    },
+    {
+      "id": "latissimus",
+      "type": "blob",
+      "center": [0.27, -0.04, -0.12],
+      "size": [0.2, 0.25, 0.15],
+      "mirror": true
+    }
+  ]
+}

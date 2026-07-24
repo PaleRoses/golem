@@ -1,0 +1,8 @@
+{
+ "components": 1,
+ "shells": 1,
+ "watertight": true,
+ "symmetry_iou_raw": 0.9769317005864091,
+ "faces": 97696,
+ "res": 130
+}

@@ -1,0 +1,94 @@
+{
+  "diagnostics": [
+    {
+      "bone_ids": [
+        "fore_girdle",
+        "fore_upper"
+      ],
+      "id": "shoulder_angle",
+      "measured": 130.000033,
+      "status": "pass",
+      "target": {
+        "maximum": 145.0,
+        "minimum": 110.0
+      },
+      "unit": "degrees"
+    },
+    {
+      "bone_ids": [
+        "hind_girdle",
+        "hind_thigh"
+      ],
+      "id": "stifle_angle",
+      "measured": 135.0,
+      "status": "pass",
+      "target": {
+        "maximum": 150.0,
+        "minimum": 125.0
+      },
+      "unit": "degrees"
+    },
+    {
+      "bone_ids": [
+        "hind_thigh",
+        "hind_shin"
+      ],
+      "id": "hock_angle",
+      "measured": 145.000019,
+      "status": "pass",
+      "target": {
+        "maximum": 160.0,
+        "minimum": 120.0
+      },
+      "unit": "degrees"
+    },
+    {
+      "bone_ids": [
+        "fore_paw",
+        "hind_paw"
+      ],
+      "id": "stance_width_to_chest_depth",
+      "measured": 1.099434,
+      "status": "pass",
+      "target": {
+        "maximum": 1.1,
+        "minimum": 0.5
+      },
+      "unit": "ratio"
+    },
+    {
+      "bone_ids": [
+        "fore_girdle",
+        "hind_girdle"
+      ],
+      "id": "topline_levelness",
+      "measured": 0.0,
+      "status": "pass",
+      "target": {
+        "maximum": 10.0,
+        "minimum": 0.0
+      },
+      "unit": "degrees"
+    },
+    {
+      "bone_ids": [
+        "neck"
+      ],
+      "id": "neck_set",
+      "measured": 46.000023,
+      "status": "pass",
+      "target": {
+        "maximum": 55.0,
+        "minimum": 25.0
+      },
+      "unit": "degrees"
+    }
+  ],
+  "proposal": {
+    "adjustments": [],
+    "obstructions": [],
+    "status": "empty"
+  },
+  "status": "accepted",
+  "subject": "vigil-hound-demo"
+}

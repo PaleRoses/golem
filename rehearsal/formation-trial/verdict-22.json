@@ -1,0 +1,56 @@
+{
+  "status": "rejected",
+  "diagnostics": [
+    {
+      "code": "body.SkinFormationAnatomyObstruction",
+      "severity": "error",
+      "address": "anatomy/integument_layers",
+      "predicate": "opted-in skin formation has accepted anatomy descent",
+      "required": "AcceptedAnatomy",
+      "observed": [
+        "MissingTerminalRegionObstruction"
+      ],
+      "witness": {
+        "obstruction": "SkinFormationAnatomyObstruction",
+        "obstructions": [
+          {
+            "host_bone_id": "fore_paw_right"
+          }
+        ],
+        "address": "anatomy/integument_layers",
+        "predicate": "opted-in skin formation has accepted anatomy descent",
+        "required": "AcceptedAnatomy",
+        "observed": [
+          "MissingTerminalRegionObstruction"
+        ]
+      },
+      "help": {
+        "operations": []
+      }
+    }
+  ],
+  "margins": [],
+  "binding_constraint": null,
+  "deltas": {
+    "margins": [],
+    "newly_active": [],
+    "newly_inactive": []
+  },
+  "contract_refs": [
+    "primer",
+    "schema"
+  ],
+  "changed_addresses": [],
+  "base_txn": 0,
+  "txn": 0,
+  "operations": [],
+  "journal": [],
+  "schema": "golem.session.verdict/2",
+  "diagnostics_summary": {
+    "total": 1,
+    "expected": 0,
+    "unexpected": 1,
+    "shown": 1,
+    "expected_filtered": false
+  }
+}

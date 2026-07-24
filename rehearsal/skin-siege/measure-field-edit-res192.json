@@ -1,0 +1,29 @@
+{
+ "geometry": "sable_stride formed (static_implicit_relaxation)",
+ "resolution": 192,
+ "seal_resolution": 242,
+ "edited_part": "pelvic_basin",
+ "edit": "uniform shrink x0.98 (bounds-stable, bitwise)",
+ "positive_sections": 30,
+ "carves": 1,
+ "section_store_entries": 46,
+ "section_store_bytes": 10078935568,
+ "base_miss_seconds": 22.317731958002696,
+ "edit_warm_seconds": 2.551959000000352,
+ "recompose_floor_seconds": [
+  2.325633291999111,
+  2.233335790999263
+ ],
+ "recompose_floor_median_seconds": 2.279484541499187,
+ "composed_hit_seconds": [
+  0.1106355000010808,
+  0.10362104199884925,
+  0.10427583400087315
+ ],
+ "composed_hit_median_seconds": 0.10427583400087315,
+ "edit_speedup_vs_miss": 8.74533327455481,
+ "v4a_miss_baseline_seconds": 25.36,
+ "v4a_hit_baseline_seconds": 0.228,
+ "entry_001_baseline_seconds": 20.5,
+ "caveat": "wins apply to bounds-stable edits; a hull-moving edit shifts the derived grid and lawfully misses every section key"
+}

@@ -1,0 +1,4 @@
+meta  obsidian-knight-underbody  blend 0.024 ground_y -0.81 @ meta
+skeleton  10 bones, 16 flesh, root [0, 0.43, 0] @ skeleton/root
+  skeleton/spine_lower  len 0.52 dof fixed  flesh[spine_lower]
+  skeleton/thigh  len 0.57 dof fixed mirror  flesh[thigh,hip,knee]

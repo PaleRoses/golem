@@ -1,0 +1,103 @@
+{
+  "name": "frostfang-wolf",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "appearance_material":"obsidian_warden",
+  "appearance_palette":{
+    "obsidian_warden":{"tint_linear_rgb":[0.055,0.028,0.022]},
+    "eye_gloss":{"tint_linear_rgb":[0.74,0.2,0.025]},
+    "vascular_supply_gold":{"tint_linear_rgb":[0.82,0.22,0.06]},
+    "vascular_return_violet":{"tint_linear_rgb":[0.2,0.06,0.58]},
+    "vascular_exchange_cyan":{"tint_linear_rgb":[0.08,0.6,0.72]}
+  },
+  "blend": 0.008,
+  "ground_y": 0.02,
+  "ground_tol": 0.03,
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {"region_id":"axial_core","kind":"torso","host_bone_id":"thorax"},
+        {"region_id":"cranial","kind":"head","host_bone_id":"skull"},
+        {"region_id":"caudal","kind":"tail","host_bone_id":"tail_tip"},
+        {"region_id":"fore_paws","kind":"limb","host_bone_id":"fore_paw"},
+        {"region_id":"hind_paws","kind":"limb","host_bone_id":"hind_paw"}
+      ],
+      "circulation": {
+        "kind":"closed_vascular",
+        "pump_region_id":"axial_core",
+        "exchange_beds":[
+          {"region_id":"cranial","tissue":"neural_tissue","demand":0.04},
+          {"region_id":"caudal","tissue":"skeletal_muscle","demand":0.03},
+          {"region_id":"fore_paws","tissue":"skeletal_muscle","demand":0.03},
+          {"region_id":"hind_paws","tissue":"skeletal_muscle","demand":0.18}
+        ],
+        "carrier_radius_scale":0.075,
+        "distance_decay":0.86
+      },
+      "integument_layers":[
+        {"region_id":"axial_core","thickness":0.004},
+        {"region_id":"cranial","thickness":0.004},
+        {"region_id":"caudal","thickness":0.004},
+        {"region_id":"fore_paws","thickness":0.004},
+        {"region_id":"hind_paws","thickness":0.004}
+      ]
+    }
+  },
+  "contacts":[{"group":"support","parts":["fore_pad","hind_pad"],"solve":"lift_body"}],
+  "mounts":[],
+  "pose":{"goals":[],"joints":{},"relations":[]},
+  "contract":{
+    "contract":"frostfang-envelope",
+    "clauses":[
+      {"id":"env_balanced","scope":["whole","contact:support"],"metric":"centroid_support_margin","operator":"minimum","value":0.02,"unit":"world_unit"},
+      {"id":"env_integrity","scope":["whole"],"metric":"post_dust_components","operator":"equal","value":1,"unit":"count"}
+    ],
+    "attach":[
+      ["pelvic_basin","tucked_waist"],["tucked_waist","chest_mass"],["chest_mass","shoulder_junction"],["chest_mass","neck_mass"],["neck_mass","head_mass"],["head_mass","muzzle"],
+      ["pelvic_basin","tail_base"],["tail_base","tail_mid"],["tail_mid","tail_tip_mass"],
+      ["chest_mass","fore_girdle"],["fore_girdle","fore_upper_mass"],["fore_upper_mass","fore_shin_mass"],["fore_shin_mass","fore_pad"],
+      ["pelvic_basin","hind_girdle"],["hind_girdle","hind_thigh_mass"],["hind_thigh_mass","hind_shin_mass"],["hind_shin_mass","hind_pad"],
+      ["shoulder_junction","shoulder_sling"],["fore_upper_mass","shoulder_sling_insertion"],["shoulder_sling_insertion","shoulder_sling"],["fore_upper_mass","shoulder_sling"],
+      ["hind_thigh_mass","haunch_drive_origin"],["haunch_drive_origin","haunch_drive"],["hind_thigh_mass","haunch_drive_insertion"],["haunch_drive_insertion","haunch_drive"],["hind_thigh_mass","haunch_drive"],
+      ["tail_base","tail_lifter_origin"],["tail_lifter_origin","tail_lifter"],["tail_tip_mass","tail_lifter_insertion"],["tail_lifter_insertion","tail_lifter"],["tail_base","tail_lifter"],["tail_mid","tail_lifter"],["tail_tip_mass","tail_lifter"],["pelvic_basin","tail_lifter_origin"],["pelvic_basin","tail_lifter"],
+      ["haunch_junction","spine_runner"],["shoulder_junction","spine_runner"],["chest_mass","spine_runner"],["hind_girdle","spine_runner"],["shoulder_sling","spine_runner"],
+      ["tucked_waist","tail_base"],["tucked_waist","hind_girdle"],["tucked_waist","hind_thigh_mass"],["pelvic_basin","hind_thigh_mass"],["haunch_junction","tucked_waist"],["chest_mass","fore_upper_mass"],["neck_mass","fore_girdle"],["neck_mass","fore_upper_mass"]
+    ],
+    "midline":["pelvic_basin","tucked_waist","chest_mass","neck_mass","head_mass","muzzle","tail_base","tail_mid","tail_tip_mass"]
+  },
+  "skeleton":{
+    "root":{
+      "id":"pelvis",
+      "world":[0.0,0.86,-0.58],
+      "flesh":[
+        {"kind":"blob","name":"pelvic_basin","t":0.0,"size":[0.25,0.15,0.205]},
+        {"kind":"blob","name":"haunch_junction","t":0.0,"offset":[0.16,0.14,-0.08],"size":[0.07,0.05,0.09],"operator":"local_blend","blend":0.012}
+      ]
+    },
+    "bones":[
+      {"id":"loin","parent":"pelvis","attach":{"t":0.0},"length":0.55,"rest_dir":[0.0,0.0,1.0],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"tucked_waist","span":[0.0,1.0],"radii":[0.16,0.145],"blend":0.002}]},
+      {"id":"thorax","parent":"loin","attach":{"t":1.0},"length":0.62,"rest_dir":[0.0,0.0,1.0],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"chest_mass","span":[0.0,1.0],"radii":[0.22,0.19]},{"kind":"blob","name":"shoulder_junction","t":0.6,"offset":[0.175,0.194,0.0],"size":[0.07,0.06,0.1],"operator":"local_blend","blend":0.012}]},
+      {"id":"neck","parent":"thorax","attach":{"t":1.0},"length":0.42,"rest_dir":[0.0,0.71934,0.694658],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"neck_mass","span":[0.0,1.0],"radii":[0.14,0.1]}]},
+      {"id":"skull","parent":"neck","attach":{"t":1.0},"length":0.41,"rest_dir":[0.0,-0.292372,0.956305],"joint":{"dof":"fixed"},"flesh":[{"kind":"blob","name":"head_mass","t":0.38,"size":[0.15,0.12,0.19]},{"kind":"blob","name":"muzzle","t":0.82,"offset":[0.0,-0.02,0.08],"size":[0.1,0.08,0.14],"operator":"chamfer","blend":0.01}]},
+      {"id":"tail_base","parent":"pelvis","attach":{"t":0.0,"offset":[0.0,0.055,-0.12]},"length":0.36,"rest_dir":[0.0,0.087156,-0.996195],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"tail_base","span":[0.0,1.0],"radii":[0.085,0.055],"blend":0.002},{"kind":"blob","name":"tail_lifter_origin","t":0.08,"offset":[0.08,0.05,0.0],"size":[0.025,0.02,0.03],"operator":"crease","role":"non_carrier"}]},
+      {"id":"tail_mid","parent":"tail_base","attach":{"t":1.0},"length":0.32,"rest_dir":[0.0,-0.052336,0.99863],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"tail_mid","span":[0.0,1.0],"radii":[0.05,0.03]}]},
+      {"id":"tail_tip","parent":"tail_mid","attach":{"t":1.0},"length":0.32,"rest_dir":[0.0,-0.03,0.99955],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"tail_tip_mass","span":[0.0,1.0],"radii":[0.03,0.016]},{"kind":"blob","name":"tail_lifter_insertion","t":0.92,"offset":[0.028,0.012,0.0],"size":[0.018,0.012,0.02],"operator":"crease","role":"non_carrier"}]},
+      {"id":"fore_girdle","parent":"thorax","attach":{"t":0.74,"offset":[0.0,0.025,0.0]},"length":0.23,"rest_dir":[0.7,0.0,0.714142],"mirror":true,"joint":{"dof":"fixed"},"flesh":[{"kind":"blob","name":"fore_girdle","t":0.95,"size":[0.05,0.078,0.072]}]},
+      {"id":"fore_upper","parent":"fore_girdle","attach":{"t":1.0},"length":0.36,"rest_dir":[0.0,-0.766044,0.642788],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"fore_upper_mass","span":[0.0,1.0],"radii":[0.085,0.065]},{"kind":"blob","name":"shoulder_sling_insertion","t":0.65,"offset":[0.07,0.05,0.0],"size":[0.025,0.02,0.03],"operator":"crease","role":"non_carrier"}]},
+      {"id":"fore_shin","parent":"fore_upper","attach":{"t":1.0},"length":0.43,"rest_dir":[0.0,-0.5,0.866025],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"fore_shin_mass","span":[0.0,1.0],"radii":[0.065,0.047]}]},
+      {"id":"fore_paw","parent":"fore_shin","attach":{"t":1.0},"length":0.19,"rest_dir":[0.0,0.5,0.866025],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"fore_paw_mass","span":[0.0,1.0],"radii":[0.05,0.038]},{"kind":"blob","name":"fore_pad","t":0.92,"offset":[0.0,-0.025,0.035],"size":[0.061,0.032,0.092],"operator":"chamfer","blend":0.008}]},
+      {"id":"hind_girdle","parent":"pelvis","attach":{"t":0.0,"offset":[0.14,0.025,-0.02]},"length":0.235,"rest_dir":[0.4298,0.0,0.902925],"mirror":true,"joint":{"dof":"fixed"},"flesh":[{"kind":"blob","name":"hind_girdle","t":0.76,"size":[0.074,0.135,0.145],"operator":"crease"}]},
+      {"id":"hind_thigh","parent":"hind_girdle","attach":{"t":1.0},"length":0.38,"rest_dir":[0.0,-0.707107,0.707107],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"hind_thigh_mass","span":[0.0,1.0],"radii":[0.115,0.07],"operator":"crease"},{"kind":"blob","name":"haunch_drive_origin","t":0.25,"offset":[0.09,0.055,0.0],"size":[0.03,0.025,0.035],"operator":"crease","role":"non_carrier"},{"kind":"blob","name":"haunch_drive_insertion","t":0.65,"offset":[0.07,0.04,0.0],"size":[0.03,0.025,0.035],"operator":"crease","role":"non_carrier"}]},
+      {"id":"hind_shin","parent":"hind_thigh","attach":{"t":1.0},"length":0.41,"rest_dir":[0.0,-0.573576,0.819152],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"hind_shin_mass","span":[0.0,1.0],"radii":[0.065,0.048]}]},
+      {"id":"hind_paw","parent":"hind_shin","attach":{"t":1.0},"length":0.2,"rest_dir":[0.0,0.5,0.866025],"joint":{"dof":"fixed"},"flesh":[{"kind":"gencyl","name":"hind_paw_mass","span":[0.0,1.0],"radii":[0.052,0.038]},{"kind":"blob","name":"hind_pad","t":0.92,"offset":[0.0,-0.025,0.04],"size":[0.064,0.033,0.096],"operator":"chamfer","blend":0.008}]}
+    ]
+  },
+  "muscles":[
+    {"kind":"muscle","id":"shoulder_sling","origin":"part:shoulder_junction","insertion":"part:shoulder_sling_insertion","formation":"skeleton_integral","operator":"crease","sections":[{"station":0.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0},{"station":0.2,"width":0.025,"depth":0.025,"exponent":2.0,"roll":0.0},{"station":0.5,"width":0.035,"depth":0.035,"exponent":2.0,"roll":0.0},{"station":0.8,"width":0.025,"depth":0.025,"exponent":2.0,"roll":0.0},{"station":1.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0}]},
+    {"kind":"muscle","id":"haunch_drive","origin":"part:haunch_drive_origin","insertion":"part:haunch_drive_insertion","formation":"skeleton_integral","operator":"crease","sections":[{"station":0.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0},{"station":0.2,"width":0.028,"depth":0.028,"exponent":2.0,"roll":0.0},{"station":0.5,"width":0.04,"depth":0.04,"exponent":2.0,"roll":0.0},{"station":0.8,"width":0.028,"depth":0.028,"exponent":2.0,"roll":0.0},{"station":1.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0}]},
+    {"kind":"muscle","id":"tail_lifter","origin":"part:tail_lifter_origin","insertion":"part:tail_lifter_insertion","formation":"skeleton_integral","operator":"crease","sections":[{"station":0.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0},{"station":0.2,"width":0.018,"depth":0.018,"exponent":2.0,"roll":0.0},{"station":0.5,"width":0.022,"depth":0.022,"exponent":2.0,"roll":0.0},{"station":0.8,"width":0.018,"depth":0.018,"exponent":2.0,"roll":0.0},{"station":1.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0}]},
+    {"kind":"muscle","id":"spine_runner","origin":"part:haunch_junction","insertion":"part:shoulder_junction","formation":"skeleton_integral","operator":"crease","sections":[{"station":0.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0},{"station":0.2,"width":0.022,"depth":0.022,"exponent":2.0,"roll":0.0},{"station":0.5,"width":0.03,"depth":0.03,"exponent":2.0,"roll":0.0},{"station":0.8,"width":0.022,"depth":0.022,"exponent":2.0,"roll":0.0},{"station":1.0,"width":0.0172,"depth":0.0172,"exponent":2.0,"roll":0.0}]}
+  ],
+  "eyes":[{"id":"amber_eye","host_bone_id":"skull","t":0.42,"offset":[0.13,0.04,0.1],"radius":0.045,"mirror":true,"appearance_material":"eye_gloss","socket":{"radius":0.06,"depth":0.02}}]
+}

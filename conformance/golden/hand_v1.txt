@@ -1,0 +1,25 @@
+[anatomy] 15 violations
+   - phalanx_ratio @ index/seg1: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ index/seg2: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ middle/seg1: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ middle/seg2: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ ring/seg1: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ ring/seg2: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ pinky/seg1: ratio 1.00 outside [0.55, 0.90]
+   - phalanx_ratio @ pinky/seg2: ratio 1.00 outside [0.55, 0.90]
+   - length_profile @ hand: middle must be longest: {'index': 1.05, 'middle': 1.05, 'ring': 1.05, 'pinky': 1.05}
+   - length_profile @ pinky: pinky 1.05 too long vs middle 1.05
+   - splay_fan @ index->middle: splay must open along knuckle line (0.0 -> 0.0)
+   - splay_fan @ middle->ring: splay must open along knuckle line (0.0 -> 0.0)
+   - splay_fan @ ring->pinky: splay must open along knuckle line (0.0 -> 0.0)
+   - thumb_divergence @ thumb: yaw 10 outside [35, 80]
+   - thumb_opposition @ thumb: opposition 5 outside [25, 70]
+[open] PASS
+[fist] 5 violations
+   - interpenetration @ fist:pinky1/thumb1: overlap 0.064 (radii 0.10+0.10)
+   - fist_contact @ fist:index: fingertip buried in palm (-0.098)
+   - fist_contact @ fist:middle: fingertip buried in palm (-0.138)
+   - fist_contact @ fist:ring: fingertip buried in palm (-0.138)
+   - fist_contact @ fist:pinky: fingertip buried in palm (-0.109)
+[point] PASS
+TOTAL: 20

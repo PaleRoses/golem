@@ -1,0 +1,1685 @@
+{
+  "name": "vigil-hound-demo",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "appearance_material": "obsidian_warden",
+  "appearance_palette": {
+    "obsidian_warden": {
+      "tint_linear_rgb": [
+        0.052,
+        0.027,
+        0.021
+      ],
+      "variation": {
+        "kind": "triplanar_value_noise",
+        "wavelength_world": 0.34,
+        "amplitude": 0.045
+      }
+    },
+    "obsidian_deep": {
+      "tint_linear_rgb": [
+        0.018,
+        0.01,
+        0.012
+      ]
+    },
+    "gambeson_dark": {
+      "tint_linear_rgb": [
+        0.19,
+        0.105,
+        0.072
+      ]
+    },
+    "neutral_gray": {
+      "tint_linear_rgb": [
+        0.16,
+        0.068,
+        0.038
+      ]
+    },
+    "eye_gloss": {
+      "tint_linear_rgb": [
+        0.72,
+        0.24,
+        0.035
+      ]
+    },
+    "vascular_supply_gold": {
+      "tint_linear_rgb": [
+        0.9,
+        0.25,
+        0.08
+      ]
+    },
+    "vascular_return_violet": {
+      "tint_linear_rgb": [
+        0.22,
+        0.08,
+        0.65
+      ]
+    },
+    "vascular_exchange_cyan": {
+      "tint_linear_rgb": [
+        0.1,
+        0.75,
+        0.82
+      ]
+    }
+  },
+  "blend": 0.028,
+  "ground_y": 0.02,
+  "ground_tol": 0.025,
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {
+          "region_id": "axial_core",
+          "kind": "torso",
+          "host_bone_id": "thorax"
+        },
+        {
+          "region_id": "cranial",
+          "kind": "head",
+          "host_bone_id": "skull"
+        },
+        {
+          "region_id": "caudal",
+          "kind": "tail",
+          "host_bone_id": "tail_tip"
+        },
+        {
+          "region_id": "fore_paws",
+          "kind": "limb",
+          "host_bone_id": "fore_paw"
+        },
+        {
+          "region_id": "hind_paws",
+          "kind": "limb",
+          "host_bone_id": "hind_paw"
+        }
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "axial_core",
+        "exchange_beds": [
+          {
+            "region_id": "cranial",
+            "tissue": "neural_tissue",
+            "demand": 0.05
+          },
+          {
+            "region_id": "caudal",
+            "tissue": "skeletal_muscle",
+            "demand": 0.03
+          },
+          {
+            "region_id": "fore_paws",
+            "tissue": "skeletal_muscle",
+            "demand": 0.14
+          },
+          {
+            "region_id": "hind_paws",
+            "tissue": "skeletal_muscle",
+            "demand": 0.18
+          }
+        ],
+        "carrier_radius_scale": 0.075,
+        "distance_decay": 0.86
+      }
+    }
+  },
+  "contacts": [],
+  "mounts": [],
+  "pose": {
+    "goals": [],
+    "joints": {},
+    "relations": []
+  },
+  "contract": {
+    "contract": "body.contract",
+    "clauses": [],
+    "attach": [
+      ["deltoid_cap", "deltoid_cap_m"],
+      ["deltoid_cap", "forearm_crown"],
+      ["deltoid_cap", "keeled_thorax"],
+      ["deltoid_cap", "raised_neck"],
+      ["deltoid_cap", "shoulder_cap"],
+      ["deltoid_cap", "trapezius_scapular"],
+      ["deltoid_cap", "triceps_brachial"],
+      ["deltoid_cap_m", "forearm_crown"],
+      ["deltoid_cap_m", "keeled_thorax"],
+      ["deltoid_cap_m", "raised_neck"],
+      ["deltoid_cap_m", "shoulder_cap"],
+      ["deltoid_cap_m", "trapezius_scapular_m"],
+      ["deltoid_cap_m", "triceps_brachial_m"],
+      ["eye.vigil.brow", "skull_crest"],
+      ["eye.vigil.brow", "wedge_skull"],
+      ["flat_fore_shin", "fore_elbow"],
+      ["flat_fore_shin", "forearm_extensor"],
+      ["flat_fore_shin", "forearm_extensor_m"],
+      ["flat_fore_shin", "triceps_brachial"],
+      ["flat_fore_shin", "triceps_brachial_m"],
+      ["flat_hind_shin", "gastrocnemius_calf"],
+      ["flat_hind_shin", "gastrocnemius_calf_m"],
+      ["flat_hind_shin", "hamstring_group"],
+      ["flat_hind_shin", "hamstring_group_m"],
+      ["flat_hind_shin", "quadriceps_femoris"],
+      ["flat_hind_shin", "quadriceps_femoris_m"],
+      ["flat_hind_shin", "stifle_knuckle"],
+      ["fore_elbow", "forearm_extensor"],
+      ["fore_elbow", "forearm_extensor_m"],
+      ["fore_elbow", "triceps_brachial"],
+      ["fore_elbow", "triceps_brachial_m"],
+      ["fore_pastern", "fore_wrist"],
+      ["fore_pastern", "forearm_extensor"],
+      ["fore_pastern", "forearm_extensor_m"],
+      ["fore_wrist", "forearm_extensor"],
+      ["fore_wrist", "forearm_extensor_m"],
+      ["forearm_crown", "forearm_extensor"],
+      ["forearm_crown", "forearm_extensor_m"],
+      ["forearm_crown", "keeled_thorax"],
+      ["forearm_crown", "raised_neck"],
+      ["forearm_crown", "scapular_crown"],
+      ["forearm_crown", "trapezius_scapular"],
+      ["forearm_crown", "trapezius_scapular_m"],
+      ["forearm_crown", "triceps_brachial"],
+      ["forearm_crown", "triceps_brachial_m"],
+      ["forearm_extensor", "triceps_brachial"],
+      ["forearm_extensor_m", "triceps_brachial_m"],
+      ["gastrocnemius_calf", "hamstring_group"],
+      ["gastrocnemius_calf", "haunch_crown"],
+      ["gastrocnemius_calf", "hind_pastern"],
+      ["gastrocnemius_calf", "hock_knuckle"],
+      ["gastrocnemius_calf", "quadriceps_femoris"],
+      ["gastrocnemius_calf", "stifle_knuckle"],
+      ["gastrocnemius_calf_m", "hamstring_group_m"],
+      ["gastrocnemius_calf_m", "haunch_crown"],
+      ["gastrocnemius_calf_m", "hind_pastern"],
+      ["gastrocnemius_calf_m", "hock_knuckle"],
+      ["gastrocnemius_calf_m", "quadriceps_femoris_m"],
+      ["gastrocnemius_calf_m", "stifle_knuckle"],
+      ["hamstring_group", "hamstring_group_m"],
+      ["hamstring_group", "haunch_crown"],
+      ["hamstring_group", "hip_cap"],
+      ["hamstring_group", "iliac_crest"],
+      ["hamstring_group", "keeled_thorax"],
+      ["hamstring_group", "pelvic_basin"],
+      ["hamstring_group", "quadriceps_femoris"],
+      ["hamstring_group", "quadriceps_femoris_m"],
+      ["hamstring_group", "stifle_knuckle"],
+      ["hamstring_group", "tail_root"],
+      ["hamstring_group", "tucked_waist"],
+      ["hamstring_group_m", "haunch_crown"],
+      ["hamstring_group_m", "hip_cap"],
+      ["hamstring_group_m", "iliac_crest"],
+      ["hamstring_group_m", "keeled_thorax"],
+      ["hamstring_group_m", "pelvic_basin"],
+      ["hamstring_group_m", "quadriceps_femoris"],
+      ["hamstring_group_m", "quadriceps_femoris_m"],
+      ["hamstring_group_m", "stifle_knuckle"],
+      ["hamstring_group_m", "tail_root"],
+      ["hamstring_group_m", "tucked_waist"],
+      ["haunch_crown", "iliac_crest"],
+      ["haunch_crown", "keeled_thorax"],
+      ["haunch_crown", "pelvic_basin"],
+      ["haunch_crown", "quadriceps_femoris"],
+      ["haunch_crown", "quadriceps_femoris_m"],
+      ["haunch_crown", "tucked_waist"],
+      ["hind_pastern", "hock_knuckle"],
+      ["hip_cap", "iliac_crest"],
+      ["hip_cap", "quadriceps_femoris"],
+      ["hip_cap", "quadriceps_femoris_m"],
+      ["hip_cap", "tucked_waist"],
+      ["iliac_crest", "tail_root"],
+      ["iliac_crest", "tucked_waist"],
+      ["keeled_thorax", "quadriceps_femoris"],
+      ["keeled_thorax", "quadriceps_femoris_m"],
+      ["keeled_thorax", "trapezius_scapular"],
+      ["keeled_thorax", "trapezius_scapular_m"],
+      ["keeled_thorax", "triceps_brachial"],
+      ["keeled_thorax", "triceps_brachial_m"],
+      ["muzzle_bridge", "skull_crest"],
+      ["pelvic_basin", "quadriceps_femoris"],
+      ["pelvic_basin", "quadriceps_femoris_m"],
+      ["quadriceps_femoris", "quadriceps_femoris_m"],
+      ["quadriceps_femoris", "stifle_knuckle"],
+      ["quadriceps_femoris", "tucked_waist"],
+      ["quadriceps_femoris_m", "stifle_knuckle"],
+      ["quadriceps_femoris_m", "tucked_waist"],
+      ["raised_neck", "scapular_crown"],
+      ["raised_neck", "shoulder_cap"],
+      ["raised_neck", "skull_crest"],
+      ["raised_neck", "sternal_crown"],
+      ["raised_neck", "trapezius_scapular"],
+      ["raised_neck", "trapezius_scapular_m"],
+      ["raised_neck", "triceps_brachial"],
+      ["raised_neck", "triceps_brachial_m"],
+      ["scapular_crown", "shoulder_cap"],
+      ["scapular_crown", "sternal_crown"],
+      ["scapular_crown", "trapezius_scapular"],
+      ["scapular_crown", "trapezius_scapular_m"],
+      ["shoulder_cap", "trapezius_scapular"],
+      ["shoulder_cap", "trapezius_scapular_m"],
+      ["shoulder_cap", "triceps_brachial"],
+      ["shoulder_cap", "triceps_brachial_m"],
+      ["sternal_crown", "trapezius_scapular"],
+      ["sternal_crown", "trapezius_scapular_m"],
+      ["tail_root", "tucked_waist"],
+      ["trapezius_scapular", "trapezius_scapular_m"],
+      ["trapezius_scapular", "triceps_brachial"],
+      ["trapezius_scapular_m", "triceps_brachial_m"],
+      ["deltoid_cap", "triceps_brachial_m"],
+      ["deltoid_cap_m", "triceps_brachial"],
+      ["eye.vigil.brow", "raised_neck"],
+      ["deltoid_cap_m", "trapezius_scapular"],
+      ["deltoid_cap", "trapezius_scapular_m"],
+      ["eye.vigil.brow", "muzzle_bridge"],
+      ["triceps_brachial", "triceps_brachial_m"],
+      ["trapezius_scapular", "triceps_brachial_m"],
+      ["trapezius_scapular_m", "triceps_brachial"],
+      ["fore_pad", "fore_wrist"],
+      ["hip_cap", "tail_root"],
+      ["muzzle_bridge", "raised_neck"],
+      ["hind_pad", "hock_knuckle"],
+      ["fore_pad", "forearm_extensor"],
+      ["fore_pad", "forearm_extensor_m"],
+      ["flat_fore_shin", "fore_pad"],
+      ["gastrocnemius_calf", "hind_pad"],
+      ["gastrocnemius_calf_m", "hind_pad"],
+      ["deltoid_cap", "scapular_crown"],
+      ["deltoid_cap_m", "scapular_crown"],
+      ["keeled_thorax", "skull_crest"],
+      ["flat_hind_shin", "hind_pad"],
+      ["skull_crest", "trapezius_scapular"],
+      ["skull_crest", "trapezius_scapular_m"],
+      ["sternal_crown", "tucked_waist"],
+      ["scapular_crown", "triceps_brachial"],
+      ["scapular_crown", "triceps_brachial_m"],
+      ["keeled_thorax", "pelvic_basin"],
+      ["iliac_crest", "quadriceps_femoris_m"],
+      ["iliac_crest", "quadriceps_femoris"],
+      ["forearm_crown", "skull_crest"]
+    ],
+    "midline": ["haunch_crown", "hip_cap"]
+  },
+  "skeleton": {
+    "root": {
+      "id": "pelvis",
+      "world": [
+        0.0,
+        0.86,
+        -0.58
+      ],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "pelvic_basin",
+          "t": 0.0,
+          "offset": [
+            0.0,
+            0.015,
+            0.0
+          ],
+          "size": [
+            0.19,
+            0.15,
+            0.205
+          ]
+        },
+        {
+          "kind": "blob",
+          "name": "iliac_crest",
+          "t": 0.0,
+          "offset": [
+            0.0,
+            0.105,
+            -0.015
+          ],
+          "size": [
+            0.17,
+            0.038,
+            0.145
+          ],
+          "operator": "chamfer",
+          "blend": 0.009
+        }
+      ]
+    },
+    "bones": [
+      {
+        "id": "loin",
+        "parent": "pelvis",
+        "attach": {
+          "t": 0.0
+        },
+        "rest_dir": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.55,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "tucked_waist",
+            "operator": "blend",
+            "blend": 0.04,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.165,
+                "depth": 0.11,
+                "exponent": 3.2,
+                "roll": 0.0
+              },
+              {
+                "station": 0.18,
+                "width": 0.15,
+                "depth": 0.092,
+                "exponent": 3.1,
+                "roll": 0.0
+              },
+              {
+                "station": 0.48,
+                "width": 0.108,
+                "depth": 0.062,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.78,
+                "width": 0.12,
+                "depth": 0.074,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.145,
+                "depth": 0.1,
+                "exponent": 3.1,
+                "roll": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thorax",
+        "parent": "loin",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "length": 0.62,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "keeled_thorax",
+            "operator": "blend",
+            "blend": 0.046,
+            "sections": [
+              {
+                "station": -0.1,
+                "width": 0.145,
+                "depth": 0.1,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.18,
+                "width": 0.17,
+                "depth": 0.155,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.48,
+                "width": 0.218,
+                "depth": 0.31,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.78,
+                "width": 0.205,
+                "depth": 0.285,
+                "exponent": 3.1,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.155,
+                "depth": 0.19,
+                "exponent": 3.2,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "sternal_crown",
+            "t": 0.58,
+            "offset": [
+              0.0,
+              -0.025,
+              0.0
+            ],
+            "size": [
+              0.19,
+              0.275,
+              0.155
+            ],
+            "operator": "chamfer",
+            "blend": 0.009
+          },
+          {
+            "kind": "blob",
+            "name": "scapular_crown",
+            "t": 0.76,
+            "offset": [
+              0.0,
+              0.09,
+              0.0
+            ],
+            "size": [
+              0.205,
+              0.13,
+              0.16
+            ],
+            "operator": "chamfer",
+            "blend": 0.011
+          }
+        ]
+      },
+      {
+        "id": "neck",
+        "parent": "thorax",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          0.71934,
+          0.694658
+        ],
+        "length": 0.42,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "raised_neck",
+            "operator": "blend",
+            "blend": 0.034,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.14,
+                "depth": 0.145,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.28,
+                "width": 0.125,
+                "depth": 0.12,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.66,
+                "width": 0.105,
+                "depth": 0.095,
+                "exponent": 3.1,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.09,
+                "depth": 0.08,
+                "exponent": 3.2,
+                "roll": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "skull",
+        "parent": "neck",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.292372,
+          0.956305
+        ],
+        "length": 0.41,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "wedge_skull",
+            "operator": "chamfer",
+            "blend": 0.01,
+            "sections": [
+              {
+                "station": -0.1,
+                "width": 0.1,
+                "depth": 0.085,
+                "exponent": 3.4,
+                "roll": 0.0
+              },
+              {
+                "station": 0.08,
+                "width": 0.142,
+                "depth": 0.12,
+                "exponent": 4.2,
+                "roll": 0.0
+              },
+              {
+                "station": 0.34,
+                "width": 0.138,
+                "depth": 0.115,
+                "exponent": 4.4,
+                "roll": 0.0
+              },
+              {
+                "station": 0.62,
+                "width": 0.105,
+                "depth": 0.09,
+                "exponent": 4.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.84,
+                "width": 0.078,
+                "depth": 0.065,
+                "exponent": 3.6,
+                "roll": 0.0
+              },
+              {
+                "station": 1.08,
+                "width": 0.032,
+                "depth": 0.027,
+                "exponent": 3.0,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "skull_crest",
+            "t": 0.24,
+            "offset": [
+              0.0,
+              0.078,
+              0.0
+            ],
+            "size": [
+              0.12,
+              0.032,
+              0.15
+            ],
+            "operator": "crease"
+          },
+          {
+            "kind": "blob",
+            "name": "muzzle_bridge",
+            "t": 0.7,
+            "offset": [
+              0.0,
+              0.048,
+              0.0
+            ],
+            "size": [
+              0.072,
+              0.027,
+              0.14
+            ],
+            "operator": "chamfer",
+            "blend": 0.007
+          }
+        ]
+      },
+      {
+        "id": "tail_base",
+        "parent": "pelvis",
+        "attach": {
+          "t": 0.0,
+          "offset": [
+            0.0,
+            0.055,
+            -0.12
+          ]
+        },
+        "rest_dir": [
+          0.0,
+          0.087156,
+          -0.996195
+        ],
+        "length": 0.36,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_root",
+            "span": [
+              -0.08,
+              1.05
+            ],
+            "stations": [
+              -0.08,
+              0.2,
+              0.56,
+              0.82,
+              1.05
+            ],
+            "radii": [
+              0.085,
+              0.08,
+              0.066,
+              0.048,
+              0.038
+            ],
+            "operator": "blend",
+            "blend": 0.02
+          }
+        ]
+      },
+      {
+        "id": "tail_tip",
+        "parent": "tail_base",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.052336,
+          0.99863
+        ],
+        "length": 0.32,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_lash",
+            "span": [
+              -0.08,
+              1.04
+            ],
+            "stations": [
+              -0.08,
+              0.28,
+              0.62,
+              1.04
+            ],
+            "radii": [
+              0.04,
+              0.032,
+              0.023,
+              0.012
+            ],
+            "operator": "blend",
+            "blend": 0.014
+          }
+        ]
+      },
+      {
+        "id": "fore_girdle",
+        "parent": "thorax",
+        "attach": {
+          "t": 0.74,
+          "offset": [
+            0.0,
+            0.025,
+            0.0
+          ]
+        },
+        "rest_dir": [
+          0.4298,
+          0.0,
+          0.902925
+        ],
+        "length": 0.23,
+        "mirror": true,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "shoulder_cap",
+            "t": 0.95,
+            "offset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": [
+              0.05,
+              0.078,
+              0.072
+            ],
+            "operator": "chamfer",
+            "blend": 0.008
+          }
+        ]
+      },
+      {
+        "id": "fore_upper",
+        "parent": "fore_girdle",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.766044,
+          0.642788
+        ],
+        "length": 0.36,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "forearm_crown",
+            "operator": "blend",
+            "blend": 0.028,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.082,
+                "depth": 0.085,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.22,
+                "width": 0.105,
+                "depth": 0.095,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.58,
+                "width": 0.09,
+                "depth": 0.078,
+                "exponent": 3.1,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.066,
+                "depth": 0.058,
+                "exponent": 3.3,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "fore_elbow",
+            "t": 1.0,
+            "size": [
+              0.07,
+              0.067,
+              0.073
+            ],
+            "operator": "chamfer",
+            "blend": 0.007
+          }
+        ]
+      },
+      {
+        "id": "fore_shin",
+        "parent": "fore_upper",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.5,
+          0.866025
+        ],
+        "length": 0.43,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "flat_fore_shin",
+            "operator": "chamfer",
+            "blend": 0.009,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.068,
+                "depth": 0.052,
+                "exponent": 4.8,
+                "roll": 0.0
+              },
+              {
+                "station": 0.28,
+                "width": 0.061,
+                "depth": 0.044,
+                "exponent": 5.2,
+                "roll": 0.0
+              },
+              {
+                "station": 0.72,
+                "width": 0.052,
+                "depth": 0.038,
+                "exponent": 5.6,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.047,
+                "depth": 0.035,
+                "exponent": 5.8,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "fore_wrist",
+            "t": 1.0,
+            "size": [
+              0.052,
+              0.048,
+              0.055
+            ],
+            "operator": "crease"
+          }
+        ]
+      },
+      {
+        "id": "fore_paw",
+        "parent": "fore_shin",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          0.5,
+          0.866025
+        ],
+        "length": 0.19,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "fore_pastern",
+            "operator": "chamfer",
+            "blend": 0.007,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.05,
+                "depth": 0.045,
+                "exponent": 4.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.46,
+                "width": 0.045,
+                "depth": 0.04,
+                "exponent": 4.2,
+                "roll": 0.0
+              },
+              {
+                "station": 1.04,
+                "width": 0.038,
+                "depth": 0.036,
+                "exponent": 4.4,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "fore_pad",
+            "t": 0.92,
+            "offset": [
+              0.0,
+              -0.025,
+              0.035
+            ],
+            "size": [
+              0.061,
+              0.032,
+              0.092
+            ],
+            "operator": "blend",
+            "blend": 0.018
+          }
+        ]
+      },
+      {
+        "id": "hind_girdle",
+        "parent": "pelvis",
+        "attach": {
+          "t": 0.0,
+          "offset": [
+            0.0,
+            0.025,
+            -0.02
+          ]
+        },
+        "rest_dir": [
+          0.4298,
+          0.0,
+          0.902925
+        ],
+        "length": 0.235,
+        "mirror": true,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hip_cap",
+            "t": 0.76,
+            "offset": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": [
+              0.074,
+              0.135,
+              0.145
+            ],
+            "operator": "chamfer",
+            "blend": 0.008
+          }
+        ]
+      },
+      {
+        "id": "hind_thigh",
+        "parent": "hind_girdle",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.707107,
+          0.707107
+        ],
+        "length": 0.38,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "haunch_crown",
+            "operator": "blend",
+            "blend": 0.034,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.105,
+                "depth": 0.1,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.2,
+                "width": 0.135,
+                "depth": 0.125,
+                "exponent": 3.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.5,
+                "width": 0.125,
+                "depth": 0.11,
+                "exponent": 3.1,
+                "roll": 0.0
+              },
+              {
+                "station": 0.78,
+                "width": 0.095,
+                "depth": 0.082,
+                "exponent": 3.2,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.07,
+                "depth": 0.061,
+                "exponent": 3.4,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "stifle_knuckle",
+            "t": 1.0,
+            "size": [
+              0.076,
+              0.071,
+              0.08
+            ],
+            "operator": "chamfer",
+            "blend": 0.008
+          }
+        ]
+      },
+      {
+        "id": "hind_shin",
+        "parent": "hind_thigh",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          -0.573576,
+          0.819152
+        ],
+        "length": 0.41,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "flat_hind_shin",
+            "operator": "chamfer",
+            "blend": 0.009,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.071,
+                "depth": 0.054,
+                "exponent": 4.8,
+                "roll": 0.0
+              },
+              {
+                "station": 0.28,
+                "width": 0.064,
+                "depth": 0.046,
+                "exponent": 5.2,
+                "roll": 0.0
+              },
+              {
+                "station": 0.72,
+                "width": 0.054,
+                "depth": 0.039,
+                "exponent": 5.6,
+                "roll": 0.0
+              },
+              {
+                "station": 1.06,
+                "width": 0.048,
+                "depth": 0.035,
+                "exponent": 5.8,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "hock_knuckle",
+            "t": 1.0,
+            "size": [
+              0.054,
+              0.05,
+              0.058
+            ],
+            "operator": "crease"
+          }
+        ]
+      },
+      {
+        "id": "hind_paw",
+        "parent": "hind_shin",
+        "attach": {
+          "t": 1.0
+        },
+        "rest_dir": [
+          0.0,
+          0.5,
+          0.866025
+        ],
+        "length": 0.2,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "loft",
+            "name": "hind_pastern",
+            "operator": "chamfer",
+            "blend": 0.007,
+            "sections": [
+              {
+                "station": -0.08,
+                "width": 0.052,
+                "depth": 0.046,
+                "exponent": 4.0,
+                "roll": 0.0
+              },
+              {
+                "station": 0.46,
+                "width": 0.046,
+                "depth": 0.041,
+                "exponent": 4.2,
+                "roll": 0.0
+              },
+              {
+                "station": 1.04,
+                "width": 0.039,
+                "depth": 0.036,
+                "exponent": 4.4,
+                "roll": 0.0
+              }
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "hind_pad",
+            "t": 0.92,
+            "offset": [
+              0.0,
+              -0.025,
+              0.04
+            ],
+            "size": [
+              0.064,
+              0.033,
+              0.096
+            ],
+            "operator": "blend",
+            "blend": 0.018
+          }
+        ]
+      }
+    ]
+  },
+  "muscles": [
+    {
+      "kind": "muscle",
+      "id": "trapezius_scapular",
+      "origin": "part:scapular_crown",
+      "insertion": "part:shoulder_cap",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.02,
+          "depth": 0.018,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.28,
+          "width": 0.078,
+          "depth": 0.058,
+          "exponent": 3.2,
+          "roll": 18.0
+        },
+        {
+          "station": 0.58,
+          "width": 0.116,
+          "depth": 0.088,
+          "exponent": 3.8,
+          "roll": 28.0
+        },
+        {
+          "station": 0.82,
+          "width": 0.07,
+          "depth": 0.052,
+          "exponent": 3.0,
+          "roll": 12.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.02,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "trapezius_scapular_m",
+      "origin": "part:scapular_crown",
+      "insertion": "part:shoulder_cap_m",
+      "mirror_of": "trapezius_scapular",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "deltoid_cap",
+      "origin": "part:shoulder_cap",
+      "insertion": "landmark:fore_upper/center",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.024,
+          "depth": 0.018,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.22,
+          "width": 0.096,
+          "depth": 0.086,
+          "exponent": 3.4,
+          "roll": -16.0
+        },
+        {
+          "station": 0.48,
+          "width": 0.122,
+          "depth": 0.108,
+          "exponent": 4.0,
+          "roll": -28.0
+        },
+        {
+          "station": 0.76,
+          "width": 0.08,
+          "depth": 0.068,
+          "exponent": 3.2,
+          "roll": -14.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.02,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "deltoid_cap_m",
+      "origin": "part:shoulder_cap_m",
+      "insertion": "landmark:fore_upper_m/center",
+      "mirror_of": "deltoid_cap",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "triceps_brachial",
+      "origin": "landmark:fore_girdle/tail",
+      "insertion": "part:fore_elbow",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.3,
+          "roll": 0.0
+        },
+        {
+          "station": 0.26,
+          "width": 0.108,
+          "depth": 0.094,
+          "exponent": 3.2,
+          "roll": 24.0
+        },
+        {
+          "station": 0.56,
+          "width": 0.142,
+          "depth": 0.12,
+          "exponent": 3.8,
+          "roll": 34.0
+        },
+        {
+          "station": 0.82,
+          "width": 0.086,
+          "depth": 0.066,
+          "exponent": 3.0,
+          "roll": 18.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.02,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "triceps_brachial_m",
+      "origin": "landmark:fore_girdle_m/tail",
+      "insertion": "part:fore_elbow_m",
+      "mirror_of": "triceps_brachial",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "forearm_extensor",
+      "origin": "part:fore_elbow",
+      "insertion": "part:fore_wrist",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.2,
+          "width": 0.1,
+          "depth": 0.08,
+          "exponent": 3.6,
+          "roll": -18.0
+        },
+        {
+          "station": 0.46,
+          "width": 0.086,
+          "depth": 0.069,
+          "exponent": 3.8,
+          "roll": -10.0
+        },
+        {
+          "station": 0.66,
+          "width": 0.047,
+          "depth": 0.035,
+          "exponent": 3.2,
+          "roll": -4.0
+        },
+        {
+          "station": 0.78,
+          "width": 0.026,
+          "depth": 0.02,
+          "exponent": 2.8,
+          "roll": 0.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.018,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "forearm_extensor_m",
+      "origin": "part:fore_elbow_m",
+      "insertion": "part:fore_wrist_m",
+      "mirror_of": "forearm_extensor",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "quadriceps_femoris",
+      "origin": "part:hip_cap",
+      "insertion": "part:stifle_knuckle",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.026,
+          "depth": 0.02,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.2,
+          "width": 0.162,
+          "depth": 0.145,
+          "exponent": 3.4,
+          "roll": -16.0
+        },
+        {
+          "station": 0.46,
+          "width": 0.222,
+          "depth": 0.198,
+          "exponent": 4.2,
+          "roll": -28.0
+        },
+        {
+          "station": 0.72,
+          "width": 0.19,
+          "depth": 0.164,
+          "exponent": 3.8,
+          "roll": -18.0
+        },
+        {
+          "station": 0.9,
+          "width": 0.062,
+          "depth": 0.046,
+          "exponent": 3.0,
+          "roll": -8.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "quadriceps_femoris_m",
+      "origin": "part:hip_cap_m",
+      "insertion": "part:stifle_knuckle_m",
+      "mirror_of": "quadriceps_femoris",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "hamstring_group",
+      "origin": "part:iliac_crest",
+      "insertion": "landmark:hind_thigh/tail",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.24,
+          "width": 0.142,
+          "depth": 0.122,
+          "exponent": 3.2,
+          "roll": 24.0
+        },
+        {
+          "station": 0.52,
+          "width": 0.206,
+          "depth": 0.18,
+          "exponent": 4.0,
+          "roll": 38.0
+        },
+        {
+          "station": 0.76,
+          "width": 0.166,
+          "depth": 0.142,
+          "exponent": 3.6,
+          "roll": 28.0
+        },
+        {
+          "station": 0.92,
+          "width": 0.052,
+          "depth": 0.038,
+          "exponent": 2.8,
+          "roll": 12.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.02,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "hamstring_group_m",
+      "origin": "part:iliac_crest",
+      "insertion": "landmark:hind_thigh_m/tail",
+      "mirror_of": "hamstring_group",
+      "operator": "crease"
+    },
+    {
+      "kind": "muscle",
+      "id": "gastrocnemius_calf",
+      "origin": "part:stifle_knuckle",
+      "insertion": "part:hock_knuckle",
+      "operator": "crease",
+      "sections": [
+        {
+          "station": 0.0,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.4,
+          "roll": 0.0
+        },
+        {
+          "station": 0.2,
+          "width": 0.094,
+          "depth": 0.076,
+          "exponent": 3.4,
+          "roll": 18.0
+        },
+        {
+          "station": 0.42,
+          "width": 0.116,
+          "depth": 0.096,
+          "exponent": 3.9,
+          "roll": 12.0
+        },
+        {
+          "station": 0.62,
+          "width": 0.076,
+          "depth": 0.06,
+          "exponent": 3.4,
+          "roll": 6.0
+        },
+        {
+          "station": 0.72,
+          "width": 0.034,
+          "depth": 0.025,
+          "exponent": 3.0,
+          "roll": 2.0
+        },
+        {
+          "station": 0.84,
+          "width": 0.022,
+          "depth": 0.018,
+          "exponent": 2.6,
+          "roll": 0.0
+        },
+        {
+          "station": 1.0,
+          "width": 0.018,
+          "depth": 0.018,
+          "exponent": 2.2,
+          "roll": 0.0
+        }
+      ]
+    },
+    {
+      "kind": "muscle",
+      "id": "gastrocnemius_calf_m",
+      "origin": "part:stifle_knuckle_m",
+      "insertion": "part:hock_knuckle_m",
+      "mirror_of": "gastrocnemius_calf",
+      "operator": "crease"
+    }
+  ],
+  "conduits": [
+    {"id": "dorsal_thorax", "kind": "face_line", "part": "keeled_thorax", "axis": "x", "width": 0.065, "face_normal": [0.0, 1.0, 0.0], "emit": ["band"], "material": "obsidian_deep"},
+    {"id": "dorsal_neck", "kind": "face_line", "part": "raised_neck", "axis": "x", "width": 0.045, "face_normal": [0.0, 1.0, 0.0], "emit": ["band"], "material": "obsidian_deep"},
+    {"id": "dorsal_skull", "kind": "face_line", "part": "wedge_skull", "axis": "x", "width": 0.04, "face_normal": [0.0, 1.0, 0.0], "emit": ["band"], "material": "obsidian_deep"},
+    {"id": "dorsal_tail_base", "kind": "face_line", "part": "tail_root", "axis": "x", "width": 0.035, "face_normal": [0.0, 1.0, 0.0], "emit": ["band"], "material": "obsidian_deep"},
+    {"id": "ventral_belly", "kind": "face_line", "part": "pelvic_basin", "axis": "x", "width": 0.2, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "ventral_thorax", "kind": "face_line", "part": "keeled_thorax", "axis": "x", "width": 0.25, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "ventral_neck", "kind": "face_line", "part": "raised_neck", "axis": "x", "width": 0.12, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_fore_upper", "kind": "face_line", "part": "forearm_crown", "axis": "x", "width": 0.2, "face_normal": [-1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_fore_upper_m", "kind": "face_line", "part": "forearm_crown_m", "axis": "x", "width": 0.2, "face_normal": [1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_fore_shin", "kind": "face_line", "part": "flat_fore_shin", "axis": "x", "width": 0.13, "face_normal": [-1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_fore_shin_m", "kind": "face_line", "part": "flat_fore_shin_m", "axis": "x", "width": 0.13, "face_normal": [1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_hind_thigh", "kind": "face_line", "part": "haunch_crown", "axis": "x", "width": 0.24, "face_normal": [-1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_hind_thigh_m", "kind": "face_line", "part": "haunch_crown_m", "axis": "x", "width": 0.24, "face_normal": [1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_hind_shin", "kind": "face_line", "part": "flat_hind_shin", "axis": "x", "width": 0.14, "face_normal": [-1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "inner_hind_shin_m", "kind": "face_line", "part": "flat_hind_shin_m", "axis": "x", "width": 0.14, "face_normal": [1.0, 0.0, 0.0], "emit": ["band"], "material": "gambeson_dark"},
+    {"id": "warm_muzzle", "kind": "axial_loop", "part": "wedge_skull", "t": 0.83, "width": 0.18, "emit": ["band"], "material": "neutral_gray"},
+    {"id": "warm_fore_pad", "kind": "face_line", "part": "fore_pad", "axis": "x", "width": 0.14, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "neutral_gray"},
+    {"id": "warm_fore_pad_m", "kind": "face_line", "part": "fore_pad_m", "axis": "x", "width": 0.14, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "neutral_gray"},
+    {"id": "warm_hind_pad", "kind": "face_line", "part": "hind_pad", "axis": "x", "width": 0.15, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "neutral_gray"},
+    {"id": "warm_hind_pad_m", "kind": "face_line", "part": "hind_pad_m", "axis": "x", "width": 0.15, "face_normal": [0.0, -1.0, 0.0], "emit": ["band"], "material": "neutral_gray"}
+  ],
+  "eyes": [
+    {
+      "id": "vigil",
+      "host_bone_id": "skull",
+      "t": 0.28,
+      "offset": [
+        0.13,
+        0.048,
+        0.012
+      ],
+      "radius": 0.045,
+      "mirror": true,
+      "appearance_material": "eye_gloss",
+      "socket": {
+        "radius": 0.059,
+        "depth": 0.021
+      },
+      "brow_ridge": {
+        "offset": [
+          0.0,
+          0.052,
+          -0.006
+        ],
+        "size": [
+          0.066,
+          0.014,
+          0.027
+        ],
+        "round": 0.034,
+        "blend": 0.011
+      }
+    }
+  ]
+}

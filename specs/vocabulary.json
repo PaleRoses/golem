@@ -1,0 +1,101 @@
+{
+ "_schema": "GOLEM v0.3 quarantined-vocabulary registry. Each record is a VocabEntry. status='quarantine' means the compiler path exists and is verified but the kind is NOT trusted: promotion to 'trusted' is a human act performed outside this file (there is deliberately no automated promotion mechanism).",
+ "vocab": [
+  {
+   "kind_name": "box",
+   "compiler_ref": "v03/engine_v03.py#sdf_box",
+   "frame_doc": "Rounded box / prism. Axes: +x = creature's LEFT, +y = up, +z = forward; world units. Local axes equal world axes unless 'rot' is present. size = CORE half-extents along the part's local axes (NOT full widths). round (>= 0) is an additive OUTWARD fillet radius applied equally to every face, edge and corner, so the total half-extent along each axis is size + round and the compiled AABB is enlarged by round on every side. SDF (exact): let pl = R^T (p - center) (R = identity if no rot); q = |pl| - size; d = ||max(q,0)|| + min(max(q_x,q_y,q_z),0) - round. Mirror across x=0 sends center.x -> -center.x and, if oriented, the quaternion (w,x,y,z) -> (w,x,-y,-z). rot on a box is permitted (see the 'rot' entry); rot on a gencyl is forbidden.",
+   "verification_ref": [
+    "v03/test_engine_v03.py::test_box_field_is_deterministic",
+    "v03/test_engine_v03.py::test_box_sdf_matches_closed_form",
+    "v03/test_engine_v03.py::test_box_sdf_via_part_dispatch_matches_direct",
+    "v03/test_engine_v03.py::test_sliver_box_triggers_both_feature_size_violations",
+    "v03/test_engine_v03.py::test_well_formed_box_has_no_feature_size_violations",
+    "v03/test_engine_v03.py::test_greatsword_golden"
+   ],
+   "golden_ref": "v03/golden/greatsword_v1.json",
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "rot",
+   "compiler_ref": "v03/engine_v03.py#part_sdf",
+   "frame_doc": "Per-part orientation for blob and box ONLY. Schema: 'rot':[w,x,y,z], a unit quaternion in canonical double-cover form w >= 0. It is normalized and sign-canonicalized on read; if |q| differs far from 1 that is a reported violation (R-quat-nonunit) but the normalized quaternion is still used. Orientation is applied by isometry conjugation: d(p) = d_local(R^T (p - center)), where R = quat_to_matrix(q) is the local->world rotation. Exact for box; for blob the frozen scaled-space ellipsoid approximation is preserved unchanged inside the rotated frame. Mirror rule (across x=0): center.x -> -center.x and (w,x,y,z) -> (w,x,-y,-z); for box/blob this reflection is realized as the proper rotation R' = M R M with M = diag(-1,1,1), the improper factor being absorbed by the per-axis reflection symmetry of the box/ellipsoid local SDF, so the mirrored instance is the exact geometric reflection of the original. FENCE: rot on a gencyl is FORBIDDEN because spines already carry orientation; it is a reported violation (FENCE-rot-on-gencyl) and is NEVER applied -- a gencyl is always evaluated exactly as in v0.2.",
+   "verification_ref": [
+    "v03/test_engine_v03.py::test_rot_rotation_invariance",
+    "v03/test_engine_v03.py::test_rot_mirror_consistency",
+    "v03/test_engine_v03.py::test_rot_on_gencyl_reported_and_not_applied",
+    "v03/test_engine_v03.py::test_nonunit_quat_reported_but_used",
+    "v03/test_engine_v03.py::test_lean_marker_golden"
+   ],
+   "golden_ref": "v03/golden/lean_marker.json",
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "profile",
+   "compiler_ref": "golem/kernel/engine/algebra.py#sdf_gencyl_profile",
+   "frame_doc": "Swept-superellipse cross-section for gencyl ONLY. Schema: 'profile': {'n': scalar-or-per-anchor list, exactly zero or one of 'aspect' and absolute 'depth': scalar-or-per-anchor list, 'roll': scalar-or-per-anchor degrees optional, 'offset': [u,v] or per-anchor pairs optional, 'up': [x,y,z] optional}; omission of both depth forms defaults aspect to 1. The cross-section is |u/width|^n + |v/depth|^n = 1 with width from radii, depth = width*aspect for the legacy relative form or the authored world-unit half-depth for the absolute form. n is checked against [2,12], all depths must be positive, aspect outside (0,1] is advisory, and per-anchor lists must match spine arity. Frame before roll: u = normalize(up x tangent), v = tangent x u; positive roll rotates the width axis toward v about the tangent. SDF is approximate: scaled radial superellipse distance follows linearly interpolated station parameters over each spine segment, interior station sections glue the local cover, and signed axial flat caps exist only at the whole-spine endpoints. Mirror across x=0 reflects the frame, negates roll, and negates the local width offset. FENCE: profile on blob/box is reported and ignored; rot on gencyl is reported and ignored.",
+   "verification_ref": [
+    "tests/test_profile.py::test_profile_delegation_untouched",
+    "tests/test_profile.py::test_profile_mirror_exactness",
+    "tests/test_profile.py::test_offset_profile_mirror_exactness_for_an_arbitrary_bone_frame",
+    "tests/test_profile.py::test_offset_profile_bounds_cover_the_displaced_section",
+    "tests/test_profile.py::test_profile_blade_golden_mesh",
+    "tests/test_profile.py::test_profile_interior_is_negative",
+    "tests/test_profile.py::test_profile_violations",
+    "tests/test_profile.py::test_profile_circle_matches_frozen_on_sides",
+    "tests/test_profile.py::test_profile_internal_stations_are_glued_interior_sections",
+    "tests/test_profile.py::test_profile_stations_preserve_straight_constant_sweep_and_outer_caps",
+    "tests/test_profile.py::test_profile_bent_station_glues_to_a_finite_junction"
+   ],
+   "golden_ref": "golden/profile_blade_v1.json",
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "surface_detail/curvature",
+   "compiler_ref": "golem/kernel/engine/compile.py#apply_curvature_surface_detail",
+   "frame_doc": "Strictly opt-in post-extraction flesh detail. Schema at the creature or graph document root: 'surface_detail': {'kind':'curvature','amplitude': non-negative world distance, 'scale': positive world distance no larger than the extracted creature mesh diagonal}. The engine heat-diffuses the extracted mesh over the authored scale, projects the signed fine-to-coarse offset onto outward vertex normals, pushes convex crowns outward, creases concave mass boundaries inward, and clamps every realized offset by amplitude through a bounded response. Assembly rejects use on equipment and amplitudes above 0.9 times extracted-mesh pitch. Omission and zero amplitude are exact identities: no displacement report is emitted and compiled/exported geometry remains byte-identical. Face connectivity is never changed; export recomputes normals from displaced geometry.",
+   "verification_ref": [
+    "tests/test_surface_detail.py::test_opt_in_curvature_detail_is_signed_bounded_and_topology_preserving",
+    "tests/test_surface_detail.py::test_zero_amplitude_surface_detail_is_byte_identical",
+    "tests/test_surface_detail.py::test_surface_detail_failures_are_typed_obstructions"
+   ],
+   "golden_ref": "artifacts/muscle_crown_detail_demo.glb",
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "loft",
+   "compiler_ref": "golem/kernel/body/emit.py#_flesh_loft_part",
+   "frame_doc": "Anatomy-facing generalized cylinder authored on body flesh as {'kind':'loft','sections':[...]} with at least two strictly increasing stations. Every section carries exactly finite station, positive half-width, positive absolute half-depth, exponent in [2,12], and finite roll degrees. The body owner lowers it directly into the existing gencyl field owner: spine points follow the bone axis, radii are widths, profile.depth carries absolute depths, profile.n carries exponents, profile.roll carries degrees, and profile.up is bone-local +y in world, making zero-roll width bone-local +x. This expresses keeled or deep chests, tucked waists, wedge skulls, and flat shins without a parallel geometry pipeline. Approximation bound: the field differs from an ideal continuous sweep by at most the Hausdorff distance between that sweep and the piecewise-linear spine and section-parameter interpolation declared by adjacent stations.",
+   "verification_ref": [
+    "tests/test_body.py::test_loft_sections_lower_to_anisotropic_profile",
+    "tests/test_body.py::test_invalid_loft_sections_are_addressed_violations",
+    "tests/test_profile.py::test_absolute_depth_roll_mirrors_exactly"
+   ],
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "operator",
+   "compiler_ref": "golem/kernel/engine/algebra.py#compose_union",
+   "frame_doc": "Ordered union operator carried by each incoming part or body flesh record. 'blend' is the existing polynomial smooth minimum and uses the selected blend radius; it remains the default when operator is absent. 'chamfer' uses a linear bevel union with that radius. 'crease' is exact hard min(a,b). Chamfer and crease avoid smooth-min bulge overshoot at joints; crease is pointwise identical to the primitive hard union. The operator belongs to the union edge formed when the part enters authored order, not to an isolated primitive.",
+   "verification_ref": [
+    "tests/test_engine.py::test_crease_union_has_no_smooth_bulge_overshoot",
+    "tests/test_engine.py::test_chamfer_union_dispatches_through_the_checked_operator",
+    "tests/test_engine.py::test_unknown_composition_operator_is_a_typed_obstruction"
+   ],
+   "status": "quarantine"
+  },
+  {
+   "kind_name": "muscle",
+   "compiler_ref": "golem/kernel/body/myology.py#compile_myology",
+   "frame_doc": "Tier-two myology mass authored at top-level muscles. The minimal base form carries kind, id, origin, insertion, bulk, and definition. bulk is exactly one of {'relative':{'to':'origin'|'insertion'|'span','width':positive fraction,'depth':positive fraction}} or {'absolute':{'width':positive half-extent,'depth':positive half-extent}}. A relative origin or insertion part anchor uses that emitted part's full maximum cross-section girth; a bone or landmark anchor uses its host bone length; span uses solved anchor distance. definition is in [0,1]. The compiler derives a five-section fusiform profile with tendinous endpoints, shoulders, and a mid-span belly, then lowers it through the existing LoftSection and profiled gencyl owners. Detailed opt-in refinement replaces bulk and definition with legacy sections covering normalized span [0,1] and containing an interior belly wider and deeper than both tendinous endpoints. sections, bulk, and mirror_of are disjoint forms; relative and absolute are disjoint bulk units. Origin and insertion reuse the body relation selector grammar and must resolve to existing bone, part, or landmark constructed geometry; no myology-specific address syntax exists. mirror_of inherits and reflects the source derived or explicit profile after verifying the target anchors agree with sagittal reflection. blend, chamfer, and crease remain the existing incoming union-edge operators. Approximation bound: surface-distance error is bounded by the profiled gencyl piecewise-linear station interpolation over the resolved anchor span.",
+   "verification_ref": [
+    "tests/test_muscle.py::test_quadruped_muscles_lower_to_profiled_union_parts",
+    "tests/test_muscle.py::test_minimal_muscles_derive_fusiform_profiles_from_host_scale",
+    "tests/test_muscle.py::test_relative_and_absolute_bulk_are_a_typed_schema_and_check_obstruction",
+    "tests/test_muscle.py::test_mirrored_muscle_is_the_exact_reflected_profile",
+    "tests/test_muscle.py::test_unresolvable_and_degenerate_anchors_are_typed_obstructions"
+   ],
+   "status": "quarantine"
+  }
+ ]
+}

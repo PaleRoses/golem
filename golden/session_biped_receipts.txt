@@ -1,0 +1,141 @@
+golem> envelope {"heads": 6.0, "head": "head", "margin": 0.02}
+txn 1  set meta@contract (new) = {"contract": "biped-envelope", "clauses": [{"...
+new 2:
+  env_heads_tall heads_tall: UNMEASURABLE (missing part:head)
+  env_balanced centroid_support_margin: UNMEASURABLE (missing contact:support)
+contract 0 FAIL / 1 pass / 2 unmeasurable
+est_tokens: 68
+golem> attach bone spine at root:0 {"length": 0.34, "world_dir": [0, 1, 0], "dof": "ball", "flesh": [{"kind": "gencyl", "name": "torso", "span": [0, 1], "radii": [0.13, 0.155]}]}
+txn 2  add bone skeleton/spine
+contract 0 FAIL / 1 pass / 2 unmeasurable
+anomaly + deep_burial @ seed~torso: 0.126 deep, 252% of seed
+senses  W 0.10 -> 0.31 | H 0.10 -> 0.63 | D 0.10 -> 0.31 | HW 1.00 -> 2.02 | k 0.001 -> 0.006
+est_tokens: 57
+golem> remove skeleton/root/seed
+txn 3  remove flesh skeleton/root/seed
+contract 0 FAIL / 1 pass / 2 unmeasurable
+anomaly - deep_burial @ seed~torso
+est_tokens: 29
+golem> attach bone neck at spine:1 {"length": 0.07, "world_dir": [0, 1, 0.08], "dof": "hinge", "limits": {"pitch": [-20, 20]}, "flesh": [{"kind": "gencyl", "name": "neck", "span": [0, 1], "radii": [0.055, 0.05]}]}
+txn 4  add bone skeleton/neck
+contract 0 FAIL / 1 pass / 2 unmeasurable
+anomaly + deep_burial @ torso~neck: 0.147 deep, 294% of neck
+est_tokens: 33
+golem> attach bone head at neck:1 {"length": 0.2, "world_dir": [0, 1, 0.05], "dof": "ball", "flesh": [{"kind": "blob", "name": "head", "t": 0.55, "size": [0.105, 0.14, 0.11]}]}
+txn 5  add bone skeleton/head
+contract 1 FAIL / 1 pass / 1 unmeasurable
+anomaly + deep_burial @ neck~head: 0.048 deep, 96% of neck
+anomaly + unintended_fusion @ torso~head: gap -0.080, 2 links apart
+senses  H 0.63 -> 0.76 | HW 2.02 -> 2.47 | k 0.006 -> 0.007
+est_tokens: 65
+golem> attach bone thigh at root:0 {"offset": [0.11, -0.03, 0], "length": 0.41, "world_dir": [0.04, -1, 0.03], "dof": "ball", "limits": {"pitch": [-30, 90], "yaw": [-30, 30], "roll": [-20, 20]}, "flesh": [{"kind": "gencyl", "name": "thigh", "span": [0, 1], "radii": [0.085, 0.06]}]}
+txn 6  add bone skeleton/thigh
+contract 1 FAIL / 1 pass / 1 unmeasurable
+anomaly + unintended_fusion @ torso~thigh: gap -0.095
+senses  W 0.31 -> 0.35 | H 0.76 -> 1.13 | HW 2.47 -> 3.24 | k 0.007 -> 0.010
+est_tokens: 51
+golem> reflect thigh
+txn 7  set skeleton/thigh@mirror (new) = true
+contract 1 FAIL / 1 pass / 1 unmeasurable
+senses  W 0.35 -> 0.39 | HW 3.24 -> 2.91
+est_tokens: 32
+golem> attach bone shin at thigh:1 {"length": 0.36, "world_dir": [0, -1, 0.03], "dof": "hinge", "limits": {"pitch": [-140, 0]}, "flesh": [{"kind": "gencyl", "name": "shin", "span": [0, 1], "radii": [0.055, 0.04]}]}
+txn 8  add bone skeleton/shin
+cleared 1: env_heads_tall
+contract 0 FAIL / 2 pass / 1 unmeasurable
+anomaly + deep_burial @ thigh~shin: 0.061 deep, 152% of shin
+senses  H 1.13 -> 1.47 | HW 2.91 -> 3.78 | k 0.010 -> 0.012
+est_tokens: 55
+golem> attach bone foot at shin:1 {"length": 0.15, "world_dir": [0, 0, 1], "dof": "hinge", "limits": {"pitch": [-30, 30]}, "flesh": [{"kind": "blob", "name": "foot", "t": 0.5, "offset": [0, 0, -0.02], "size": [0.055, 0.035, 0.13]}]}
+txn 9  add bone skeleton/foot
+contract 0 FAIL / 2 pass / 1 unmeasurable
+anomaly + deep_burial @ shin~foot: 0.041 deep, 117% of foot
+senses  H 1.47 -> 1.49 | D 0.31 -> 0.36 | HW 3.78 -> 3.82
+est_tokens: 48
+golem> add contact contacts {"group": "support", "parts": ["foot"], "solve": "lift_body"}
+txn 10  add contact contacts/support
+cleared 1: env_balanced
+contract 0 FAIL / 3 pass
+senses  ground_lift 0.0 -> -0.125682
+est_tokens: 31
+golem> attach bone clavicle at spine:0.92 {"length": 0.15, "world_dir": [1, -0.1, 0], "dof": "fixed"}
+txn 11  add bone skeleton/clavicle
+contract 0 FAIL / 3 pass
+est_tokens: 15
+golem> reflect clavicle
+txn 12  set skeleton/clavicle@mirror (new) = true
+contract 0 FAIL / 3 pass
+est_tokens: 19
+golem> attach bone upper_arm at clavicle:1 {"length": 0.3, "world_dir": [0.12, -1, 0.02], "dof": "ball", "flesh": [{"kind": "gencyl", "name": "upper_arm", "span": [0, 1], "radii": [0.05, 0.042]}]}
+txn 13  add bone skeleton/upper_arm
+contract 0 FAIL / 3 pass
+anomaly + deep_burial @ torso~upper_arm: 0.052 deep, 124% of upper_arm
+anomaly + unintended_fusion @ upper_arm~thigh: gap -0.043
+senses  W 0.39 -> 0.45 | HW 3.82 -> 3.28 | k 0.012 -> 0.013
+est_tokens: 63
+golem> attach bone forearm at upper_arm:1 {"length": 0.26, "world_dir": [0.03, -1, 0.12], "dof": "hinge", "limits": {"pitch": [0, 140]}, "flesh": [{"kind": "gencyl", "name": "forearm", "span": [0, 1], "radii": [0.04, 0.034]}, {"kind": "blob", "name": "mitt", "t": 1.05, "size": [0.045, 0.055, 0.05]}]}
+txn 14  add bone skeleton/forearm
+contract 0 FAIL / 3 pass
+anomaly + deep_burial @ forearm~mitt: 0.026 deep, 76% of forearm
+anomaly + deep_burial @ upper_arm~forearm: 0.038 deep, 112% of forearm
+anomaly + unintended_fusion @ forearm~thigh: gap -0.046
+anomaly + unintended_fusion @ mitt~thigh: gap -0.044
+senses  W 0.45 -> 0.51 | HW 3.28 -> 2.93
+est_tokens: 86
+golem> array spine dorsal 5 [0.2, 0.9] {"kind": "blob", "size": [0.028, 0.05, 0.028], "offset": [-0.15, 0, 0]}
+txn 15  add array skeleton/spine/dorsal
+contract 0 FAIL / 3 pass
+anomaly + blend_ambiguity @ dorsal.0~dorsal.1: gap 0.004 < k 0.013 (no void; may bridge at mesh)
+anomaly + blend_ambiguity @ dorsal.1~dorsal.2: gap 0.004 < k 0.013 (no void; may bridge at mesh)
+anomaly + blend_ambiguity @ dorsal.2~dorsal.3: gap 0.004 < k 0.013 (no void; may bridge at mesh)
+anomaly + blend_ambiguity @ dorsal.3~dorsal.4: gap 0.004 < k 0.013 (no void; may bridge at mesh)
+anomaly + unintended_fusion @ torso~dorsal.0: gap -0.012
+anomaly + unintended_fusion @ torso~dorsal.1: gap -0.017
+anomaly + unintended_fusion @ torso~dorsal.2: gap -0.021
+anomaly + unintended_fusion @ torso~dorsal.3: gap -0.026
+anomaly ... +1 more deltas -- outline "" 1 constraint
+senses  D 0.36 -> 0.39
+est_tokens: 190
+golem> squeeze belt between spine:0.1 spine:0.22 {"flesh": [{"kind": "gencyl", "name": "belt", "span": [0, 1], "radii": [0.155, 0.15]}]}
+txn 16  add bone skeleton/belt
+contract 0 FAIL / 3 pass
+anomaly + blend_ambiguity @ dorsal.2~belt: gap 0.010 < k 0.013 (no void; may bridge at mesh)
+anomaly + deep_burial @ torso~belt: 0.147 deep, 113% of torso
+anomaly + unintended_fusion @ belt~thigh: gap -0.107
+anomaly + unintended_fusion @ dorsal.0~belt: gap -0.029
+anomaly + unintended_fusion @ dorsal.1~belt: gap -0.019
+anomaly + unintended_fusion @ forearm~belt: gap -0.006, 3 links apart
+anomaly + unintended_fusion @ upper_arm~belt: gap -0.019, 2 links apart
+est_tokens: 130
+golem> outline "" 2 structure
+meta  biped  blend 0.006 ground_y 0.02 @ meta
+skeleton  10 bones, 10 flesh, root [0.0, 1.0, 0.0] @ skeleton/root
+  skeleton/spine  len 0.34 dof ball  flesh[torso]
+    skeleton/neck  len 0.07 dof hinge  flesh[neck]
+    skeleton/clavicle  len 0.15 dof fixed mirror
+    skeleton/belt  len 0.04 dof fixed  flesh[belt]
+  skeleton/thigh  len 0.41 dof ball mirror  flesh[thigh]
+    skeleton/shin  len 0.36 dof hinge  flesh[shin]
+contacts/support  parts ['foot'] solve lift_body
+golem> outline "" 1 constraint
+contract  0 FAIL / 3 pass @ meta
+anomaly N1 deep_burial @ torso~neck: 0.147 deep, 294% of neck
+anomaly N2 unintended_fusion @ belt~thigh: gap -0.107
+anomaly N3 unintended_fusion @ torso~thigh: gap -0.095
+anomaly N4 deep_burial @ thigh~shin: 0.061 deep, 152% of shin
+anomaly N5 unintended_fusion @ forearm~thigh: gap -0.046
+anomaly N6 deep_burial @ torso~upper_arm: 0.052 deep, 124% of upper_arm
+anomaly N7 deep_burial @ shin~foot: 0.041 deep, 117% of foot
+anomaly N8 deep_burial @ torso~belt: 0.147 deep, 113% of torso
+anomaly N9 deep_burial @ upper_arm~forearm: 0.038 deep, 112% of forearm
+anomaly N10 unintended_fusion @ torso~dorsal.4: gap -0.030
+anomaly N11 unintended_fusion @ dorsal.0~belt: gap -0.029
+anomaly N12 unintended_fusion @ upper_arm~thigh: gap -0.043
+anomaly N13 unintended_fusion @ mitt~thigh: gap -0.044
+anomaly N14 deep_burial @ neck~head: 0.048 deep, 96% of neck
+anomaly N15 unintended_fusion @ torso~dorsal.3: gap -0.026
+anomaly N16 deep_burial @ forearm~mitt: 0.026 deep, 76% of forearm
+anomaly N17 unintended_fusion @ torso~head: gap -0.080, 2 links apart
+anomaly N18 unintended_fusion @ torso~dorsal.2: gap -0.021
+anomaly N19 blend_ambiguity @ dorsal.0~dorsal.1: gap 0.004 < k 0.013 (no void; may bridge at mesh)
+... +9 more @ meta (raise depth or narrow scope)

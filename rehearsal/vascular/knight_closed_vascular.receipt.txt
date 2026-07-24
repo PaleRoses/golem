@@ -1,0 +1,32 @@
+element body       role=creature  res=210 components=1 watertight=True dust=4 faces=230476 violations=0
+  vascular nodes=1058 edges=1312 terminal_pairs=256 residual=1.364e-11 balance=9.422e-13
+  allocation {"cranial": 28, "forelimb": 14, "hindlimb": 214}
+  stages     {"arteriole": 256, "artery": 272, "exchange": 256, "vein": 272, "venule": 256}
+  geometry   capsule_margin=5.005523e-04 symmetry_error=0.000e+00 nonincident_intersections=0
+  delivery   {"cranial": 0.09999595083673805, "forelimb": 0.03999020885615439, "hindlimb": 0.880013840324743} max_relative_error=2.448e-04
+  solve      normalized_pressure_drop=1.225372e+14 conservation=2.898e-17
+  structural guidance samples=2435 maximum_cost_multiplier=1.050000e+00
+vascular_supply    body__vascular_supply        appearance=vascular_supply_gold     edges= 528 faces= 12672
+vascular_return    body__vascular_return        appearance=vascular_return_violet   edges= 528 faces= 12672
+vascular_exchange  body__vascular_exchange      appearance=vascular_exchange_cyan   edges= 256 faces=  6144
+element sword      role=equipment res=128 components=1 watertight=True dust=0 faces=26692 violations=0
+conduit sword__fuller_rune     appearance=emissive_seam            faces=685
+physical_evidence: requested
+solid fit pairs=1 declared=1 maximum_penetration_world=0.000000e+00
+fit relation element=sword with=body law=bounded_mount_contact minimum_clearance_world=6.980344e-03 permitted_clearance_world=8.511579e-03 maximum_penetration_world=0.000000e+00 tolerance_world=4.255789e-03 fitted_surface_fraction=not_evaluated
+coupled evidence metres_per_world_unit=1.000000e+00 materials=["stainless_steel_316l_room_temperature"] cases=["greatsword_gravity_heat"]
+physical volume element=body solid=9.999791e-01 lumen=2.086581e-05 wall=4.186951e-06 minimum_ligament_m=5.005523e-04
+vascular sizing element=body heat_w=1.400000e+02 total_rise_k=2.000000e+01 approach_reserve_k=2.000000e+00 bulk_rise_k=1.800000e+01 required_flow_m3_s=1.863176e-06 baseline_flow_m3_s=1.860551e-08 radius_scale=3.163393e+00 achieved_flow_m3_s=2.077676e-06
+hydraulics circuit=0 flow_m3_s=2.077676e-06 pressure_drop_pa=2.500000e+05 power_w=5.194190e-01 max_reynolds=2.187561e+03 residual=8.942e-12 balance=4.107e-14
+thermal element=body case=greatsword_gravity_heat maximum_k=3.051516e+02 mean_k=2.954632e+02 gradient_k_m=5.495532e+01 coolant_outlet_k=2.961045e+02 hottest=region:body/axial_core correlations=["laminar_circular_tube_conservative_lower_bound", "churchill_chu_isothermal_vertical_plate"] source_w=1.400000e+02 solver_residual=6.885e-16 energy_balance=2.182e-15
+ambient convection element=body case=greatsword_gravity_heat gas=dry_air_101325_pa_298k film_k=2.915914e+02 prandtl=7.129243e-01 rayleigh=2.548144e+10 nusselt=3.396289e+02 h_w_m2_k=2.682039e+00 valid_prandtl_gt=0.000000e+00 valid_rayleigh=[0.000000e+00,1.000000e+12)
+tube heat-transfer validity correlation=laminar_circular_tube_conservative_lower_bound coolant=water_0_1_mpa_293k reynolds=[8.564399e+00,2.187561e+03] prandtl=[7.004500e+00,7.004500e+00] entrance_diameters=[1.125067e+00,2.903844e+03] hydraulic_diameter_m=[9.910112e-05,1.205177e-03] valid_reynolds=[0.000000e+00,2.300000e+03) valid_prandtl=[6.000000e-01,1.000000e+03] minimum_entrance_diameters=0.000000e+00
+coolant validity material=water_0_1_mpa_293k inlet_k=2.931500e+02 outlet_k=2.961045e+02 catalogue_temperature=[2.881500e+02,3.131500e+02] pressure=[0.000000e+00,2.500000e+05] catalogue_pressure=[9.000000e+04,5.000000e+05]
+mechanics element=body case=greatsword_gravity_heat displacement_m=9.967047e-05 von_mises_pa=1.152641e+07 yield_safety=1.474873e+01 buckling_factor=1.709815e+03 burst_safety=1.479663e+01 critical=element:body solver_residual=5.788e-15 force_balance=9.594e-15 moment_balance=9.672e-15 not_evaluated=["fatigue", "fracture", "large_deformation", "contact_plasticity", "anisotropic_composite_failure", "subgrid_channel_stress_concentration", "subgrid_channel_global_stiffness", "subgrid_channel_global_strength", "subgrid_channel_pressure_prestress"]
+embedded channels element=body case=greatsword_gravity_heat edges=1312 diameter_pitch=1.084942e-02 lumen_fraction=2.086581e-05 envelope_fraction=2.505276e-05 lame_hoop_pa=7.659400e+06 burst_safety=1.479663e+01 not_evaluated=["subgrid_channel_global_stiffness", "subgrid_channel_global_strength", "subgrid_channel_stress_concentration", "subgrid_channel_pressure_prestress"]
+rigid payload element=sword case=greatsword_gravity_heat mass_kg=1.103047e+02 gap_m=1.730929e-02 force_residual_n=7.109e-13 moment_residual_nm=4.129e-13
+resolution refinement element=body case=greatsword_gravity_heat base=32 refined=64 temperature_utilization_change=2.639820e-02 displacement_utilization_change=3.832399e-04 yield_utilization_change=2.221924e-02
+coupled not_evaluated=["equipment_local_thermal_response", "equipment_local_deformation", "equipment_local_stress", "equipment_contact_stress", "subgrid_channel_global_constitutive_response"]
+coupling iterations=11 maximum_state_delta=5.493e-09
+scene -> rehearsal/vascular/knight_closed_vascular.glb
+assembly verdict: AcceptedAssembly

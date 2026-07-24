@@ -1,0 +1,19 @@
+{
+ "geometry": "sable_stride formed (static_implicit_relaxation)",
+ "resolution": 242,
+ "miss_seconds": [
+  25.48050329200123,
+  25.23992900000303
+ ],
+ "hit_seconds": [
+  0.2279718749996391,
+  0.22871820799991838,
+  0.226905125000485,
+  0.2321477080004115,
+  0.2282080830009363
+ ],
+ "miss_median_seconds": 25.36021614600213,
+ "hit_median_seconds": 0.2282080830009363,
+ "snapshot_speedup": 111.12759816617924,
+ "entry_001_baseline_seconds": 20.5
+}

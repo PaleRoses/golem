@@ -1,0 +1,79 @@
+{
+  "name": "eye-demo-head",
+  "dialect": "body/0.3",
+  "emit_target": "v03",
+  "appearance_material": "obsidian_warden",
+  "blend": 0.02,
+  "ground_y": 0.02,
+  "contacts": [],
+  "mounts": [],
+  "contract": {
+    "contract": "body.contract",
+    "clauses": [],
+    "attach": [
+      ["eye.watcher.brow", "skull"]
+    ]
+  },
+
+  "skeleton": {
+    "root": {
+      "id": "head",
+      "world": [
+        0.0,
+        0.22,
+        0.0
+      ],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "skull",
+          "t": 0.0,
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            0.19,
+            0.18,
+            0.21
+          ]
+        }
+      ]
+    },
+    "bones": []
+  },
+  "eyes": [
+    {
+      "id": "watcher",
+      "host_bone_id": "head",
+      "t": 0.0,
+      "offset": [
+        0.095,
+        0.035,
+        0.17
+      ],
+      "radius": 0.045,
+      "mirror": true,
+      "appearance_material": "eye_gloss",
+      "socket": {
+        "radius": 0.06,
+        "depth": 0.025
+      },
+      "brow_ridge": {
+        "offset": [
+          0.0,
+          0.065,
+          -0.02
+        ],
+        "size": [
+          0.065,
+          0.012,
+          0.018
+        ],
+        "round": 0.01,
+        "blend": 0.01
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+"""Mechanics assembly role package."""

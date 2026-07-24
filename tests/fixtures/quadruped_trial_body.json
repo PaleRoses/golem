@@ -1,0 +1,153 @@
+{
+  "name": "quadruped-underbody",
+  "dialect": "body/0.3",
+  "blend": 0.025,
+  "contacts": [],
+  "mounts": [],
+  "pose": { "goals": [], "joints": {} },
+  "skeleton": {
+    "root": {
+      "id": "pelvis",
+      "world": [0, 0.78, -0.5],
+      "flesh": [
+        { "kind": "blob", "name": "pelvis_mass", "size": [0.18, 0.16, 0.18], "offset": [0, 0, 0], "t": 0 }
+      ]
+    },
+    "bones": [
+      {
+        "id": "spine_lower",
+        "parent": "pelvis",
+        "attach": { "t": 0 },
+        "length": 0.5,
+        "rest_dir": [0, 0, 1],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "loin", "radii": [0.16, 0.19, 0.185], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "spine_upper",
+        "parent": "spine_lower",
+        "attach": { "t": 1 },
+        "length": 0.4,
+        "rest_dir": [0, 0, 1],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "thorax", "radii": [0.19, 0.21, 0.17], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "neck",
+        "parent": "spine_upper",
+        "attach": { "t": 1 },
+        "length": 0.24,
+        "rest_dir": [0, 0.5, 0.866],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "neck_flesh", "radii": [0.12, 0.1, 0.095], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "head",
+        "parent": "neck",
+        "attach": { "t": 1 },
+        "length": 0.22,
+        "rest_dir": [0, 0.15, 0.988],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "head_flesh", "radii": [0.09, 0.115, 0.1, 0.08], "stations": [0, 0.35, 0.7, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "shoulder",
+        "parent": "spine_upper",
+        "attach": { "t": 0.5 },
+        "length": 0.17,
+        "rest_dir": [1, 0, 0],
+        "mirror": true,
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "blob", "name": "shoulder_mass", "size": [0.11, 0.11, 0.11], "offset": [0, 0, 0], "t": 0.8 }
+        ]
+      },
+      {
+        "id": "foreleg_up",
+        "parent": "shoulder",
+        "attach": { "t": 1 },
+        "length": 0.34,
+        "rest_dir": [0.12, -0.98, 0.04],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "foreleg_up_flesh", "radii": [0.09, 0.08, 0.072], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "foreleg_lo",
+        "parent": "foreleg_up",
+        "attach": { "t": 1 },
+        "length": 0.33,
+        "rest_dir": [0.04, -0.999, 0],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "foreleg_lo_flesh", "radii": [0.072, 0.08, 0.07], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "hip",
+        "parent": "pelvis",
+        "attach": { "t": 0 },
+        "length": 0.17,
+        "rest_dir": [1, 0, 0],
+        "mirror": true,
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "blob", "name": "hip_mass", "size": [0.12, 0.12, 0.12], "offset": [0, 0, 0], "t": 0.8 }
+        ]
+      },
+      {
+        "id": "hindleg_up",
+        "parent": "hip",
+        "attach": { "t": 1 },
+        "length": 0.34,
+        "rest_dir": [0.12, -0.98, -0.04],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "hindleg_up_flesh", "radii": [0.09, 0.08, 0.072], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      },
+      {
+        "id": "hindleg_lo",
+        "parent": "hindleg_up",
+        "attach": { "t": 1 },
+        "length": 0.33,
+        "rest_dir": [0.04, -0.999, 0],
+        "joint": { "dof": "fixed" },
+        "flesh": [
+          { "kind": "gencyl", "name": "hindleg_lo_flesh", "radii": [0.072, 0.08, 0.07], "stations": [0, 0.5, 1.0], "span": [0, 1] }
+        ]
+      }
+    ]
+  },
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        { "region_id": "axial_core", "kind": "torso", "host_bone_id": "spine_upper" },
+        { "region_id": "cranial", "kind": "head", "host_bone_id": "head" },
+        { "region_id": "forelimb", "kind": "limb", "host_bone_id": "foreleg_lo" },
+        { "region_id": "hindlimb", "kind": "limb", "host_bone_id": "hindleg_lo" }
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "axial_core",
+        "carrier_radius_scale": 0.12,
+        "distance_decay": 0.86,
+        "exchange_beds": [
+          { "region_id": "cranial", "tissue": "neural_tissue", "demand": 0.1, "tissue_envelope": { "minimum_radius": 0.07 } },
+          { "region_id": "forelimb", "tissue": "skeletal_muscle", "demand": 0.1 },
+          { "region_id": "hindlimb", "tissue": "skeletal_muscle", "demand": 0.2 }
+        ]
+      }
+    }
+  }
+}

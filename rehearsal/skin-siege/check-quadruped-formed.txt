@@ -1,0 +1,18 @@
+PROPRIO skin-siege-quadruped txn:1 | 10 parts (2 mirrored, 12 instances) | no mesh
+GLOBAL  bbox 0.51w x 1.24h x 2.96d | H/W 2.44 | centroid (0.00,0.86,+0.03) | k=0.085 (global; 2 part override(s)) | predicted 1 component(s)
+
+ASSERT  0 FAIL / 0 pass  [pack:skin-siege-quadruped-envelope]
+
+ANOMALY 0
+
+CIRCULATION pump thorax | 2/2 closed | 2 suggested carrier scales | coverage 1.000 | leverage 0.857x
+  SKELETAL_MUSCLE 0.429 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > loin > pelvis > tail_base > tail_mid > tail_tip
+  NEURAL_TISSUE 0.571 | PUMP > ARTERY > ARTERIOLE > CAPILLARY > VENULE > VEIN | thorax > neck > skull
+  CIRCULATION_CLEARANCE @ skeleton/tail_mid/joint: radius 0.030 < 0.040; suggest scale skeleton/tail_mid/flesh[0] x1.333
+  CIRCULATION_CLEARANCE @ skeleton/tail_tip/joint: radius 0.016 < 0.040; suggest scale skeleton/tail_tip/flesh[0] x2.500
+VASCULAR feasibility: ACCEPTED
+  vascular nodes=1052 edges=1306 terminal_pairs=256 residual=3.295e-13 balance=3.317e-13
+  allocation {"caudal": 110, "cranial": 146}
+
+ASSEMBLY acceptance: ACCEPTED
+

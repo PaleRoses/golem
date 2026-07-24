@@ -1,0 +1,60 @@
+{
+ "elements": {
+  "harness": "obsidian_warden",
+  "helm": "obsidian_deep",
+  "sword": "steel_violet"
+ },
+ "records": {
+  "obsidian_deep": {
+   "base_color": [
+    0.03,
+    0.029,
+    0.044
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.3,
+   "texture_set": null
+  },
+  "obsidian_warden": {
+   "base_color": [
+    0.034,
+    0.033,
+    0.048
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.24,
+   "texture_set": null
+  },
+  "steel_violet": {
+   "base_color": [
+    0.06,
+    0.06,
+    0.086
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.75,
+   "roughness": 0.38,
+   "texture_set": null
+  }
+ }
+}

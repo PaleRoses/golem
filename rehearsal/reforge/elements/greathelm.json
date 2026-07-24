@@ -1,0 +1,155 @@
+{
+ "name": "greathelm",
+ "_doc": "canonical frame: shallow external faceplate at the head front, +y up; positive SDFs are not hollow helmets",
+ "blend": 0.012,
+ "parts": [
+  {
+   "id": "helm",
+   "type": "gencyl",
+   "blend": 0.007,
+   "spine": [
+    [
+     0,
+     0.04,
+     0.0
+    ],
+    [
+     0,
+     0.16,
+     0.0
+    ],
+    [
+     0,
+     0.27,
+     0.0
+    ]
+   ],
+   "radii": [
+    0.075,
+    0.105,
+    0.08
+   ],
+   "profile": {
+    "n": [
+     4.0,
+     5.2,
+     4.6
+    ],
+    "aspect": [
+     0.30,
+     0.22,
+     0.28
+    ],
+    "offset": [[0.0, 0.143], [0.0, 0.143], [0.0, 0.143]],
+    "up": [
+     0,
+     0,
+     1
+    ]
+   }
+  }
+ ],
+ "conduits": [
+  {
+   "id": "visor_line",
+   "kind": "axial_loop",
+   "part": "helm",
+   "t": 0.42,
+   "width": 0.022,
+   "depth": 0.008,
+   "emit": [
+    "groove",
+    "band"
+   ],
+   "material": "emissive_seam"
+  }
+ ],
+ "appendages": [
+  {
+   "id": "antler",
+   "anchor_part": "helm",
+   "anchor_t": 0.97,
+   "root_offset": [0.05, 0.0, 0.143],
+   "mirror": true,
+   "intent": [
+    {
+     "id": "beam",
+     "type": "gencyl",
+     "spine": [
+      [
+       0.05,
+       0.26,
+       0.143
+      ],
+      [
+       0.24,
+       0.5,
+       0.083
+      ],
+      [
+       0.34,
+       0.72,
+       0.163
+      ]
+     ],
+     "radii": [
+      0.05,
+      0.09,
+      0.08
+     ]
+    },
+    {
+     "id": "tine_f",
+     "type": "gencyl",
+     "spine": [
+      [
+       0.13,
+       0.38,
+       0.123
+      ],
+      [
+       0.14,
+       0.6,
+       0.283
+      ]
+     ],
+     "radii": [
+      0.045,
+      0.055
+     ]
+    },
+    {
+     "id": "tine_b",
+     "type": "gencyl",
+     "spine": [
+      [
+       0.2,
+       0.5,
+       0.103
+      ],
+      [
+       0.18,
+       0.74,
+       -0.017
+      ]
+     ],
+     "radii": [
+      0.04,
+      0.05
+     ]
+    }
+   ],
+   "count": 110,
+   "seed": 11,
+   "step": 0.042,
+   "influence": 0.3,
+   "kill": 0.05,
+   "root_radius": 0.026,
+   "min_radius": 0.007,
+   "envelope": 1.7,
+   "env_min_radius": 0.013,
+   "tip_taper": 0.4,
+   "blend": 0.018
+  }
+ ]
+}

@@ -1,0 +1,527 @@
+{
+ "name": "obsidian_knight",
+ "dialect": "body/0.3",
+ "emit_target": "v03",
+ "blend": 0.006,
+ "ground_y": -0.9,
+ "ground_tol": 0.02,
+ "skeleton": {
+  "root": {
+   "id": "root",
+   "world": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "flesh": [
+    {
+     "kind": "blob",
+     "name": "seed",
+     "t": 0.0,
+     "size": [
+      0.05,
+      0.05,
+      0.05
+     ]
+    }
+   ]
+  },
+  "bones": [
+   {
+    "id": "spine1",
+    "length": 0.32,
+    "rest_dir": [
+     0,
+     1,
+     0
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "parent": "root",
+    "flesh": [
+     {
+      "name": "abdomen",
+      "kind": "box",
+      "t": 0.5,
+      "size": [
+       0.24,
+       0.28,
+       0.15
+      ]
+     },
+     {
+      "name": "tasset",
+      "kind": "box",
+      "t": 0.0,
+      "size": [
+       0.3,
+       0.12,
+       0.2
+      ]
+     }
+    ]
+   },
+   {
+    "id": "spine2",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.34,
+    "rest_dir": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "breastplate",
+      "kind": "box",
+      "t": 0.5,
+      "size": [
+       0.3,
+       0.32,
+       0.17
+      ]
+     }
+    ],
+    "parent": "spine1"
+   },
+   {
+    "id": "neck",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.16,
+    "rest_dir": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "gorget",
+      "kind": "box",
+      "t": 0.5,
+      "size": [
+       0.15,
+       0.12,
+       0.15
+      ]
+     }
+    ],
+    "parent": "spine2"
+   },
+   {
+    "id": "head",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.26,
+    "rest_dir": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "helm",
+      "kind": "box",
+      "t": 0.4,
+      "size": [
+       0.19,
+       0.18,
+       0.2
+      ]
+     },
+     {
+      "name": "crest",
+      "kind": "blob",
+      "t": 1.0,
+      "size": [
+       0.05,
+       0.12,
+       0.18
+      ]
+     }
+    ],
+    "parent": "neck"
+   },
+   {
+    "id": "clavicle.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.22,
+    "rest_dir": [
+     0.0,
+     0.980581,
+     0.196116
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [],
+    "parent": "spine2",
+    "mirror": true
+   },
+   {
+    "id": "uarm.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.32,
+    "rest_dir": [
+     0.287683,
+     0.957113,
+     -0.034254
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "pauldron",
+      "kind": "blob",
+      "t": 0.0,
+      "size": [
+       0.22,
+       0.14,
+       0.22
+      ]
+     },
+     {
+      "name": "upperarm",
+      "kind": "gencyl",
+      "span": [
+       0.25,
+       1.0
+      ],
+      "radii": [
+       0.08,
+       0.065
+      ]
+     }
+    ],
+    "parent": "clavicle.L"
+   },
+   {
+    "id": "farm.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.38,
+    "rest_dir": [
+     0.613338,
+     -0.161114,
+     0.773213
+    ],
+    "joint": {
+     "dof": "hinge"
+    },
+    "flesh": [
+     {
+      "name": "forearm",
+      "kind": "gencyl",
+      "span": [
+       0.0,
+       1.0
+      ],
+      "radii": [
+       0.07,
+       0.055
+      ]
+     }
+    ],
+    "parent": "uarm.L"
+   },
+   {
+    "id": "hand.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.09,
+    "rest_dir": [
+     -0.038922,
+     -0.363502,
+     0.93078
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "gauntlet",
+      "kind": "blob",
+      "t": 0.6,
+      "size": [
+       0.09,
+       0.08,
+       0.1
+      ]
+     }
+    ],
+    "parent": "farm.L"
+   },
+   {
+    "id": "hip.L",
+    "attach": {
+     "t": 0.0
+    },
+    "length": 0.2,
+    "rest_dir": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [],
+    "parent": "spine1",
+    "mirror": true
+   },
+   {
+    "id": "thigh.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.61,
+    "rest_dir": [
+     -1.0,
+     0.0,
+     0.0
+    ],
+    "joint": {
+     "dof": "ball"
+    },
+    "flesh": [
+     {
+      "name": "cuisse",
+      "kind": "gencyl",
+      "span": [
+       0.0,
+       1.0
+      ],
+      "radii": [
+       0.09,
+       0.075
+      ]
+     }
+    ],
+    "parent": "hip.L"
+   },
+   {
+    "id": "shin.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.61,
+    "rest_dir": [
+     0.0,
+     0.039968,
+     0.999201
+    ],
+    "joint": {
+     "dof": "hinge"
+    },
+    "flesh": [
+     {
+      "name": "greave",
+      "kind": "gencyl",
+      "span": [
+       0.0,
+       1.0
+      ],
+      "radii": [
+       0.08,
+       0.065
+      ]
+     },
+     {
+      "name": "knee",
+      "kind": "blob",
+      "t": 0.0,
+      "size": [
+       0.09,
+       0.09,
+       0.09
+      ]
+     }
+    ],
+    "parent": "thigh.L"
+   },
+   {
+    "id": "foot.L",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 0.2,
+    "rest_dir": [
+     0.0,
+     0.987321,
+     0.158733
+    ],
+    "joint": {
+     "dof": "hinge"
+    },
+    "flesh": [
+     {
+      "name": "sabaton",
+      "kind": "box",
+      "t": 0.5,
+      "size": [
+       0.13,
+       0.09,
+       0.24
+      ]
+     }
+    ],
+    "parent": "shin.L"
+   },
+   {
+    "id": "swordmount",
+    "attach": {
+     "t": 0.4
+    },
+    "length": 0.18,
+    "rest_dir": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [],
+    "parent": "spine1"
+   },
+   {
+    "id": "sword",
+    "attach": {
+     "t": 1.0
+    },
+    "length": 1.42,
+    "rest_dir": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "name": "pommel",
+      "kind": "blob",
+      "t": 0.02,
+      "size": [
+       0.07,
+       0.08,
+       0.07
+      ]
+     },
+     {
+      "name": "grip",
+      "kind": "gencyl",
+      "span": [
+       0.03,
+       0.14
+      ],
+      "radii": [
+       0.028,
+       0.028
+      ]
+     },
+     {
+      "name": "crossguard",
+      "kind": "box",
+      "t": 0.13,
+      "size": [
+       0.08,
+       0.05,
+       0.36
+      ]
+     },
+     {
+      "name": "blade",
+      "kind": "gencyl",
+      "span": [
+       0.12,
+       1.0
+      ],
+      "radii": [
+       0.06,
+       0.014
+      ]
+     }
+    ],
+    "parent": "swordmount"
+   }
+  ]
+ },
+ "pose": {
+  "joints": {},
+  "goals": []
+ },
+ "props": [],
+ "mounts": [],
+ "contacts": [
+  {
+   "group": "support",
+   "parts": [
+    "foot.L",
+    "foot.R"
+   ],
+   "solve": "ground"
+  }
+ ],
+ "contract": {
+  "contract": "obsidian_knight-envelope",
+  "clauses": [
+   {
+    "id": "env_heads_tall",
+    "scope": [
+     "part:helm"
+    ],
+    "metric": "heads_tall",
+    "operator": "within",
+    "value": [
+     6.5,
+     7.5
+    ],
+    "unit": "heads"
+   },
+   {
+    "id": "env_balanced",
+    "scope": [
+     "whole",
+     "contact:support"
+    ],
+    "metric": "centroid_support_margin",
+    "operator": "minimum",
+    "value": 0.05,
+    "unit": "world_unit"
+   },
+   {
+    "id": "env_integrity",
+    "scope": [
+     "whole"
+    ],
+    "metric": "post_dust_components",
+    "operator": "equal",
+    "value": 1,
+    "unit": "count"
+   }
+  ]
+ }
+}

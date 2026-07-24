@@ -1,0 +1,37 @@
+{
+ "name": "arm_plate",
+ "_doc": "External rerebrace and vambrace splints follow the anatomy frame on +x without enclosing the limb as a solid cylinder.",
+ "blend": 0.012,
+ "parts": [
+  {
+   "id": "rerebrace",
+   "type": "gencyl",
+   "spine": [[0.252, 1.145, 0.021], [0.276, 1.000, 0.045], [0.307, 0.813, 0.076]],
+   "radii": [0.065, 0.06, 0.045],
+   "profile": {
+    "n": [4.0, 4.8, 4.0],
+    "aspect": [0.34, 0.36, 0.48],
+    "offset": [[0.0, 0.23], [0.0, 0.235], [0.0, 0.21]],
+    "up": [0.0, 0.0, 1.0]
+   }
+  },
+  {
+   "id": "couter",
+   "type": "blob",
+   "center": [0.305, 0.825, 0.267],
+   "size": [0.056, 0.055, 0.025]
+  },
+  {
+   "id": "vambrace",
+   "type": "gencyl",
+   "spine": [[0.307, 0.813, 0.076], [0.233, 0.729, 0.113], [0.142, 0.606, 0.163]],
+   "radii": [0.045, 0.055, 0.04],
+   "profile": {
+    "n": [4.0, 4.8, 4.0],
+    "aspect": [0.48, 0.40, 0.54],
+    "offset": [[0.0, 0.21], [0.0, 0.215], [0.0, 0.19]],
+    "up": [0.0, 0.0, 1.0]
+   }
+  }
+ ]
+}

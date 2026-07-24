@@ -1,0 +1,383 @@
+{
+ "elements": {
+  "vigil-hound-demo": "obsidian_warden",
+  "vigil-hound-demo__dorsal_neck": "obsidian_deep",
+  "vigil-hound-demo__dorsal_skull": "obsidian_deep",
+  "vigil-hound-demo__dorsal_tail_base": "obsidian_deep",
+  "vigil-hound-demo__dorsal_thorax": "obsidian_deep",
+  "vigil-hound-demo__eye_vigil": "eye_gloss",
+  "vigil-hound-demo__eye_vigil_m": "eye_gloss",
+  "vigil-hound-demo__inner_fore_shin": "gambeson_dark",
+  "vigil-hound-demo__inner_fore_shin_m": "gambeson_dark",
+  "vigil-hound-demo__inner_fore_upper": "gambeson_dark",
+  "vigil-hound-demo__inner_fore_upper_m": "gambeson_dark",
+  "vigil-hound-demo__inner_hind_shin": "gambeson_dark",
+  "vigil-hound-demo__inner_hind_shin_m": "gambeson_dark",
+  "vigil-hound-demo__inner_hind_thigh": "gambeson_dark",
+  "vigil-hound-demo__inner_hind_thigh_m": "gambeson_dark",
+  "vigil-hound-demo__vascular_exchange": "vascular_exchange_cyan",
+  "vigil-hound-demo__vascular_return": "vascular_return_violet",
+  "vigil-hound-demo__vascular_supply": "vascular_supply_gold",
+  "vigil-hound-demo__ventral_belly": "gambeson_dark",
+  "vigil-hound-demo__ventral_neck": "gambeson_dark",
+  "vigil-hound-demo__ventral_thorax": "gambeson_dark",
+  "vigil-hound-demo__warm_fore_pad": "neutral_gray",
+  "vigil-hound-demo__warm_fore_pad_m": "neutral_gray",
+  "vigil-hound-demo__warm_hind_pad": "neutral_gray",
+  "vigil-hound-demo__warm_hind_pad_m": "neutral_gray",
+  "vigil-hound-demo__warm_muzzle": "neutral_gray"
+ },
+ "records": {
+  "eye_gloss": {
+   "base_color": [
+    0.035,
+    0.045,
+    0.055
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.08,
+   "texture_set": null
+  },
+  "gambeson_dark": {
+   "base_color": [
+    0.048,
+    0.042,
+    0.046
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.88,
+   "texture_set": null
+  },
+  "neutral_gray": {
+   "base_color": [
+    0.4,
+    0.41,
+    0.44
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.6,
+   "texture_set": null
+  },
+  "obsidian_deep": {
+   "base_color": [
+    0.03,
+    0.029,
+    0.044
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.3,
+   "texture_set": null
+  },
+  "obsidian_warden": {
+   "base_color": [
+    0.034,
+    0.033,
+    0.048
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.24,
+   "texture_set": null
+  },
+  "vascular_exchange_cyan": {
+   "base_color": [
+    0.36,
+    0.78,
+    0.82
+   ],
+   "emissive": true,
+   "emissive_color": [
+    0.56,
+    0.96,
+    1.0
+   ],
+   "emissive_strength": 1.45,
+   "metallic": 0.0,
+   "roughness": 0.45,
+   "texture_set": null
+  },
+  "vascular_return_violet": {
+   "base_color": [
+    0.16,
+    0.1,
+    0.44
+   ],
+   "emissive": true,
+   "emissive_color": [
+    0.28,
+    0.18,
+    0.92
+   ],
+   "emissive_strength": 1.7,
+   "metallic": 0.08,
+   "roughness": 0.38,
+   "texture_set": null
+  },
+  "vascular_supply_gold": {
+   "base_color": [
+    0.72,
+    0.43,
+    0.08
+   ],
+   "emissive": true,
+   "emissive_color": [
+    1.0,
+    0.52,
+    0.1
+   ],
+   "emissive_strength": 1.8,
+   "metallic": 0.18,
+   "roughness": 0.32,
+   "texture_set": null
+  }
+ },
+ "surface_colors": {
+  "vigil-hound-demo": {
+   "derived_seed": "d4106afaf4911d07",
+   "tint_linear_rgb": [
+    0.052,
+    0.027,
+    0.021
+   ],
+   "variation": {
+    "amplitude": 0.045,
+    "kind": "triplanar_value_noise",
+    "wavelength_world": 0.34
+   }
+  },
+  "vigil-hound-demo__dorsal_neck": {
+   "derived_seed": "eac442c960a72e60",
+   "tint_linear_rgb": [
+    0.018,
+    0.01,
+    0.012
+   ]
+  },
+  "vigil-hound-demo__dorsal_skull": {
+   "derived_seed": "eac442c960a72e60",
+   "tint_linear_rgb": [
+    0.018,
+    0.01,
+    0.012
+   ]
+  },
+  "vigil-hound-demo__dorsal_tail_base": {
+   "derived_seed": "eac442c960a72e60",
+   "tint_linear_rgb": [
+    0.018,
+    0.01,
+    0.012
+   ]
+  },
+  "vigil-hound-demo__dorsal_thorax": {
+   "derived_seed": "eac442c960a72e60",
+   "tint_linear_rgb": [
+    0.018,
+    0.01,
+    0.012
+   ]
+  },
+  "vigil-hound-demo__eye_vigil": {
+   "derived_seed": "a050d2a9fe84e6ca",
+   "tint_linear_rgb": [
+    0.72,
+    0.24,
+    0.035
+   ]
+  },
+  "vigil-hound-demo__eye_vigil_m": {
+   "derived_seed": "a050d2a9fe84e6ca",
+   "tint_linear_rgb": [
+    0.72,
+    0.24,
+    0.035
+   ]
+  },
+  "vigil-hound-demo__inner_fore_shin": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_fore_shin_m": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_fore_upper": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_fore_upper_m": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_hind_shin": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_hind_shin_m": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_hind_thigh": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__inner_hind_thigh_m": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__vascular_exchange": {
+   "derived_seed": "37af4a6c135020ba",
+   "tint_linear_rgb": [
+    0.1,
+    0.75,
+    0.82
+   ]
+  },
+  "vigil-hound-demo__vascular_return": {
+   "derived_seed": "79535fdf6405c8dd",
+   "tint_linear_rgb": [
+    0.22,
+    0.08,
+    0.65
+   ]
+  },
+  "vigil-hound-demo__vascular_supply": {
+   "derived_seed": "cd015da593858b1c",
+   "tint_linear_rgb": [
+    0.9,
+    0.25,
+    0.08
+   ]
+  },
+  "vigil-hound-demo__ventral_belly": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__ventral_neck": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__ventral_thorax": {
+   "derived_seed": "a6ea4faec4437c7e",
+   "tint_linear_rgb": [
+    0.19,
+    0.105,
+    0.072
+   ]
+  },
+  "vigil-hound-demo__warm_fore_pad": {
+   "derived_seed": "c26a30f599d8bd8d",
+   "tint_linear_rgb": [
+    0.16,
+    0.068,
+    0.038
+   ]
+  },
+  "vigil-hound-demo__warm_fore_pad_m": {
+   "derived_seed": "c26a30f599d8bd8d",
+   "tint_linear_rgb": [
+    0.16,
+    0.068,
+    0.038
+   ]
+  },
+  "vigil-hound-demo__warm_hind_pad": {
+   "derived_seed": "c26a30f599d8bd8d",
+   "tint_linear_rgb": [
+    0.16,
+    0.068,
+    0.038
+   ]
+  },
+  "vigil-hound-demo__warm_hind_pad_m": {
+   "derived_seed": "c26a30f599d8bd8d",
+   "tint_linear_rgb": [
+    0.16,
+    0.068,
+    0.038
+   ]
+  },
+  "vigil-hound-demo__warm_muzzle": {
+   "derived_seed": "c26a30f599d8bd8d",
+   "tint_linear_rgb": [
+    0.16,
+    0.068,
+    0.038
+   ]
+  }
+ }
+}

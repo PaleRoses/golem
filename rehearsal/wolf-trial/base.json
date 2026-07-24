@@ -1,0 +1,74 @@
+{
+  "name": "Ashfall",
+  "dialect": "body/0.3",
+  "blend": 0.045,
+  "ground_tol": 0.025,
+  "skeleton": {
+    "root": {
+      "id": "ashfall_torso",
+      "world": [0.0, 1.02, 0.0],
+      "flesh": [
+        {"kind": "blob", "name": "ashfall_deep_chest", "size": [0.40, 0.37, 0.62], "offset": [0.0, 0.0, 0.12]},
+        {"kind": "blob", "name": "ashfall_tucked_waist", "size": [0.30, 0.265, 0.405], "offset": [0.0, -0.015, -0.42], "operator": "local_blend", "blend": 0.05}
+      ]
+    },
+    "bones": [
+      {"id": "ashfall_neck", "parent": "ashfall_torso", "attach": {"offset": [0.0133, 0.16, 0.55]}, "length": 0.27, "rest_dir": [0.0, 0.31, 0.951], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_neck_column", "size": [0.17, 0.18, 0.22]}]},
+      {"id": "ashfall_head", "parent": "ashfall_neck", "attach": {"t": 0.88}, "length": 0.38, "rest_dir": [0.0, 0.12, 0.993], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_cranium", "size": [0.22, 0.21, 0.25]}]},
+      {"id": "ashfall_shoulder_arc", "parent": "ashfall_torso", "attach": {"offset": [0.29, -0.22, 0.38]}, "length": 0.16, "rest_dir": [1.0, 0.0, 0.0], "mirror": true, "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_shoulder_mass", "size": [0.14, 0.17, 0.19]}]},
+      {"id": "ashfall_fore_upper", "parent": "ashfall_shoulder_arc", "attach": {"t": 0.98}, "length": 0.34, "rest_dir": [-0.50, -0.866, 0.0], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_upper_forelimb", "size": [0.115, 0.13, 0.22]}]},
+      {"id": "ashfall_fore_lower", "parent": "ashfall_fore_upper", "attach": {"t": 0.98}, "length": 0.31, "rest_dir": [0.0, -0.316744, 0.948511], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_lower_forelimb", "size": [0.11, 0.125, 0.22]}]},
+      {"id": "ashfall_fore_foot", "parent": "ashfall_fore_lower", "attach": {"t": 0.98}, "length": 0.15, "rest_dir": [0.0, -0.100978, 0.994889], "joint": {"dof": "fixed"}, "flesh": [{"kind": "blob", "name": "ashfall_front_paw", "size": [0.12, 0.10, 0.15]}]},
+      {"id": "ashfall_pelvic_arc", "parent": "ashfall_torso", "attach": {"offset": [0.30, -0.15, -0.44]}, "length": 0.19, "rest_dir": [1.0, 0.0, 0.0], "mirror": true, "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_rump_mass", "size": [0.16, 0.19, 0.24]}]},
+      {"id": "ashfall_hind_upper", "parent": "ashfall_pelvic_arc", "attach": {"t": 0.96}, "length": 0.44, "rest_dir": [-0.57, -0.821, 0.0], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_thigh_mass", "size": [0.135, 0.16, 0.27]}]},
+      {"id": "ashfall_hind_lower", "parent": "ashfall_hind_upper", "attach": {"t": 0.98}, "length": 0.43, "rest_dir": [0.0, -0.98651, 0.163701], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_hock_shaft", "size": [0.115, 0.13, 0.25]}]},
+      {"id": "ashfall_hind_foot", "parent": "ashfall_hind_lower", "attach": {"t": 0.98}, "length": 0.15, "rest_dir": [0.0, 0.783108, 0.621886], "joint": {"dof": "fixed"}, "flesh": [{"kind": "blob", "name": "ashfall_rear_paw", "size": [0.13, 0.105, 0.16]}]},
+      {"id": "ashfall_tail_base", "parent": "ashfall_torso", "attach": {"offset": [0.0125, -0.02, -0.61]}, "length": 0.24, "rest_dir": [0.0, 0.0, -1.0], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_tail_base_flesh", "size": [0.14, 0.14, 0.18]}]},
+      {"id": "ashfall_tail_mid", "parent": "ashfall_tail_base", "attach": {"t": 0.98}, "length": 0.24, "rest_dir": [0.0, 0.0, 1.0], "joint": {"dof": "ball"}, "flesh": [{"kind": "blob", "name": "ashfall_tail_ribbon", "size": [0.105, 0.105, 0.17]}]},
+      {"id": "ashfall_tail_end", "parent": "ashfall_tail_mid", "attach": {"t": 0.98}, "length": 0.20, "rest_dir": [0.0, -0.12, 0.993], "joint": {"dof": "fixed"}, "flesh": [{"kind": "blob", "name": "ashfall_tail_end_flesh", "size": [0.075, 0.075, 0.14]}]}
+    ]
+  },
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {"region_id": "ashfall_torso_region", "kind": "torso", "host_bone_id": "ashfall_torso"},
+        {"region_id": "ashfall_head_region", "kind": "head", "host_bone_id": "ashfall_head"},
+        {"region_id": "ashfall_fore_region", "kind": "segment", "host_bone_id": "ashfall_fore_foot"},
+        {"region_id": "ashfall_hind_region", "kind": "segment", "host_bone_id": "ashfall_hind_foot"},
+        {"region_id": "ashfall_tail_region", "kind": "tail", "host_bone_id": "ashfall_tail_end"}
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "ashfall_torso_region",
+        "exchange_beds": [
+          {"region_id": "ashfall_head_region", "tissue": "neural_tissue", "demand": 0.44},
+          {"region_id": "ashfall_fore_region", "tissue": "skeletal_muscle", "demand": 0.28},
+          {"region_id": "ashfall_hind_region", "tissue": "skeletal_muscle", "demand": 0.34},
+          {"region_id": "ashfall_tail_region", "tissue": "skeletal_muscle", "demand": 0.22}
+        ],
+        "carrier_radius_scale": 1.0,
+        "distance_decay": 0.72
+      },
+      "integument_layers": [
+        {"region_id": "ashfall_torso_region", "thickness": 0.028, "formation": "static_implicit_relaxation"},
+        {"region_id": "ashfall_head_region", "thickness": 0.028, "formation": "static_implicit_relaxation"},
+        {"region_id": "ashfall_fore_region", "thickness": 0.028, "formation": "static_implicit_relaxation"},
+        {"region_id": "ashfall_hind_region", "thickness": 0.028, "formation": "static_implicit_relaxation"},
+        {"region_id": "ashfall_tail_region", "thickness": 0.028, "formation": "static_implicit_relaxation"}
+      ]
+    }
+  },
+  "eyes": [
+    {"id": "ashfall_amber_eye", "host_bone_id": "ashfall_head", "offset": [0.16, 0.06, 0.19], "radius": 0.042, "socket": {"radius": 0.062}, "mirror": true}
+  ],
+  "contract": {"attach": [], "midline": []},
+  "appearance_material": "neutral_gray",
+  "appearance_palette": {
+    "neutral_gray": {"tint_linear_rgb": [0.18, 0.14, 0.10]},
+    "obsidian_deep": {"tint_linear_rgb": [0.055, 0.035, 0.025]},
+    "eye_gloss": {"tint_linear_rgb": [0.75, 0.34, 0.07]},
+    "vascular_supply_gold": {"tint_linear_rgb": [0.72, 0.32, 0.05]},
+    "vascular_return_violet": {"tint_linear_rgb": [0.16, 0.06, 0.03]}
+  }
+}

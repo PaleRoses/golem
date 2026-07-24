@@ -1,0 +1,77 @@
+GOLEM CONDUIT HARNESS -- operator guide
+
+AUTHORING CONTRACT
+  Author GOLEM body architecture and vascular intent, never vessel geometry.
+  Declare the skeleton, perfusion regions, pump, exchange beds, tissue demands,
+  and carrier scale. Do not enumerate vascular nodes, edges, radii, seeds, or
+  coordinates. The deterministic solver owns terminal sampling, topology,
+  bifurcations, symmetry, containment, flow, and exact placement. If it
+  rejects, revise only the semantic addresses named by its obstructions.
+
+  Internal circulation requires a body/0.3 file carrying anatomy/0.1 intent.
+  Space colonization is appendage-only: antlers, roots, venation, tendrils.
+  Surface conduits are trim/rune strata. There is deliberately no
+  "conduit add vascular" command.
+
+RUN
+  uv run --frozen python -m golem.conduits.harness <body-or-element.json>
+  uv run --frozen python -m golem.conduits.harness <file> --script ops.txt
+  Optional: --res 120
+
+  Resolution is pinned, not inferred from changing bounds, so receipts remain
+  comparable across iterations.
+
+VASCULAR COMMANDS
+  vascular solve
+      Compile body/anatomy intent, allocate the sealed 256 terminal pairs,
+      generate and glue supply/return trees, connect exchange beds, solve the
+      Poiseuille field, validate delivery, and derive bounded support.
+  vascular receipt
+      Print the authoritative topology/flow/support receipt from the last solve.
+  vascular render <out-prefix>
+      Render the supported body plus warm-gold supply, violet-blue return, and
+      pale-cyan exchange strata from the last accepted solve.
+
+GENERAL COMMANDS
+  parts
+      List part ids, kinds, endpoints/centers, and mirror state.
+  intent add <id> blob <cx,cy,cz> <sx,sy,sz>
+  intent add <id> gencyl <x,y,z> <x,y,z> <r0> <r1>
+      Author a sketch volume for an appendage, never for vasculature.
+  appendage add <id> anchor <part>:<t> intent <id,id> [mirror]
+      [count <n>] [seed <n>] [envelope <k>] [offset <x,y,z>]
+      Grow an appendage from a host station into the named intent volumes.
+  conduit add loop <id> <part>:<t> width <w>
+      [depth <d>] [emit groove,band] [material <tag>]
+  conduit add line <id> <part> axis <x|y|z> width <w>
+      [normal <x,y,z>] [emit groove,band] [material <tag>]
+      Author surface trim or runic lines only.
+  set <conduits|appendages>.<id>.<key> <json-value>
+  remove <conduits|appendages|intents> <id>
+  grow
+      Compile surface/appendage work at the pinned resolution and print receipt.
+  render <out-prefix>
+      Render the most recent grow or accepted vascular solve.
+  save <path>
+  show
+  help
+  quit
+
+RECEIPTS AND REFUSALS
+  components=1, watertight=True, zero vocabulary violations are the solid gate.
+  Surface groove displacement and band lift are hard-bounded by 0.9 times the
+  evaluated grid pitch;
+  violating emission dimensions return EmissionPitchBoundViolation at the
+  conduit address before a mesh result is accepted.
+  Vascular acceptance also requires complete closure, whole-capsule containment,
+  exact bilateral reflection, residual and boundary balance <= 1e-10, and
+  per-bed delivery relative error <= 1e-3.
+
+  A refusal is an answer, printed as:
+    REJECTED [TypedObstruction] /semantic/address: reason
+  Revise that semantic address. Never answer a refusal by placing vessel nodes.
+
+MATERIAL TAGS
+  vascular_supply_gold, vascular_return_violet, vascular_exchange_cyan,
+  obsidian_warden, obsidian_deep, steel_violet, emissive_seam, gambeson_dark,
+  neutral_gray.

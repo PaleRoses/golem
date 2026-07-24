@@ -1,0 +1,702 @@
+{
+  "name": "vespertine-stalker",
+  "dialect": "body/0.3",
+  "appearance_material": "obsidian_warden",
+  "contacts": [],
+  "mounts": [],
+  "pose": {
+    "goals": [],
+    "joints": {},
+    "relations": []
+  },
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {
+          "region_id": "thoracic",
+          "kind": "torso",
+          "host_bone_id": "core"
+        },
+        {
+          "region_id": "cranial",
+          "kind": "head",
+          "host_bone_id": "head"
+        },
+        {
+          "region_id": "caudal",
+          "kind": "tail",
+          "host_bone_id": "tail_tip"
+        },
+        {
+          "region_id": "paw_fl",
+          "kind": "limb",
+          "host_bone_id": "footFL"
+        },
+        {
+          "region_id": "paw_fr",
+          "kind": "limb",
+          "host_bone_id": "footFR"
+        },
+        {
+          "region_id": "paw_bl",
+          "kind": "limb",
+          "host_bone_id": "footBL"
+        },
+        {
+          "region_id": "paw_br",
+          "kind": "limb",
+          "host_bone_id": "footBR"
+        }
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "thoracic",
+        "carrier_radius_scale": 0.12,
+        "distance_decay": 0.86,
+        "exchange_beds": [
+          {
+            "region_id": "cranial",
+            "tissue": "neural_tissue",
+            "demand": 0.1
+          },
+          {
+            "region_id": "caudal",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          },
+          {
+            "region_id": "paw_fl",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          },
+          {
+            "region_id": "paw_fr",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          },
+          {
+            "region_id": "paw_bl",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          },
+          {
+            "region_id": "paw_br",
+            "tissue": "skeletal_muscle",
+            "demand": 0.1
+          }
+        ]
+      }
+    }
+  },
+  "skeleton": {
+    "root": {
+      "id": "core",
+      "world": [
+        0,
+        0.6,
+        0
+      ],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "thorax",
+          "t": 0,
+          "size": [
+            0.2,
+            0.16,
+            0.4
+          ]
+        }
+      ]
+    },
+    "bones": [
+      {
+        "id": "neck_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0.06,
+            0.12,
+            0.38
+          ]
+        },
+        "rest_dir": [
+          0.08,
+          0.28,
+          0.956
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "neck_g_mass",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "neck_g_yoke",
+            "radii": [
+              0.13,
+              0.115,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tail_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            -0.06,
+            0.13,
+            -0.38
+          ]
+        },
+        "rest_dir": [
+          -0.08,
+          0.22,
+          -0.972
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "tail_g_mass",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "tail_g_yoke",
+            "radii": [
+              0.13,
+              0.115,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hipFL_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0.18,
+            0.08,
+            0.3
+          ]
+        },
+        "rest_dir": [
+          0.8,
+          0.3,
+          0.52
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hipFL_g_mass",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "hipFL_g_yoke",
+            "radii": [
+              0.13,
+              0.115,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hipFR_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            -0.18,
+            0.06,
+            0.17
+          ]
+        },
+        "rest_dir": [
+          -0.8,
+          0.32,
+          0.5
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hipFR_g_mass",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "hipFR_g_yoke",
+            "radii": [
+              0.13,
+              0.115,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hipBL_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0.18,
+            -0.11,
+            -0.14
+          ]
+        },
+        "rest_dir": [
+          0.92,
+          -0.34,
+          -0.1
+        ],
+        "length": 0.15,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hipBL_g_mass",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "hipBL_g_yoke",
+            "radii": [
+              0.13,
+              0.115,
+              0.1
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hipBR_g",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            -0.18,
+            -0.11,
+            -0.27
+          ]
+        },
+        "rest_dir": [
+          -0.6,
+          -0.62,
+          -0.36
+        ],
+        "length": 0.17,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hipBR_g_mass",
+            "t": 0.0,
+            "size": [
+              0.125,
+              0.115,
+              0.113
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "hipBR_g_yoke",
+            "radii": [
+              0.135,
+              0.122,
+              0.11
+            ]
+          }
+        ]
+      },
+      {
+        "id": "neck",
+        "parent": "neck_g",
+        "attach": {
+          "at": "landmark:neck_g/tail"
+        },
+        "rest_dir": [
+          0.05,
+          0.3,
+          0.952
+        ],
+        "length": 0.3,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "neck_col",
+            "radii": [
+              0.115,
+              0.105,
+              0.095
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tail_mid",
+        "parent": "tail_g",
+        "attach": {
+          "at": "landmark:tail_g/tail"
+        },
+        "rest_dir": [
+          -0.05,
+          -0.02,
+          -0.999
+        ],
+        "length": 0.34,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_root",
+            "radii": [
+              0.11,
+              0.09,
+              0.075
+            ]
+          }
+        ]
+      },
+      {
+        "id": "legFL_mid",
+        "parent": "hipFL_g",
+        "attach": {
+          "at": "landmark:hipFL_g/tail"
+        },
+        "rest_dir": [
+          0.35,
+          -0.9,
+          0.15
+        ],
+        "length": 0.32,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "legFL_shaft",
+            "radii": [
+              0.105,
+              0.092,
+              0.08
+            ]
+          }
+        ]
+      },
+      {
+        "id": "legFR_mid",
+        "parent": "hipFR_g",
+        "attach": {
+          "at": "landmark:hipFR_g/tail"
+        },
+        "rest_dir": [
+          -0.35,
+          -0.9,
+          0.15
+        ],
+        "length": 0.32,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "legFR_shaft",
+            "radii": [
+              0.105,
+              0.092,
+              0.08
+            ]
+          }
+        ]
+      },
+      {
+        "id": "legBL_mid",
+        "parent": "hipBL_g",
+        "attach": {
+          "at": "landmark:hipBL_g/tail"
+        },
+        "rest_dir": [
+          0.35,
+          -0.9,
+          -0.15
+        ],
+        "length": 0.3,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "legBL_shaft",
+            "radii": [
+              0.105,
+              0.092,
+              0.08
+            ]
+          }
+        ]
+      },
+      {
+        "id": "legBR_mid",
+        "parent": "hipBR_g",
+        "attach": {
+          "at": "landmark:hipBR_g/tail"
+        },
+        "rest_dir": [
+          -0.25,
+          -0.94,
+          -0.13
+        ],
+        "length": 0.3,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "legBR_shaft",
+            "radii": [
+              0.113,
+              0.1,
+              0.088
+            ]
+          }
+        ]
+      },
+      {
+        "id": "head",
+        "parent": "neck",
+        "attach": {
+          "at": "landmark:neck/tail"
+        },
+        "rest_dir": [
+          0.05,
+          0.15,
+          0.987
+        ],
+        "length": 0.22,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "skull_taper",
+            "radii": [
+              0.12,
+              0.1,
+              0.07
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "brow",
+            "t": 0.35,
+            "size": [
+              0.115,
+              0.1,
+              0.11
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tail_tip",
+        "parent": "tail_mid",
+        "attach": {
+          "at": "landmark:tail_mid/tail"
+        },
+        "rest_dir": [
+          -0.05,
+          -0.25,
+          -0.966
+        ],
+        "length": 0.3,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "tail_lash",
+            "radii": [
+              0.085,
+              0.065,
+              0.048
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footFL",
+        "parent": "legFL_mid",
+        "attach": {
+          "at": "landmark:legFL_mid/tail"
+        },
+        "rest_dir": [
+          0.48,
+          -0.6,
+          0.64
+        ],
+        "length": 0.16,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "pawFL",
+            "radii": [
+              0.09,
+              0.065,
+              0.045
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footFR",
+        "parent": "legFR_mid",
+        "attach": {
+          "at": "landmark:legFR_mid/tail"
+        },
+        "rest_dir": [
+          -0.48,
+          -0.6,
+          0.64
+        ],
+        "length": 0.16,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "pawFR",
+            "radii": [
+              0.09,
+              0.065,
+              0.045
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footBL",
+        "parent": "legBL_mid",
+        "attach": {
+          "at": "landmark:legBL_mid/tail"
+        },
+        "rest_dir": [
+          0.55,
+          -0.62,
+          -0.44
+        ],
+        "length": 0.16,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "pawBL",
+            "radii": [
+              0.09,
+              0.065,
+              0.045
+            ]
+          }
+        ]
+      },
+      {
+        "id": "footBR",
+        "parent": "legBR_mid",
+        "attach": {
+          "at": "landmark:legBR_mid/tail"
+        },
+        "rest_dir": [
+          -0.45,
+          -0.62,
+          -0.55
+        ],
+        "length": 0.16,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "pawBR",
+            "radii": [
+              0.09,
+              0.065,
+              0.045
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

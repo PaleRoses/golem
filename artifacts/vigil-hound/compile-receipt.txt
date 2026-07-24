@@ -1,0 +1,38 @@
+element vigil-hound-demo role=creature  res=222 components=1 watertight=True dust=0 faces=155488 violations=0
+  vascular nodes=1080 edges=1336 terminal_pairs=256 residual=3.945e-13 balance=3.018e-13
+  allocation {"caudal": 13, "cranial": 21, "fore_paws": 98, "hind_paws": 124}
+  stages     {"arteriole": 256, "artery": 284, "exchange": 256, "vein": 284, "venule": 256}
+  geometry   capsule_margin=5.003020e-04 symmetry_error=0.000e+00 nonincident_intersections=0
+  delivery   {"caudal": 0.029996732135841975, "cranial": 0.04995893669764882, "fore_paws": 0.2800080748068511, "hind_paws": 0.3600362563579647} max_relative_error=8.213e-04
+  solve      normalized_pressure_drop=8.154299e+15 conservation=1.261e-16
+  structural guidance samples=0 maximum_cost_multiplier=1.000000e+00
+eye vigil-hound-demo__eye_vigil  appearance=eye_gloss                faces= 19484
+eye vigil-hound-demo__eye_vigil_m appearance=eye_gloss                faces= 19484
+conduit vigil-hound-demo__dorsal_thorax appearance=obsidian_deep            faces=1156
+conduit vigil-hound-demo__dorsal_neck appearance=obsidian_deep            faces=203
+conduit vigil-hound-demo__dorsal_skull appearance=obsidian_deep            faces=642
+conduit vigil-hound-demo__dorsal_tail_base appearance=obsidian_deep            faces=308
+conduit vigil-hound-demo__ventral_belly appearance=gambeson_dark            faces=1146
+conduit vigil-hound-demo__ventral_thorax appearance=gambeson_dark            faces=5253
+conduit vigil-hound-demo__ventral_neck appearance=gambeson_dark            faces=780
+conduit vigil-hound-demo__inner_fore_upper appearance=gambeson_dark            faces=511
+conduit vigil-hound-demo__inner_fore_upper_m appearance=gambeson_dark            faces=526
+conduit vigil-hound-demo__inner_fore_shin appearance=gambeson_dark            faces=1403
+conduit vigil-hound-demo__inner_fore_shin_m appearance=gambeson_dark            faces=1421
+conduit vigil-hound-demo__inner_hind_thigh appearance=gambeson_dark            faces=178
+conduit vigil-hound-demo__inner_hind_thigh_m appearance=gambeson_dark            faces=130
+conduit vigil-hound-demo__inner_hind_shin appearance=gambeson_dark            faces=1020
+conduit vigil-hound-demo__inner_hind_shin_m appearance=gambeson_dark            faces=951
+conduit vigil-hound-demo__warm_muzzle appearance=neutral_gray             faces=2576
+conduit vigil-hound-demo__warm_fore_pad appearance=neutral_gray             faces=987
+conduit vigil-hound-demo__warm_fore_pad_m appearance=neutral_gray             faces=987
+conduit vigil-hound-demo__warm_hind_pad appearance=neutral_gray             faces=1075
+conduit vigil-hound-demo__warm_hind_pad_m appearance=neutral_gray             faces=1089
+vascular_supply    vigil-hound-demo__vascular_supply appearance=vascular_supply_gold     edges= 540 faces= 12960
+vascular_return    vigil-hound-demo__vascular_return appearance=vascular_return_violet   edges= 540 faces= 12960
+vascular_exchange  vigil-hound-demo__vascular_exchange appearance=vascular_exchange_cyan   edges= 256 faces=  6144
+physical_evidence: not_requested
+solid fit pairs=0 declared=0 maximum_penetration_world=0.000000e+00
+advisories vocabulary_violations=0
+scene -> artifacts/vigil-hound/vigil_hound_demo.glb
+assembly verdict: AcceptedAssembly

@@ -1,0 +1,1304 @@
+{
+ "name": "scree-maiden",
+ "dialect": "body/0.3",
+ "emit_target": "v03",
+ "appearance_material": "neutral_gray",
+ "appearance_palette": {
+  "neutral_gray": {
+   "tint_linear_rgb": [
+    0.145,
+    0.185,
+    0.24
+   ],
+   "variation": {
+    "kind": "triplanar_value_noise",
+    "wavelength_world": 0.4,
+    "amplitude": 0.06
+   }
+  },
+  "obsidian_deep": {
+   "tint_linear_rgb": [
+    0.07,
+    0.09,
+    0.12
+   ]
+  },
+  "gambeson_dark": {
+   "tint_linear_rgb": [
+    0.16,
+    0.3,
+    0.1
+   ]
+  },
+  "steel_violet": {
+   "tint_linear_rgb": [
+    0.22,
+    0.2,
+    0.17
+   ]
+  },
+  "eye_gloss": {
+   "tint_linear_rgb": [
+    0.65,
+    0.3,
+    0.06
+   ]
+  },
+  "vascular_supply_gold": {
+   "tint_linear_rgb": [
+    0.9,
+    0.25,
+    0.08
+   ]
+  },
+  "vascular_return_violet": {
+   "tint_linear_rgb": [
+    0.22,
+    0.08,
+    0.65
+   ]
+  },
+  "vascular_exchange_cyan": {
+   "tint_linear_rgb": [
+    0.1,
+    0.75,
+    0.82
+   ]
+  }
+ },
+ "blend": 0.028,
+ "ground_y": 0.02,
+ "ground_tol": 0.025,
+ "anatomy": {
+  "dialect": "anatomy/0.1",
+  "overall": {
+   "regions": [
+    {
+     "region_id": "axial_core",
+     "kind": "torso",
+     "host_bone_id": "thorax"
+    },
+    {
+     "region_id": "cranial",
+     "kind": "head",
+     "host_bone_id": "skull"
+    },
+    {
+     "region_id": "fore_talons",
+     "kind": "limb",
+     "host_bone_id": "fore_foot"
+    },
+    {
+     "region_id": "hind_talons",
+     "kind": "limb",
+     "host_bone_id": "hind_foot"
+    }
+   ],
+   "circulation": {
+    "kind": "closed_vascular",
+    "pump_region_id": "axial_core",
+    "exchange_beds": [
+     {
+      "region_id": "cranial",
+      "tissue": "neural_tissue",
+      "demand": 0.03
+     },
+     {
+      "region_id": "fore_talons",
+      "tissue": "skeletal_muscle",
+      "demand": 0.14
+     },
+     {
+      "region_id": "hind_talons",
+      "tissue": "skeletal_muscle",
+      "demand": 0.18
+     }
+    ],
+    "carrier_radius_scale": 0.075,
+    "distance_decay": 0.86
+   }
+  }
+ },
+ "contacts": [],
+ "mounts": [],
+ "pose": {
+  "goals": [],
+  "joints": {},
+  "relations": []
+ },
+ "contract": {
+  "contract": "body.contract",
+  "clauses": [],
+  "attach": [
+   [
+    "collar_slab_front",
+    "maul_wedge"
+   ],
+   [
+    "eye.scree.brow",
+    "maul_wedge"
+   ],
+   [
+    "hump_plate",
+    "hump_plate_rear"
+   ],
+   [
+    "collar_slab_top",
+    "poll_crest"
+   ],
+   [
+    "flank_sheets",
+    "hump_plate_rear"
+   ],
+   [
+    "chest_mass",
+    "collar_slab_top"
+   ],
+   [
+    "flank_sheets",
+    "hind_thigh_slab"
+   ],
+   [
+    "hind_thigh_slab",
+    "hind_hock"
+   ],
+   [
+    "collar_socket",
+    "shoulder_plate"
+   ],
+   [
+    "fore_thigh_slab",
+    "fore_knee"
+   ],
+   [
+    "collar_slab_front",
+    "poll_crest"
+   ],
+   [
+    "rump_cap",
+    "flank_sheets"
+   ],
+   [
+    "hump_plate",
+    "poll_crest"
+   ],
+   [
+    "hump_plate",
+    "collar_slab_top"
+   ],
+   [
+    "rump_cap",
+    "hip_plate"
+   ],
+   [
+    "hump_plate_rear",
+    "collar_slab_top"
+   ],
+   [
+    "eye.scree.brow",
+    "poll_crest"
+   ],
+   [
+    "chest_mass",
+    "maul_wedge"
+   ],
+   [
+    "collar_socket",
+    "fore_thigh_slab"
+   ],
+   [
+    "collar_slab_top",
+    "maul_wedge"
+   ],
+   [
+    "collar_socket",
+    "poll_crest"
+   ],
+   [
+    "chest_mass",
+    "collar_slab_front"
+   ],
+   [
+    "hump_plate",
+    "maul_wedge"
+   ],
+   [
+    "chest_mass",
+    "fore_thigh_slab"
+   ],
+   [
+    "flank_sheets",
+    "sternum_keel"
+   ],
+   [
+    "rump_cap",
+    "hind_thigh_slab"
+   ],
+   [
+    "hump_plate",
+    "collar_socket"
+   ],
+   [
+    "rump_basin",
+    "hind_thigh_slab"
+   ],
+   [
+    "sternum_keel",
+    "fore_thigh_slab"
+   ],
+   [
+    "hump_plate_rear",
+    "collar_socket"
+   ],
+   [
+    "collar_slab_top",
+    "collar_slab_front"
+   ],
+   [
+    "flank_sheets",
+    "hip_plate"
+   ],
+   [
+    "sternum_keel",
+    "collar_socket"
+   ],
+   [
+    "flank_sheets",
+    "fore_thigh_slab"
+   ]
+  ],
+  "midline": []
+ },
+ "skeleton": {
+  "root": {
+   "id": "pelvis",
+   "world": [
+    0.0,
+    0.56,
+    -0.34
+   ],
+   "flesh": [
+    {
+     "kind": "blob",
+     "name": "rump_basin",
+     "t": 0.0,
+     "offset": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "size": [
+      0.14,
+      0.12,
+      0.15
+     ],
+     "operator": "chamfer",
+     "blend": 0.01
+    },
+    {
+     "kind": "blob",
+     "name": "rump_cap",
+     "t": 0.0,
+     "offset": [
+      0.0,
+      0.115,
+      -0.02
+     ],
+     "size": [
+      0.13,
+      0.035,
+      0.135
+     ],
+     "operator": "chamfer",
+     "blend": 0.009
+    }
+   ]
+  },
+  "bones": [
+   {
+    "id": "loin",
+    "parent": "pelvis",
+    "attach": {
+     "t": 0.0
+    },
+    "rest_dir": [
+     0.0,
+     0.09,
+     0.9959
+    ],
+    "length": 0.38,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "flank_sheets",
+      "operator": "blend",
+      "blend": 0.04,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.12,
+        "depth": 0.1,
+        "exponent": 4.4,
+        "roll": 0.0
+       },
+       {
+        "station": 0.3,
+        "width": 0.125,
+        "depth": 0.105,
+        "exponent": 4.4,
+        "roll": 0.0
+       },
+       {
+        "station": 0.7,
+        "width": 0.135,
+        "depth": 0.115,
+        "exponent": 4.5,
+        "roll": 0.0
+       },
+       {
+        "station": 1.06,
+        "width": 0.14,
+        "depth": 0.12,
+        "exponent": 4.5,
+        "roll": 0.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "thorax",
+    "parent": "loin",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     0.11,
+     0.9939
+    ],
+    "length": 0.36,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "chest_mass",
+      "operator": "blend",
+      "blend": 0.046,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.14,
+        "depth": 0.12,
+        "exponent": 4.5,
+        "roll": 0.0
+       },
+       {
+        "station": 0.25,
+        "width": 0.15,
+        "depth": 0.14,
+        "exponent": 4.5,
+        "roll": 0.0
+       },
+       {
+        "station": 0.55,
+        "width": 0.15,
+        "depth": 0.15,
+        "exponent": 4.6,
+        "roll": 0.0
+       },
+       {
+        "station": 0.8,
+        "width": 0.145,
+        "depth": 0.155,
+        "exponent": 4.6,
+        "roll": 0.0
+       },
+       {
+        "station": 1.06,
+        "width": 0.135,
+        "depth": 0.13,
+        "exponent": 4.5,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "hump_plate",
+      "t": 0.78,
+      "offset": [
+       0.0,
+       0.16,
+       0.0
+      ],
+      "size": [
+       0.13,
+       0.07,
+       0.15
+      ],
+      "operator": "chamfer",
+      "blend": 0.01
+     },
+     {
+      "kind": "blob",
+      "name": "hump_plate_rear",
+      "t": 0.5,
+      "offset": [
+       0.0,
+       0.13,
+       0.0
+      ],
+      "size": [
+       0.12,
+       0.06,
+       0.13
+      ],
+      "operator": "chamfer",
+      "blend": 0.01
+     },
+     {
+      "kind": "blob",
+      "name": "sternum_keel",
+      "t": 0.5,
+      "offset": [
+       0.0,
+       -0.1,
+       0.0
+      ],
+      "size": [
+       0.11,
+       0.07,
+       0.16
+      ],
+      "operator": "chamfer",
+      "blend": 0.009
+     }
+    ]
+   },
+   {
+    "id": "socket",
+    "parent": "thorax",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     -0.05,
+     0.9988
+    ],
+    "length": 0.14,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "collar_socket",
+      "operator": "blend",
+      "blend": 0.036,
+      "sections": [
+       {
+        "station": -0.08,
+        "width": 0.13,
+        "depth": 0.12,
+        "exponent": 4.5,
+        "roll": 0.0
+       },
+       {
+        "station": 0.4,
+        "width": 0.14,
+        "depth": 0.125,
+        "exponent": 4.6,
+        "roll": 0.0
+       },
+       {
+        "station": 1.08,
+        "width": 0.15,
+        "depth": 0.135,
+        "exponent": 4.6,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "collar_slab_top",
+      "t": 0.5,
+      "offset": [
+       0.0,
+       0.12,
+       0.0
+      ],
+      "size": [
+       0.14,
+       0.04,
+       0.11
+      ],
+      "operator": "chamfer",
+      "blend": 0.009
+     },
+     {
+      "kind": "blob",
+      "name": "collar_slab_front",
+      "t": 0.92,
+      "offset": [
+       0.0,
+       0.02,
+       0.05
+      ],
+      "size": [
+       0.15,
+       0.1,
+       0.045
+      ],
+      "operator": "chamfer",
+      "blend": 0.009
+     }
+    ]
+   },
+   {
+    "id": "skull",
+    "parent": "socket",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     -0.4,
+     0.9165
+    ],
+    "length": 0.42,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "maul_wedge",
+      "operator": "chamfer",
+      "blend": 0.012,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.12,
+        "depth": 0.17,
+        "exponent": 4.6,
+        "roll": 0.0
+       },
+       {
+        "station": 0.15,
+        "width": 0.115,
+        "depth": 0.15,
+        "exponent": 4.7,
+        "roll": 0.0
+       },
+       {
+        "station": 0.45,
+        "width": 0.1,
+        "depth": 0.12,
+        "exponent": 4.9,
+        "roll": 0.0
+       },
+       {
+        "station": 0.75,
+        "width": 0.075,
+        "depth": 0.09,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 1.05,
+        "width": 0.06,
+        "depth": 0.07,
+        "exponent": 5.4,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "poll_crest",
+      "t": 0.1,
+      "offset": [
+       0.0,
+       0.15,
+       0.0
+      ],
+      "size": [
+       0.1,
+       0.075,
+       0.17
+      ],
+      "operator": "chamfer",
+      "blend": 0.009
+     }
+    ]
+   },
+   {
+    "id": "fore_girdle",
+    "parent": "thorax",
+    "attach": {
+     "t": 0.78
+    },
+    "rest_dir": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "length": 0.19,
+    "mirror": true,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "blob",
+      "name": "shoulder_plate",
+      "t": 0.9,
+      "offset": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "size": [
+       0.13,
+       0.11,
+       0.06
+      ],
+      "operator": "chamfer",
+      "blend": 0.008
+     }
+    ]
+   },
+   {
+    "id": "fore_thigh",
+    "parent": "fore_girdle",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.6,
+     -0.8,
+     0.0
+    ],
+    "length": 0.26,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "fore_thigh_slab",
+      "operator": "blend",
+      "blend": 0.024,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.09,
+        "depth": 0.1,
+        "exponent": 5.0,
+        "roll": 0.0
+       },
+       {
+        "station": 0.3,
+        "width": 0.08,
+        "depth": 0.09,
+        "exponent": 5.1,
+        "roll": 0.0
+       },
+       {
+        "station": 0.7,
+        "width": 0.07,
+        "depth": 0.075,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 1.06,
+        "width": 0.065,
+        "depth": 0.065,
+        "exponent": 5.3,
+        "roll": 0.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "fore_shin",
+    "parent": "fore_thigh",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     -0.065,
+     0.999
+    ],
+    "length": 0.22,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "fore_shin_facet",
+      "operator": "chamfer",
+      "blend": 0.01,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.065,
+        "depth": 0.06,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 0.4,
+        "width": 0.06,
+        "depth": 0.055,
+        "exponent": 5.4,
+        "roll": 0.0
+       },
+       {
+        "station": 1.05,
+        "width": 0.055,
+        "depth": 0.05,
+        "exponent": 5.6,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "fore_knee",
+      "t": 0.0,
+      "size": [
+       0.06,
+       0.055,
+       0.06
+      ],
+      "operator": "chamfer",
+      "blend": 0.007
+     }
+    ]
+   },
+   {
+    "id": "fore_foot",
+    "parent": "fore_shin",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     -0.581,
+     0.813
+    ],
+    "length": 0.18,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "fore_foot_taper",
+      "operator": "chamfer",
+      "blend": 0.009,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.075,
+        "depth": 0.07,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 0.5,
+        "width": 0.072,
+        "depth": 0.068,
+        "exponent": 5.4,
+        "roll": 0.0
+       },
+       {
+        "station": 1.04,
+        "width": 0.068,
+        "depth": 0.065,
+        "exponent": 5.6,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "fore_talon",
+      "t": 1.0,
+      "offset": [
+       0.0,
+       0.005,
+       0.0
+      ],
+      "size": [
+       0.045,
+       0.04,
+       0.05
+      ],
+      "operator": "chamfer",
+      "blend": 0.006
+     }
+    ]
+   },
+   {
+    "id": "hind_girdle",
+    "parent": "pelvis",
+    "attach": {
+     "t": 0.0,
+     "offset": [
+      0.0,
+      0.02,
+      -0.03
+     ]
+    },
+    "rest_dir": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "length": 0.19,
+    "mirror": true,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "blob",
+      "name": "hip_plate",
+      "t": 0.85,
+      "offset": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "size": [
+       0.13,
+       0.115,
+       0.06
+      ],
+      "operator": "chamfer",
+      "blend": 0.008
+     }
+    ]
+   },
+   {
+    "id": "hind_thigh",
+    "parent": "hind_girdle",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     -0.78,
+     -0.62,
+     0.0
+    ],
+    "length": 0.28,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "hind_thigh_slab",
+      "operator": "blend",
+      "blend": 0.024,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.095,
+        "depth": 0.105,
+        "exponent": 5.0,
+        "roll": 0.0
+       },
+       {
+        "station": 0.3,
+        "width": 0.085,
+        "depth": 0.095,
+        "exponent": 5.1,
+        "roll": 0.0
+       },
+       {
+        "station": 0.7,
+        "width": 0.075,
+        "depth": 0.08,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 1.06,
+        "width": 0.068,
+        "depth": 0.068,
+        "exponent": 5.3,
+        "roll": 0.0
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "hind_shin",
+    "parent": "hind_thigh",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     -0.978,
+     0.215
+    ],
+    "length": 0.24,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "hind_shin_facet",
+      "operator": "chamfer",
+      "blend": 0.01,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.068,
+        "depth": 0.063,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 0.4,
+        "width": 0.062,
+        "depth": 0.058,
+        "exponent": 5.4,
+        "roll": 0.0
+       },
+       {
+        "station": 1.05,
+        "width": 0.056,
+        "depth": 0.052,
+        "exponent": 5.6,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "hind_hock",
+      "t": 0.0,
+      "size": [
+       0.063,
+       0.058,
+       0.063
+      ],
+      "operator": "chamfer",
+      "blend": 0.007
+     }
+    ]
+   },
+   {
+    "id": "hind_foot",
+    "parent": "hind_shin",
+    "attach": {
+     "t": 1.0
+    },
+    "rest_dir": [
+     0.0,
+     0.778,
+     0.639
+    ],
+    "length": 0.17,
+    "joint": {
+     "dof": "fixed"
+    },
+    "flesh": [
+     {
+      "kind": "loft",
+      "name": "hind_foot_taper",
+      "operator": "chamfer",
+      "blend": 0.009,
+      "sections": [
+       {
+        "station": -0.06,
+        "width": 0.076,
+        "depth": 0.072,
+        "exponent": 5.2,
+        "roll": 0.0
+       },
+       {
+        "station": 0.5,
+        "width": 0.073,
+        "depth": 0.069,
+        "exponent": 5.4,
+        "roll": 0.0
+       },
+       {
+        "station": 1.04,
+        "width": 0.068,
+        "depth": 0.065,
+        "exponent": 5.6,
+        "roll": 0.0
+       }
+      ]
+     },
+     {
+      "kind": "blob",
+      "name": "hind_talon",
+      "t": 1.0,
+      "offset": [
+       0.0,
+       0.002,
+       -0.01
+      ],
+      "size": [
+       0.05,
+       0.048,
+       0.07
+      ],
+      "operator": "chamfer",
+      "blend": 0.006
+     }
+    ]
+   }
+  ]
+ },
+ "muscles": [],
+ "conduits": [
+  {
+   "id": "moss_rump",
+   "kind": "face_line",
+   "part": "rump_cap",
+   "axis": "x",
+   "width": 0.08,
+   "face_normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "gambeson_dark"
+  },
+  {
+   "id": "moss_flank",
+   "kind": "face_line",
+   "part": "flank_sheets",
+   "axis": "x",
+   "width": 0.07,
+   "face_normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "gambeson_dark"
+  },
+  {
+   "id": "moss_hump",
+   "kind": "face_line",
+   "part": "hump_plate",
+   "axis": "x",
+   "width": 0.08,
+   "face_normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "gambeson_dark"
+  },
+  {
+   "id": "moss_hump_rear",
+   "kind": "face_line",
+   "part": "hump_plate_rear",
+   "axis": "x",
+   "width": 0.07,
+   "face_normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "gambeson_dark"
+  },
+  {
+   "id": "moss_poll",
+   "kind": "face_line",
+   "part": "poll_crest",
+   "axis": "x",
+   "width": 0.06,
+   "face_normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "gambeson_dark"
+  },
+  {
+   "id": "shadow_belly_chest",
+   "kind": "face_line",
+   "part": "chest_mass",
+   "axis": "x",
+   "width": 0.1,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "obsidian_deep"
+  },
+  {
+   "id": "shadow_belly_flank",
+   "kind": "face_line",
+   "part": "flank_sheets",
+   "axis": "x",
+   "width": 0.08,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "obsidian_deep"
+  },
+  {
+   "id": "shadow_belly_rump",
+   "kind": "face_line",
+   "part": "rump_basin",
+   "axis": "x",
+   "width": 0.09,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "obsidian_deep"
+  },
+  {
+   "id": "talon_sheen_fore",
+   "kind": "face_line",
+   "part": "fore_talon",
+   "axis": "x",
+   "width": 0.025,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "steel_violet"
+  },
+  {
+   "id": "talon_sheen_fore_m",
+   "kind": "face_line",
+   "part": "fore_talon_m",
+   "axis": "x",
+   "width": 0.025,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "steel_violet"
+  },
+  {
+   "id": "talon_sheen_hind",
+   "kind": "face_line",
+   "part": "hind_talon",
+   "axis": "x",
+   "width": 0.025,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "steel_violet"
+  },
+  {
+   "id": "talon_sheen_hind_m",
+   "kind": "face_line",
+   "part": "hind_talon_m",
+   "axis": "x",
+   "width": 0.025,
+   "face_normal": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "emit": [
+    "band"
+   ],
+   "material": "steel_violet"
+  }
+ ],
+ "eyes": [
+  {
+   "id": "scree",
+   "host_bone_id": "skull",
+   "t": 0.4,
+   "offset": [
+    0.088,
+    0.075,
+    0.0
+   ],
+   "radius": 0.03,
+   "mirror": true,
+   "appearance_material": "eye_gloss",
+   "socket": {
+    "radius": 0.04,
+    "depth": 0.016
+   },
+   "brow_ridge": {
+    "offset": [
+     0.0,
+     0.032,
+     -0.003
+    ],
+    "size": [
+     0.045,
+     0.01,
+     0.018
+    ],
+    "round": 0.022,
+    "blend": 0.008
+   }
+  }
+ ]
+}

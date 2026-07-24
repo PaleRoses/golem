@@ -1,0 +1,24 @@
+{
+ "elements": {
+  "loft-anatomy-demo": "obsidian_warden"
+ },
+ "records": {
+  "obsidian_warden": {
+   "base_color": [
+    0.034,
+    0.033,
+    0.048
+   ],
+   "emissive": false,
+   "emissive_color": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emissive_strength": 0.0,
+   "metallic": 0.05,
+   "roughness": 0.24,
+   "texture_set": null
+  }
+ }
+}

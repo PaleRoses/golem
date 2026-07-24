@@ -1,0 +1,24 @@
+PROPRIO obsidian-knight txn:1 | 16 parts (6 mirrored, 22 instances) | no mesh
+GLOBAL  bbox 1.96w x 2.90h x 1.27d | H/W 1.48 | centroid (0.00,1.62,+0.13) | k=0.123 (global; 5 part override(s)) | predicted 1 component(s)
+
+ASSERT  6 FAIL / 1 pass  [pack:knight.intent]
+  A2 neck_gap @ helm~torso: -0.234 world_unit, target [0.020,0.120] -> helm.spine.y + (est 0.254, x12.700)  [also: burial 92%]
+  A3 head_exposure @ helm~pauldron: 0.566 helm-heights, target >= 0.850 -> pauldron.center.y - (est 0.284, x0.334)  [also: blend +0.076]
+  A4 span @ pauldron: 1.960 world_unit, target <= 1.600 -> pauldron.center.x - (est 0.360, x0.225)
+  A5 plant_offset @ sword_plant<->toe_line: 0.350 world_unit, target <= 0.150 -> blade.spine.z - (est 0.200, x1.333)
+  A6 sword_length @ pommel<->blade_tip: 1.505 world_unit, target [2.470,3.050] -> blade.spine.tip.y + (est 0.965, x0.391)
+  A7 heads_tall @ helm: 4.504 heads, target >= 6.000 -> helm.radii - (est 1.496, x0.249)
+
+ANOMALY 12 (2 suppressed into asserts)
+  N1 articulated_fusion @ grip~blade: gap -0.063, joined by fused attachment chain
+  N2 blend_ambiguity @ arm~pommel: gap 0.014 < k 0.123 (no void; may bridge at mesh)
+  N3 blend_ambiguity @ grip~blade_flat: gap 0.012 < k 0.099 (no void; may bridge at mesh)
+  N4 blend_ambiguity @ chest_plate~arm: gap 0.021 < k 0.123 (no void; may bridge at mesh)
+  N5 blend_ambiguity @ chest_plate~helm: gap 0.027 < k 0.123 (no void; may bridge at mesh)
+  N6 blend_ambiguity @ pommel~blade_flat: gap 0.037 < k 0.099 (no void; may bridge at mesh)
+  N7 blend_ambiguity @ chest_plate~pelvis: gap 0.060 < k 0.123 (no void; may bridge at mesh)
+  N8 blend_ambiguity @ arm~grip: gap 0.051 < k 0.099 (no void; may bridge at mesh)
+  N9 cross_plane_fusion @ gauntlet.L~gauntlet.R: overlap 0.045 across x=0
+  N10 unintended_fusion @ torso~visor_ridge: gap -0.012, 2 links apart
+  N11 blend_ambiguity @ pommel~crossguard: gap 0.096 < k 0.108 (no void; may bridge at mesh)
+  N12 blend_ambiguity @ torso~gauntlet: gap 0.116 < k 0.123 (no void; may bridge at mesh)

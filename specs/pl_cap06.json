@@ -1,0 +1,355 @@
+{
+  "name": "pl-cap06",
+  "dialect": "body/0.3",
+  "appearance_material": "obsidian_warden",
+  "contacts": [],
+  "mounts": [],
+  "pose": {
+    "goals": [],
+    "joints": {},
+    "relations": []
+  },
+  "anatomy": {
+    "dialect": "anatomy/0.1",
+    "overall": {
+      "regions": [
+        {
+          "region_id": "thoracic",
+          "kind": "torso",
+          "host_bone_id": "core"
+        },
+        {
+          "region_id": "fore_paw",
+          "kind": "limb",
+          "host_bone_id": "forefoot"
+        },
+        {
+          "region_id": "hind_paw",
+          "kind": "limb",
+          "host_bone_id": "hindfoot"
+        }
+      ],
+      "circulation": {
+        "kind": "closed_vascular",
+        "pump_region_id": "thoracic",
+        "carrier_radius_scale": 0.12,
+        "distance_decay": 0.86,
+        "exchange_beds": [
+          {
+            "region_id": "fore_paw",
+            "tissue": "skeletal_muscle",
+            "demand": 0.12
+          },
+          {
+            "region_id": "hind_paw",
+            "tissue": "skeletal_muscle",
+            "demand": 0.12
+          }
+        ]
+      }
+    }
+  },
+  "skeleton": {
+    "root": {
+      "id": "core",
+      "world": [
+        0,
+        0.64,
+        0
+      ],
+      "flesh": [
+        {
+          "kind": "blob",
+          "name": "thorax",
+          "t": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "size": [
+            0.19,
+            0.16,
+            0.31
+          ]
+        }
+      ]
+    },
+    "bones": [
+      {
+        "id": "foreleg_upper",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0.14,
+            -0.06,
+            0.15
+          ]
+        },
+        "rest_dir": [
+          0.28,
+          -0.957,
+          0.06
+        ],
+        "length": 0.32,
+        "mirror": true,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "fore_hip",
+            "t": 0.0,
+            "size": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "fore_humerus",
+            "radii": [
+              0.105,
+              0.093,
+              0.083
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "fore_knee",
+            "t": 1.0,
+            "size": [
+              0.085,
+              0.085,
+              0.085
+            ]
+          }
+        ]
+      },
+      {
+        "id": "foreleg_lower",
+        "parent": "foreleg_upper",
+        "attach": {
+          "at": "landmark:foreleg_upper/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.995,
+          0.1
+        ],
+        "length": 0.3,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "fore_radius",
+            "radii": [
+              0.093,
+              0.083,
+              0.073
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "fore_ankle",
+            "t": 1.0,
+            "size": [
+              0.07,
+              0.07,
+              0.07
+            ]
+          }
+        ]
+      },
+      {
+        "id": "forefoot",
+        "parent": "foreleg_lower",
+        "attach": {
+          "at": "landmark:foreleg_lower/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.42,
+          0.9075
+        ],
+        "length": 0.17,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "paw",
+            "t": 0.45,
+            "size": [
+              0.09,
+              0.075,
+              0.12
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "toecap",
+            "t": 1.0,
+            "size": [
+              0.06,
+              0.06,
+              0.06
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "pads",
+            "radii": [
+              0.078,
+              0.07,
+              0.062
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hindleg_upper",
+        "parent": "core",
+        "attach": {
+          "t": 0,
+          "offset": [
+            0.15,
+            -0.06,
+            -0.15
+          ]
+        },
+        "rest_dir": [
+          0.28,
+          -0.957,
+          -0.06
+        ],
+        "length": 0.34,
+        "mirror": true,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "hind_hip",
+            "t": 0.0,
+            "size": [
+              0.13,
+              0.13,
+              0.13
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "hind_femur",
+            "radii": [
+              0.115,
+              0.1,
+              0.088
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "hind_knee",
+            "t": 1.0,
+            "size": [
+              0.09,
+              0.09,
+              0.09
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hindleg_lower",
+        "parent": "hindleg_upper",
+        "attach": {
+          "at": "landmark:hindleg_upper/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.995,
+          -0.1
+        ],
+        "length": 0.32,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "gencyl",
+            "name": "hind_tibia",
+            "radii": [
+              0.098,
+              0.088,
+              0.076
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "hind_ankle",
+            "t": 1.0,
+            "size": [
+              0.075,
+              0.075,
+              0.075
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hindfoot",
+        "parent": "hindleg_lower",
+        "attach": {
+          "at": "landmark:hindleg_lower/tail"
+        },
+        "rest_dir": [
+          0,
+          -0.42,
+          0.9075
+        ],
+        "length": 0.18,
+        "joint": {
+          "dof": "fixed"
+        },
+        "flesh": [
+          {
+            "kind": "blob",
+            "name": "paw",
+            "t": 0.45,
+            "size": [
+              0.09,
+              0.075,
+              0.12
+            ]
+          },
+          {
+            "kind": "blob",
+            "name": "toecap",
+            "t": 1.0,
+            "size": [
+              0.06,
+              0.06,
+              0.06
+            ]
+          },
+          {
+            "kind": "gencyl",
+            "name": "pads",
+            "radii": [
+              0.078,
+              0.07,
+              0.062
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

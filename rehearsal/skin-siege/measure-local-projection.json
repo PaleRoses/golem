@@ -1,0 +1,119 @@
+{
+ "resolution": 242,
+ "vertex_count": 78125,
+ "thickness": 0.004,
+ "maximum_pitch": 0.016965439778808482,
+ "segment_samples": 17,
+ "flesh_eval_seconds": 21.477272332999746,
+ "sweeps": [
+  {
+   "budget": 16,
+   "step_pitch_cap": 0.5,
+   "descent_seconds": 0.9491455420002239,
+   "converged_vertices": 77891,
+   "domain_escape_vertices": 0,
+   "degenerate_vertices": 0,
+   "unconverged_vertices": 234,
+   "overshoot_vertices": 19,
+   "residual_over_pitch_max": 0.3470753240668713,
+   "displacement_over_thickness": {
+    "p50": 0.998128027841869,
+    "p95": 1.4636734007588317,
+    "p99": 2.029915030515042,
+    "p999": 3.606098042897924,
+    "max": 7.569509093072891
+   },
+   "displacement_over_pitch": {
+    "p999": 0.850222119771348,
+    "max": 1.7846891543661507
+   },
+   "segment_crossing_histogram": {
+    "0": 39565,
+    "1": 38541,
+    "2": 19
+   }
+  },
+  {
+   "budget": 24,
+   "step_pitch_cap": 0.25,
+   "descent_seconds": 1.2245673749998787,
+   "converged_vertices": 78001,
+   "domain_escape_vertices": 0,
+   "degenerate_vertices": 0,
+   "unconverged_vertices": 124,
+   "overshoot_vertices": 14,
+   "residual_over_pitch_max": 0.2611617848502975,
+   "displacement_over_thickness": {
+    "p50": 0.9981640876899442,
+    "p95": 1.4668856715397716,
+    "p99": 2.0487298872652713,
+    "p999": 3.640920530102001,
+    "max": 5.843418130169507
+   },
+   "displacement_over_pitch": {
+    "p999": 0.8584323371681464,
+    "max": 1.377722760236022
+   },
+   "segment_crossing_histogram": {
+    "0": 39308,
+    "1": 38803,
+    "2": 14
+   }
+  },
+  {
+   "budget": 32,
+   "step_pitch_cap": 0.125,
+   "descent_seconds": 1.6639792920000218,
+   "converged_vertices": 78035,
+   "domain_escape_vertices": 0,
+   "degenerate_vertices": 0,
+   "unconverged_vertices": 90,
+   "overshoot_vertices": 6,
+   "residual_over_pitch_max": 0.1592536667413011,
+   "displacement_over_thickness": {
+    "p50": 0.9981629766669375,
+    "p95": 1.4651953879538244,
+    "p99": 2.040359700662083,
+    "p999": 3.7238477842442395,
+    "max": 5.802903574364494
+   },
+   "displacement_over_pitch": {
+    "p999": 0.8779843806691519,
+    "max": 1.3681705042772654
+   },
+   "segment_crossing_histogram": {
+    "0": 38734,
+    "1": 39385,
+    "2": 6
+   }
+  },
+  {
+   "budget": 48,
+   "step_pitch_cap": 0.0625,
+   "descent_seconds": 2.609471208999821,
+   "converged_vertices": 78067,
+   "domain_escape_vertices": 0,
+   "degenerate_vertices": 0,
+   "unconverged_vertices": 58,
+   "overshoot_vertices": 4,
+   "residual_over_pitch_max": 0.1499082470160649,
+   "displacement_over_thickness": {
+    "p50": 0.9981608080151883,
+    "p95": 1.465778428460484,
+    "p99": 2.052024604378482,
+    "p999": 3.858685304245164,
+    "max": 7.576253627041189
+   },
+   "displacement_over_pitch": {
+    "p999": 0.9097754858238442,
+    "max": 1.7862793363021883
+   },
+   "segment_crossing_histogram": {
+    "0": 38834,
+    "1": 39287,
+    "2": 3,
+    "3": 1
+   }
+  }
+ ]
+}
