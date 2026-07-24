@@ -65,6 +65,8 @@ golem/
     anatomy/    Vascular descent and tissue envelopes over the compiled body.
     mechanics/  Fit, load, and structural cost over realized carriers.
     sheaf/      Field → section restriction and gluing.
+    blame/      Minimal-blame (WHY): approximate MUS over authored
+                declarations — which authored units own a rejection.
   assembly/     Scene assembly: composes compiled elements into one verdict —
                 AcceptedAssembly with export artifacts (GLB + receipts), or
                 RejectedAssembly with typed obstructions.
@@ -84,7 +86,8 @@ Supporting planes: `senses/` (the perception plane — proprio, symmetry,
 silhouette, anomaly classification), `materials/` (appearance palette baked
 into GLB exports), `plates/` (surface cell complexes), `conduits/` (surface
 conduit authoring), `contracts/` (postural assertion packs), `evals/` (sealed
-executable instruments).
+executable instruments), `addressing/` (the anchor/scope/cell grammars
+authored names resolve through).
 
 `specs/` holds authored creatures (the vigil hound is the flagship);
 `golden/` holds write-once golden texts and frozen fixtures; `tests/` is the
