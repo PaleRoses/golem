@@ -1,0 +1,108 @@
+{
+  "resolution": 68,
+  "schema": "golem.creature-design-validation/1",
+  "source_fingerprint": "15b889833e54c5f0f6643d7e13f649c89ced109dec93524001566bbc21bf3c34",
+  "witnesses": {
+    "cairnbark-bear": {
+      "cavity_count": 2,
+      "component_count": 1,
+      "dimensions": {
+        "character_salience": 100.0,
+        "distal_character": 90.0,
+        "identity_preservation": 100.0,
+        "semantic_restraint": 69.948,
+        "silhouette_rhythm": 76.951,
+        "surface_integrity": 100.0,
+        "systems_coherence": 72.0,
+        "taxonomic_coherence": 100.0
+      },
+      "faces": 8000,
+      "field_residual_max": 0.017610066681622,
+      "quality": 90.378,
+      "quality_floor": 82.0,
+      "self_intersections": 0,
+      "status": "accepted",
+      "vertices": 4004,
+      "watertight": true
+    },
+    "moonthorn-ibex": {
+      "cavity_count": 0,
+      "component_count": 1,
+      "dimensions": {
+        "character_salience": 100.0,
+        "distal_character": 90.0,
+        "identity_preservation": 100.0,
+        "semantic_restraint": 65.234,
+        "silhouette_rhythm": 81.767,
+        "surface_integrity": 100.0,
+        "systems_coherence": 72.0,
+        "taxonomic_coherence": 100.0
+      },
+      "faces": 7356,
+      "field_residual_max": 0.01693277804938668,
+      "quality": 90.724,
+      "quality_floor": 84.0,
+      "self_intersections": 0,
+      "status": "accepted",
+      "vertices": 3680,
+      "watertight": true
+    },
+    "sableglass-fox": {
+      "cavity_count": 2,
+      "component_count": 1,
+      "dimensions": {
+        "character_salience": 100.0,
+        "distal_character": 90.0,
+        "identity_preservation": 100.0,
+        "semantic_restraint": 67.491,
+        "silhouette_rhythm": 66.349,
+        "surface_integrity": 100.0,
+        "systems_coherence": 72.0,
+        "taxonomic_coherence": 100.0
+      },
+      "faces": 5568,
+      "field_residual_max": 0.022740498309719595,
+      "quality": 88.592,
+      "quality_floor": 84.0,
+      "self_intersections": 0,
+      "status": "accepted",
+      "vertices": 2790,
+      "watertight": true
+    },
+    "sableglass-fox-living-diagnostic": {
+      "circuit_stages": [
+        "anatomy.circuit[terminal_foreleg_terminal]",
+        "anatomy.circuit[terminal_head]",
+        "anatomy.circuit[terminal_hindleg]",
+        "anatomy.circuit[terminal_tail]"
+      ],
+      "obstructions": ["InfeasibleBifurcationObstruction"],
+      "quality": 49.0,
+      "status": "rejected",
+      "surface_retained": true,
+      "vasculature_artifact": "RejectedVasculature"
+    },
+    "velvet-rime-caracal": {
+      "cavity_count": 2,
+      "component_count": 1,
+      "dimensions": {
+        "character_salience": 100.0,
+        "distal_character": 90.0,
+        "identity_preservation": 100.0,
+        "semantic_restraint": 65.234,
+        "silhouette_rhythm": 82.279,
+        "surface_integrity": 100.0,
+        "systems_coherence": 72.0,
+        "taxonomic_coherence": 100.0
+      },
+      "faces": 4496,
+      "field_residual_max": 0.023139315946140243,
+      "quality": 90.801,
+      "quality_floor": 85.0,
+      "self_intersections": 0,
+      "status": "accepted",
+      "vertices": 2254,
+      "watertight": true
+    }
+  }
+}
